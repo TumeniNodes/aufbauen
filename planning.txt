@@ -1,0 +1,170 @@
+====== Mapgen Mod ======
+
+ This mod will contains all of the natural items related to mapgen, as follows:
+
+rock
+river stone
+*random stone clusters throughout map?*
+gravel
+sand
+sandstone
+limestone
+granite (maybe two types, grey and red?)
+
+dirt
+dirt with grass
+dirt with wetland grass (or swamp grass, and dirt may be darker due to dampness)
+both will have grass 1-5, wetlands will have long grass and poss cats tails
+
+*** trees & logs ***
+ash
+birch
+elm
+maple
+oak
+pine
+
+*** bushes ***
+basic bush (needs a sensible name)
+evergreen bush
+
+assorted flower types?
+vine types, one with flowers, one without, poss a rose vine too
+
+*** liquids ***
+just water| water source, and water flowing. (no need for water variations)
+lava, not sure if adding, prob not
+
+mapgen.lua
+trees.lua
+functions.lua
+nodes.lua
+
+
+ ATM, I am unsure if core essentials to mapgen can be bundled into it's own mod?
+
+
+
+====== Materials Mod ======
+
+ This mod will contain all handemade materials, as follows:
+
+*** stone-like ***
+
+brick
+
+stone (which will also be used with stone wall nodes/textures as well
+stone brick
+stone block
+stone block half
+stone cinderblock
+stone smooth
+
+*granite may have two colour versions, grey and red*
+granite
+granite block
+granite block half
+granite smooth
+
+sandstone
+sandstone brick
+sandstone block
+sandstone block half
+sandstone smooth
+
+limestone
+limestone brick
+limestone block
+limestone block half
+limestone smooth
+
+cobblestone
+
+slate
+
+
+*** wood ***
+
+planks & planking of all wood types
+same for doors, trap doors, and window types
+possibly, shingles for each type as well
+
+basic wooden ladder
+basic rope ladder
+
+
+*** metals ***
+
+bronze
+copper (and copper with patina via functions.lua)
+iron   (and rusted iron via functions.lua)
+wrought iron
+steel  (and rusted steel via functions.lua)
+
+
+
+
+====== Lighting Mod ======
+
+ This mod will contain all lighting nodes/textures
+
+*** exterior ***
+
+streetlamps, on poles
+exterior wall, and hanging type lamps
+
+*** interior ***
+unsure if this should go into a separate "deco" mod with other deco-types?
+
+wall sconces
+ceiling chandeliers
+
+
+
+====== Removing Uneeded Bits of Code ======
+
+all crafting aspects
+crafting grid no longer required
+drops will not be required any longer
+tools are not required, although keep bronze, iron and steel weapons for PVP
+
+"maybe" keep aspects to collecting materials and forging for weapons?
+
+weapons are, ax, sword, (maybe dagger?)
+can also include armour and shields
+would like to have bows in all wood classes (maybe)
+using levels of power attributed to the wood type
+flint and obsidian arrowheads.
+
+possibly keep health, hudbar code for PVP
+PVP will need aspects of survival, hunger, thirst, health, etc.. (so keep)
+
+Dyes can go? possibly unsure yet.
+
+
+
+ Quite a bit is still just ideas in the works.
+But, basically a creative, building environment, with PVP/Adventure/Quest capabilities.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
