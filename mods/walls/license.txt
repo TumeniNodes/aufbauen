@@ -39,4 +39,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ** line 24 through line 45 / line 64 through line 72
-** line 89 through line 110 / line 124 through line 132
