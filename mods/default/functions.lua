@@ -271,6 +271,7 @@ function default.register_fence(name, def)
 		inventory_image = fence_texture,
 		wield_image = fence_texture,
 		tiles = {def.texture},
+		align_style = align_style_node,
 		sunlight_propagates = true,
 		is_ground_content = false,
 		groups = {},
