@@ -19,7 +19,7 @@ dirt with wetland grass (or swamp grass, and dirt may be darker due to dampness)
 both will have grass 1-5, wetlands will have long grass and poss cats tails
 
 *** trees & logs ***
-ash
+ash ?
 birch
 elm
 maple
@@ -28,7 +28,7 @@ pine
 
 *** bushes ***
 basic bush (needs a sensible name)
-evergreen bush
+pine bush
 
 assorted flower types?
 vine types, one with flowers, one without, poss a rose vine too
@@ -147,6 +147,17 @@ Dyes can go? possibly unsure yet.
 
  Quite a bit is still just ideas in the works.
 But, basically a creative, building environment, with PVP/Adventure/Quest capabilities.
+
+
+*** mapgen ***
+
+Just thoughts on what I would like to be able to do/see
+
+Implement a cold/snow biome at higher altitudes only (MgV7)
+
+Implement medium/large bodies of water at higher altitudes (MgV7 & MgFlat)
+
+Implement (MgV7 type ridges/rivers) into (MgFlat) as an option, as mountains & lakes
 
 
 

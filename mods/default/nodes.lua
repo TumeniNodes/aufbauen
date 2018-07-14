@@ -2911,14 +2911,14 @@ default.register_fence("default:fence_acacia_wood", {
 })
 
 default.register_fence2("default:fence_granite", {
-   description = "Granite Fence",
-   image = "default_fence_granite.png",
-   texture = {"default_fence_granite_top.png", "default_fence_granite_top.png", "default_fence_granite.png"},
-   inventory_image = "default_fence_overlay.png^default_fence_granite_inv.png^default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_fence_granite_inv.png^default_fence_overlay.png^[makealpha:255,126,126",
-   material = "default:stone",
-   groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-   sounds = default.node_sound_wood_defaults()
+	description = "Granite Fence",
+	image = "default_fence_granite.png",
+	texture = {"default_fence_granite_top.png", "default_fence_granite_top.png", "default_fence_granite.png"},
+	inventory_image = "default_fence_granite_inv.png",
+	wield_image = "default_fence_granite_inv.png",
+	material = "default:stone",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	sounds = default.node_sound_wood_defaults()
 })
 
 default.register_fence("default:fence_willow_wood", {
@@ -3010,18 +3010,6 @@ default.register_fence_rail("default:fence_rail_birch_wood", {
 
 
 --
--- Misc
---
-
-minetest.register_node("default:cloud", {
-	description = "Cloud",
-	tiles = {"default_cloud.png"},
-	is_ground_content = false,
-	sounds = default.node_sound_defaults(),
-	groups = {not_in_creative_inventory = 1},
-})
-
---
 -- register trees for leafdecay
 --
 
@@ -3072,7 +3060,7 @@ default.register_leafdecay({
 default.register_leafdecay({
 	trunks = {"default:birch_tree"},
 	leaves = {"default:birch_leaves"},
-	radius = 3,
+	radius = 4,
 })
 
 default.register_leafdecay({
