@@ -1,3 +1,5 @@
+'aufbauen' = 'build up' [German > English]
+
 ====== Mapgen Mod ======
 
  This mod will contains all of the natural items related to mapgen, as follows:
