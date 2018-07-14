@@ -969,11 +969,20 @@ minetest.register_node("default:willow_log", {
 	on_place = minetest.rotate_node
 })
 
-minetest.register_node("default:willow_wood", {
+minetest.register_node("default:willow_planking", {
+	description = "Willow Wood Planking",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_willow_planking.png",},
+	groups = {choppy = 1, flammable = 1, oddly_breakable_by_hand=1, wood=1},
+	sounds = default.node_sound_wood_defaults()
+})
+
+minetest.register_node("default:willow_planks", {
 	description = "Willow Wood Planks",
-	tiles = {
-		"default_willow_wood.png",
-	},
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_willow_planks.png",},
 	groups = {choppy = 1, flammable = 1, oddly_breakable_by_hand=1, wood=1},
 	sounds = default.node_sound_wood_defaults()
 })
@@ -1178,11 +1187,21 @@ minetest.register_node("default:pine_log", {
 	on_place = minetest.rotate_node
 })
 
-minetest.register_node("default:pine_wood", {
+minetest.register_node("default:pine_planking", {
+	description = "Pine Wood Planking",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_pine_planking.png"},
+	is_ground_content = false,
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("default:pine_planks", {
 	description = "Pine Wood Planks",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"default_pine_wood.png"},
+	tiles = {"default_pine_planks.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
@@ -1348,11 +1367,21 @@ minetest.register_node("default:birch_log", {
 	on_place = minetest.rotate_node
 })
 
-minetest.register_node("default:birch_wood", {
+minetest.register_node("default:birch_planking", {
+	description = "Birch Wood Planking",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_birch_planking.png"},
+	is_ground_content = false,
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("default:birch_planks", {
 	description = "Birch Wood Planks",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"default_birch_wood.png"},
+	tiles = {"default_birch_planks.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
