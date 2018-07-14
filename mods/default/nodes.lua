@@ -2910,14 +2910,15 @@ default.register_fence("default:fence_acacia_wood", {
 	sounds = default.node_sound_wood_defaults()
 })
 
-default.register_fence("default:fence_granite", {
-	description = "Granite Fence",
-	texture = "default_fence_granite.png", "default_fence_granite_top.png", "default_fence_granite_top.png",
-	inventory_image = "default_fence_granite_inv.png",
-	wield_image = "default_fence_granite_inv.png",
-	material = "default:stone",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-	sounds = default.node_sound_wood_defaults()
+default.register_fence2("default:fence_granite", {
+   description = "Granite Fence",
+   image = "default_fence_granite.png",
+   texture = {"default_fence_granite_top.png", "default_fence_granite_top.png", "default_fence_granite.png"},
+   inventory_image = "default_fence_overlay.png^default_fence_granite_inv.png^default_fence_overlay.png^[makealpha:255,126,126",
+	wield_image = "default_fence_overlay.png^default_fence_granite_inv.png^default_fence_overlay.png^[makealpha:255,126,126",
+   material = "default:stone",
+   groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+   sounds = default.node_sound_wood_defaults()
 })
 
 default.register_fence("default:fence_willow_wood", {
