@@ -1,6 +1,7 @@
 'aufbauen' = 'build up' [German > English]
 
-====== Mapgen Mod ======
+====== Default Mod ======
+(The original 'default' mod, stripped down to contain only mapgen components)
 
  This mod will contains all of the natural items related to mapgen, as follows:
 
@@ -43,11 +44,8 @@ functions.lua
 nodes.lua
 
 
- ATM, I am unsure if core essentials to mapgen can be bundled into it's own mod?
-
-
-
 ====== Materials Mod ======
+(Possible rename or to be split into numerous, small, individual mods)
 
  This mod will contain all handemade materials, as follows:
 
