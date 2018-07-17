@@ -3,7 +3,7 @@
 ====== Default Mod ======
 (The original 'default' mod, stripped down to contain only mapgen components)
 
- This mod will contains all of the natural items related to mapgen, as follows:
+ This mod will contain all of the natural items related to mapgen, as follows:
 
 rock
 river stone
