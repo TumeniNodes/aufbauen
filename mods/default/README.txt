@@ -18,6 +18,10 @@ Textures
 celeron55, Perttu Ahola <celeron55@gmail.com> (CC BY-SA 3.0)
 
 
+[no one knows]
+    blank.png
+
+
 Cisoun's texture pack (CC BY-SA 3.0):
     default_lava.png
     default_leaves.png
