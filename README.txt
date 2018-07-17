@@ -21,3 +21,5 @@ Licensing
 ---------
 
 See LICENSE.txt
+
+![Preview]https://raw.githubusercontent.com/TumeniNodes/aufbauen/master/screenshot.png
