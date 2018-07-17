@@ -93,7 +93,7 @@ minetest.register_node("default:torch", {
 			fakestack:set_name("default:torch_wall")
 		end
 
-		itemstack = minetest.item_place(fakestack, placer, pointed_thing, wdir)
+		itemstack = minetest.item_place(fakestack, placer, pointed_thing, param2)
 		itemstack:set_name("default:torch")
 
 		return itemstack
