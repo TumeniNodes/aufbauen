@@ -656,14 +656,16 @@ minetest.register_node("default:gravel", {
 	description = "Gravel",
 	tiles = {"default_gravel.png"},
 	groups = {crumbly = 2, falling_node = 1},
+	drop = {},
 	sounds = default.node_sound_gravel_defaults(),
-	drop = {
-		max_items = 1,
-		items = {
-			{items = {'default:flint'}, rarity = 16},
-			{items = {'default:gravel'}}
-		}
-	}
+})
+
+minetest.register_node("default:gravel_mossy", {
+	description = "Mossy Gravel",
+	tiles = {"default_gravel_mossy.png"},
+	groups = {crumbly = 2, falling_node = 1},
+	drop = {},
+	sounds = default.node_sound_gravel_defaults(),
 })
 
 minetest.register_node("default:clay", {
