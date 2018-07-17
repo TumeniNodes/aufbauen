@@ -3084,7 +3084,7 @@ default.register_leafdecay({
 default.register_leafdecay({
 	trunks = {"default:birch_tree"},
 	leaves = {"default:birch_leaves"},
-	radius = 4,
+	radius = 2,
 })
 
 default.register_leafdecay({
