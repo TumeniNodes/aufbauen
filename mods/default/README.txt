@@ -71,6 +71,10 @@ paramat (CC BY-SA 3.0):
     default_bookshelf_slot.png -- Derived from a texture by Gambit (CC-BY-SA 3.0)
     default_permafrost.png -- Derived from a texture by Neuromancer (CC BY-SA 3.0)
     default_stones.png -- Derived from a texture by sofar (CC0 1.0)
+    default_fence_rail_wood.png
+    default_fence_rail_birch_wood.png
+    default_fence_rail_pine_wood.png
+    default_fence_rail_jungle_wood.png
 
 
 TumeniNodes (CC BY-SA 3.0):
