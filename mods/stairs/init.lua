@@ -192,26 +192,6 @@ function stairs.register_slab(subname, recipeitem, groups, images, description, 
 
 				local p2 = under.param2
 
-				-- combine two slabs if possible
-				if slab_trans_dir[math.floor(p2 / 4)] == dir
-						and wield_item == under.name then
-
-					if not recipeitem then
-						return itemstack
-					end
-					if minetest.is_protected(pointed_thing.under, player_name) and not
-							minetest.check_player_privs(player_name, "protection_bypass") then
-						minetest.record_protection_violation(pointed_thing.under,
-							player_name)
-						return
-					end
-					minetest.set_node(pointed_thing.under, {name = recipeitem, param2 = p2})
-					if not creative_enabled then
-						itemstack:take_item()
-					end
-					return itemstack
-				end
-
 				-- Placing a slab on an upside down slab should make it right-side up.
 				if p2 >= 20 and dir == 8 then
 					p2 = p2 - 20
