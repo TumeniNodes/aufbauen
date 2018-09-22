@@ -36,6 +36,7 @@ vine types, one with flowers, one without, poss a rose vine too
 
 *** liquids ***
 just water| water source, and water flowing. (no need for water variations)
+river water may actually be necessary to add, in fact most likely. But will match water source
 lava, not sure if adding, prob not
 
 mapgen.lua
