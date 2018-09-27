@@ -796,7 +796,7 @@ doors.register_fencegate("doors:gate_acacia_wood", {
 
 doors.register_fencegate("doors:gate_willow_wood", {
 	description = "Willow Wood Fence Gate",
-	texture = "default_willow_wood.png",
+	texture = "default_willow_planks.png",
 	material = "default:willow_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })

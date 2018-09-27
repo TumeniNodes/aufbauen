@@ -459,7 +459,7 @@ stairs.register_stair_and_slab(
 	"willow_wood",
 	"default:willow_wood",
 	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-	{"default_willow_wood.png"},
+	{"default_willow_planks.png"},
 	"Willow Wood Stair",
 	"Willow Wood Slab",
 	default.node_sound_wood_defaults()

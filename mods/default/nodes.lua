@@ -2941,9 +2941,9 @@ default.register_fence2("default:fence_granite", {
 
 default.register_fence("default:fence_willow_wood", {
 	description = "Willow Wood Fence",
-	texture = "default_fence_willow_wood.png",
-	inventory_image = "default_fence_overlay.png^default_willow_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_willow_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
+	texture = "default_fence_willow_planks.png",
+	inventory_image = "default_fence_overlay.png^default_willow_planks.png^default_fence_overlay.png^[makealpha:255,126,126",
+	wield_image = "default_fence_overlay.png^default_willow_planks.png^default_fence_overlay.png^[makealpha:255,126,126",
 	material = "default:willow_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	drop = {},
@@ -3001,9 +3001,9 @@ default.register_fence_rail("default:fence_rail_acacia_wood", {
 
 default.register_fence_rail("default:fence_rail_willow_wood", {
 	description = "Willow Wood Fence Rail",
-	texture = "default_fence_rail_willow_wood.png",
-	inventory_image = "default_fence_rail_overlay.png^default_willow_wood.png^default_fence_rail_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_rail_overlay.png^default_willow_wood.png^default_fence_rail_overlay.png^[makealpha:255,126,126",
+	texture = "default_fence_rail_willow_planks.png",
+	inventory_image = "default_fence_rail_overlay.png^default_willow_planks.png^default_fence_rail_overlay.png^[makealpha:255,126,126",
+	wield_image = "default_fence_rail_overlay.png^default_willow_planks.png^default_fence_rail_overlay.png^[makealpha:255,126,126",
 	material = "default:willow_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	drop = {},
