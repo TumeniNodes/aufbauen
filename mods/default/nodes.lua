@@ -2132,7 +2132,7 @@ minetest.register_node("default:water_source", {
 	liquid_alternative_flowing = "default:water_flowing",
 	liquid_alternative_source = "default:water_source",
 	liquid_viscosity = 1,
-	post_effect_color = {a = 220, r = 82, g = 88, b = 94},
+	post_effect_color = {a = 220, r = 68, g = 93, b = 100},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1, cools_lava = 1},
 	sounds = default.node_sound_water_defaults(),
 })
@@ -2178,7 +2178,7 @@ minetest.register_node("default:water_flowing", {
 	liquid_alternative_flowing = "default:water_flowing",
 	liquid_alternative_source = "default:water_source",
 	liquid_viscosity = 1,
-	post_effect_color = {a = 220, r = 82, g = 88, b = 94},
+	post_effect_color = {a = 220, r = 68, g = 93, b = 100},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1,
 		not_in_creative_inventory = 1, cools_lava = 1},
 	sounds = default.node_sound_water_defaults(),
@@ -2230,7 +2230,7 @@ minetest.register_node("default:water_source", {
 	-- option used in the 'bucket' mod by the river water bucket.
 	liquid_renewable = false,
 	liquid_range = 2,
-	post_effect_color = {a = 220, r = 82, g = 88, b = 94},
+	post_effect_color = {a = 220, r = 68, g = 93, b = 100},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1, cools_lava = 1},
 	sounds = default.node_sound_water_defaults(),
 })
@@ -2277,7 +2277,7 @@ minetest.register_node("default:river_water_flowing", {
 	liquid_viscosity = 1,
 	liquid_renewable = false,
 	liquid_range = 2,
-	post_effect_color = {a = 220, r = 82, g = 88, b = 94},
+	post_effect_color = {a = 220, r = 68, g = 93, b = 100},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1,
 		not_in_creative_inventory = 1, cools_lava = 1},
 	sounds = default.node_sound_water_defaults(),
