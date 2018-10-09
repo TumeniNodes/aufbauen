@@ -2905,39 +2905,39 @@ minetest.register_node("default:ladder_steel", {
 -- Fences
 --
 
-default.register_fence("default:fence_birch_wood", {
-	description = "Birch Wood Fence",
-	image = "default_fence_birch_wood.png",
-	texture = {"default_fence_birch_wood.png"},
-	inventory_image = "default_fence_overlay.png^default_birch_wood.png^" .. 
+default.register_fence("default:fence_birch", {
+	description = "Birch Fence",
+	image = "default_fence_birch.png",
+	texture = {"default_fence_birch.png"},
+	inventory_image = "default_fence_overlay.png^default_fence_birch.png^" .. 
 				"default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_birch_wood.png^" .. 
+	wield_image = "default_fence_overlay.png^default_fence_birch.png^" .. 
 				"default_fence_overlay.png^[makealpha:255,126,126",
 	material = "default:birch_wood",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 	sounds = default.node_sound_wood_defaults()
 })
 
-default.register_fence("default:fence_pine_wood", {
-	description = "Pine Wood Fence",
-	image = "default_fence_pine_wood.png",
-	texture = {"default_fence_pine_wood.png"},
-	inventory_image = "default_fence_overlay.png^default_pine_wood.png^" .. 
+default.register_fence("default:fence_pine", {
+	description = "Pine Fence",
+	image = "default_fence_pine.png",
+	texture = {"default_fence_pine.png"},
+	inventory_image = "default_fence_overlay.png^default_fence_pine.png^" .. 
 				"default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_pine_wood.png^" .. 
+	wield_image = "default_fence_overlay.png^default_fence_pine.png^" .. 
 				"default_fence_overlay.png^[makealpha:255,126,126",
 	material = "default:pine_wood",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 	sounds = default.node_sound_wood_defaults()
 })
 
-default.register_fence("default:fence_willow_wood", {
-	description = "Willow Wood Fence",
-	image = "default_fence_willow_wood.png",
-	texture = {"default_fence_willow_wood.png"},
-	inventory_image = "default_fence_overlay.png^default_willow_wood.png^" .. 
+default.register_fence("default:fence_willow", {
+	description = "Willow Fence",
+	image = "default_fence_willow.png",
+	texture = {"default_fence_willow.png"},
+	inventory_image = "default_fence_overlay.png^default_fence_willow.png^" .. 
 				"default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_willow_wood.png^" .. 
+	wield_image = "default_fence_overlay.png^default_fence_willow.png^" .. 
 				"default_fence_overlay.png^[makealpha:255,126,126",
 	material = "default:willow_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
@@ -2945,12 +2945,12 @@ default.register_fence("default:fence_willow_wood", {
 })
 
 default.register_fence("default:fence_wood", {
-	description = "Apple Wood Fence",
+	description = "Wood Fence",
 	image = "default_fence_wood.png",
 	texture = {"default_fence_wood.png"},
-	inventory_image = "default_fence_overlay.png^default_wood.png^" .. 
+	inventory_image = "default_fence_overlay.png^default_fence_wood.png^" .. 
 				"default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_wood.png^" .. 
+	wield_image = "default_fence_overlay.png^default_fence_wood.png^" .. 
 				"default_fence_overlay.png^[makealpha:255,126,126",
 	material = "default:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
@@ -2961,22 +2961,22 @@ default.register_fence("default:fence_junglewood", {
 	description = "Jungle Wood Fence",
 	image = "default_fence_junglewood.png",
 	texture = {"default_fence_junglewood.png"},
-	inventory_image = "default_fence_overlay.png^default_junglewood.png^" .. 
+	inventory_image = "default_fence_overlay.png^default_fence_junglewood.png^" .. 
 				"default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_junglewood.png^" .. 
+	wield_image = "default_fence_overlay.png^default_fence_junglewood.png^" .. 
 				"default_fence_overlay.png^[makealpha:255,126,126",
 	material = "default:junglewood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
 })
 
-default.register_fence("default:fence_stone", {
-	description = "Stone Fence Post",
-	image = "default_fence_stone.png",
-	texture = {"default_fence_stone_top.png", "default_fence_stone_top.png", "default_fence_stone.png"},
-	inventory_image = "default_fence_stone_inv.png",
-	wield_image = "default_fence_stone_inv.png",
-	material = "default:stone",
+default.register_fence("default:fence_granite", {
+	description = "Granite Fence Post",
+	image = "default_fence_granite.png",
+	texture = {"default_fence_granite_top.png", "default_fence_granite_top.png", "default_fence_granite.png"},
+	inventory_image = "default_fence_granite_inv.png",
+	wield_image = "default_fence_granite_inv.png",
+	material = "default:granite",
 	groups = {cracky = 3, stone = 1},
 	sounds = default.node_sound_stone_defaults()
 })
@@ -2986,12 +2986,12 @@ default.register_fence("default:fence_stone", {
 --Fence Rails
 --
 
-default.register_fence_rail("default:fence_rail_birch_wood", {
-	description = "Birch Wood Fence Rail",
-	texture = "default_fence_rail_birch_wood.png",
-	inventory_image = "default_fence_rail_overlay.png^default_birch_wood.png^" .. 
+default.register_fence_rail("default:fence_rail_birch", {
+	description = "Birch Fence Rail",
+	texture = "default_fence_rail_birch.png",
+	inventory_image = "default_fence_rail_overlay.png^default_fence_rail_birch.png^" .. 
                     "default_fence_rail_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_rail_overlay.png^default_birch_wood.png^" .. 
+	wield_image = "default_fence_rail_overlay.png^default_fence_rail_birch.png^" .. 
                     "default_fence_rail_overlay.png^[makealpha:255,126,126",
 	material = "default:birch_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
@@ -2999,12 +2999,25 @@ default.register_fence_rail("default:fence_rail_birch_wood", {
 	sounds = default.node_sound_wood_defaults()
 })
 
-default.register_fence_rail("default:fence_rail_pine_wood", {
-	description = "Pine Wood Fence Rail",
-	texture = "default_fence_rail_pine_wood.png",
-	inventory_image = "default_fence_rail_overlay.png^default_pine_wood.png^" .. 
+default.register_fence_rail("default:fence_rail_junglewood", {
+	description = "Jungle Wood Fence Rail",
+	texture = "default_fence_rail_junglewood.png",
+	inventory_image = "default_fence_rail_overlay.png^default_fence_rail_junglewood.png^" .. 
 				"default_fence_rail_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_rail_overlay.png^default_pine_wood.png^" .. 
+	wield_image = "default_fence_rail_overlay.png^default_fence_rail_junglewood.png^" .. 
+				"default_fence_rail_overlay.png^[makealpha:255,126,126",
+	material = "default:junglewood",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	drop = {},
+	sounds = default.node_sound_wood_defaults()
+})
+
+default.register_fence_rail("default:fence_rail_pine", {
+	description = "Pine Fence Rail",
+	texture = "default_fence_rail_pine.png",
+	inventory_image = "default_fence_rail_overlay.png^default_fence_rail_pine.png^" .. 
+				"default_fence_rail_overlay.png^[makealpha:255,126,126",
+	wield_image = "default_fence_rail_overlay.png^default_fence_rail_pine.png^" .. 
 				"default_fence_rail_overlay.png^[makealpha:255,126,126",
 	material = "default:pine_wood",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -3012,12 +3025,12 @@ default.register_fence_rail("default:fence_rail_pine_wood", {
 	sounds = default.node_sound_wood_defaults()
 })
 
-default.register_fence_rail("default:fence_rail_willow_wood", {
-	description = "Willow Wood Fence Rail",
-	texture = "default_fence_rail_willow_planks.png",
-	inventory_image = "default_fence_rail_overlay.png^default_willow_planks.png^" .. 
+default.register_fence_rail("default:fence_rail_willow", {
+	description = "Willow Fence Rail",
+	texture = "default_fence_rail_willow.png",
+	inventory_image = "default_fence_rail_overlay.png^default_fence_rail_willow.png^" .. 
 				"default_fence_rail_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_rail_overlay.png^default_willow_planks.png^" .. 
+	wield_image = "default_fence_rail_overlay.png^default_fence_rail_willow.png^" .. 
 				"default_fence_rail_overlay.png^[makealpha:255,126,126",
 	material = "default:willow_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
@@ -3026,11 +3039,11 @@ default.register_fence_rail("default:fence_rail_willow_wood", {
 })
 
 default.register_fence_rail("default:fence_rail_wood", {
-	description = "Apple Wood Fence Rail",
-	texture = "default_wood.png",
-	inventory_image = "default_fence_rail_overlay.png^default_wood.png^" .. 
+	description = "Wood Fence Rail",
+	texture = "default_fence_rail_wood.png",
+	inventory_image = "default_fence_rail_overlay.png^default_fence_rail_wood.png^" .. 
 				"default_fence_rail_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_rail_overlay.png^default_wood.png^" .. 
+	wield_image = "default_fence_rail_overlay.png^default_fence_rail_wood.png^" .. 
 				"default_fence_rail_overlay.png^[makealpha:255,126,126",
 	material = "default:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
