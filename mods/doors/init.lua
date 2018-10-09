@@ -780,39 +780,39 @@ function doors.register_fencegate(name, def)
 	})
 end
 
-doors.register_fencegate("doors:gate_wood", {
-	description = "Apple Wood Fence Gate",
-	texture = "default_wood.png",
+doors.register_fencegate("doors:gate_birch", {
+	description = "Birch Fence Gate",
+	texture = "default_birch_planks.png",
+	material = "default:birch_wood",
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
+})
+
+doors.register_fencegate("doors:gate_junglewood", {
+	description = "Junglewood Fence Gate",
+	texture = "default_junglewood_planks.png",
 	material = "default:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
-doors.register_fencegate("doors:gate_acacia_wood", {
-	description = "Acacia Wood Fence Gate",
-	texture = "default_acacia_wood.png",
-	material = "default:acacia_wood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
+doors.register_fencegate("doors:gate_pine", {
+	description = "Pine Fence Gate",
+	texture = "default_pine_planks.png",
+	material = "default:pine_wood",
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
 })
 
-doors.register_fencegate("doors:gate_willow_wood", {
-	description = "Willow Wood Fence Gate",
+doors.register_fencegate("doors:gate_willow", {
+	description = "Willow Fence Gate",
 	texture = "default_willow_planks.png",
 	material = "default:willow_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
-doors.register_fencegate("doors:gate_pine_wood", {
-	description = "Pine Wood Fence Gate",
-	texture = "default_pine_wood.png",
-	material = "default:pine_wood",
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
-})
-
-doors.register_fencegate("doors:gate_birch_wood", {
-	description = "Birch Wood Fence Gate",
-	texture = "default_birch_wood.png",
-	material = "default:birch_wood",
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
+doors.register_fencegate("doors:gate_wood", {
+	description = "Wood Fence Gate",
+	texture = "default_wood_planks.png",
+	material = "default:wood",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
 
