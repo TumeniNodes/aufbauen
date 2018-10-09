@@ -825,11 +825,22 @@ minetest.register_node("default:tree", {
 	on_place = minetest.rotate_node
 })
 
-minetest.register_node("default:wood", {
-	description = "Apple Wood Planks",
+minetest.register_node("default:wood_planking", {
+	description = "Wood Planking",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"default_wood.png"},
+	tiles = {"default_wood_planking.png"},
+	is_ground_content = false,
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	drop = {},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("default:wood_planks", {
+	description = "Wood Planks",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_wood_planks.png"},
 	is_ground_content = false,
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
 	drop = {},
@@ -977,7 +988,17 @@ minetest.register_node("default:willow_planking", {
 })
 
 minetest.register_node("default:willow_planks", {
-	description = "Willow Wood Planks",
+	description = "Willow Planks",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_willow_planks.png",},
+	groups = {choppy = 1, flammable = 1, oddly_breakable_by_hand=1, wood=1},
+	drop = {},
+	sounds = default.node_sound_wood_defaults()
+})
+
+minetest.register_node("default:willow_planks", {
+	description = "Willow Planks",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_willow_planks.png",},
@@ -1050,19 +1071,28 @@ minetest.register_node("default:jungletree", {
 	sounds = default.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
-})
+})]]--
 
-minetest.register_node("default:junglewood", {
-	description = "Jungle Wood Planks",
+minetest.register_node("default:junglewood_planking", {
+	description = "Jungle Wood Planking",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"default_junglewood.png"},
+	tiles = {"default_junglewood_planking.png"},
 	is_ground_content = false,
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:jungleleaves", {
+minetest.register_node("default:junglewood_planks", {
+	description = "Jungle Wood Planks",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_junglewood_planks.png"},
+	is_ground_content = false,
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	sounds = default.node_sound_wood_defaults(),
+})
+--[[minetest.register_node("default:jungleleaves", {
 	description = "Jungle Tree Leaves",
 	drawtype = "allfaces_optional",
 	waving = 1,
@@ -1182,7 +1212,7 @@ minetest.register_node("default:pine_log", {
 })
 
 minetest.register_node("default:pine_planking", {
-	description = "Pine Wood Planking",
+	description = "Pine Planking",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_pine_planking.png"},
@@ -1193,7 +1223,7 @@ minetest.register_node("default:pine_planking", {
 })
 
 minetest.register_node("default:pine_planks", {
-	description = "Pine Wood Planks",
+	description = "Pine Planks",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_pine_planks.png"},
@@ -1254,85 +1284,6 @@ minetest.register_node("default:pine_sapling", {
 })
 
 
-minetest.register_node("default:acacia_tree", {
-	description = "Acacia Tree",
-	tiles = {"default_acacia_tree_top.png", "default_acacia_tree_top.png",
-		"default_acacia_tree.png"},
-	paramtype2 = "facedir",
-	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
-	sounds = default.node_sound_wood_defaults(),
-
-	on_place = minetest.rotate_node
-})
-
-minetest.register_node("default:acacia_wood", {
-	description = "Acacia Wood Planks",
-	paramtype2 = "facedir",
-	place_param2 = 0,
-	tiles = {"default_acacia_wood.png"},
-	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-minetest.register_node("default:acacia_leaves", {
-	description = "Acacia Tree Leaves",
-	drawtype = "allfaces_optional",
-	tiles = {"default_acacia_leaves.png"},
-	special_tiles = {"default_acacia_leaves_simple.png"},
-	waving = 1,
-	paramtype = "light",
-	is_ground_content = false,
-	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
-	drop = {
-		max_items = 1,
-		items = {
-			{items = {"default:acacia_sapling"}, rarity = 20},
-			{items = {"default:acacia_leaves"}}
-		}
-	},
-	sounds = default.node_sound_leaves_defaults(),
-
-	after_place_node = default.after_place_leaves,
-})
-
-minetest.register_node("default:acacia_sapling", {
-	description = "Acacia Tree Sapling",
-	drawtype = "plantlike",
-	tiles = {"default_acacia_sapling.png"},
-	inventory_image = "default_acacia_sapling.png",
-	wield_image = "default_acacia_sapling.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	on_timer = default.grow_sapling,
-	selection_box = {
-		type = "fixed",
-		fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16}
-	},
-	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
-		attached_node = 1, sapling = 1},
-	sounds = default.node_sound_leaves_defaults(),
-
-	on_construct = function(pos)
-		minetest.get_node_timer(pos):start(math.random(300, 1500))
-	end,
-
-	on_place = function(itemstack, placer, pointed_thing)
-		itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
-			"default:acacia_sapling",
-			-- minp, maxp to be checked, relative to sapling pos
-			-- minp_relative.y = 1 because sapling pos has been checked
-			{x = -4, y = 1, z = -4},
-			{x = 4, y = 7, z = 4},
-			-- maximum interval of interior volume check
-			4)
-
-		return itemstack
-	end,
-})
-
 minetest.register_node("default:birch_tree", {
 	description = "Birch Tree",
 	tiles = {"default_birch_tree.png"},
@@ -1359,7 +1310,7 @@ minetest.register_node("default:birch_log", {
 })
 
 minetest.register_node("default:birch_planking", {
-	description = "Birch Wood Planking",
+	description = "Birch Planking",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_birch_planking.png"},
@@ -1370,7 +1321,7 @@ minetest.register_node("default:birch_planking", {
 })
 
 minetest.register_node("default:birch_planks", {
-	description = "Birch Wood Planks",
+	description = "Birch Planks",
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_birch_planks.png"},
@@ -1429,6 +1380,30 @@ minetest.register_node("default:birch_sapling", {
 		return itemstack
 	end,
 })
+
+
+minetest.register_node("default:oak_planking", {
+	description = "Oak Planking",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_oak_planking.png"},
+	is_ground_content = false,
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	drop = {},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("default:oak_planks", {
+	description = "Oak Wood Planks",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_oak_planks.png"},
+	is_ground_content = false,
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	drop = {},
+	sounds = default.node_sound_wood_defaults(),
+})
+
 
 --
 -- Ores
@@ -2909,11 +2884,32 @@ default.register_fence("default:fence_birch", {
 	description = "Birch Fence",
 	image = "default_fence_birch.png",
 	texture = {"default_fence_birch.png"},
-	inventory_image = "default_fence_overlay.png^default_fence_birch.png^" .. 
-				"default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_fence_birch.png^" .. 
-				"default_fence_overlay.png^[makealpha:255,126,126",
+	inventory_image = "default_fence_birch_inv.png",
+	wield_image = "default_fence_birch_inv.png",
 	material = "default:birch_wood",
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	sounds = default.node_sound_wood_defaults()
+})
+
+default.register_fence("default:fence_junglewood", {
+	description = "Jungle Wood Fence",
+	image = "default_fence_junglewood.png",
+	texture = {"default_fence_junglewood.png"},
+	inventory_image = "default_fence_junglewood_inv.png",
+	wield_image = "default_fence_junglewood_inv.png",
+	material = "default:junglewood",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
+	drop = {}
+})
+
+default.register_fence("default:fence_oak", {
+	description = "Oak Fence",
+	image = "default_fence_oak.png",
+	texture = {"default_fence_oak.png"},
+	inventory_image = "default_fence_oak_inv.png",
+	wield_image = "default_fence_oak_inv.png",
+	material = "default:oak_wood",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 	sounds = default.node_sound_wood_defaults()
 })
@@ -2922,10 +2918,8 @@ default.register_fence("default:fence_pine", {
 	description = "Pine Fence",
 	image = "default_fence_pine.png",
 	texture = {"default_fence_pine.png"},
-	inventory_image = "default_fence_overlay.png^default_fence_pine.png^" .. 
-				"default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_fence_pine.png^" .. 
-				"default_fence_overlay.png^[makealpha:255,126,126",
+	inventory_image = "default_fence_pine_inv.png",
+	wield_image = "default_fence_pine_inv.png",
 	material = "default:pine_wood",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 	sounds = default.node_sound_wood_defaults()
@@ -2935,11 +2929,9 @@ default.register_fence("default:fence_willow", {
 	description = "Willow Fence",
 	image = "default_fence_willow.png",
 	texture = {"default_fence_willow.png"},
-	inventory_image = "default_fence_overlay.png^default_fence_willow.png^" .. 
-				"default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_fence_willow.png^" .. 
-				"default_fence_overlay.png^[makealpha:255,126,126",
-	material = "default:willow_wood",
+	inventory_image = "default_fence_willow_inv.png",
+	wield_image = "default_fence_willow_inv.png",
+	material = "default:willow_planks",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
 })
@@ -2948,24 +2940,9 @@ default.register_fence("default:fence_wood", {
 	description = "Wood Fence",
 	image = "default_fence_wood.png",
 	texture = {"default_fence_wood.png"},
-	inventory_image = "default_fence_overlay.png^default_fence_wood.png^" .. 
-				"default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_fence_wood.png^" .. 
-				"default_fence_overlay.png^[makealpha:255,126,126",
+	inventory_image = "default_fence_wood_inv.png",
+	wield_image = "default_fence_wood_inv.png",
 	material = "default:wood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-	sounds = default.node_sound_wood_defaults()
-})
-
-default.register_fence("default:fence_junglewood", {
-	description = "Jungle Wood Fence",
-	image = "default_fence_junglewood.png",
-	texture = {"default_fence_junglewood.png"},
-	inventory_image = "default_fence_overlay.png^default_fence_junglewood.png^" .. 
-				"default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^default_fence_junglewood.png^" .. 
-				"default_fence_overlay.png^[makealpha:255,126,126",
-	material = "default:junglewood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
 })
@@ -2977,8 +2954,9 @@ default.register_fence("default:fence_granite", {
 	inventory_image = "default_fence_granite_inv.png",
 	wield_image = "default_fence_granite_inv.png",
 	material = "default:granite",
+	drop = {},
 	groups = {cracky = 3, stone = 1},
-	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_stone_defaults(),
 })
 
 
@@ -2989,49 +2967,52 @@ default.register_fence("default:fence_granite", {
 default.register_fence_rail("default:fence_rail_birch", {
 	description = "Birch Fence Rail",
 	texture = "default_fence_rail_birch.png",
-	inventory_image = "default_fence_rail_overlay.png^default_fence_rail_birch.png^" .. 
-                    "default_fence_rail_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_rail_overlay.png^default_fence_rail_birch.png^" .. 
-                    "default_fence_rail_overlay.png^[makealpha:255,126,126",
+	inventory_image = "default_fence_rail_birch_inv.png",
+	wield_image = "default_fence_rail_birch_inv.png",
 	material = "default:birch_wood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	drop = {},
-	sounds = default.node_sound_wood_defaults()
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
 })
 
 default.register_fence_rail("default:fence_rail_junglewood", {
 	description = "Jungle Wood Fence Rail",
 	texture = "default_fence_rail_junglewood.png",
-	inventory_image = "default_fence_rail_overlay.png^default_fence_rail_junglewood.png^" .. 
-				"default_fence_rail_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_rail_overlay.png^default_fence_rail_junglewood.png^" .. 
-				"default_fence_rail_overlay.png^[makealpha:255,126,126",
+	inventory_image = "default_fence_rail_junglewood_inv.png",
+	wield_image = "default_fence_rail_junglewood_inv.png",
 	material = "default:junglewood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	drop = {},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
+})
+
+default.register_fence_rail("default:fence_rail_oak", {
+	description = "Oak Fence Rail",
+	texture = "default_fence_rail_oak.png",
+	inventory_image = "default_fence_rail_oak_inv.png",
+	wield_image = "default_fence_rail_oak_inv.png",
+	material = "default:oak_wood",
+	drop = {},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
 })
 
 default.register_fence_rail("default:fence_rail_pine", {
 	description = "Pine Fence Rail",
 	texture = "default_fence_rail_pine.png",
-	inventory_image = "default_fence_rail_overlay.png^default_fence_rail_pine.png^" .. 
-				"default_fence_rail_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_rail_overlay.png^default_fence_rail_pine.png^" .. 
-				"default_fence_rail_overlay.png^[makealpha:255,126,126",
+	inventory_image = "default_fence_rail_pine_inv.png",
+	wield_image = "default_fence_rail_pine_inv.png",
 	material = "default:pine_wood",
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 	drop = {},
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 	sounds = default.node_sound_wood_defaults()
 })
 
 default.register_fence_rail("default:fence_rail_willow", {
 	description = "Willow Fence Rail",
 	texture = "default_fence_rail_willow.png",
-	inventory_image = "default_fence_rail_overlay.png^default_fence_rail_willow.png^" .. 
-				"default_fence_rail_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_rail_overlay.png^default_fence_rail_willow.png^" .. 
-				"default_fence_rail_overlay.png^[makealpha:255,126,126",
+	inventory_image = "default_fence_rail_willow_inv.png",
+	wield_image = "default_fence_rail_willow_inv.png",
 	material = "default:willow_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	drop = {},
@@ -3041,10 +3022,8 @@ default.register_fence_rail("default:fence_rail_willow", {
 default.register_fence_rail("default:fence_rail_wood", {
 	description = "Wood Fence Rail",
 	texture = "default_fence_rail_wood.png",
-	inventory_image = "default_fence_rail_overlay.png^default_fence_rail_wood.png^" .. 
-				"default_fence_rail_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_rail_overlay.png^default_fence_rail_wood.png^" .. 
-				"default_fence_rail_overlay.png^[makealpha:255,126,126",
+	inventory_image = "default_fence_rail_wood_inv.png",
+	wield_image = "default_fence_rail_wood_inv.png",
 	material = "default:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	drop = {},
@@ -3093,12 +3072,6 @@ else
 		radius = 2,
 	})
 end
-
-default.register_leafdecay({
-	trunks = {"default:acacia_tree"},
-	leaves = {"default:acacia_leaves"},
-	radius = 2,
-})
 
 default.register_leafdecay({
 	trunks = {"default:birch_tree"},

@@ -794,6 +794,13 @@ doors.register_fencegate("doors:gate_junglewood", {
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
+doors.register_fencegate("doors:gate_oak", {
+	description = "Oak Fence Gate",
+	texture = "default_oak_planks.png",
+	material = "default:oak_wood",
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
+})
+
 doors.register_fencegate("doors:gate_pine", {
 	description = "Pine Fence Gate",
 	texture = "default_pine_planks.png",
