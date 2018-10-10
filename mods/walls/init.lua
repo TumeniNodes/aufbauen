@@ -1,6 +1,10 @@
 walls = {}
 
-walls.register = function(wall_name, wall_desc, wall_texture, wall_mat, wall_sounds)
+walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wall_sounds)
+	--make wall_texture_table paramenter backwards compatible for mods passing single texture
+	if type(wall_texture_table) ~= "table" then
+		wall_texture_table = { wall_texture_table }
+	end
 	-- inventory node, and pole-type wall start item
 	minetest.register_node(wall_name, {
 		description = wall_desc,
@@ -8,20 +12,19 @@ walls.register = function(wall_name, wall_desc, wall_texture, wall_mat, wall_sou
 		node_box = {
 			type = "connected",
 			fixed = {{-1/4, -1/2, -1/4, 1/4, 1/2, 1/4}},
-			-- connect_bottom =
 			connect_front = {{-3/16, -1/2, -1/2,  3/16, 3/8, -1/4}},
 			connect_left = {{-1/2, -1/2, -3/16, -1/4, 3/8,  3/16}},
 			connect_back = {{-3/16, -1/2,  1/4,  3/16, 3/8,  1/2}},
 			connect_right = {{ 1/4, -1/2, -3/16,  1/2, 3/8,  3/16}},
 		},
-		connects_to = {"group:wall", "group:stone", "group:fence", "group:fence_rail"},
+		connects_to = { "group:wall", "group:stone", "group:fence", "group:pane" },
 		paramtype = "light",
 		is_ground_content = false,
-		tiles = { wall_texture, },
 		walkable = true,
-		groups = { cracky = 3, wall = 1, stone = 2 },
+		groups = {cracky = 3, wall = 1, stone = 2},
+		tiles = wall_texture_table,
 		sounds = wall_sounds,
-		after_place_node = function(pos, placer, itemstack, pointed_thing)
+				after_place_node = function(pos, placer, itemstack, pointed_thing)
 			local pos_under = {x = pos.x, y = pos.y - 1, z = pos.z}
 			local pos_above = {x = pos.x, y = pos.y + 1, z = pos.z}
 			local node_under = string.gsub(minetest.get_node(pos_under).name, "_full$", "")
@@ -31,7 +34,7 @@ walls.register = function(wall_name, wall_desc, wall_texture, wall_mat, wall_sou
 				minetest.set_node(pos_under, {name = node_under .. "_full"})
 			end
 			if minetest.get_item_group(node_above, "wall") == 1 then
-				minetest.set_node(pos, {name = name .. "_full"})
+				minetest.set_node(pos, {name = wall_name .. "_full"})
 			end
 		end,
 		after_dig_node = function(pos, oldnode, oldmetadata, digger)
@@ -47,9 +50,6 @@ walls.register = function(wall_name, wall_desc, wall_texture, wall_mat, wall_sou
 	minetest.register_node(wall_name .. "_full", {
 		description = wall_desc,
 		drawtype = "nodebox",
-		paramtype = "light",
-		tiles = { wall_texture, },
-		groups = {cracky = 3, wall = 1, stone = 2, not_in_creative_inventory = 1},
 		node_box = {
 			type = "connected",
 			fixed = {{-1/4, -1/2, -1/4, 1/4, 1/2, 1/4}},
@@ -58,9 +58,56 @@ walls.register = function(wall_name, wall_desc, wall_texture, wall_mat, wall_sou
 			connect_back = {{-3/16, -1/2,  1/4,  3/16, 1/2,  1/2}},
 			connect_right = {{ 1/4, -1/2, -3/16,  1/2, 1/2,  3/16}},
 		},
-		connects_to = {"group:wall", "group:stone", "group:fence", "group:fence_rail"},
+		connects_to = {"group:wall", "group:stone", "group:fence", "group:pane"},
+		paramtype = "light",
+		is_ground_content = false,
+		groups = {cracky = 3, wall = 1, stone = 2, not_in_creative_inventory = 1},
+		tiles = wall_texture_table,
 		sounds = wall_sounds,
-		drop = name,
+		drop = wall_name,
+		after_dig_node = function(pos, oldnode, oldmetadata, digger)
+			local pos_under = {x = pos.x, y = pos.y - 1, z = pos.z}
+			local node_under = string.gsub(minetest.get_node(pos_under).name, "_full$", "")
+			if minetest.get_item_group(node_under, "wall") == 1 and
+					digger and digger:is_player() then
+				minetest.set_node(pos_under, {name = node_under})
+			end
+		end,
+})
+
+	-- add a low wall and full low wall to use between original walls or alone
+	minetest.register_node(wall_name .. "_low", {
+		description = wall_desc .. " Low",
+		drawtype = "nodebox",
+		node_box = {
+			type = "connected",
+			fixed = {{-3/16, -1/2, -3/16, 3/16, 3/8, 3/16}},
+			connect_top = {{-3/16, -1/2, -3/16, 3/16, 1/2, 3/16}},
+			connect_front = {{-3/16, -1/2, -1/2,  3/16, 3/8, 3/16}},
+			connect_left = {{-1/2, -1/2, -3/16, -3/16, 3/8,  3/16}},
+			connect_back = {{-3/16, -1/2,  3/16,  3/16, 3/8,  1/2}},
+			connect_right = {{ 3/16, -1/2, -3/16,  1/2, 3/8,  3/16}},
+		},
+		connects_to = {"group:wall", "group:stone", "group:fence", "group:pane"},
+		paramtype = "light",
+		is_ground_content = false,
+		walkable = true,
+		groups = {cracky = 3, wall = 1, stone = 2},
+		tiles = wall_texture_table,
+		sounds = wall_sounds,
+		after_place_node = function(pos, placer, itemstack, pointed_thing)
+			local pos_under = {x = pos.x, y = pos.y - 1, z = pos.z}
+			local pos_above = {x = pos.x, y = pos.y + 1, z = pos.z}
+			local node_under = string.gsub(minetest.get_node(pos_under).name, "_full$", "")
+			local node_above = string.gsub(minetest.get_node(pos_above).name, "_full$", "")
+
+			if minetest.get_item_group(node_under, "wall") == 1 then
+				minetest.set_node(pos_under, {name = node_under .. "_full"})
+			end
+			if minetest.get_item_group(node_above, "wall") == 1 then
+				minetest.set_node(pos, {name = wall_name .. "_low_full"})
+			end
+		end,
 		after_dig_node = function(pos, oldnode, oldmetadata, digger)
 			local pos_under = {x = pos.x, y = pos.y - 1, z = pos.z}
 			local node_under = string.gsub(minetest.get_node(pos_under).name, "_full$", "")
@@ -71,39 +118,33 @@ walls.register = function(wall_name, wall_desc, wall_texture, wall_mat, wall_sou
 		end,
 	})
 
-	minetest.register_node(wall_name .. "_filler", {
-		description = wall_desc,
-		paramtype = "light",
-		is_ground_content = false,
-		tiles = { wall_texture, },
-		walkable = true,
-		groups = { cracky = 3, wall = 1, stone = 2 },
-		sounds = wall_sounds,
+	minetest.register_node(wall_name .. "_low_full", {
+		description = wall_desc .. " Low Full",
 		drawtype = "nodebox",
 		node_box = {
 			type = "connected",
-			fixed = {{-1/2, -1/2, -3/16, 1/2, 3/8, 3/16}},
-			connect_top = {{-1/2, -1/2, -3/16, 1/2, 1/2, 3/16}},
+			fixed = {{-3/16, -1/2, -3/16, 3/16, 1/2, 3/16}},
+			connect_front = {{-3/16, -1/2, -1/2,  3/16, 1/2, 3/16}},
+			connect_left = {{-1/2, -1/2, -3/16, -3/16, 1/2,  3/16}},
+			connect_back = {{-3/16, -1/2,  3/16,  3/16, 1/2,  1/2}},
+			connect_right = {{ 3/16, -1/2, -3/16,  1/2, 1/2,  3/16}},
 		},
-		connects_to = {"group:wall", "group:stone", "group:fence", "group:fence_rail"},
-	})
-
-	minetest.register_node(wall_name .. "_filler2", {
-		description = wall_desc,
+		connects_to = {"group:wall", "group:stone", "group:fence", "group:pane"},
 		paramtype = "light",
 		is_ground_content = false,
-		tiles = { wall_texture, },
-		walkable = true,
-		groups = { cracky = 3, wall = 1, stone = 2 },
+		groups = {cracky = 3, wall = 1, stone = 2, not_in_creative_inventory = 1},
+		tiles = wall_texture_table,
 		sounds = wall_sounds,
-		drawtype = "nodebox",
-		node_box = {
-			type = "connected",
-			fixed = {{-3/16, -1/2, -1/2, 3/16, 3/8, 1/2}},
-			connect_top = {{-3/16, -1/2, -1/2, 3/16, 1/2, 1/2}},
-		},
-		connects_to = {"group:wall", "group:stone", "group:fence", "group:fence_rail"},
-	})
+		drop = wall_name,
+		after_dig_node = function(pos, oldnode, oldmetadata, digger)
+			local pos_under = {x = pos.x, y = pos.y - 1, z = pos.z}
+			local node_under = string.gsub(minetest.get_node(pos_under).name, "_full$", "")
+			if minetest.get_item_group(node_under, "wall") == 1 and
+					digger and digger:is_player() then
+				minetest.set_node(pos_under, {name = node_under})
+			end
+		end,
+})
 
 	-- crafting recipe
 	minetest.register_craft({
@@ -114,7 +155,6 @@ walls.register = function(wall_name, wall_desc, wall_texture, wall_mat, wall_sou
 			{ wall_mat, wall_mat, wall_mat},
 		}
 	})
-
 end
 
 walls.register("walls:rock", "Rock Wall", "default_rock.png",
