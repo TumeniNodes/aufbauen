@@ -169,11 +169,11 @@ walls.register("walls:stone", "Stone Wall", "default_stone.png",
 walls.register("walls:stone_mossy", "Mossy Stone Wall", "default_stone_mossy.png",
 		"default:stone_mossy", default.node_sound_stone_defaults())
 
-walls.register("walls:stonebrick", "Stone Brick Wall", "default_stone_brick.png",
+walls.register("walls:stone_block", "Stone Block Wall", "default_stone_block.png",
 		"default:stonebrick", default.node_sound_stone_defaults())
 
-walls.register("walls:stone_block", "Stone Block Wall", "default_stone_block.png",
-		"default:stone_block", default.node_sound_stone_defaults())
+walls.register("walls:stone_brick", "Stone Brick Wall", "default_stone_brick.png",
+		"default:stone_brick", default.node_sound_stone_defaults())
 
 walls.register("walls:cobblestone", "Cobblestone Wall", "default_cobblestone.png",
 		"default:cobblestone", default.node_sound_stone_defaults())
@@ -184,8 +184,8 @@ walls.register("walls:cobblestone_mossy", "Mossy Cobblestone Wall", "default_cob
 walls.register("walls:sandstone", "Sandstone Wall", "default_sandstone.png",
 		"default:sandstone", default.node_sound_stone_defaults())
 
-walls.register("walls:sandstone_brick", "Sandstone Brick Wall", "default_sandstone_brick.png",
-		"default:sandstone_brick", default.node_sound_stone_defaults())
-
 walls.register("walls:sandstone_block", "Sandstone Block Wall", "default_sandstone_block.png",
 		"default:sandstone_block", default.node_sound_stone_defaults())
+
+walls.register("walls:sandstone_brick", "Sandstone Brick Wall", "default_sandstone_brick.png",
+		"default:sandstone_brick", default.node_sound_stone_defaults())
