@@ -157,6 +157,13 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 	})
 end
 
+--stone
+walls.register("walls:cobblestone", "Cobblestone Wall", "default_cobblestone.png",
+		"default:cobblestone", default.node_sound_stone_defaults())
+
+walls.register("walls:cobblestone_mossy", "Mossy Cobblestone Wall", "default_cobblestone_mossy.png",
+		"default:cobblestone_mossy", default.node_sound_stone_defaults())
+
 walls.register("walls:rock", "Rock Wall", "default_rock.png",
 		"default:rock", default.node_sound_stone_defaults())
 
@@ -170,16 +177,16 @@ walls.register("walls:stone_mossy", "Mossy Stone Wall", "default_stone_mossy.png
 		"default:stone_mossy", default.node_sound_stone_defaults())
 
 walls.register("walls:stone_block", "Stone Block Wall", "default_stone_block.png",
-		"default:stonebrick", default.node_sound_stone_defaults())
+		"default:stone_block", default.node_sound_stone_defaults())
+
+walls.register("walls:stone_block_half", "Stone Block Wall Half", "default_stone_block_half.png",
+		"default:stone_block_half", default.node_sound_stone_defaults())
 
 walls.register("walls:stone_brick", "Stone Brick Wall", "default_stone_brick.png",
 		"default:stone_brick", default.node_sound_stone_defaults())
 
-walls.register("walls:cobblestone", "Cobblestone Wall", "default_cobblestone.png",
-		"default:cobblestone", default.node_sound_stone_defaults())
-
-walls.register("walls:cobblestone_mossy", "Mossy Cobblestone Wall", "default_cobblestone_mossy.png",
-		"default:cobblestone_mossy", default.node_sound_stone_defaults())
+walls.register("walls:stone_cinderblock", "Stone Cinderblock Wall", "default_stone_cinderblock.png",
+		"default:stone_cinderblock", default.node_sound_stone_defaults())
 
 walls.register("walls:sandstone", "Sandstone Wall", "default_sandstone.png",
 		"default:sandstone", default.node_sound_stone_defaults())
@@ -189,3 +196,24 @@ walls.register("walls:sandstone_block", "Sandstone Block Wall", "default_sandsto
 
 walls.register("walls:sandstone_brick", "Sandstone Brick Wall", "default_sandstone_brick.png",
 		"default:sandstone_brick", default.node_sound_stone_defaults())
+
+--wood
+walls.register("walls:birch", "Birch Wall", "default_birch_planks.png",
+		"default:birch_planks", default.node_sound_stone_defaults())
+
+walls.register("walls:junglewood", "Jungle Wood Wall", "default_junglewood_planks.png",
+		"default:junglewood_planks", default.node_sound_stone_defaults())
+
+walls.register("walls:oak", "Oak Wall", "default_oak_planks.png",
+		"default:oak_planks", default.node_sound_stone_defaults())
+
+walls.register("walls:pine", "Pine Wall", "default_pine_planks.png",
+		"default:pine_planks", default.node_sound_stone_defaults())
+
+walls.register("walls:willow", "Willow Wall", "default_willow_planks.png",
+		"default:willow_planks", default.node_sound_stone_defaults())
+
+walls.register("walls:wood", "Wood Wall", "default_wood_planks.png",
+		"default:wood_planks", default.node_sound_stone_defaults())
+
+

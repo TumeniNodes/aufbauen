@@ -209,7 +209,7 @@ default:mese_post_light
 
 --]]
 
-
+--[[
 minetest.register_node("default:brick", {
 	description = "Brick Block",
 	paramtype2 = "facedir",
@@ -346,7 +346,7 @@ minetest.register_node("default:limestone_smooth", {
 	drop = {},
 	sounds = default.node_sound_stone_defaults(),
 })
-
+]]--
 
 --
 -- Rock & Mossy Rock Nodes
