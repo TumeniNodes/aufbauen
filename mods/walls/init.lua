@@ -198,23 +198,23 @@ walls.register("walls:sandstone_brick", "Sandstone Brick Wall", "stone_sandstone
 		"stone:sandstone_brick", default.node_sound_stone_defaults())
 
 --wood walls
-walls.register("walls:birch", "Birch Wall", "default_birch_planks.png",
-		"default:birch_planks", default.node_sound_stone_defaults())
+walls.register("walls:birch", "Birch Wall", "wood_birch_planks.png",
+		"wood:birch_planks", default.node_sound_stone_defaults())
 
-walls.register("walls:junglewood", "Jungle Wood Wall", "default_junglewood_planks.png",
-		"default:junglewood_planks", default.node_sound_stone_defaults())
+walls.register("walls:junglewood", "Jungle Wood Wall", "wood_junglewood_planks.png",
+		"wood:junglewood_planks", default.node_sound_stone_defaults())
 
-walls.register("walls:oak", "Oak Wall", "default_oak_planks.png",
-		"default:oak_planks", default.node_sound_stone_defaults())
+walls.register("walls:oak", "Oak Wall", "wood_oak_planks.png",
+		"wood:oak_planks", default.node_sound_stone_defaults())
 
-walls.register("walls:pine", "Pine Wall", "default_pine_planks.png",
-		"default:pine_planks", default.node_sound_stone_defaults())
+walls.register("walls:pine", "Pine Wall", "wood_pine_planks.png",
+		"wood:pine_planks", default.node_sound_stone_defaults())
 
-walls.register("walls:willow", "Willow Wall", "default_willow_planks.png",
-		"default:willow_planks", default.node_sound_stone_defaults())
+walls.register("walls:willow", "Willow Wall", "wood_willow_planks.png",
+		"wood:willow_planks", default.node_sound_stone_defaults())
 
-walls.register("walls:wood", "Wood Wall", "default_wood_planks.png",
-		"default:wood_planks", default.node_sound_stone_defaults())
+walls.register("walls:wood", "Wood Wall", "wood_wood_planks.png",
+		"wood:wood_planks", default.node_sound_stone_defaults())
 
 --metal walls
 
