@@ -15,48 +15,16 @@ language (for example pinewood and pine wood) the underscore form should be used
 Stone
 -----
 
-default:brick
-
-default:cobblestone
-default:mossy_cobblestone
-
 default_granite
-default:granite_block
-default:granite_block_half
-default:granite_smooth
-
 default:limestone
-default:limestone_brick
-default:limestone_block
-default:limestone_block_half
-default:limestone_cinderblock
-default:limestone_smooth
-
 default:river_stone
 default:mossy_river_stone
-
 default:rock
 default:mossy_rock
-
 default:sandstone
-default:sandstonebrick
-default:sandstone_block
-default:sandstone_block_half
-default:sandstone_cinderblock
-default:sandstone_smooth
-
 default:stone
 default:mossy_stone
-default:stone_brick
-default:mossy_stone_brick
-default:stone_block
-default:mossy_stone_block
-default:stone_block_half
-default:mossy_stone_block_half
-default:stone_cinderblock
-default:mossy_stone_cinderblock
-default:stone_smooth
-default:mossy_stone_smooth
+
 
 Soft / Non-Stone
 ----------------
@@ -104,25 +72,6 @@ default:birch_tree
 default:birch_wood
 default:birch_leaves
 default:birch_sapling
-
-
-Metals
-----
-default:bronze_block
-
-default:coal_block
-
-default:copper_block
-
-default:iron_block
-
-default:gold_block
-
-default:steel_block
-
-default:tin_block
-
-default:mese_block
 
 
 Plantlife
@@ -193,13 +142,6 @@ default:sign_wall_wood
 default:sign_wall_steel
 
 default:ladder_wood
-default:ladder_steel
-
-default:fence_wood
-x-default:fence_acacia_wood
-x-default:fence_willow_wood
-default:fence_pine_wood
-default:fence_birch_wood
 
 default:glass
 default:obsidian_glass
@@ -211,7 +153,7 @@ default:mese_post_light
 
 
 --
--- Granite Nodes
+-- Stone
 --
 
 minetest.register_node("default:granite", {
@@ -223,11 +165,6 @@ minetest.register_node("default:granite", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-
---
--- Limestone Nodes
---
-
 minetest.register_node("default:limestone", {
 	description = "Limestone",
 	tiles = {"default_limestone.png"},
@@ -235,11 +172,6 @@ minetest.register_node("default:limestone", {
 	drop = {},
 	sounds = default.node_sound_stone_defaults(),
 })
-
-
---
--- Rock & Mossy Rock Nodes
---
 
 minetest.register_node("default:river_rock", {
 	description = "River Rock",
@@ -277,22 +209,12 @@ minetest.register_node("default:rock_mossy", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-
---
--- Sandstone Nodes
---
-
 minetest.register_node("default:sandstone", {
 	description = "Sandstone",
 	tiles = {"default_sandstone.png"},
 	groups = {crumbly = 1, cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 })
-
-
---
--- Stone & Mossy Stone Nodes
---
 
 minetest.register_node("default:stone", {
 	description = "Stone",
@@ -1012,140 +934,6 @@ minetest.register_node("default:birch_sapling", {
 	end,
 })
 
-
---
--- Ores
---
-
---[[
-minetest.register_node("default:stone_with_coal", {
-	description = "Coal Ore",
-	tiles = {"default_stone.png^default_mineral_coal.png"},
-	groups = {cracky = 3},
-	drop = 'default:coal_lump',
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:coalblock", {
-	description = "Coal Block",
-	tiles = {"default_coal_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 3},
-	sounds = default.node_sound_stone_defaults(),
-})
-
-
-minetest.register_node("default:stone_with_iron", {
-	description = "Iron Ore",
-	tiles = {"default_stone.png^default_mineral_iron.png"},
-	groups = {cracky = 2},
-	drop = 'default:iron_lump',
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:steelblock", {
-	description = "Steel Block",
-	tiles = {"default_steel_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_metal_defaults(),
-})
-
-
-minetest.register_node("default:stone_with_copper", {
-	description = "Copper Ore",
-	tiles = {"default_stone.png^default_mineral_copper.png"},
-	groups = {cracky = 2},
-	drop = 'default:copper_lump',
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:copperblock", {
-	description = "Copper Block",
-	tiles = {"default_copper_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_metal_defaults(),
-})
-
-
-minetest.register_node("default:stone_with_tin", {
-	description = "Tin Ore",
-	tiles = {"default_stone.png^default_mineral_tin.png"},
-	groups = {cracky = 2},
-	drop = "default:tin_lump",
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:tinblock", {
-	description = "Tin Block",
-	tiles = {"default_tin_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_metal_defaults(),
-})
-
-
-minetest.register_node("default:bronzeblock", {
-	description = "Bronze Block",
-	tiles = {"default_bronze_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_metal_defaults(),
-})
-
-
-minetest.register_node("default:stone_with_mese", {
-	description = "Mese Ore",
-	tiles = {"default_stone.png^default_mineral_mese.png"},
-	groups = {cracky = 1},
-	drop = "default:mese_crystal",
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:mese", {
-	description = "Mese Block",
-	tiles = {"default_mese_block.png"},
-	paramtype = "light",
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_stone_defaults(),
-	light_source = 3,
-})
-
-
-minetest.register_node("default:stone_with_gold", {
-	description = "Gold Ore",
-	tiles = {"default_stone.png^default_mineral_gold.png"},
-	groups = {cracky = 2},
-	drop = "default:gold_lump",
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:goldblock", {
-	description = "Gold Block",
-	tiles = {"default_gold_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1},
-	sounds = default.node_sound_metal_defaults(),
-})
-
-
-minetest.register_node("default:stone_with_diamond", {
-	description = "Diamond Ore",
-	tiles = {"default_stone.png^default_mineral_diamond.png"},
-	groups = {cracky = 1},
-	drop = "default:diamond",
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:diamondblock", {
-	description = "Diamond Block",
-	tiles = {"default_diamond_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1, level = 3},
-	sounds = default.node_sound_stone_defaults(),
-})
---]]
 
 --
 -- Plantlife (non-cubic)
@@ -2460,7 +2248,7 @@ minetest.register_node("default:ladder_wood", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:ladder_steel", {
+--[[minetest.register_node("default:ladder_steel", {
 	description = "Steel Ladder",
 	drawtype = "signlike",
 	tiles = {"default_ladder_steel.png"},
@@ -2481,9 +2269,9 @@ minetest.register_node("default:ladder_steel", {
 	groups = {cracky = 2},
 	drop = {},
 	sounds = default.node_sound_metal_defaults(),
-})
+})]]--
 
-
+--[[
 --
 -- Fences
 --
@@ -2566,7 +2354,7 @@ default.register_fence("default:fence_granite", {
 	groups = {cracky = 3, stone = 1},
 	sounds = default.node_sound_stone_defaults(),
 })
-
+]]--
 
 --
 --Fence Rails
