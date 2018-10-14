@@ -76,17 +76,6 @@ minetest.register_node("stone:granite_smooth", {
 -- Limestone Nodes
 --
 
-minetest.register_node("stone:limestone_brick", {
-	description = "Limestone Brick",
-	paramtype2 = "facedir",
-	place_param2 = 0,
-	tiles = {"stone_limestone_brick.png"},
-	is_ground_content = false,
-	groups = {cracky = 2},
-	drop = {},
-	sounds = default.node_sound_stone_defaults(),
-})
-
 minetest.register_node("stone:limestone_block", {
 	description = "Limestone Block",
 	tiles = {"stone_limestone_block.png"},
@@ -101,6 +90,17 @@ minetest.register_node("stone:limestone_block_half", {
 	tiles = {"stone_limestone_block_half.png"},
 	is_ground_content = false,
 	paramtype2 = "facedir",
+	groups = {cracky = 2},
+	drop = {},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("stone:limestone_brick", {
+	description = "Limestone Brick",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"stone_limestone_brick.png"},
+	is_ground_content = false,
 	groups = {cracky = 2},
 	drop = {},
 	sounds = default.node_sound_stone_defaults(),
