@@ -1,6 +1,6 @@
 dofile(minetest.get_modpath("sfinv") .. "/api.lua")
 
-sfinv.register_page("sfinv:crafting", {
+--[[sfinv.register_page("sfinv:crafting", {
 	title = "Crafting",
 	get = function(self, player, context)
 		return sfinv.make_formspec(player, context, [[
@@ -17,6 +17,7 @@ sfinv.register_page("sfinv:crafting", {
 				image[5,4.75;1,1;gui_hb_bg.png]
 				image[6,4.75;1,1;gui_hb_bg.png]
 				image[7,4.75;1,1;gui_hb_bg.png]
-			]], true)
+			, true)
 	end
 })
+]]--
