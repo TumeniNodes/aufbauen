@@ -1,0 +1,24 @@
+# Blender MTL File: 'gate work.blend'
+# Material Count: 2
+
+newmtl granite
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.161486 0.640000 0.068125
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd /home/paul/Homer/minetest/games/aufbauen/mods/stone/textures/stone_stone_block.png
+
+newmtl wood
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.020364 0.074141
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd /home/paul/Homer/minetest/games/aufbauen/mods/stone/textures/stone_stone_block.png

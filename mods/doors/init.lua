@@ -822,6 +822,12 @@ doors.register_fencegate("doors:gate_wood", {
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
+doors.register_fencegate("doors:gate_granite", {
+	description = "Granite Fence Gate",
+	texture = "wood_wood_planks.png", "default_stone.png", "default_stone.png",
+	material = "wood:wood",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
+})
 
 ----fuels----
 
