@@ -706,7 +706,7 @@ minetest.register_craft({
 
 ----fence gate----
 
-function doors.register_fencegate(name, def)
+function doors.register_fence_gate(name, def)
 	local fence = {
 		description = def.description,
 		drawtype = "mesh",
@@ -749,7 +749,7 @@ function doors.register_fencegate(name, def)
 	fence.groups.fence = 1
 
 	local fence_closed = table.copy(fence)
-	fence_closed.mesh = "doors_fencegate_closed.obj"
+	fence_closed.mesh = "doors_fence_gate_closed.obj"
 	fence_closed.gate = name .. "_open"
 	fence_closed.sound = "doors_fencegate_open"
 	fence_closed.collision_box = {
@@ -758,7 +758,7 @@ function doors.register_fencegate(name, def)
 	}
 
 	local fence_open = table.copy(fence)
-	fence_open.mesh = "doors_fencegate_open.obj"
+	fence_open.mesh = "doors_fence_gate_open.obj"
 	fence_open.gate = name .. "_closed"
 	fence_open.sound = "doors_fencegate_close"
 	fence_open.groups.not_in_creative_inventory = 1
@@ -780,49 +780,49 @@ function doors.register_fencegate(name, def)
 	})
 end
 
-doors.register_fencegate("doors:gate_birch", {
+doors.register_fence_gate("doors:gate_birch", {
 	description = "Birch Fence Gate",
-	texture = "default_birch_planks.png",
+	texture = "doors_gate_birch.png",
 	material = "default:birch_wood",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
 })
 
-doors.register_fencegate("doors:gate_junglewood", {
+doors.register_fence_gate("doors:gate_junglewood", {
 	description = "Junglewood Fence Gate",
-	texture = "default_junglewood_planks.png",
+	texture = "doors_gate_junglewood.png",
 	material = "default:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
-doors.register_fencegate("doors:gate_oak", {
+doors.register_fence_gate("doors:gate_oak", {
 	description = "Oak Fence Gate",
-	texture = "default_oak_planks.png",
+	texture = "doors_gate_oak.png",
 	material = "default:oak_wood",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
 })
 
-doors.register_fencegate("doors:gate_pine", {
+doors.register_fence_gate("doors:gate_pine", {
 	description = "Pine Fence Gate",
-	texture = "default_pine_planks.png",
+	texture = "doors_gate_pine.png",
 	material = "default:pine_wood",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
 })
 
-doors.register_fencegate("doors:gate_willow", {
+doors.register_fence_gate("doors:gate_willow", {
 	description = "Willow Fence Gate",
-	texture = "default_willow_planks.png",
+	texture = "doors_gate_willow.png",
 	material = "default:willow_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
-doors.register_fencegate("doors:gate_wood", {
+doors.register_fence_gate("doors:gate_wood", {
 	description = "Wood Fence Gate",
-	texture = "default_wood_planks.png",
+	texture = "doors_gate_wood.png",
 	material = "default:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
-doors.register_fencegate("doors:gate_granite", {
+doors.register_fence_gate("doors:gate_granite", {
 	description = "Granite Fence Gate",
 	texture = "doors_gate_granite.png",
 	material = "wood:wood",
