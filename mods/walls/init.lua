@@ -19,6 +19,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 		},
 		connects_to = { "group:wall", "group:stone", "group:fence", "group:pane" },
 		paramtype = "light",
+		paramtype2 = "facedir",
 		is_ground_content = false,
 		walkable = true,
 		groups = {cracky = 3, wall = 1, stone = 2},
@@ -60,6 +61,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 		},
 		connects_to = {"group:wall", "group:stone", "group:fence", "group:pane"},
 		paramtype = "light",
+		paramtype2 = "facedir",
 		is_ground_content = false,
 		groups = {cracky = 3, wall = 1, stone = 2},
 		tiles = wall_texture_table,
@@ -90,6 +92,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 		},
 		connects_to = {"group:wall", "group:stone", "group:fence", "group:pane"},
 		paramtype = "light",
+		paramtype2 = "facedir",
 		is_ground_content = false,
 		walkable = true,
 		groups = {cracky = 3, wall = 1, stone = 2},
@@ -131,6 +134,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 		},
 		connects_to = {"group:wall", "group:stone", "group:fence", "group:pane"},
 		paramtype = "light",
+		paramtype2 = "facedir",
 		is_ground_content = false,
 		groups = {cracky = 3, wall = 1, stone = 2},
 		tiles = wall_texture_table,
@@ -196,6 +200,9 @@ walls.register("walls:sandstone_block", "Sandstone Block Wall", "stone_sandstone
 
 walls.register("walls:sandstone_brick", "Sandstone Brick Wall", "stone_sandstone_brick.png",
 		"stone:sandstone_brick", default.node_sound_stone_defaults())
+
+walls.register("walls:stone_wood", "Stone Wood Wall", {"stone_stone_wood_top.png","stone_stone_wood.png", "stone_stone_wood.png"},
+		"stone:stone_wood", default.node_sound_stone_defaults())
 
 --wood walls
 walls.register("walls:birch", "Birch Wall", "wood_birch_planks.png",
