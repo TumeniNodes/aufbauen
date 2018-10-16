@@ -824,7 +824,7 @@ doors.register_fencegate("doors:gate_wood", {
 
 doors.register_fencegate("doors:gate_granite", {
 	description = "Granite Fence Gate",
-	texture = "wood_wood_planks.png", "default_stone.png", "default_stone.png",
+	texture = "doors_gate_granite.png",
 	material = "wood:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
