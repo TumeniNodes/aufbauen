@@ -1,45 +1,52 @@
 -- Metal Materials
 
+metal = {}
 
-minetest.register_node("metal:bronze_block", {
-	description = "Bronze Block",
-	tiles = {"metal_bronze_block.png"},
+function metal.register_block(modname, subname, desc, tiles)
+minetest.register_node("metal:" .. subname .. "_block", {
+	description = desc .. "Block",
+	drawtype = "nodebox",
+	tiles = {tiles},
+	paramtype = "light",
 	is_ground_content = false,
 	groups = {cracky = 1, level = 2},
 	sounds = default.node_sound_metal_defaults(),
-})
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.4375, -0.4375, -0.4375, 0.4375, 0.4375, 0.4375},
+			{-0.5, -0.5, -0.5, -0.4375, 0.5, -0.4375},
+			{0.4375, -0.5, -0.5, 0.5, 0.5, -0.4375},
+			{-0.5, -0.5, 0.4375, -0.4375, 0.5, 0.5},
+			{0.4375, -0.5, 0.4375, 0.5, 0.5, 0.5},
+			{-0.5, 0.4375, 0.4375, 0.5, 0.5, 0.5},
+			{-0.5, 0.4375, -0.5, 0.5, 0.5, -0.4375},
+			{-0.5, -0.5, -0.5, 0.5, -0.4375, -0.4375},
+			{-0.5, -0.5, 0.4375, 0.5, -0.4375, 0.5},
+			{0.4375, 0.4375, -0.5, 0.5, 0.5, 0.5},
+			{0.4375, -0.5, -0.5, 0.5, -0.4375, 0.5},
+			{-0.5, 0.4375, -0.5, -0.4375, 0.5, 0.5},
+			{-0.5, -0.5, -0.5, -0.4375, -0.4375, 0.5},
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
+			},
+		},
+	})
+end
 
-minetest.register_node("metal:copper_block", {
-	description = "Copper Block",
-	tiles = {"metal_copper_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_metal_defaults(),
-})
+function metal.register_metal_nodes(modname, subname, desc, tiles)
+	metal.register_block(modname, subname, desc, tiles)
+end
 
-minetest.register_node("metal:iron_block", {
-	description = "Iron Block",
-	tiles = {"metal_iron_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_metal_defaults(),
-})
+metal.register_block("metal", "bronze", "Bronze Block", "metal_bronze_block.png")
+metal.register_block("metal", "copper",  "Copper Block", "metal_copper_block.png")
+metal.register_block("metal", "iron", "Iron Block", "metal_iron_block.png")
+metal.register_block("metal", "steel", "Steel Block", "metal_steel_block.png")
 
-minetest.register_node("metal:steel_block", {
-	description = "Steel Block",
-	tiles = {"metal_steel_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_metal_defaults(),
-})
-
-minetest.register_node("metal:tin_block", {
-	description = "Tin Block",
-	tiles = {"metal_tin_block.png"},
-	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_metal_defaults(),
-})
 
 minetest.register_node("metal:ladder_steel", {
 	description = "Steel Ladder",
@@ -63,7 +70,6 @@ minetest.register_node("metal:ladder_steel", {
 	drop = {},
 	sounds = default.node_sound_metal_defaults(),
 })
-
 
 
 minetest.register_node("metal:furnace", {
