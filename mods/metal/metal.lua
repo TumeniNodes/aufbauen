@@ -14,25 +14,25 @@ minetest.register_node("metal:" .. subname .. "_block", {
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{-0.4375, -0.4375, -0.4375, 0.4375, 0.4375, 0.4375},
-			{-0.5, -0.5, -0.5, -0.4375, 0.5, -0.4375},
-			{0.4375, -0.5, -0.5, 0.5, 0.5, -0.4375},
-			{-0.5, -0.5, 0.4375, -0.4375, 0.5, 0.5},
-			{0.4375, -0.5, 0.4375, 0.5, 0.5, 0.5},
-			{-0.5, 0.4375, 0.4375, 0.5, 0.5, 0.5},
-			{-0.5, 0.4375, -0.5, 0.5, 0.5, -0.4375},
-			{-0.5, -0.5, -0.5, 0.5, -0.4375, -0.4375},
-			{-0.5, -0.5, 0.4375, 0.5, -0.4375, 0.5},
-			{0.4375, 0.4375, -0.5, 0.5, 0.5, 0.5},
-			{0.4375, -0.5, -0.5, 0.5, -0.4375, 0.5},
-			{-0.5, 0.4375, -0.5, -0.4375, 0.5, 0.5},
-			{-0.5, -0.5, -0.5, -0.4375, -0.4375, 0.5},
+			{-7/16, -7/16, -7/16, 7/16, 7/16, 7/16},
+			{-1/2, -1/2, -1/2, -7/16, 1/2, -7/16},
+			{7/16, -1/2, -1/2, 1/2, 1/2, -7/16},
+			{-1/2, -1/2, 7/16, -7/16, 1/2, 1/2},
+			{7/16, -1/2, 7/16, 1/2, 1/2, 1/2},
+			{-1/2, 7/16, 7/16, 1/2, 1/2, 1/2},
+			{-1/2, 7/16, -1/2, 1/2, 1/2, -7/16},
+			{-1/2, -1/2, -1/2, 1/2, -7/16, -7/16},
+			{-1/2, -1/2, 7/16, 1/2, -7/16, 1/2},
+			{7/16, 7/16, -1/2, 1/2, 1/2, 1/2},
+			{7/16, -1/2, -1/2, 1/2, -7/16, 1/2},
+			{-1/2, 7/16, -1/2, -7/16, 1/2, 1/2},
+			{-1/2, -1/2, -1/2, -7/16, -7/16, 1/2},
 			},
 		},
 		selection_box = {
 			type = "fixed",
 			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
+				{-1/2, -1/2, -1/2, 1/2, 1/2, 1/2},
 			},
 		},
 	})
@@ -46,6 +46,94 @@ metal.register_block("metal", "bronze", "Bronze Block", "metal_bronze_block.png"
 metal.register_block("metal", "copper",  "Copper Block", "metal_copper_block.png")
 metal.register_block("metal", "iron", "Iron Block", "metal_iron_block.png")
 metal.register_block("metal", "steel", "Steel Block", "metal_steel_block.png")
+
+
+minetest.register_node("metal:furnace", {
+	description = "Furnace",
+	drawtype = "nodebox",
+	tiles = {
+		"metal_furnace_top.png", "metal_furnace_bottom.png",
+		"metal_furnace_side.png", "metal_furnace_side.png",
+		"metal_furnace_side.png", "metal_furnace_front.png"
+	},
+	paramtype2 = "facedir",
+	legacy_facedir_simple = true,
+	is_ground_content = false,
+	groups = {cracky=2},
+	sounds = default.node_sound_stone_defaults(),
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-1/2, -1/2, -1/2, 1/2, -3/8, 1/2},
+			{-7/16, -3/8, -7/16, 7/16, -5/16, 7/16},
+			{-1/2, 3/16, -1/2, 1/2, 1/2, 1/2},
+			{-1/2, -5/16, -1/2, -1/4, 1/2, 1/2},
+			{1/4, -5/16, -1/2, 1/2, 1/2, 1/2},
+			{-1/2, -5/16, 1/4, 1/2, 1/2, 1/2},
+			{-1/4, -1/4, -7/16, 1/4, 3/16, -3/8},
+			{-7/16, -1/2, -7/16, 07/16, -1/4, -3/8},
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-1/2, -1/2, -1/2, 1/2, 1/2, 1/2},
+			},
+		},
+
+	on_rightclick = function(pos, node, puncher)
+		minetest.swap_node(pos, {name = "metal:furnace_active", param2 = node.param2})
+	end,
+})
+
+minetest.register_node("metal:furnace_active", {
+	description = "Furnace",
+	drawtype = "nodebox",
+	tiles = {
+		"metal_furnace_top.png", "metal_furnace_bottom.png",
+		"metal_furnace_side.png", "metal_furnace_side.png",
+		"metal_furnace_side.png",
+		{
+			image = "metal_furnace_front_active.png",
+			backface_culling = false,
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 1.0
+			},
+		}
+	},
+	paramtype2 = "facedir",
+	light_source = 4,
+	drop = {},
+	not_in_creative_inventory = true,
+	legacy_facedir_simple = true,
+	is_ground_content = false,
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-1/2, -1/2, -1/2, 1/2, -3/8, 1/2},
+			{-7/16, -3/8, -7/16, 7/16, -5/16, 7/16},
+			{-1/2, 3/16, -1/2, 1/2, 1/2, 1/2},
+			{-1/2, -5/16, -1/2, -1/4, 1/2, 1/2},
+			{1/4, -5/16, -1/2, 1/2, 1/2, 1/2},
+			{-1/2, -5/16, 1/4, 1/2, 1/2, 1/2},
+			{-1/4, -1/4, -7/16, 1/4, 3/16, -3/8},
+			{-7/16, -1/2, -7/16, 07/16, -1/4, -3/8},
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-1/2, -1/2, -1/2, 1/2, 1/2, 1/2},
+			},
+		},
+
+	on_rightclick = function(pos, node, puncher)
+		minetest.swap_node(pos, {name = "metal:furnace", param2 = node.param2})
+	end,
+})
 
 
 minetest.register_node("metal:ladder_steel", {
@@ -71,50 +159,3 @@ minetest.register_node("metal:ladder_steel", {
 	sounds = default.node_sound_metal_defaults(),
 })
 
-
-minetest.register_node("metal:furnace", {
-	description = "Furnace",
-	tiles = {
-		"metal_furnace_top.png", "metal_furnace_bottom.png",
-		"metal_furnace_side.png", "metal_furnace_side.png",
-		"metal_furnace_side.png", "metal_furnace_front.png"
-	},
-	paramtype2 = "facedir",
-	groups = {cracky=2},
-	legacy_facedir_simple = true,
-	is_ground_content = false,
-	sounds = default.node_sound_stone_defaults(),
-
-	on_rightclick = function(pos, node, puncher)
-		minetest.swap_node(pos, {name = "metal:furnace_active", param2 = node.param2})
-	end,
-})
-
-minetest.register_node("metal:furnace_active", {
-	description = "Furnace",
-	tiles = {
-		"metal_furnace_top.png", "metal_furnace_bottom.png",
-		"metal_furnace_side.png", "metal_furnace_side.png",
-		"metal_furnace_side.png",
-		{
-			image = "metal_furnace_front_active.png",
-			backface_culling = false,
-			animation = {
-				type = "vertical_frames",
-				aspect_w = 16,
-				aspect_h = 16,
-				length = 1.5
-			},
-		}
-	},
-	paramtype2 = "facedir",
-	light_source = 4,
-	drop = {},
-	not_in_creative_inventory = true,
-	legacy_facedir_simple = true,
-	is_ground_content = false,
-
-	on_rightclick = function(pos, node, puncher)
-		minetest.swap_node(pos, {name = "metal:furnace", param2 = node.param2})
-	end,
-})
