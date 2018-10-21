@@ -1686,7 +1686,7 @@ minetest.register_node("default:lava_flowing", {
 --
 -- Tools / "Advanced" crafting / Non-"natural"
 --
-
+--[[
 default.chest = {}
 
 function default.chest.get_chest_formspec(pos)
@@ -2004,7 +2004,7 @@ default.chest.register_chest("chest_locked", {
 	groups = {choppy = 2, oddly_breakable_by_hand = 2},
 	protected = true,
 })
-
+]]--
 
 local function register_sign(material, desc, def)
 	minetest.register_node("default:sign_wall_" .. material, {
