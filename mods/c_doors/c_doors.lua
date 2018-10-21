@@ -7,27 +7,29 @@ c_doors = {}
 c_doors.door = {
 
 --Wood Doors
-	{"birch", "Birch", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "doors_door_birch.png",backface_culling = true}, "default:wood"},
+	{"birch", "Birch", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_birch.png",backface_culling = true}, "wood:wood"},
 
-	{"junglewood", "Junglewood", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "doors_door_junglewood.png",backface_culling = true}, "default:wood"},
+	{"junglewood", "Junglewood", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_junglewood.png",backface_culling = true}, "wood:wood"},
 
-	{"oak", "Oak", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "doors_door_oak.png",backface_culling = true}, "default:wood"},
+	{"oak", "Oak", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_oak.png",backface_culling = true}, "wood:wood"},
 
-	{"pine", "Pine", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "doors_door_pine.png",backface_culling = true}, "default:wood"},
+	{"pine", "Pine", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_pine.png",backface_culling = true}, "wood:wood"},
 
-	{"willow", "Willow", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "doors_door_willow.png",backface_culling = true}, "default:wood"},
+	{"willow", "Willow", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_willow.png",backface_culling = true}, "default:wood"},
 
-	{"wood", "Wood", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "doors_door_wood.png",backface_culling = true}, "default:wood"},
+	{"wood", "Wood", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_wood.png",backface_culling = true}, "wood:wood"},
 
 --Metal Doors
-	{"steel", "Steel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "doors_door_steel.png",backface_culling = true}, "default:steelblock"},
+	{"iron", "Iron", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_iron.png",backface_culling = true}, "metal:iron_block"},
 
-	{"iron", "Iron", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_iron", {name = "c_doors_door_iron.png",backface_culling = true}, "default:coalblock"},
+	{"steel", "Steel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_steel.png",backface_culling = true}, "metal:iron_block"},
+
+	{"irongate", "IronGate", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_irongate", {name = "c_doors_irongate.png",backface_culling = true}, "default:coalblock"},
 
 --Glass Doors
-	{"glass", "Glass", {cracky = 3, door = 1}, default.node_sound_glass_defaults(), "c_doors_glass", {name = "c_doors_door_glass.png"}, "default:glass"},
+	{"glass", "Glass", {cracky = 3, door = 1}, default.node_sound_glass_defaults(), "c_doors_glass", {name = "c_doors_glass.png"}, "default:glass"},
 
-	{"obsidian_glass", "Obsidian Glass", {cracky = 1, door = 1}, default.node_sound_glass_defaults(), "c_doors_glass", {name = "doors_door_obsidian_glass.png"},"default:obsidian_glass"},
+	{"obsidian_glass", "Obsidian Glass", {cracky = 1, door = 1}, default.node_sound_glass_defaults(), "c_doors_glass", {name = "c_doors_obsidian_glass.png"},"default:obsidian_glass"},
 }
 
 for _, row in ipairs(c_doors.door) do
@@ -41,8 +43,8 @@ for _, row in ipairs(c_doors.door) do
 
 minetest.register_node("c_doors:" ..name.. "_Ldoor", {
 	description = desc.. " Door (left)",
-	inventory_image = "doors_item_" ..name.. ".png",
-	wield_image = "doors_item_" ..name.. ".png",
+	inventory_image = "c_doors_item_" ..name.. ".png^[transformFXX",
+	wield_image = "c_doors_item_" ..name.. ".png^[transformFXX",
 	drawtype = "mesh",
 	mesh = "c_door_L.obj",
 	tiles = {door_tiles},
@@ -106,8 +108,8 @@ minetest.register_node("c_doors:" ..name.. "_Ldoor_open", {
 
 minetest.register_node("c_doors:" ..name.. "_Rdoor", {
 	description = desc.. " Door (right)",
-	inventory_image = "doors_item_" ..name.. ".png",
-	wield_image = "doors_item_" ..name.. ".png",
+	inventory_image = "c_doors_item_" ..name.. ".png",
+	wield_image = "c_doors_item_" ..name.. ".png",
 	drawtype = "mesh",
 	mesh = "c_door_R.obj",
 	tiles = {door_tiles},
