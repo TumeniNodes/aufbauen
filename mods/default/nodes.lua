@@ -1556,7 +1556,7 @@ minetest.register_node("default:water_flowing", {
 })
 
 
-minetest.register_node("default:water_source", {
+minetest.register_node("default:river_water_source", {
 	description = "River Water Source",
 	drawtype = "liquid",
 	tiles = {
