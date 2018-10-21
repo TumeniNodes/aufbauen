@@ -36,7 +36,7 @@ See LICENSE.txt and http://www.gnu.org/licenses/lgpl-2.1.txt
 --]]
 
 local function on_flood(pos, oldnode, newnode)
-	minetest.add_item(pos, ItemStack("default:torch 1"))
+	minetest.add_item(pos, ItemStack("lighting:torch 1"))
 	-- Play flame-extinguish sound if liquid is not an 'igniter'
 	local nodedef = minetest.registered_items[newnode.name]
 	if not (nodedef and nodedef.groups and
@@ -50,14 +50,14 @@ local function on_flood(pos, oldnode, newnode)
 	return false
 end
 
-minetest.register_node("default:torch", {
+minetest.register_node("lighting:torch", {
 	description = "Torch",
 	drawtype = "mesh",
 	mesh = "torch_floor.obj",
-	inventory_image = "default_torch_on_floor.png",
-	wield_image = "default_torch_on_floor.png",
+	inventory_image = "lighting_torch_on_floor.png",
+	wield_image = "lighting_torch_on_floor.png",
 	tiles = {{
-		    name = "default_torch_on_floor_animated.png",
+		    name = "lighting_torch_on_floor_animated.png",
 		    animation = {type = "vertical_frames", aspect_w = 16, aspect_h = 16, length = 3.3}
 	}},
 	paramtype = "light",
@@ -88,13 +88,13 @@ minetest.register_node("default:torch", {
 		local wdir = minetest.dir_to_wallmounted(vector.subtract(under, above))
 		local fakestack = itemstack
 		if wdir == 1 then
-			fakestack:set_name("default:torch")
+			fakestack:set_name("lighting:torch")
 		else
-			fakestack:set_name("default:torch_wall")
+			fakestack:set_name("lighting:torch_wall")
 		end
 
 		itemstack = minetest.item_place(fakestack, placer, pointed_thing, param2)
-		itemstack:set_name("default:torch")
+		itemstack:set_name("lighting:torch")
 
 		return itemstack
 	end,
@@ -102,11 +102,11 @@ minetest.register_node("default:torch", {
 	on_flood = on_flood,
 })
 
-minetest.register_node("default:torch_wall", {
+minetest.register_node("lighting:torch_wall", {
 	drawtype = "mesh",
 	mesh = "torch_wall.obj",
 	tiles = {{
-		    name = "default_torch_on_floor_animated.png",
+		    name = "lighting_torch_on_floor_animated.png",
 		    animation = {type = "vertical_frames", aspect_w = 16, aspect_h = 16, length = 3.3}
 	}},
 	paramtype = "light",
@@ -126,14 +126,14 @@ minetest.register_node("default:torch_wall", {
 })
 
 minetest.register_lbm({
-	name = "default:3dtorch",
-	nodenames = {"default:torch", "torches:floor", "torches:wall"},
+	name = "lighting:3dtorch",
+	nodenames = {"lighting:torch", "lighting:floor", "lighting:wall"},
 	action = function(pos, node)
 		if node.param2 == 1 then
-			minetest.set_node(pos, {name = "default:torch",
+			minetest.set_node(pos, {name = "lighting:torch",
 				param2 = node.param2})
 		else
-			minetest.set_node(pos, {name = "default:torch_wall",
+			minetest.set_node(pos, {name = "lighting:torch_wall",
 				param2 = node.param2})
 		end
 	end
