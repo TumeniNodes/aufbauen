@@ -159,6 +159,35 @@ minetest.register_node("wood:wood_planks", {
 
 
 --
+-- Wood Ladder
+--
+
+minetest.register_node("wood:ladder_wood", {
+	description = "Wooden Ladder",
+	drawtype = "signlike",
+	tiles = {"wood_ladder_wood.png"},
+	inventory_image = "wood_ladder_wood.png",
+	wield_image = "wood_ladder_wood.png",
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,
+	walkable = false,
+	climbable = true,
+	is_ground_content = false,
+	selection_box = {
+		type = "wallmounted",
+		--wall_top = = <default>
+		--wall_bottom = = <default>
+		--wall_side = = <default>
+	},
+	groups = {choppy = 2, oddly_breakable_by_hand = 3, flammable = 2},
+	drop = {},
+	legacy_wallmounted = true,
+	sounds = default.node_sound_wood_defaults(),
+})
+
+
+--
 -- Fences
 --
 
@@ -242,3 +271,175 @@ default.register_fence("wood:fence_granite", {
 })
 
 
+--
+--Fence Rails
+--
+
+default.register_fence_rail("wood:fence_rail_birch", {
+	description = "Birch Fence Rail",
+	texture = "wood_fence_rail_birch.png",
+	inventory_image = "wood_fence_rail_birch_inv.png",
+	wield_image = "wood_fence_rail_birch_inv.png",
+	material = "wood:birch_wood",
+	drop = {},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+default.register_fence_rail("wood:fence_rail_junglewood", {
+	description = "Jungle Wood Fence Rail",
+	texture = "wood_fence_rail_junglewood.png",
+	inventory_image = "wood_fence_rail_junglewood_inv.png",
+	wield_image = "wood_fence_rail_junglewood_inv.png",
+	material = "wood:junglewood",
+	drop = {},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	sounds = default.node_sound_wood_defaults()
+})
+
+default.register_fence_rail("wood:fence_rail_oak", {
+	description = "Oak Fence Rail",
+	texture = "wood_fence_rail_oak.png",
+	inventory_image = "wood_fence_rail_oak_inv.png",
+	wield_image = "wood_fence_rail_oak_inv.png",
+	material = "wood:oak_wood",
+	drop = {},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+default.register_fence_rail("wood:fence_rail_pine", {
+	description = "Pine Fence Rail",
+	texture = "wood_fence_rail_pine.png",
+	inventory_image = "wood_fence_rail_pine_inv.png",
+	wield_image = "wood_fence_rail_pine_inv.png",
+	material = "wood:pine_wood",
+	drop = {},
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	sounds = default.node_sound_wood_defaults()
+})
+
+default.register_fence_rail("wood:fence_rail_willow", {
+	description = "Willow Fence Rail",
+	texture = "wood_fence_rail_willow.png",
+	inventory_image = "wood_fence_rail_willow_inv.png",
+	wield_image = "wood_fence_rail_willow_inv.png",
+	material = "wood:willow_wood",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	drop = {},
+	sounds = default.node_sound_wood_defaults()
+})
+
+default.register_fence_rail("wood:fence_rail_wood", {
+	description = "Wood Fence Rail",
+	texture = "wood_fence_rail_wood.png",
+	inventory_image = "wood_fence_rail_wood_inv.png",
+	wield_image = "wood_fence_rail_wood_inv.png",
+	material = "wood:wood",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	drop = {},
+	sounds = default.node_sound_wood_defaults()
+})
+
+
+--
+-- Book Shelves
+--
+
+local bookshelf_formspec =
+	"size[8,7;]" ..
+	default.gui_bg ..
+	default.gui_bg_img ..
+	default.gui_slots ..
+	"list[context;books;0,0.3;8,2;]" ..
+	"list[current_player;main;0,2.85;8,1;]" ..
+	"list[current_player;main;0,4.08;8,3;8]" ..
+	"listring[context;books]" ..
+	"listring[current_player;main]" ..
+	default.get_hotbar_bg(0,2.85)
+
+local function update_bookshelf(pos)
+	local meta = minetest.get_meta(pos)
+	local inv = meta:get_inventory()
+	local invlist = inv:get_list("books")
+
+	local formspec = bookshelf_formspec
+	-- Inventory slots overlay
+	local bx, by = 0, 0.3
+	local n_written, n_empty = 0, 0
+	for i = 1, 16 do
+		if i == 9 then
+			bx = 0
+			by = by + 1
+		end
+		local stack = invlist[i]
+		if stack:is_empty() then
+			formspec = formspec ..
+				"image[" .. bx .. "," .. by .. ";1,1;wood_bookshelf_slot.png]"
+		else
+			local metatable = stack:get_meta():to_table() or {}
+			if metatable.fields and metatable.fields.text then
+				n_written = n_written + stack:get_count()
+			else
+				n_empty = n_empty + stack:get_count()
+			end
+		end
+		bx = bx + 1
+	end
+	meta:set_string("formspec", formspec)
+	if n_written + n_empty == 0 then
+		meta:set_string("infotext", "Empty Bookshelf")
+	else
+		meta:set_string("infotext", "Bookshelf (" .. n_written ..
+			" written, " .. n_empty .. " empty books)")
+	end
+end
+
+minetest.register_node("wood:bookshelf", {
+	description = "Bookshelf",
+	tiles = {"wood_wood_planks.png", "wood_wood_planks.png", "wood_wood_planks.png",
+		"wood_wood_planks.png", "wood_bookshelf.png", "wood_bookshelf.png"},
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	sounds = default.node_sound_wood_defaults(),
+
+	on_construct = function(pos)
+		local meta = minetest.get_meta(pos)
+		local inv = meta:get_inventory()
+		inv:set_size("books", 8 * 2)
+		update_bookshelf(pos)
+	end,
+	can_dig = function(pos,player)
+		local inv = minetest.get_meta(pos):get_inventory()
+		return inv:is_empty("books")
+	end,
+	allow_metadata_inventory_put = function(pos, listname, index, stack)
+		if minetest.get_item_group(stack:get_name(), "book") ~= 0 then
+			return stack:get_count()
+		end
+		return 0
+	end,
+	on_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
+		minetest.log("action", player:get_player_name() ..
+			" moves stuff in bookshelf at " .. minetest.pos_to_string(pos))
+		update_bookshelf(pos)
+	end,
+	on_metadata_inventory_put = function(pos, listname, index, stack, player)
+		minetest.log("action", player:get_player_name() ..
+			" puts stuff to bookshelf at " .. minetest.pos_to_string(pos))
+		update_bookshelf(pos)
+	end,
+	on_metadata_inventory_take = function(pos, listname, index, stack, player)
+		minetest.log("action", player:get_player_name() ..
+			" takes stuff from bookshelf at " .. minetest.pos_to_string(pos))
+		update_bookshelf(pos)
+	end,
+	on_blast = function(pos)
+		local drops = {}
+		default.get_inventory_drops(pos, "books", drops)
+		drops{}
+		minetest.remove_node(pos)
+		return drops
+	end,
+})
