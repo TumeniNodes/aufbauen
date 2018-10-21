@@ -416,32 +416,6 @@ minetest.register_node("default:cave_ice", {
 --- Glass Nodes
 ---
 
-minetest.register_node("default:glass", {
-	description = "Glass",
-	drawtype = "glasslike_framed_optional",
-	tiles = {"default_glass.png", "default_glass_detail.png"},
-	paramtype = "light",
-	paramtype2 = "glasslikeliquidlevel",
-	sunlight_propagates = true,
-	is_ground_content = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	drop = {},
-	sounds = default.node_sound_glass_defaults(),
-})
-
-minetest.register_node("default:obsidian_glass", {
-	description = "Obsidian Glass",
-	drawtype = "glasslike_framed_optional",
-	tiles = {"default_obsidian_glass.png", "default_obsidian_glass_detail.png"},
-	paramtype = "light",
-	paramtype2 = "glasslikeliquidlevel",
-	is_ground_content = false,
-	sunlight_propagates = true,
-	groups = {cracky = 3},
-	drop = {},
-	sounds = default.node_sound_glass_defaults(),
-})
-
 minetest.register_node("default:meselamp", {
 	description = "Mese Lamp",
 	drawtype = "glasslike",
