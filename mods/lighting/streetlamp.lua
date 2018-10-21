@@ -21,25 +21,22 @@
 minetest.register_node("lighting:streetlamp_off", {
 	description = "Street Lamp Off",
     use_texture_alpha = true,
-	tiles = {
-		-- up, down, right, left, back, front
-		'lighting_streetlamp_top.png',
-		'lighting_streetlamp_top.png',
-		'lighting_streetlamp_off.png',
+	tiles = {"lighting_streetlamp_top.png",
 	},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "streetlamp.obj",
 	paramtype = "light",
 	sunlight_propagates = true,
 	groups = {snappy = 3},
 	sounds = default.node_sound_glass_defaults(),
-	node_box = {
+--[[	node_box = {
 		type = "fixed",
 		fixed = {
 			{-3/16, -1/2, -3/16, 3/16, 1/8, 3/16},
 			{-1/16, 1/8, -1/16, 1/16, 3/16, 1/16},
 			{-5/16, 0, -5/16, 5/16, 1/16, 5/16},
 		},
-	},
+	},]]--
 	selection_box = {
 		type = "fixed",
 		fixed = {-3/16, -1/2, -3/16, 3/16, 1/8, 3/16},
@@ -53,25 +50,24 @@ minetest.register_node("lighting:streetlamp_off", {
 minetest.register_node("lighting:streetlamp_on", {
 	description = "Street Lamp ",
     use_texture_alpha = true,
-	tiles = {
-		-- up, down, right, left, back, front
-		'lighting_streetlamp_top.png',
-		'lighting_streetlamp_top.png',
-		'lighting_streetlamp_on.png',
-	},
-	drawtype = "nodebox",
+	tiles = {{
+			name = "lighting_streetlamp_on.png",
+			animation = {type = "vertical_frames", aspect_w = 16, aspect_h = 16, length = 3.3}
+	}},
+	drawtype = "mesh",
+	mesh = "streetlamp.obj",
 	paramtype = "light",
 	sunlight_propagates = true,
 	light_source = 12,
 	groups = {not_in_creative_inventory = 1},
-	node_box = {
+--[[	node_box = {
 		type = "fixed",
 		fixed = {
 			{-3/16, -1/2, -3/16, 3/16, 1/8, 3/16},
 			{-1/16, 1/8, -1/16, 1/16, 3/16, 1/16},
 			{-5/16, 0, -5/16, 5/16, 1/16, 5/16},
 		},
-	},
+	},]]--
 	selection_box = {
 		type = "fixed",
 		fixed = {-3/16, -1/2, -3/16, 3/16, 1/8, 3/16},
@@ -123,23 +119,24 @@ minetest.register_node("lighting:tod_streetlamp_off", {
     use_texture_alpha = true,
 	tiles = {
 		-- up, down, right, left, back, front
-		'lighting_streetlamp_top.png',
-		'lighting_streetlamp_top.png',
+--		'lighting_streetlamp_top.png',
+--		'lighting_streetlamp_top.png',
 		'lighting_streetlamp_off.png',
 	},
-	drawtype = "nodebox",
+	drawtype = "mesh",
+	mesh = "lighting_streetlamp.obj",
 	paramtype = "light",
 	sunlight_propagates = true,
 	groups = {snappy = 3},
 	sounds = default.node_sound_glass_defaults(),
-	node_box = {
+--[[	node_box = {
 		type = "fixed",
 		fixed = {
 			{-3/16, -1/2, -3/16, 3/16, 1/8, 3/16},
 			{-1/16, 1/8, -1/16, 1/16, 3/16, 1/16},
 			{-5/16, 0, -5/16, 5/16, 1/16, 5/16},
 		},
-	},
+	},]]--
 	selection_box = {
 		type = "fixed",
 		fixed = {-3/16, -1/2, -3/16, 3/16, 1/8, 3/16},
@@ -149,13 +146,12 @@ minetest.register_node("lighting:tod_streetlamp_off", {
 minetest.register_node("lighting:tod_streetlamp_on", {
 	description = "TOD Street Lamp ",
     use_texture_alpha = true,
-	tiles = {
-		-- up, down, right, left, back, front
-		'lighting_streetlamp_top.png',
-		'lighting_streetlamp_top.png',
-		'lighting_streetlamp_on.png',
-	},
-	drawtype = "nodebox",
+	tiles = {{
+			name = "lighting_streetlamp_on.png",
+			animation = {type = "vertical_frames", aspect_w = 16, aspect_h = 16, length = 3.3}
+	}},
+	drawtype = "mesh",
+	mesh = "lighting_streetlamp.obj",
 	paramtype = "light",
 	sunlight_propagates = true,
 	light_source = 12,

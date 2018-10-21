@@ -56,21 +56,6 @@ minetest.register_craftitem("default:skeleton_key", {
 	end
 })
 
-minetest.register_craftitem("default:mese_crystal", {
-	description = "Mese Crystal",
-	inventory_image = "default_mese_crystal.png",
-})
-
-minetest.register_craftitem("default:mese_crystal_fragment", {
-	description = "Mese Crystal Fragment",
-	inventory_image = "default_mese_crystal_fragment.png",
-})
-
-minetest.register_craftitem("default:obsidian_shard", {
-	description = "Obsidian Shard",
-	inventory_image = "default_obsidian_shard.png",
-})
-
 minetest.register_craftitem("default:flint", {
 	description = "Flint",
 	inventory_image = "default_flint.png"
