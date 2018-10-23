@@ -29,6 +29,21 @@ minetest.register_node("stone:cobblestone", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_node("stone:cobblestone_path", {
+	description = "Cobblestone Path",
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-1/2, -1/2, -1/2, 1/2, 3/8, 1/2},
+			},
+		},
+	tiles = {"stone_cobblestone.png"},
+	groups = {cracky = 3, soil = 1},
+	drop = {},
+	sounds = default.node_sound_stone_defaults(),
+})
+
 minetest.register_node("stone:cobblestone_mossy", {
 	description = "Mossy Cobblestone",
 	tiles = {"stone_cobblestone_mossy.png"},
