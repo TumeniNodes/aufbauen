@@ -2,15 +2,15 @@
 
 metal = {}
 
-function metal.register_block(modname, subname, desc, tiles)
+function metal.register_block(modname, subname, desc, tiles, groups, sounds)
 minetest.register_node("metal:" .. subname .. "_block", {
 	description = desc .. "Block",
 	drawtype = "nodebox",
-	tiles = {tiles},
+	tiles = tiles,
 --	paramtype = "light",
 	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_metal_defaults(),
+	groups = groups,
+	sounds = sounds,
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -42,10 +42,10 @@ function metal.register_metal_nodes(modname, subname, desc, tiles)
 	metal.register_block(modname, subname, desc, tiles)
 end
 
-metal.register_block("metal", "bronze", "Bronze Block", "metal_bronze_block.png")
-metal.register_block("metal", "copper",  "Copper Block", "metal_copper_block.png")
-metal.register_block("metal", "iron", "Iron Block", "metal_iron_block.png")
-metal.register_block("metal", "steel", "Steel Block", "metal_steel_block.png")
+metal.register_block("metal", "bronze", "Bronze Block", {"metal_bronze_block.png"}, {cracky = 3, oddly_breakable_by_hand = 3}, default.node_sound_metal_defaults())
+metal.register_block("metal", "copper",  "Copper Block", {"metal_copper_block.png"}, {cracky = 3, oddly_breakable_by_hand = 3}, default.node_sound_metal_defaults())
+metal.register_block("metal", "iron", "Iron Block", {"metal_iron_block.png"}, {cracky = 3, oddly_breakable_by_hand = 3}, default.node_sound_metal_defaults())
+metal.register_block("metal", "steel", "Steel Block", {"metal_steel_block.png"}, {cracky = 3, oddly_breakable_by_hand = 3}, default.node_sound_metal_defaults())
 
 
 minetest.register_node("metal:furnace", {
