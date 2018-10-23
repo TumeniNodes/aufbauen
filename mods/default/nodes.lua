@@ -31,6 +31,7 @@ Soft / Non-Stone
 (1. Material 2. Modified forms)
 
 default:dirt
+default:dirt_path
 default:dirt_with_coniferous_litter
 default:dirt_with_grass
 default:dirt_with_snow
@@ -151,7 +152,7 @@ default:mese_post_light
 
 --]]
 
-
+--default = {}
 --
 -- Stone
 --
@@ -239,10 +240,25 @@ minetest.register_node("default:stone_mossy", {
 -- Soft / Non-Stone
 --
 
+minetest.register_node("default:dirt_path", {
+	description = "Dirt Path",
+	drawtype = "nodebox",
+	node_box = {
+		type = "connected",
+		fixed = {
+			{-1/2, -1/2, -1/2, 1/2, 3/8, 1/2},
+			},
+		},
+	tiles = {"default_dirt.png"},
+	groups = {cracky = 3, soil = 1},
+	drop = {},
+	sounds = default.node_sound_dirt_defaults(),
+})
+
 minetest.register_node("default:dirt", {
 	description = "Dirt",
 	tiles = {"default_dirt.png"},
-	groups = {crumbly = 3, soil = 1},
+	groups = {cracky = 3, soil = 1},
 	drop = {},
 	sounds = default.node_sound_dirt_defaults(),
 })
@@ -259,7 +275,7 @@ minetest.register_node("default:dirt_with_grass", {
 	}),
 })
 
-minetest.register_node("default:dirt_with_grass_footsteps", {
+--[[minetest.register_node("default:dirt_with_grass_footsteps", {
 	description = "Dirt with Grass and Footsteps",
 	tiles = {"default_grass.png^default_footprint.png", "default_dirt.png",
 		{name = "default_dirt.png^default_grass_side.png",
@@ -269,7 +285,7 @@ minetest.register_node("default:dirt_with_grass_footsteps", {
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_grass_footstep", gain = 0.25},
 	}),
-})
+})]]--
 
 minetest.register_node("default:dirt_with_dry_grass", {
 	description = "Dirt with Dry Grass",
@@ -284,7 +300,7 @@ minetest.register_node("default:dirt_with_dry_grass", {
 	}),
 })
 
-minetest.register_node("default:dirt_with_snow", {
+--[[minetest.register_node("default:dirt_with_snow", {
 	description = "Dirt with Snow",
 	tiles = {"default_snow.png", "default_dirt.png",
 		{name = "default_dirt.png^default_snow_side.png",
@@ -294,7 +310,7 @@ minetest.register_node("default:dirt_with_snow", {
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_snow_footstep", gain = 0.2},
 	}),
-})
+})]]--
 
 minetest.register_node("default:dirt_with_coniferous_litter", {
 	description = "Dirt with Coniferous Litter",
@@ -344,7 +360,7 @@ minetest.register_node("default:clay", {
 })
 
 
-minetest.register_node("default:snow", {
+--[[minetest.register_node("default:snow", {
 	description = "Snow",
 	tiles = {"default_snow.png"},
 	inventory_image = "default_snowball.png",
@@ -409,7 +425,7 @@ minetest.register_node("default:cave_ice", {
 	groups = {cracky = 3, puts_out_fire = 1, cools_lava = 1, slippery = 3},
 	drop = {},
 	sounds = default.node_sound_glass_defaults(),
-})
+})]]--
 
 
 --

@@ -7,7 +7,7 @@ minetest.register_node("metal:" .. subname .. "_block", {
 	description = desc .. "Block",
 	drawtype = "nodebox",
 	tiles = {tiles},
-	paramtype = "light",
+--	paramtype = "light",
 	is_ground_content = false,
 	groups = {cracky = 1, level = 2},
 	sounds = default.node_sound_metal_defaults(),

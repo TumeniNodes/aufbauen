@@ -750,6 +750,7 @@ stairs.register_stair_and_slab(
 	default.node_sound_stone_defaults()
 )
 
+
 --metal stairs
 
 stairs.register_stair_and_slab(
@@ -801,3 +802,36 @@ stairs.register_stair_and_slab(
 	"Tin Block Slab",
 	default.node_sound_metal_defaults()
 )]]--
+
+
+--soft/non-stone slabs
+
+stairs.register_slab(
+	"dirt",
+	"default:dirt",
+	{cracky = 1, level = 2},
+	{"default_dirt.png"},
+	"Dirt Slab",
+	default.node_sound_dirt_defaults()
+)
+
+
+--glass slabs
+
+stairs.register_slab(
+	"glass",
+	"glass:glass",
+	{cracky = 1, level = 2},
+	{"glass_glass.png"},
+	"Glass Slab",
+	default.node_sound_dirt_defaults()
+)
+
+stairs.register_slab(
+	"obsidian_glass",
+	"glass:obsidian_glass",
+	{cracky = 1, level = 2},
+	{"glass_obsidian_glass.png"},
+	"Obsidian Glass Slab",
+	default.node_sound_dirt_defaults()
+)
