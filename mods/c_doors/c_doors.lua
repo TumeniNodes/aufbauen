@@ -27,9 +27,9 @@ c_doors.door = {
 	{"irongate", "IronGate", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_irongate", {name = "c_doors_irongate.png",backface_culling = true}, "default:coalblock"},
 
 --Glass Doors
-	{"glass", "Glass", {cracky = 3, door = 1}, default.node_sound_glass_defaults(), "c_doors_glass", {name = "c_doors_glass.png"}, "default:glass"},
+	{"glass", "Glass", {cracky = 3, door = 1}, default.node_sound_glass_defaults(), "c_doors_glass", {name = "c_doors_glass.png"}, "glass:glass"},
 
-	{"obsidian_glass", "Obsidian Glass", {cracky = 1, door = 1}, default.node_sound_glass_defaults(), "c_doors_glass", {name = "c_doors_obsidian_glass.png"},"default:obsidian_glass"},
+	{"obsidian_glass", "Obsidian Glass", {cracky = 1, door = 1}, default.node_sound_glass_defaults(), "c_doors_glass", {name = "c_doors_obsidian_glass.png"},"glass:obsidian_glass"},
 }
 
 for _, row in ipairs(c_doors.door) do
@@ -54,6 +54,8 @@ minetest.register_node("c_doors:" ..name.. "_Ldoor", {
 	on_rotate = screwdriver.rotate_simple,
 	sunlight_propogates = true,
 	is_ground_content = false,
+	walkable = true,
+	buildable_to = false,
 	groups = mat_groups,
 	sounds = mat_sound,
 	selection_box = {
@@ -85,6 +87,8 @@ minetest.register_node("c_doors:" ..name.. "_Ldoor_open", {
 	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
+	walkable = true,
+	buildable_to = false,
 	groups = mat_groups,
 	drop = "c_doors:" ..name.. "_Ldoor",
 	sounds = mat_sound,
@@ -119,6 +123,8 @@ minetest.register_node("c_doors:" ..name.. "_Rdoor", {
 	on_rotate = screwdriver.rotate_simple,
 	sunlight_propogates = true,
 	is_ground_content = false,
+	walkable = true,
+	buildable_to = false,
 	groups = mat_groups,
 	sounds = mat_sound,
 	selection_box = {
@@ -150,6 +156,8 @@ minetest.register_node("c_doors:" ..name.. "_Rdoor_open", {
 	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
+	walkable = true,
+	buildable_to = false,
 	groups = mat_groups,
 	drop = "c_doors:" ..name.. "_Rdoor",
 	sounds = mat_sound,

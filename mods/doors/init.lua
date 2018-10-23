@@ -338,14 +338,6 @@ function doors.register(name, def)
 	})
 	def.inventory_image = nil
 
-	if def.recipe then
-		minetest.register_craft({
-			output = name,
-			recipe = def.recipe,
-		})
-	end
-	def.recipe = nil
-
 	if not def.sounds then
 		def.sounds = default.node_sound_wood_defaults()
 	end
@@ -445,11 +437,8 @@ doors.register("door_birch", {
 		description = "Birch Door",
 		inventory_image = "doors_item_birch.png",
 		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-		recipe = {
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-		}
+		sound_open = "doors_door_open",
+		sound_close = "doors_door_close",
 })
 
 doors.register("door_junglewood", {
@@ -457,11 +446,8 @@ doors.register("door_junglewood", {
 		description = "Junglewood Door",
 		inventory_image = "doors_item_junglewood.png",
 		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-		recipe = {
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-		}
+		sound_open = "doors_door_open",
+		sound_close = "doors_door_close",
 })
 
 doors.register("door_oak", {
@@ -469,11 +455,8 @@ doors.register("door_oak", {
 		description = "Oak Door",
 		inventory_image = "doors_item_oak.png",
 		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-		recipe = {
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-		}
+		sound_open = "doors_door_open",
+		sound_close = "doors_door_close",
 })
 
 doors.register("door_pine", {
@@ -481,11 +464,8 @@ doors.register("door_pine", {
 		description = "Pine Door",
 		inventory_image = "doors_item_pine.png",
 		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-		recipe = {
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-		}
+		sound_open = "doors_door_open",
+		sound_close = "doors_door_close",
 })
 
 doors.register("door_willow", {
@@ -493,11 +473,8 @@ doors.register("door_willow", {
 		description = "Willow Door",
 		inventory_image = "doors_item_willow.png",
 		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-		recipe = {
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-		}
+		sound_open = "doors_door_open",
+		sound_close = "doors_door_close",
 })
 
 doors.register("door_wood", {
@@ -505,11 +482,8 @@ doors.register("door_wood", {
 		description = "Wooden Door",
 		inventory_image = "doors_item_wood.png",
 		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-		recipe = {
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-			{"group:wood", "group:wood"},
-		}
+		sound_open = "doors_door_open",
+		sound_close = "doors_door_close",
 })
 
 doors.register("door_iron", {
@@ -521,11 +495,6 @@ doors.register("door_iron", {
 		sounds = default.node_sound_metal_defaults(),
 		sound_open = "doors_steel_door_open",
 		sound_close = "doors_steel_door_close",
-		recipe = {
-			{"default:iron_lump", "default:iron_lump"},
-			{"default:iron_lump", "default:iron_lump"},
-			{"default:iron_lump", "default:iron_lump"},
-		}
 })
 
 doors.register("door_steel", {
@@ -537,11 +506,6 @@ doors.register("door_steel", {
 		sounds = default.node_sound_metal_defaults(),
 		sound_open = "doors_steel_door_open",
 		sound_close = "doors_steel_door_close",
-		recipe = {
-			{"default:steel_ingot", "default:steel_ingot"},
-			{"default:steel_ingot", "default:steel_ingot"},
-			{"default:steel_ingot", "default:steel_ingot"},
-		}
 })
 
 doors.register("door_glass", {
@@ -553,11 +517,6 @@ doors.register("door_glass", {
 		sounds = default.node_sound_glass_defaults(),
 		sound_open = "doors_glass_door_open",
 		sound_close = "doors_glass_door_close",
-		recipe = {
-			{"default:glass", "default:glass"},
-			{"default:glass", "default:glass"},
-			{"default:glass", "default:glass"},
-		}
 })
 
 doors.register("door_obsidian_glass", {
@@ -569,11 +528,6 @@ doors.register("door_obsidian_glass", {
 		sounds = default.node_sound_glass_defaults(),
 		sound_open = "doors_glass_door_open",
 		sound_close = "doors_glass_door_close",
-		recipe = {
-			{"default:obsidian_glass", "default:obsidian_glass"},
-			{"default:obsidian_glass", "default:obsidian_glass"},
-			{"default:obsidian_glass", "default:obsidian_glass"},
-		},
 })
 
 -- Capture mods using the old API as best as possible.
@@ -764,21 +718,17 @@ doors.register_trapdoor("doors:trapdoor_steel", {
 	groups = {cracky = 1, level = 2, door = 1},
 })
 
-minetest.register_craft({
-	output = 'doors:trapdoor 2',
-	recipe = {
-		{'group:wood', 'group:wood', 'group:wood'},
-		{'group:wood', 'group:wood', 'group:wood'},
-		{'', '', ''},
-	}
-})
-
-minetest.register_craft({
-	output = 'doors:trapdoor_steel',
-	recipe = {
-		{'default:steel_ingot', 'default:steel_ingot'},
-		{'default:steel_ingot', 'default:steel_ingot'},
-	}
+doors.register_trapdoor("doors:trapdoor_iron", {
+	description = "Iron Trapdoor",
+	inventory_image = "doors_trapdoor_iron.png",
+	wield_image = "doors_trapdoor_iron.png",
+	tile_front = "doors_trapdoor_iron.png",
+	tile_side = "doors_trapdoor_iron_side.png",
+	protected = true,
+	sounds = default.node_sound_metal_defaults(),
+	sound_open = "doors_steel_door_open",
+	sound_close = "doors_steel_door_close",
+	groups = {cracky = 1, level = 2, door = 1},
 })
 
 
@@ -848,14 +798,6 @@ function doors.register_fence_gate(name, def)
 
 	minetest.register_node(":" .. name .. "_closed", fence_closed)
 	minetest.register_node(":" .. name .. "_open", fence_open)
-
-	minetest.register_craft({
-		output = name .. "_closed",
-		recipe = {
-			{"default:stick", def.material, "default:stick"},
-			{"default:stick", def.material, "default:stick"}
-		}
-	})
 end
 
 doors.register_fence_gate("doors:gate_birch", {
@@ -905,48 +847,4 @@ doors.register_fence_gate("doors:gate_granite", {
 	texture = "doors_gate_granite.png",
 	material = "wood:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
-})
-
-----fuels----
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "doors:trapdoor",
-	burntime = 7,
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "doors:door_wood",
-	burntime = 14,
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "doors:gate_wood_closed",
-	burntime = 7,
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "doors:gate_acacia_wood_closed",
-	burntime = 8,
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "doors:gate_willow_wood_closed",
-	burntime = 9,
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "doors:gate_pine_wood_closed",
-	burntime = 6,
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "doors:gate_birch_wood_closed",
-	burntime = 5,
 })
