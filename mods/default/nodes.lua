@@ -255,6 +255,15 @@ minetest.register_node("default:dirt_path", {
 	sounds = default.node_sound_dirt_defaults(),
 })
 
+-- Path dirt don't convert
+minetest.register_node("default:path_dirt", {
+	description = "Path Dirt",
+	tiles = {"default_dirt.png"},
+	groups = {cracky = 3, soil = 1},
+	drop = {},
+	sounds = default.node_sound_dirt_defaults(),
+})
+
 minetest.register_node("default:dirt", {
 	description = "Dirt",
 	tiles = {"default_dirt.png"},
