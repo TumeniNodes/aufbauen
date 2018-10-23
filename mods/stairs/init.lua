@@ -740,13 +740,23 @@ stairs.register_stair_and_slab(
 	default.node_sound_stone_defaults()
 )
 
+stairs.register_stair_and_slab(
+	"stone_cinderblock",
+	"stone:stone_cinderblock",
+	{cracky = 2},
+	{"stone_stone_cinderblock.png"},
+	"Stone Cinderblock Stair",
+	"Stone Cinderblock Slab",
+	default.node_sound_stone_defaults()
+)
+
 --metal stairs
 
 stairs.register_stair_and_slab(
 	"bronze_block",
-	"default:bronze_block",
+	"metal:bronze_block",
 	{cracky = 1, level = 2},
-	{"default_bronze_block.png"},
+	{"metal_bronze_block.png"},
 	"Bronze Block Stair",
 	"Bronze Block Slab",
 	default.node_sound_metal_defaults()
@@ -754,29 +764,19 @@ stairs.register_stair_and_slab(
 
 stairs.register_stair_and_slab(
 	"copper_block",
-	"default:copper_block",
+	"metal:copper_block",
 	{cracky = 1, level = 2},
-	{"default_copper_block.png"},
+	{"metal_copper_block.png"},
 	"Copper Block Stair",
 	"Copper Block Slab",
 	default.node_sound_metal_defaults()
 )
 
 stairs.register_stair_and_slab(
-	"gold_block",
-	"default:gold_block",
-	{cracky = 1},
-	{"default_gold_block.png"},
-	"Gold Block Stair",
-	"Gold Block Slab",
-	default.node_sound_metal_defaults()
-)
-
-stairs.register_stair_and_slab(
 	"iron_block",
-	"default:iron_block",
+	"metal:iron_block",
 	{cracky = 1, level = 2},
-	{"default_iron_block.png"},
+	{"metal_iron_block.png"},
 	"Iron Block Stair",
 	"Iron Block Slab",
 	default.node_sound_metal_defaults()
@@ -784,15 +784,15 @@ stairs.register_stair_and_slab(
 
 stairs.register_stair_and_slab(
 	"steel_block",
-	"default:steel_block",
+	"metal:steel_block",
 	{cracky = 1, level = 2},
-	{"default_steel_block.png"},
+	{"metal_steel_block.png"},
 	"Steel Block Stair",
 	"Steel Block Slab",
 	default.node_sound_metal_defaults()
 )
 
-stairs.register_stair_and_slab(
+--[[stairs.register_stair_and_slab(
 	"tin_block",
 	"default:tin_block",
 	{cracky = 1, level = 2},
@@ -800,4 +800,4 @@ stairs.register_stair_and_slab(
 	"Tin Block Stair",
 	"Tin Block Slab",
 	default.node_sound_metal_defaults()
-)
+)]]--
