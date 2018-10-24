@@ -2,9 +2,56 @@
 
 metal = {}
 
+--basic blocks
+
+function metal.register_basic_block(modname, subname, desc, tiles, groups, sounds)
+minetest.register_node("metal:" .. subname .. "_basic_block", {
+	description = desc .. " Basic Block",
+	tiles = tiles,
+	is_ground_content = false,
+	groups = groups,
+	sounds = sounds,
+	})
+end
+
+metal.register_basic_block(
+"metal",
+"bronze",
+"Bronze",
+{"metal_bronze_block.png"},
+{cracky = 3, oddly_breakable_by_hand = 3},
+default.node_sound_metal_defaults())
+
+metal.register_basic_block(
+"metal",
+"copper",
+"Copper",
+{"metal_copper_block.png"},
+{cracky = 3, oddly_breakable_by_hand = 3},
+default.node_sound_metal_defaults())
+
+metal.register_basic_block(
+"metal",
+"iron",
+"Iron",
+{"metal_iron_block.png"},
+{cracky = 3, oddly_breakable_by_hand = 3},
+default.node_sound_metal_defaults())
+
+metal.register_basic_block(
+"metal",
+"steel",
+"Steel",
+{"metal_steel_block.png"},
+{cracky = 3, oddly_breakable_by_hand = 3},
+default.node_sound_metal_defaults())
+
+
+-- 3D blocks and stair nodes
+
 function metal.register_block(modname, subname, desc, tiles, groups, sounds)
 minetest.register_node("metal:" .. subname .. "_block", {
-	description = desc .. "Block",
+	description = desc .. " Block",
 	drawtype = "nodebox",
 	tiles = tiles,
 --	paramtype = "light",
@@ -38,14 +85,37 @@ minetest.register_node("metal:" .. subname .. "_block", {
 	})
 end
 
-function metal.register_metal_nodes(modname, subname, desc, tiles)
-	metal.register_block(modname, subname, desc, tiles)
-end
+metal.register_block(
+"metal",
+"bronze",
+"Bronze",
+{"metal_bronze_block.png"},
+{cracky = 3, oddly_breakable_by_hand = 3},
+default.node_sound_metal_defaults())
 
-metal.register_block("metal", "bronze", "Bronze Block", {"metal_bronze_block.png"}, {cracky = 3, oddly_breakable_by_hand = 3}, default.node_sound_metal_defaults())
-metal.register_block("metal", "copper",  "Copper Block", {"metal_copper_block.png"}, {cracky = 3, oddly_breakable_by_hand = 3}, default.node_sound_metal_defaults())
-metal.register_block("metal", "iron", "Iron Block", {"metal_iron_block.png"}, {cracky = 3, oddly_breakable_by_hand = 3}, default.node_sound_metal_defaults())
-metal.register_block("metal", "steel", "Steel Block", {"metal_steel_block.png"}, {cracky = 3, oddly_breakable_by_hand = 3}, default.node_sound_metal_defaults())
+metal.register_block(
+"metal",
+"copper",
+"Copper",
+{"metal_copper_block.png"},
+{cracky = 3, oddly_breakable_by_hand = 3},
+default.node_sound_metal_defaults())
+
+metal.register_block(
+"metal",
+"iron",
+"Iron",
+{"metal_iron_block.png"},
+{cracky = 3, oddly_breakable_by_hand = 3},
+default.node_sound_metal_defaults())
+
+metal.register_block(
+"metal",
+"steel",
+"Steel",
+{"metal_steel_block.png"},
+{cracky = 3, oddly_breakable_by_hand = 3},
+default.node_sound_metal_defaults())
 
 
 -- Register metal stair
@@ -53,7 +123,7 @@ metal.register_block("metal", "steel", "Steel Block", {"metal_steel_block.png"},
 
 function metal.register_stair(modname, subname, desc, tiles, groups, sounds)
 	minetest.register_node("metal:" .. subname .. "_stair", {
-		description = desc .. "Stair",
+		description = desc .. " Stair",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -97,14 +167,45 @@ function metal.register_stair(modname, subname, desc, tiles, groups, sounds)
 	})
 end
 
-function metal.register_metal_nodes(modname, subname, desc, tiles, groups, sounds)
-	metal.register_stair(modname, subname, desc, tiles, groups, sounds)
-end
+metal.register_stair(
+"metal",
+"bronze",
+"Bronze", 
+{"metal_bronze_split.png", "metal_bronze_block.png",
+"metal_bronze_side.png^[transformFX", "metal_bronze_side.png",
+"metal_bronze_block.png", "metal_bronze_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
-metal.register_stair("metal", "bronze", "Bronze Stair", {"metal_bronze_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair("metal", "copper",  "Copper Stair", {"metal_copper_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair("metal", "iron", "Iron Stair", {"metal_iron_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair("metal", "steel", "Steel Stair", {"metal_steel_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
+metal.register_stair(
+"metal",
+"copper",
+"Copper",
+{"metal_copper_split.png", "metal_copper_block.png",
+"metal_copper_side.png^[transformFX", "metal_copper_side.png",
+"metal_copper_block.png", "metal_copper_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_stair(
+"metal",
+"iron",
+"Iron",
+{"metal_iron_split.png", "metal_iron_block.png",
+"metal_iron_side.png^[transformFX", "metal_iron_side.png",
+"metal_iron_block.png", "metal_iron_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_stair(
+"metal",
+"steel",
+"Steel",
+{"metal_steel_split.png", "metal_steel_block.png",
+"metal_steel_side.png^[transformFX", "metal_steel_side.png",
+"metal_steel_block.png", "metal_steel_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
 
 -- Register metal slab
@@ -112,7 +213,7 @@ metal.register_stair("metal", "steel", "Steel Stair", {"metal_steel_block.png"},
 
 function metal.register_slab(modname, subname, desc, tiles, groups, sounds)
 	minetest.register_node("metal:" .. subname .. "_slab", {
-		description = desc .. "Slab",
+		description = desc .. " Slab",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -147,14 +248,45 @@ function metal.register_slab(modname, subname, desc, tiles, groups, sounds)
 	})
 end
 
-function metal.register_metal_nodes(modname, subname, desc, tiles, groups, sounds)
-	metal.register_slab(modname, subname, desc, tiles, groups, sounds)
-end
+metal.register_slab(
+"metal",
+"bronze",
+"Bronze",
+{"metal_bronze_block.png", "metal_bronze_block.png",
+"metal_bronze_split.png", "metal_bronze_split.png",
+"metal_bronze_split.png", "metal_bronze_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
-metal.register_slab("metal", "bronze", "Bronze Slab", {"metal_bronze_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_slab("metal", "copper",  "Copper Slab", {"metal_copper_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_slab("metal", "iron", "Iron Slab", {"metal_iron_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_slab("metal", "steel", "Steel Slab", {"metal_steel_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
+metal.register_slab(
+"metal",
+"copper",
+"Copper",
+{"metal_copper_block.png", "metal_copper_block.png",
+"metal_copper_split.png", "metal_copper_split.png",
+"metal_copper_split.png", "metal_copper_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_slab(
+"metal",
+"iron",
+"Iron",
+{"metal_iron_block.png", "metal_iron_block.png",
+"metal_iron_split.png", "metal_iron_split.png",
+"metal_iron_split.png", "metal_iron_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_slab(
+"metal",
+"steel",
+"Steel",
+{"metal_steel_block.png", "metal_steel_block.png",
+"metal_steel_split.png", "metal_steel_split.png",
+"metal_steel_split.png", "metal_steel_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
 
 -- Register inner stair
@@ -162,7 +294,7 @@ metal.register_slab("metal", "steel", "Steel Slab", {"metal_steel_block.png"}, {
 
 function metal.register_stair_inner(modname, subname, desc, tiles, groups, sounds)
 	minetest.register_node("metal:" .. subname .. "_stair_inner", {
-		description = desc .. "Inner Stair",
+		description = desc .. " Inner Stair",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -213,14 +345,45 @@ function metal.register_stair_inner(modname, subname, desc, tiles, groups, sound
 	})
 end
 
-function metal.register_metal_nodes(modname, subname, desc, tiles, groups, sounds)
-	metal.register_stair_inner(modname, subname, desc, tiles, groups, sounds)
-end
+metal.register_stair_inner(
+"metal",
+"bronze",
+"Bronze",
+{"metal_bronze_side.png^[transformR270", "metal_bronze_block.png",
+"metal_bronze_side.png^[transformFX", "metal_bronze_block.png",
+"metal_bronze_block.png", "metal_bronze_side.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
-metal.register_stair_inner("metal", "bronze", "Bronze Inner Stair", {"metal_bronze_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_inner("metal", "copper",  "Copper Inner Stair", {"metal_copper_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_inner("metal", "iron", "Iron Inner Stair", {"metal_iron_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_inner("metal", "steel", "Steel Inner Stair", {"metal_steel_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
+metal.register_stair_inner(
+"metal",
+"copper",
+"Copper",
+{"metal_copper_side.png^[transformR270", "metal_copper_block.png",
+"metal_copper_side.png^[transformFX", "metal_copper_block.png",
+"metal_copper_block.png", "metal_copper_side.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_stair_inner(
+"metal",
+"iron",
+"Iron",
+{"metal_iron_side.png^[transformR270", "metal_iron_block.png",
+"metal_iron_side.png^[transformFX", "metal_iron_block.png",
+"metal_iron_block.png", "metal_iron_side.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_stair_inner(
+"metal",
+"steel",
+"Steel",
+{"metal_steel_side.png^[transformR270", "metal_steel_block.png",
+"metal_steel_side.png^[transformFX", "metal_steel_block.png",
+"metal_steel_block.png", "metal_steel_side.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
 
 -- Register outer stair
@@ -228,7 +391,7 @@ metal.register_stair_inner("metal", "steel", "Steel Inner Stair", {"metal_steel_
 
 function metal.register_stair_outer(modname, subname, desc, tiles, groups, sounds)
 	minetest.register_node("metal:" .. subname .. "_stair_outer", {
-		description = desc .. "Outer Stair",
+		description = desc .. " Outer Stair",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -276,24 +439,125 @@ function metal.register_stair_outer(modname, subname, desc, tiles, groups, sound
 	})
 end
 
-function metal.register_metal_nodes(modname, subname, desc, tiles, groups, sounds)
-	metal.register_stair_outer(modname, subname, desc, tiles, groups, sounds)
-end
+metal.register_stair_outer(
+"metal",
+"bronze",
+"Bronze",
+{"metal_bronze_side.png^[transformR90", "metal_bronze_block.png",
+"metal_bronze_outer.png", "metal_bronze_side.png",
+"metal_bronze_side.png^[transformR90", "metal_bronze_outer.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
-metal.register_stair_outer("metal", "bronze", "Bronze Outer Stair", {"metal_bronze_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_outer("metal", "copper",  "Copper Outer Stair", {"metal_copper_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_outer("metal", "iron", "Iron Outer Stair", {"metal_iron_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_outer("metal", "steel", "Steel Outer Stair", {"metal_steel_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
+metal.register_stair_outer(
+"metal",
+"copper",
+"Copper",
+{"metal_copper_side.png^[transformR90", "metal_copper_block.png",
+"metal_copper_outer.png", "metal_copper_side.png",
+"metal_copper_side.png^[transformR90", "metal_copper_outer.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+metal.register_stair_outer(
+"metal", "iron",
+"Iron",
+{"metal_iron_side.png^[transformR90", "metal_iron_block.png",
+"metal_iron_outer.png", "metal_iron_side.png",
+"metal_iron_side.png^[transformR90", "metal_iron_outer.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_stair_outer(
+"metal",
+"steel",
+"Steel",
+{"metal_steel_side.png^[transformR90", "metal_steel_block.png",
+"metal_steel_outer.png", "metal_steel_side.png",
+"metal_steel_side.png^[transformR90", "metal_steel_outer.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
 
 -- Grid sytem (remove inner nodeboxes for grid effect)
 
--- Register metal stair grid
--- Node will be called metal:stair_grid
+-- Register grid block
+-- Node will be called metal:grid_block
 
-function metal.register_stair_grid(modname, subname, desc, tiles, groups, sounds)
-	minetest.register_node("metal:" .. subname .. "_stair_grid", {
-		description = desc .. "Stair Grid",
+function metal.register_grid_block(modname, subname, desc, tiles, groups, sounds)
+minetest.register_node("metal:" .. subname .. "_grid_block", {
+	description = desc .. " Grid Block",
+	drawtype = "nodebox",
+	tiles = tiles,
+--	paramtype = "light",
+	is_ground_content = false,
+	groups = groups,
+	sounds = sounds,
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-1/2, -1/2, -1/2, -7/16, 1/2, -7/16},
+			{7/16, -1/2, -1/2, 1/2, 1/2, -7/16},
+			{-1/2, -1/2, 7/16, -7/16, 1/2, 1/2},
+			{7/16, -1/2, 7/16, 1/2, 1/2, 1/2},
+			{-1/2, 7/16, 7/16, 1/2, 1/2, 1/2},
+			{-1/2, 7/16, -1/2, 1/2, 1/2, -7/16},
+			{-1/2, -1/2, -1/2, 1/2, -7/16, -7/16},
+			{-1/2, -1/2, 7/16, 1/2, -7/16, 1/2},
+			{7/16, 7/16, -1/2, 1/2, 1/2, 1/2},
+			{7/16, -1/2, -1/2, 1/2, -7/16, 1/2},
+			{-1/2, 7/16, -1/2, -7/16, 1/2, 1/2},
+			{-1/2, -1/2, -1/2, -7/16, -7/16, 1/2},
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-1/2, -1/2, -1/2, 1/2, 1/2, 1/2},
+			},
+		},
+	})
+end
+
+
+metal.register_grid_block(
+"metal",
+"bronze",
+"Bronze",
+{"metal_bronze_block.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_block(
+"metal",
+"copper",
+"Copper",
+{"metal_copper_block.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_block(
+"metal",
+"iron",
+"Iron",
+{"metal_iron_block.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_block(
+"metal",
+"steel",
+"Steel",
+{"metal_steel_block.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+
+-- Register metal grid stair
+-- Node will be called metal:grid_stair
+
+function metal.register_grid_stair(modname, subname, desc, tiles, groups, sounds)
+	minetest.register_node("metal:" .. subname .. "_grid_stair", {
+		description = desc .. " Grid Stair",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -335,22 +599,53 @@ function metal.register_stair_grid(modname, subname, desc, tiles, groups, sounds
 	})
 end
 
-function metal.register_metal_nodes(modname, subname, desc, tiles, groups, sounds)
-	metal.register_stair_grid(modname, subname, desc, tiles, groups, sounds)
-end
+metal.register_grid_stair(
+"metal",
+"bronze",
+"Bronze", 
+{"metal_bronze_split.png", "metal_bronze_block.png",
+"metal_bronze_side.png^[transformFX", "metal_bronze_side.png",
+"metal_bronze_block.png", "metal_bronze_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
-metal.register_stair_grid("metal", "bronze", "Bronze Stair Grid", {"metal_bronze_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_grid("metal", "copper",  "Copper Stair Grid", {"metal_copper_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_grid("metal", "iron", "Iron Stair Grid", {"metal_iron_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_grid("metal", "steel", "Steel Stair Grid", {"metal_steel_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
+metal.register_grid_stair(
+"metal",
+"copper",
+"Copper",
+{"metal_copper_split.png", "metal_copper_block.png",
+"metal_copper_side.png^[transformFX", "metal_copper_side.png",
+"metal_copper_block.png", "metal_copper_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_stair(
+"metal",
+"iron",
+"Iron",
+{"metal_iron_split.png", "metal_iron_block.png",
+"metal_iron_side.png^[transformFX", "metal_iron_side.png",
+"metal_iron_block.png", "metal_iron_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_stair(
+"metal",
+"steel",
+"Steel",
+{"metal_steel_split.png", "metal_steel_block.png",
+"metal_steel_side.png^[transformFX", "metal_steel_side.png",
+"metal_steel_block.png", "metal_steel_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
 
--- Register metal slab grid
--- Node will be called metal:slab_grid
+-- Register metal grid slab
+-- Node will be called metal:grid_slab
 
-function metal.register_slab_grid(modname, subname, desc, tiles, groups, sounds)
-	minetest.register_node("metal:" .. subname .. "_slab_grid", {
-		description = desc .. "Slab Grid",
+function metal.register_grid_slab(modname, subname, desc, tiles, groups, sounds)
+	minetest.register_node("metal:" .. subname .. "_grid_slab", {
+		description = desc .. " Grid Slab",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -384,22 +679,53 @@ function metal.register_slab_grid(modname, subname, desc, tiles, groups, sounds)
 	})
 end
 
-function metal.register_metal_nodes(modname, subname, desc, tiles, groups, sounds)
-	metal.register_slab_grid(modname, subname, desc, tiles, groups, sounds)
-end
+metal.register_grid_slab(
+"metal",
+"bronze",
+"Bronze",
+{"metal_bronze_block.png", "metal_bronze_block.png",
+"metal_bronze_split.png", "metal_bronze_split.png",
+"metal_bronze_split.png", "metal_bronze_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
-metal.register_slab_grid("metal", "bronze", "Bronze Slab Grid", {"metal_bronze_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_slab_grid("metal", "copper",  "Copper Slab Grid", {"metal_copper_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_slab_grid("metal", "iron", "Iron Slab Grid", {"metal_iron_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_slab_grid("metal", "steel", "Steel Slab Grid", {"metal_steel_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
+metal.register_grid_slab(
+"metal",
+"copper",
+"Copper",
+{"metal_copper_block.png", "metal_copper_block.png",
+"metal_copper_split.png", "metal_copper_split.png",
+"metal_copper_split.png", "metal_copper_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_slab(
+"metal",
+"iron",
+"Iron",
+{"metal_iron_block.png", "metal_iron_block.png",
+"metal_iron_split.png", "metal_iron_split.png",
+"metal_iron_split.png", "metal_iron_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_slab(
+"metal",
+"steel",
+"Steel",
+{"metal_steel_block.png", "metal_steel_block.png",
+"metal_steel_split.png", "metal_steel_split.png",
+"metal_steel_split.png", "metal_steel_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
 
--- Register inner stair
--- Node will be called metal:stair_frame_inner
+-- Register  grid inner stair
+-- Node will be called metal:grid_stair_inner
 
-function metal.register_stair_grid_inner(modname, subname, desc, tiles, groups, sounds)
-	minetest.register_node("metal:" .. subname .. "_stair_grid_inner", {
-		description = desc .. "Inner Stair Grid",
+function metal.register_grid_stair_inner(modname, subname, desc, tiles, groups, sounds)
+	minetest.register_node("metal:" .. subname .. "_grid_stair_inner", {
+		description = desc .. " Grid Inner Stair",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -447,22 +773,53 @@ function metal.register_stair_grid_inner(modname, subname, desc, tiles, groups, 
 	})
 end
 
-function metal.register_metal_nodes(modname, subname, desc, tiles, groups, sounds)
-	metal.register_stair_grid_inner(modname, subname, desc, tiles, groups, sounds)
-end
+metal.register_grid_stair_inner(
+"metal",
+"bronze",
+"Bronze",
+{"metal_bronze_side.png^[transformR270", "metal_bronze_block.png",
+"metal_bronze_side.png^[transformFX", "metal_bronze_block.png",
+"metal_bronze_block.png", "metal_bronze_side.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
-metal.register_stair_grid_inner("metal", "bronze", "Bronze Inner Stair Grid", {"metal_bronze_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_grid_inner("metal", "copper",  "Copper Inner Stair Grid", {"metal_copper_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_grid_inner("metal", "iron", "Iron Inner Stair Grid", {"metal_iron_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_grid_inner("metal", "steel", "Steel Inner Stair Grid", {"metal_steel_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
+metal.register_grid_stair_inner(
+"metal",
+"copper",
+"Copper",
+{"metal_copper_side.png^[transformR270", "metal_copper_block.png",
+"metal_copper_side.png^[transformFX", "metal_copper_block.png",
+"metal_copper_block.png", "metal_copper_side.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_stair_inner(
+"metal",
+"iron",
+"Iron",
+{"metal_iron_side.png^[transformR270", "metal_iron_block.png",
+"metal_iron_side.png^[transformFX", "metal_iron_block.png",
+"metal_iron_block.png", "metal_iron_side.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_stair_inner(
+"metal",
+"steel",
+"Steel",
+{"metal_steel_side.png^[transformR270", "metal_steel_block.png",
+"metal_steel_side.png^[transformFX", "metal_steel_block.png",
+"metal_steel_block.png", "metal_steel_side.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
 
--- Register outer stair grid
--- Node will be called metal:stair_grid_outer
+-- Register grid stair outer
+-- Node will be called metal:grid_stair_outer
 
-function metal.register_stair_grid_outer(modname, subname, desc, tiles, groups, sounds)
+function metal.register_grid_stair_outer(modname, subname, desc, tiles, groups, sounds)
 	minetest.register_node("metal:" .. subname .. "_stair_grid_outer", {
-		description = desc .. "Outer Stair Grid",
+		description = desc .. " Grid Outer Stair",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -508,65 +865,48 @@ function metal.register_stair_grid_outer(modname, subname, desc, tiles, groups, 
 	})
 end
 
-function metal.register_metal_nodes(modname, subname, desc, tiles, groups, sounds)
-	metal.register_stair_grid_outer(modname, subname, desc, tiles, groups, sounds)
-end
+metal.register_grid_stair_outer(
+"metal",
+"bronze",
+"Bronze",
+{"metal_bronze_side.png^[transformR90", "metal_bronze_block.png",
+"metal_bronze_outer.png", "metal_bronze_side.png",
+"metal_bronze_side.png^[transformR90", "metal_bronze_outer.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
-metal.register_stair_grid_outer("metal", "bronze", "Bronze Outer Stair Grid", {"metal_bronze_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_grid_outer("metal", "copper",  "Copper Outer Stair Grid", {"metal_copper_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_grid_outer("metal", "iron", "Iron Outer Stair Grid", {"metal_iron_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_stair_grid_outer("metal", "steel", "Steel Outer Stair Grid", {"metal_steel_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
+metal.register_grid_stair_outer(
+"metal",
+"copper",
+"Copper",
+{"metal_copper_side.png^[transformR90", "metal_copper_block.png",
+"metal_copper_outer.png", "metal_copper_side.png",
+"metal_copper_side.png^[transformR90", "metal_copper_outer.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
+metal.register_grid_stair_outer(
+"metal",
+"iron",
+"Iron ",
+{"metal_iron_side.png^[transformR90", "metal_iron_block.png",
+"metal_iron_outer.png", "metal_iron_side.png",
+"metal_iron_side.png^[transformR90", "metal_iron_outer.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
--- Register block grid
--- Node will be called metal:block_grid
-
-function metal.register_block_grid(modname, subname, desc, tiles, groups, sounds)
-minetest.register_node("metal:" .. subname .. "_block_grid", {
-	description = desc .. "Block Grid",
-	drawtype = "nodebox",
-	tiles = tiles,
---	paramtype = "light",
-	is_ground_content = false,
-	groups = groups,
-	sounds = sounds,
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-1/2, -1/2, -1/2, -7/16, 1/2, -7/16},
-			{7/16, -1/2, -1/2, 1/2, 1/2, -7/16},
-			{-1/2, -1/2, 7/16, -7/16, 1/2, 1/2},
-			{7/16, -1/2, 7/16, 1/2, 1/2, 1/2},
-			{-1/2, 7/16, 7/16, 1/2, 1/2, 1/2},
-			{-1/2, 7/16, -1/2, 1/2, 1/2, -7/16},
-			{-1/2, -1/2, -1/2, 1/2, -7/16, -7/16},
-			{-1/2, -1/2, 7/16, 1/2, -7/16, 1/2},
-			{7/16, 7/16, -1/2, 1/2, 1/2, 1/2},
-			{7/16, -1/2, -1/2, 1/2, -7/16, 1/2},
-			{-1/2, 7/16, -1/2, -7/16, 1/2, 1/2},
-			{-1/2, -1/2, -1/2, -7/16, -7/16, 1/2},
-			},
-		},
-		selection_box = {
-			type = "fixed",
-			fixed = {
-				{-1/2, -1/2, -1/2, 1/2, 1/2, 1/2},
-			},
-		},
-	})
-end
+metal.register_grid_stair_outer(
+"metal",
+"steel",
+"Steel",
+{"metal_steel_side.png^[transformR90", "metal_steel_block.png",
+"metal_steel_outer.png", "metal_steel_side.png",
+"metal_steel_side.png^[transformR90", "metal_steel_outer.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
 
 
-function metal.register_metal_nodes(modname, subname, desc, tiles, groups, sounds)
-	metal.register_block_grid(modname, subname, desc, tiles, groups, sounds)
-end
-
-metal.register_block_grid("metal", "bronze", "Bronze Block Grid", {"metal_bronze_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_block_grid("metal", "copper",  "Copper Block Grid", {"metal_copper_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_block_grid("metal", "iron", "Iron Block Grid", {"metal_iron_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-metal.register_block_grid("metal", "steel", "Steel Block Grid", {"metal_steel_block.png"}, {cracky = 1, level = 2}, default.node_sound_metal_defaults())
-
-
+-- Keep furnace just for decoration
 
 minetest.register_node("metal:furnace", {
 	description = "Furnace",
