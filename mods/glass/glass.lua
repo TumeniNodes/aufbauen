@@ -9,24 +9,15 @@ glass = {}
 minetest.register_node("glass:glass", {
 	description = "Glass",
 	drawtype = "glasslike_framed_optional",
+	tiles = {"glass_glass.png"},
 	paramtype = "light",
 	paramtype2 = "glasslikeliquidlevel",
-	use_texture_alpha = true,
-	light_source = 4,
-	sunlight_propagates = true,
 	is_ground_content = false,
-	groups = {cracky = 3, oddly_breakable_by_hand = 3},
+	sunlight_propagates = true,
+	groups = {cracky = 3},
 	drop = {},
-	tiles = {{
-			name = "glass_glass^glass_flash.png", 
-			animation = {
-				type = "vertical_frames",
-				aspect_w = 16,
-				aspect_h = 16,
-				length = 25,
-			},
-		},
-	}})
+	sounds = default.node_sound_glass_defaults(),
+})
 
 minetest.register_node("glass:obsidian_glass", {
 	description = "Obsidian Glass",
@@ -154,9 +145,9 @@ glass.register_stair(
 	"glass",
 	"glass", 
 	"Glass Stair", 
-	{"glass_split.png", "glass.png",
+	{"glass_split.png", "glass_glass.png",
 	"glass_stairside.png^[transformFX", "glass_stairside.png",
-	"glass.png", "glass_split.png"},
+	"glass_glass.png", "glass_split.png"},
 	{cracky = 3},
 	default.node_sound_glass_defaults())
 

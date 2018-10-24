@@ -154,9 +154,9 @@ xpanes.register_pane("pane", {
 
 xpanes.register_pane("obsidian_pane", {
 	description = "Obsidian Glass Pane",
-	textures = {"glass_obsidian_glass.png","xpanes_pane_half.png","xpanes_edge_obsidian.png"},
-	inventory_image = "glass_obsidian_glass.png",
-	wield_image = "glass_obsidian_glass.png",
+	textures = {"glass_obsidian.png","xpanes_pane_half.png","xpanes_edge_obsidian.png"},
+	inventory_image = "glass_obsidian.png",
+	wield_image = "glass_obsidian.png",
 	sounds = default.node_sound_glass_defaults(),
 	groups = {snappy=2, cracky=3},
 	}
