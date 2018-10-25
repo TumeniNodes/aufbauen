@@ -6,32 +6,32 @@ glass = {}
 -- Basic glass nodes
 --
 
-minetest.register_node("glass:glass", {
-	description = "Glass",
-	drawtype = "glasslike_framed_optional",
-	tiles = {"glass_glass.png"},
-	paramtype = "light",
-	paramtype2 = "glasslikeliquidlevel",
+--[[function glass.register_basic_glass(modname, subname, desc, tiles, groups, sounds)
+minetest.register_node("glass:" .. subname .. "_glass", {
+	drawtype = "glasslike_framed",
+	description = desc .. " Basic Glass",
+	tiles = tiles,
 	is_ground_content = false,
-	sunlight_propagates = true,
-	groups = {cracky = 3},
-	drop = {},
-	sounds = default.node_sound_glass_defaults(),
-})
+	groups = groups,
+	sounds = sounds,
+	})
+end
 
-minetest.register_node("glass:obsidian_glass", {
-	description = "Obsidian Glass",
-	drawtype = "glasslike_framed_optional",
-	tiles = {"glass_obsidian.png"},
-	paramtype = "light",
-	paramtype2 = "glasslikeliquidlevel",
-	is_ground_content = false,
-	sunlight_propagates = true,
-	groups = {cracky = 3},
-	drop = {},
-	sounds = default.node_sound_glass_defaults(),
-})
+glass.register_basic_glass(
+"glass",
+"white_aluminium",
+"White Aluminium",
+{"glass_white.png"},
+{cracky = 3, oddly_breakable_by_hand = 3},
+default.node_sound_metal_defaults())
 
+glass.register_basic_glass(
+"glass",
+"black_aluminium",
+"Black Aluminium",
+{"glass_black.png"},
+{cracky = 3, oddly_breakable_by_hand = 3},
+default.node_sound_metal_defaults())
 
 --
 -- 3D glass nodes
@@ -39,7 +39,7 @@ minetest.register_node("glass:obsidian_glass", {
 
 function glass.register_block(modname, subname, desc, tiles, groups, sounds)
 minetest.register_node("glass:" .. subname .. "_block", {
-	description = desc,
+	description = desc .. " Block",
 	drawtype = "nodebox",
 	tiles = tiles,
 --	paramtype = "light",
@@ -73,31 +73,29 @@ minetest.register_node("glass:" .. subname .. "_block", {
 	})
 end
 
-function glass.register_glass_nodes(modname, subname, desc, tiles, groups, sounds)
-	glass.register_block(modname, subname, desc, tiles, groups, sounds)
-end
-
-
 glass.register_block(
 "glass",
-"glass_glass",
-"Glass Block",
-{"glass_glass.png"},
+"glass",
+"White Aluminium",
+{"glass_white.png"},
 {cracky = 3, oddly_breakable_by_hand = 3},
 default.node_sound_glass_defaults())
 
 glass.register_block(
 "glass",
-"glass_obsidian_glass",
-"Obsidian Glass Block",
-{"glass_obsidian.png"},
+"glass",
+"Black Aluminium",
+{"glass_black.png"},
 {cracky = 3, oddly_breakable_by_hand = 3},
 default.node_sound_glass_defaults())
 
+
+-- Register glass stair
+-- Node will be called glass:stair
 
 function glass.register_stair(modname, subname, desc, tiles, groups, sounds)
 	minetest.register_node("glass:" .. subname .. "_stair", {
-		description = desc,
+		description = desc .. " Stair",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -108,62 +106,58 @@ function glass.register_stair(modname, subname, desc, tiles, groups, sounds)
 		node_box = {
 			type = "fixed",
 			fixed = {
-				{-0.4375, -0.4375, -0.4375, 0.4375, -0.0625, 0.4375},
-				{-0.5, -0.0625, -0.4375, -0.4375, 0, 0},
-				{0.4375, -0.0625, -0.4375, 0.5, 0, 0},
-				{-0.5, 0.4375, 0.4375, 0.5, 0.5, 0.5},
-				{-0.5, -0.0625, -0.5, 0.5, 0, -0.4375},
-				{-0.5, -0.5, -0.5, 0.5, -0.4375, -0.4375},
-				{-0.5, -0.5, 0.4375, 0.5, -0.4375, 0.5},
-				{0.4375, -0.5, -0.5, 0.5, -0.4375, 0.5},
-				{-0.5, -0.5, -0.5, -0.4375, -0.4375, 0.5},
-				{-0.5, -0.5, -0.5, -0.4375, -0.0625, -0.4375},
-				{0.4375, -0.5, -0.5, 0.5, -0.0625, -0.4375},
-				{0.4375, -0.5, 0.4375, 0.5, 0.4375, 0.5},
-				{-0.5, -0.5, 0.4375, -0.4375, 0.4375, 0.5},
-				{-0.5, -0.0625, -0.0625, 0.5, 0, 0},
-				{-0.5, 0.4375, 0, -0.4375, 0.5, 0.4375},
-				{0.4375, 0.4375, 0, 0.5, 0.5, 0.4375},
-				{-0.4375, 0.4375, 0, 0.4375, 0.5, 0.0625},
-				{-0.5, -0.0625, 0, -0.4375, 0.5, 0.0625},
-				{0.4375, -0.0625, 0, 0.5, 0.5, 0.0625},
-				{-0.4375, -0.0625, 0, 0.4375, 0.0625, 0.0625},
-				{-0.4375, -0.4375, 0.0625, 0.4375, 0.4375, 0.4375},
+				{-7/16, -7/16, -7/16, 7/16, -1/16, 7/16},
+				{-1/2, -1/16, -7/16, -7/16, 0, 0},
+				{7/16, -1/16, -7/16, 1/2, 0, 0},
+				{-1/2, 7/16, 7/16, 1/2, 1/2, 1/2},
+				{-1/2, -1/16, -1/2, 1/2, 0, -7/16},
+				{-1/2, -1/2, -1/2, 1/2, -7/16, -7/16},
+				{-1/2, -1/2, 7/16, 1/2, -7/16, 1/2},
+				{7/16, -1/2, -1/2, 1/2, -7/16, 1/2},
+				{-1/2, -1/2, -1/2, -7/16, -7/16, 1/2},
+				{-1/2, -1/2, -1/2, -7/16, -1/16, -7/16},
+				{7/16, -1/2, -1/2, 1/2, -1/16, -7/16},
+				{7/16, -1/2, 7/16, 1/2, 7/16, 1/2},
+				{-1/2, -1/2, 7/16, -7/16, 7/16, 1/2},
+				{-1/2, -1/16, -1/16, 1/2, 0, 0},
+				{-1/2, 7/16, 0, -7/16, 1/2, 7/16},
+				{7/16, 7/16, 0, 1/2, 1/2, 7/16},
+				{-7/16, 7/16, 0, 7/16, 1/2, 1/16},
+				{-1/2, -1/16, 0, -7/16, 1/2, 1/16},
+				{7/16, -1/16, 0, 1/2, 1/2, 1/16},
+				{-7/16, -1/16, 0, 7/16, 1/16, 1/16},
+				{-7/16, -7/16, 1/16, 7/16, 7/16, 7/16},
 				},
 			},
 			selection_box = {
 			type = "fixed",
 			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0.0, 0.5},
-				{-0.5, 0.0, 0.0, 0.5, 0.5, 0.5},
+				{-1/2, -1/2, -1/2, 1/2, 0.0, 1/2},
+				{-1/2, 0.0, 0.0, 1/2, 1/2, 1/2},
 			},
 		},
 	})
 end
 
-function glass.register_glass_nodes(modname, subname, desc, tiles, groups, sounds)
-	glass.register_stair(modname, subname, desc, tiles, groups, sounds)
-end
+glass.register_stair(
+"glass",
+"white_aluminium",
+"White Aluminium", 
+{"glass_white_split.png", "glass_white.png",
+"glass_white_side.png^[transformFX", "glass_white_side.png",
+"glass_white.png", "glass_white_split.png"},
+{cracky = 3},
+default.node_sound_glass_defaults())
 
 glass.register_stair(
-	"glass",
-	"glass", 
-	"Glass Stair", 
-	{"glass_split.png", "glass_glass.png",
-	"glass_stairside.png^[transformFX", "glass_stairside.png",
-	"glass_glass.png", "glass_split.png"},
-	{cracky = 3},
-	default.node_sound_glass_defaults())
-
-glass.register_stair(
-	"glass",
-	"obsidian_glass", 
-	"Obsidian Glass Stair", 
-	{"glass_obsidian_split.png", "glass_obsidian.png",
-	"glass_obsidian_stairside.png^[transformFX", "glass_obsidian_stairside.png",
-	"glass_obsidian.png", "glass_obsidian_split.png"},
-	{cracky = 3},
-	default.node_sound_glass_defaults())
+"glass",
+"black_aluminium", 
+"Black Aluminium", 
+{"glass_black_split.png", "glass_black.png",
+"glass_black_side.png^[transformFX", "glass_black_side.png",
+"glass_black.png", "glass_black_split.png"},
+{cracky = 3},
+default.node_sound_glass_defaults())
 
 
 -- Register glass slab
@@ -171,7 +165,7 @@ glass.register_stair(
 
 function glass.register_slab(modname, subname, desc, tiles, groups, sounds)
 	minetest.register_node("glass:" .. subname .. "_slab", {
-		description = desc,
+		description = desc .. " Slab",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -182,38 +176,34 @@ function glass.register_slab(modname, subname, desc, tiles, groups, sounds)
 		node_box = {
 			type = "fixed",
 			fixed = {
-				{-0.4375, -0.4375, -0.4375, 0.4375, -0.0625, 0.4375},
-				{-0.5, -0.0625, -0.4375, -0.4375, 0, 0.4375},
-				{0.4375, -0.0625, -0.4375, 0.5, 0, 0.4375},
-				{-0.5, -0.0625, 0.4375, 0.5, 0, 0.5},
-				{-0.5, -0.0625, -0.5, 0.5, 0, -0.4375},
-				{-0.5, -0.5, -0.5, 0.5, -0.4375, -0.4375},
-				{-0.5, -0.5, 0.4375, 0.5, -0.4375, 0.5},
-				{0.4375, -0.5, -0.5, 0.5, -0.4375, 0.5},
-				{-0.5, -0.5, -0.5, -0.4375, -0.4375, 0.5},
-				{-0.5, -0.5, -0.5, -0.4375, -0.0625, -0.4375},
-				{0.4375, -0.5, -0.5, 0.5, -0.0625, -0.4375},
-				{0.4375, -0.5, 0.4375, 0.5, -0.0625, 0.5},
-				{-0.5, -0.5, 0.4375, -0.4375, -0.0625, 0.5},
+				{-7/16, -7/16, -7/16, 7/16, -1/16, 7/16},
+				{-1/2, -1/16, -7/16, -7/16, 0, 7/16},
+				{7/16, -1/16, -7/16, 1/2, 0, 7/16},
+				{-1/2, -1/16, 7/16, 1/2, 0, 1/2},
+				{-1/2, -1/16, -1/2, 1/2, 0, -7/16},
+				{-1/2, -1/2, -1/2, 1/2, -7/16, -7/16},
+				{-1/2, -1/2, 7/16, 1/2, -7/16, 1/2},
+				{7/16, -1/2, -1/2, 1/2, -7/16, 1/2},
+				{-1/2, -1/2, -1/2, -7/16, -7/16, 1/2},
+				{-1/2, -1/2, -1/2, -7/16, -1/16, -7/16},
+				{7/16, -1/2, -1/2, 1/2, -1/16, -7/16},
+				{7/16, -1/2, 7/16, 1/2, -1/16, 1/2},
+				{-1/2, -1/2, 7/16, -7/16, -1/16, 1/2},
 				},
 			},
 			selection_box = {
 			type = "fixed",
 			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
+				{-1/2, -1/2, -1/2, 1/2, 0, 1/2},
 			},
 		},
 	})
 end
 
-function glass.register_glass_nodes(modname, subname, desc, tiles, groups, sounds)
-	glass.register_slab(modname, subname, desc, tiles, groups, sounds)
-end
-
 glass.register_slab(
 	"glass",
 	"glass", 
-	"Glass Slab", 
+	"Glass", 
 	{"glass_glass.png", "glass_glass.png", "glass_split.png"},
 	{cracky = 3},
 	default.node_sound_glass_defaults())
@@ -221,7 +211,7 @@ glass.register_slab(
 glass.register_slab(
 	"glass",
 	"obsidian_glass", 
-	"Obsidian Glass Slab", 
+	"Obsidian Glass", 
 	{"glass_obsidian.png", "glass_obsidian.png", "glass_obsidian_split.png"},
 	{cracky = 3},
 	default.node_sound_glass_defaults())
@@ -232,7 +222,7 @@ glass.register_slab(
 
 function glass.register_stair_inner(modname, subname, desc, tiles, groups, sounds)
 	minetest.register_node("glass:" .. subname .. "_stair_inner", {
-		description = desc,
+		description = desc .. " Inner Stair",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -243,54 +233,50 @@ function glass.register_stair_inner(modname, subname, desc, tiles, groups, sound
 		node_box = {
 			type = "fixed",
 			fixed = {
-				{-0.4375, -0.4375, -0.4375, 0.4375, -0.0625, 0.4375},
-				{-0.5, 0.4375, -0.5, -0.0625, 0.5, -0.4375},
-				{0.4375, -0.0625, -0.4375, 0.5, 0, 0},
-				{-0.5, 0.4375, 0.4375, 0.5, 0.5, 0.5},
-				{0, -0.0625, -0.5, 0.5, 0, -0.4375},
-				{-0.5, -0.5, -0.5, 0.5, -0.4375, -0.4375},
-				{-0.5, -0.5, 0.4375, 0.5, -0.4375, 0.5},
-				{0.4375, -0.5, -0.5, 0.5, -0.4375, 0.5},
-				{-0.5, -0.5, -0.5, -0.4375, -0.4375, 0.5},
-				{-0.5, -0.5, -0.5, -0.4375, 0.4375, -0.4375},
-				{0.4375, -0.5, -0.5, 0.5, -0.0625, -0.4375},
-				{0.4375, -0.5, 0.4375, 0.5, 0.4375, 0.5},
-				{-0.5, -0.5, 0.4375, -0.4375, 0.4375, 0.5},
-				{-0.0625, -0.0625, -0.0625, 0.5, 0, 0},
-				{-0.5, 0.4375, -0.4375, -0.4375, 0.5, 0.4375},
-				{0.4375, 0.4375, 0, 0.5, 0.5, 0.4375},
-				{0, 0.4375, 0, 0.4375, 0.5, 0.0625},
-				{-0.0625, -0.0625, -0.5, 0, 0.5, -0.4375},
-				{0.4375, -0.0625, 0, 0.5, 0.5, 0.0625},
-				{-0.0625, -0.0625, 0, 0.4375, 0.0625, 0.0625},
-				{-0.4375, -0.4375, 0.0625, 0.4375, 0.4375, 0.4375},
-				{-0.0625, 0.4375, -0.4375, 0, 0.5, 0.0625},
-				{-0.4375, -0.4375, -0.4375, -0.0625, 0.4375, 0.0625},
-				{0, -0.0625, -0.4375, 0.0625, 0, -0.0625},
-				{-0.0625, 0, -0.4375, 0, 0.0625, 0},
-				{-0.0625, 0, -0.0625, 0, 0.4375, 0.0625},
-				{0, 0, 0, 0.0625, 0.4375, 0.0625},
+				{-7/16, -7/16, -7/16, 7/16, -1/16, 7/16},
+				{-1/2, 7/16, -1/2, -1/16, 1/2, -7/16},
+				{7/16, -1/16, -7/16, 1/2, 0, 0},
+				{-1/2, 7/16, 7/16, 1/2, 1/2, 1/2},
+				{0, -1/16, -1/2, 1/2, 0, -7/16},
+				{-1/2, -1/2, -1/2, 1/2, -7/16, -7/16},
+				{-1/2, -1/2, 7/16, 1/2, -7/16, 1/2},
+				{7/16, -1/2, -1/2, 1/2, -7/16, 1/2},
+				{-1/2, -1/2, -1/2, -7/16, -7/16, 1/2},
+				{-1/2, -1/2, -1/2, -7/16, 7/16, -7/16},
+				{7/16, -1/2, -1/2, 1/2, -1/16, -7/16},
+				{7/16, -1/2, 7/16, 1/2, 7/16, 1/2},
+				{-1/2, -1/2, 7/16, -7/16, 7/16, 1/2},
+				{-1/16, -1/16, -1/16, 1/2, 0, 0},
+				{-1/2, 7/16, -7/16, -7/16, 1/2, 7/16},
+				{7/16, 7/16, 0, 1/2, 1/2, 7/16},
+				{0, 7/16, 0, 7/16, 1/2, 1/16},
+				{-1/16, -1/16, -1/2, 0, 1/2, -7/16},
+				{7/16, -1/16, 0, 1/2, 1/2, 1/16},
+				{-1/16, -1/16, 0, 7/16, 1/16, 1/16},
+				{-7/16, -7/16, 1/16, 7/16, 7/16, 7/16},
+				{-1/16, 7/16, -7/16, 0, 1/2, 1/16},
+				{-7/16, -7/16, -7/16, -1/16, 7/16, 1/16},
+				{0, -1/16, -7/16, 1/16, 0, -1/16},
+				{-1/16, 0, -7/16, 0, 1/16, 0},
+				{-1/16, 0, -1/16, 0, 7/16, 1/16},
+				{0, 0, 0, 1/16, 7/16, 1/16},
 				},
 			},
 			selection_box = {
 			type = "fixed",
 			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0.0, 0.5},
-				{-0.5, 0.0, 0.0, 0.5, 0.5, 0.5},
-				{-0.5, 0.0, -0.5, 0.0, 0.5, 0.0},
+				{-1/2, -1/2, -1/2, 1/2, 0.0, 1/2},
+				{-1/2, 0.0, 0.0, 1/2, 1/2, 1/2},
+				{-1/2, 0.0, -1/2, 0.0, 1/2, 0.0},
 			},
 		},
 	})
 end
 
-function glass.register_glass_nodes(modname, subname, desc, tiles, groups, sounds)
-	glass.register_stair_inner(modname, subname, desc, tiles, groups, sounds)
-end
-
 glass.register_stair_inner(
 	"glass",
 	"glass", 
-	"Glass Inner Stair", 
+	"Glass", 
 	{"glass_stairside.png^[transformR270", "glass_glass.png",
 	"glass_stairside.png^[transformFX", "glass_glass.png",
 	"glass_glass.png", "glass_stairside.png"},
@@ -300,7 +286,7 @@ glass.register_stair_inner(
 glass.register_stair_inner(
 	"glass",
 	"obsidian_glass", 
-	"Obsidian Glass Inner Stair", 
+	"Obsidian Glass", 
 	{"glass_obsidian_stairside.png^[transformR270", "glass_obsidian.png",
 	"glass_obsidian_stairside.png^[transformFX", "glass_obsidian.png",
 	"glass_obsidian.png", "glass_obsidian_stairside.png"},
@@ -313,7 +299,7 @@ glass.register_stair_inner(
 
 function glass.register_stair_outer(modname, subname, desc, tiles, groups, sounds)
 	minetest.register_node("glass:" .. subname .. "_stair_outer", {
-		description = desc,
+		description = desc .. " Outer Stair",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
@@ -324,51 +310,47 @@ function glass.register_stair_outer(modname, subname, desc, tiles, groups, sound
 		node_box = {
 			type = "fixed",
 			fixed = {
-				{-0.4375, -0.4375, -0.4375, 0.4375, -0.0625, 0.4375},
-				{-0.5, -0.0625, -0.4375, -0.4375, 0, 0},
-				{0.4375, -0.0625, -0.4375, 0.5, 0, 0.4375},
-				{-0.5, 0.4375, 0.4375, 0, 0.5, 0.5},
-				{-0.5, -0.0625, -0.5, 0.5, 0, -0.4375},
-				{-0.5, -0.5, -0.5, 0.5, -0.4375, -0.4375},
-				{-0.5, -0.5, 0.4375, 0.4375, -0.4375, 0.5},
-				{0.4375, -0.5, -0.5, 0.5, -0.4375, 0.5},
-				{-0.5, -0.5, -0.5, -0.4375, -0.4375, 0.5},
-				{-0.5, -0.5, -0.5, -0.4375, -0.0625, -0.4375},
-				{0.4375, -0.5, -0.5, 0.5, -0.0625, -0.4375},
-				{0.4375, -0.5, 0.4375, 0.5, -0.0625, 0.5},
-				{-0.5, -0.5, 0.4375, -0.4375, 0.4375, 0.5},
-				{-0.5, -0.0625, -0.0625, 0.0625, 0, 0},
-				{-0.5, 0.4375, 0, -0.4375, 0.5, 0.4375},
-				{-0.0625, 0.4375, 0.0625, 0, 0.5, 0.4375},
-				{-0.4375, 0.4375, 0, -0.0625, 0.5, 0.0625},
-				{-0.5, -0.0625, 0, -0.4375, 0.5, 0.0625},
-				{-0.0625, 0.0625, 0, 0, 0.5, 0.0625},
-				{-0.4375, -0.0625, 0, 0, 0.0625, 0.0625},
-				{-0.4375, -0.4375, 0.0625, -0.0625, 0.4375, 0.4375},
-				{0, -0.0625, 0.4375, 0.5, 0, 0.5},
-				{0, -0.0625, 0, 0.0625, 0, 0.4375},
-				{-0.0625, 0, 0, 0, 0.0625, 0.4375},
-				{-0.0625, 0, 0.4375, 0, 0.4375, 0.5},
+				{-7/16, -7/16, -7/16, 7/16, -1/16, 7/16},
+				{-1/2, -1/16, -7/16, -7/16, 0, 0},
+				{7/16, -1/16, -7/16, 1/2, 0, 7/16},
+				{-1/2, 7/16, 7/16, 0, 1/2, 1/2},
+				{-1/2, -1/16, -1/2, 1/2, 0, -7/16},
+				{-1/2, -1/2, -1/2, 1/2, -7/16, -7/16},
+				{-1/2, -1/2, 7/16, 7/16, -7/16, 1/2},
+				{7/16, -1/2, -1/2, 1/2, -7/16, 1/2},
+				{-1/2, -1/2, -1/2, -7/16, -7/16, 1/2},
+				{-1/2, -1/2, -1/2, -7/16, -01/16, -7/16},
+				{7/16, -1/2, -1/2, 1/2, -1/16, -7/16},
+				{7/16, -1/2, 7/16, 1/2, -1/16, 1/2},
+				{-1/2, -1/2, 7/16, -7/16, 7/16, 1/2},
+				{-1/2, -1/16, -1/16, 1/16, 0, 0},
+				{-1/2, 7/16, 0, -7/16, 1/2, 7/16},
+				{-1/16, 7/16, 1/16, 0, 1/2, 7/16},
+				{-7/16, 7/16, 0, -1/16, 1/2, 1/16},
+				{-1/2, -1/16, 0, -7/16, 1/2, 1/16},
+				{-1/16, 1/16, 0, 0, 1/2, 1/16},
+				{-7/16, -1/16, 0, 0, 1/16, 1/16},
+				{-7/16, -7/16, 1/16, -1/16, 7/16, 7/16},
+				{0, -1/16, 7/16, 1/2, 0, 1/2},
+				{0, -1/16, 0, 1/16, 0, 7/16},
+				{-1/16, 0, 0, 0, 1/16, 7/16},
+				{-1/16, -1/16, 7/16, 0, 7/16, 1/2},
 				},
 			},
 			selection_box = {
 			type = "fixed",
 			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0.0, 0.5},
-				{-0.5, 0.0, 0.0, 0.0, 0.5, 0.5},
+				{-1/2, -1/2, -1/2, 1/2, 0.0, 1/2},
+				{-1/2, 0.0, 0.0, 0.0, 1/2, 1/2},
 			},
 		},
 	})
 end
 
-function glass.register_glass_nodes(modname, subname, desc, tiles, groups, sounds)
-	glass.register_stair_outer(modname, subname, desc, tiles, groups, sounds)
-end
-
 glass.register_stair_outer(
 	"glass",
 	"glass", 
-	"Glass Outer Stair", 
+	"Glass", 
 	{"glass_stairside.png^[transformR90", "glass_glass.png",
 	"glass_outer_stairside.png", "glass_stairside.png",
 	"glass_stairside.png^[transformR90","glass_outer_stairside.png"},
@@ -378,9 +360,10 @@ glass.register_stair_outer(
 glass.register_stair_outer(
 	"glass",
 	"obsidian_glass", 
-	"Obsidian Glass Outer Stair", 
+	"Obsidian Glass", 
 	{"glass_obsidian_stairside.png^[transformR90", "glass_obsidian.png",
 	"glass_obsidian_outer_stairside.png", "glass_obsidian_stairside.png",
 	"glass_obsidian_stairside.png^[transformR90","glass_obsidian_outer_stairside.png"},
 	{cracky = 3},
 	default.node_sound_glass_defaults())
+]]--
