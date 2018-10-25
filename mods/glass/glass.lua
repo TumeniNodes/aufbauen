@@ -3,7 +3,7 @@
 glass = {}
 
 --
--- Glass Nodes
+-- Basic glass nodes
 --
 
 minetest.register_node("glass:glass", {
@@ -32,6 +32,10 @@ minetest.register_node("glass:obsidian_glass", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
+
+--
+-- 3D glass nodes
+--
 
 function glass.register_block(modname, subname, desc, tiles, groups, sounds)
 minetest.register_node("glass:" .. subname .. "_block", {
