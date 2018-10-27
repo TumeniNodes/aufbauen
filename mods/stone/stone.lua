@@ -91,6 +91,24 @@ minetest.register_node("stone:granite_block_half", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_node("stone:granite_brick", {
+	description = "Granite Brick",
+	tiles = {"stone_granite_brick.png"},
+	is_ground_content = false,
+	groups = {cracky = 2, stone = 1},
+	drop = {},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("stone:granite_cinderblock", {
+	description = "Granite Cinderblock",
+	tiles = {"stone_granite_cinderblock.png"},
+	is_ground_content = false,
+	groups = {cracky = 2, stone = 1},
+	drop = {},
+	sounds = default.node_sound_stone_defaults(),
+})
+
 minetest.register_node("stone:granite_smooth", {
 	description = "Smooth Granite",
 	tiles = {"stone_granite_smooth.png"},

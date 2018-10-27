@@ -621,12 +621,32 @@ stairs.register_stair_and_slab(
 )
 
 stairs.register_stair_and_slab(
+	"granite_cinderblock",
+	"stone:granite_cinderblock",
+	{cracky = 2},
+	{"stone_granite_cinderblock.png"},
+	"Granite Cinderblock Stair",
+	"Granite Cinderblock Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
 	"granite_brick",
 	"stone:granite_brick",
 	{cracky = 2},
 	{"stone_granite_brick.png"},
 	"Granite Brick Stair",
 	"Granite Brick Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"granite_smooth",
+	"default:granite_smooth",
+	{crumbly = 1, cracky = 3},
+	{"stone_granite_smooth.png"},
+	"Smooth Granite Stair",
+	"Smooth Granite Slab",
 	default.node_sound_stone_defaults()
 )
 
