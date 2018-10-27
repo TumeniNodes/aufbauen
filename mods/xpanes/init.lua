@@ -162,6 +162,16 @@ xpanes.register_pane("obsidian_pane", {
 	}
 )
 
+xpanes.register_pane("copper_pane", {
+	description = "Copper Glass Pane",
+	textures = {"xpanes_copper.png","xpanes_pane_half.png","xpanes_edge_copper.png"},
+	inventory_image = "xpanes_copper.png",
+	wield_image = "xpanes_copper.png",
+	sounds = default.node_sound_metal_defaults(),
+	groups = {snappy=2, cracky=3, oddly_breakable_by_hand=3},
+	}
+)
+
 xpanes.register_pane("bar", {
 	description = "Steel Bars",
 	textures = {"xpanes_bar.png","xpanes_bar.png","xpanes_bar_top.png"},
