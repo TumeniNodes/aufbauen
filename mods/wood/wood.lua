@@ -117,7 +117,7 @@ minetest.register_node("wood:willow_planking", {
 	tiles = {"wood_willow_planking.png",},
 	groups = {choppy = 1, wood=1},
 	drop = {},
-	sounds = default.node_sound_wood_defaults()
+	sounds = default.node_sound_wood_defaults(),
 })
 
 minetest.register_node("wood:willow_planks", {
@@ -127,7 +127,7 @@ minetest.register_node("wood:willow_planks", {
 	tiles = {"wood_willow_planks.png",},
 	groups = {choppy = 1, wood=1},
 	drop = {},
-	sounds = default.node_sound_wood_defaults()
+	sounds = default.node_sound_wood_defaults(),
 })
 
 
@@ -199,7 +199,7 @@ default.register_fence("wood:fence_birch", {
 	wield_image = "wood_fence_birch_inv.png",
 	material = "wood:birch_wood",
 	groups = {choppy = 3},
-	sounds = default.node_sound_wood_defaults()
+	sounds = default.node_sound_wood_defaults(),
 })
 
 default.register_fence("wood:fence_junglewood", {
@@ -222,7 +222,7 @@ default.register_fence("wood:fence_oak", {
 	wield_image = "wood_fence_oak_inv.png",
 	material = "wood:oak_wood",
 	groups = {choppy = 3},
-	sounds = default.node_sound_wood_defaults()
+	sounds = default.node_sound_wood_defaults(),
 })
 
 default.register_fence("wood:fence_pine", {
@@ -233,7 +233,7 @@ default.register_fence("wood:fence_pine", {
 	wield_image = "wood_fence_pine_inv.png",
 	material = "wood:pine_wood",
 	groups = {choppy = 3},
-	sounds = default.node_sound_wood_defaults()
+	sounds = default.node_sound_wood_defaults(),
 })
 
 default.register_fence("wood:fence_willow", {
@@ -244,7 +244,7 @@ default.register_fence("wood:fence_willow", {
 	wield_image = "wood_fence_willow_inv.png",
 	material = "wood:willow_planks",
 	groups = {choppy = 2},
-	sounds = default.node_sound_wood_defaults()
+	sounds = default.node_sound_wood_defaults(),
 })
 
 default.register_fence("wood:fence_wood", {
@@ -255,7 +255,7 @@ default.register_fence("wood:fence_wood", {
 	wield_image = "wood_fence_wood_inv.png",
 	material = "wood:wood",
 	groups = {choppy = 2},
-	sounds = default.node_sound_wood_defaults()
+	sounds = default.node_sound_wood_defaults(),
 })
 
 default.register_fence("wood:fence_granite", {
@@ -294,7 +294,7 @@ default.register_fence_rail("wood:fence_rail_junglewood", {
 	material = "wood:junglewood",
 	drop = {},
 	groups = {choppy = 2},
-	sounds = default.node_sound_wood_defaults()
+	sounds = default.node_sound_wood_defaults(),
 })
 
 default.register_fence_rail("wood:fence_rail_oak", {
@@ -316,7 +316,7 @@ default.register_fence_rail("wood:fence_rail_pine", {
 	material = "wood:pine_wood",
 	drop = {},
 	groups = {choppy = 3},
-	sounds = default.node_sound_wood_defaults()
+	sounds = default.node_sound_wood_defaults(),
 })
 
 default.register_fence_rail("wood:fence_rail_willow", {
@@ -327,7 +327,7 @@ default.register_fence_rail("wood:fence_rail_willow", {
 	material = "wood:willow_wood",
 	groups = {choppy = 2},
 	drop = {},
-	sounds = default.node_sound_wood_defaults()
+	sounds = default.node_sound_wood_defaults(),
 })
 
 default.register_fence_rail("wood:fence_rail_wood", {
@@ -338,7 +338,7 @@ default.register_fence_rail("wood:fence_rail_wood", {
 	material = "wood:wood",
 	groups = {choppy = 2},
 	drop = {},
-	sounds = default.node_sound_wood_defaults()
+	sounds = default.node_sound_wood_defaults(),
 })
 
 
