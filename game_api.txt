@@ -733,7 +733,7 @@ Sounds inside the default table can be used within the sounds field of node defi
  * `default.node_sound_stone_defaults()`
  * `default.node_sound_dirt_defaults()`
  * `default.node_sound_sand_defaults()`
- * `default.node_sound_wood_defaults()`
+ * `wood.node_sound_wood_defaults()`
  * `default.node_sound_leaves_defaults()`
  * `default.node_sound_glass_defaults()`
  * `default.node_sound_metal_defaults()`

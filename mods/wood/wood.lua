@@ -11,7 +11,7 @@ minetest.register_node("wood:birch_planking", {
 	place_param2 = 0,
 	tiles = {"wood_birch_planking.png"},
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	groups = {choppy = 3, wood = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -22,7 +22,7 @@ minetest.register_node("wood:birch_planks", {
 	place_param2 = 0,
 	tiles = {"wood_birch_planks.png"},
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	groups = {choppy = 3, wood = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -38,7 +38,7 @@ minetest.register_node("wood:junglewood_planking", {
 	place_param2 = 0,
 	tiles = {"wood_junglewood_planking.png"},
 	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	groups = {choppy = 2, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -48,7 +48,7 @@ minetest.register_node("wood:junglewood_planks", {
 	place_param2 = 0,
 	tiles = {"wood_junglewood_planks.png"},
 	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	groups = {choppy = 2, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -63,7 +63,7 @@ minetest.register_node("wood:oak_planking", {
 	place_param2 = 0,
 	tiles = {"wood_oak_planking.png"},
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	groups = {choppy = 3, wood = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -74,7 +74,7 @@ minetest.register_node("wood:oak_planks", {
 	place_param2 = 0,
 	tiles = {"wood_oak_planks.png"},
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	groups = {choppy = 3, wood = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -90,7 +90,7 @@ minetest.register_node("wood:pine_planking", {
 	place_param2 = 0,
 	tiles = {"wood_pine_planking.png"},
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	groups = {choppy = 3, wood = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -101,7 +101,7 @@ minetest.register_node("wood:pine_planks", {
 	place_param2 = 0,
 	tiles = {"wood_pine_planks.png"},
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	groups = {choppy = 3, wood = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -115,7 +115,7 @@ minetest.register_node("wood:willow_planking", {
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"wood_willow_planking.png",},
-	groups = {choppy = 1, flammable = 1, oddly_breakable_by_hand=1, wood=1},
+	groups = {choppy = 1, wood=1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults()
 })
@@ -125,7 +125,7 @@ minetest.register_node("wood:willow_planks", {
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"wood_willow_planks.png",},
-	groups = {choppy = 1, flammable = 1, oddly_breakable_by_hand=1, wood=1},
+	groups = {choppy = 1, wood=1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults()
 })
@@ -141,7 +141,7 @@ minetest.register_node("wood:wood_planking", {
 	place_param2 = 0,
 	tiles = {"wood_wood_planking.png"},
 	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	groups = {choppy = 2, wood = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -152,7 +152,7 @@ minetest.register_node("wood:wood_planks", {
 	place_param2 = 0,
 	tiles = {"wood_wood_planks.png"},
 	is_ground_content = false,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
+	groups = {choppy = 2, wood = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -180,7 +180,7 @@ minetest.register_node("wood:ladder_wood", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {choppy = 2, oddly_breakable_by_hand = 3, flammable = 2},
+	groups = {choppy = 2},
 	drop = {},
 	legacy_wallmounted = true,
 	sounds = default.node_sound_wood_defaults(),
@@ -198,7 +198,7 @@ default.register_fence("wood:fence_birch", {
 	inventory_image = "wood_fence_birch_inv.png",
 	wield_image = "wood_fence_birch_inv.png",
 	material = "wood:birch_wood",
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults()
 })
 
@@ -209,7 +209,7 @@ default.register_fence("wood:fence_junglewood", {
 	inventory_image = "wood_fence_junglewood_inv.png",
 	wield_image = "wood_fence_junglewood_inv.png",
 	material = "wood:junglewood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults(),
 	drop = {}
 })
@@ -221,7 +221,7 @@ default.register_fence("wood:fence_oak", {
 	inventory_image = "wood_fence_oak_inv.png",
 	wield_image = "wood_fence_oak_inv.png",
 	material = "wood:oak_wood",
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults()
 })
 
@@ -232,7 +232,7 @@ default.register_fence("wood:fence_pine", {
 	inventory_image = "wood_fence_pine_inv.png",
 	wield_image = "wood_fence_pine_inv.png",
 	material = "wood:pine_wood",
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults()
 })
 
@@ -243,7 +243,7 @@ default.register_fence("wood:fence_willow", {
 	inventory_image = "wood_fence_willow_inv.png",
 	wield_image = "wood_fence_willow_inv.png",
 	material = "wood:willow_planks",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults()
 })
 
@@ -254,7 +254,7 @@ default.register_fence("wood:fence_wood", {
 	inventory_image = "wood_fence_wood_inv.png",
 	wield_image = "wood_fence_wood_inv.png",
 	material = "wood:wood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults()
 })
 
@@ -282,7 +282,7 @@ default.register_fence_rail("wood:fence_rail_birch", {
 	wield_image = "wood_fence_rail_birch_inv.png",
 	material = "wood:birch_wood",
 	drop = {},
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -293,7 +293,7 @@ default.register_fence_rail("wood:fence_rail_junglewood", {
 	wield_image = "wood_fence_rail_junglewood_inv.png",
 	material = "wood:junglewood",
 	drop = {},
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults()
 })
 
@@ -304,7 +304,7 @@ default.register_fence_rail("wood:fence_rail_oak", {
 	wield_image = "wood_fence_rail_oak_inv.png",
 	material = "wood:oak_wood",
 	drop = {},
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -315,7 +315,7 @@ default.register_fence_rail("wood:fence_rail_pine", {
 	wield_image = "wood_fence_rail_pine_inv.png",
 	material = "wood:pine_wood",
 	drop = {},
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults()
 })
 
@@ -325,7 +325,7 @@ default.register_fence_rail("wood:fence_rail_willow", {
 	inventory_image = "wood_fence_rail_willow_inv.png",
 	wield_image = "wood_fence_rail_willow_inv.png",
 	material = "wood:willow_wood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	groups = {choppy = 2},
 	drop = {},
 	sounds = default.node_sound_wood_defaults()
 })
@@ -336,7 +336,7 @@ default.register_fence_rail("wood:fence_rail_wood", {
 	inventory_image = "wood_fence_rail_wood_inv.png",
 	wield_image = "wood_fence_rail_wood_inv.png",
 	material = "wood:wood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	groups = {choppy = 2},
 	drop = {},
 	sounds = default.node_sound_wood_defaults()
 })
@@ -401,7 +401,7 @@ minetest.register_node("wood:bookshelf", {
 		"wood_wood_planks.png", "wood_bookshelf.png", "wood_bookshelf.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 
 	on_construct = function(pos)
@@ -569,20 +569,3 @@ minetest.register_node("wood:chest",{
 	end,
 	on_blast = function() end,
 })
-
---[[minetest.register_craft({
-	output = "wood_chest",
-	recipe = {
-		{"wood:wood_planks", "default:steel_ingot","default:wood"},
-		{"default:wood", "default:steel_ingot","default:wood"}
-	}
-})]]--
-
--- Hopper compatibility
---[[if minetest.get_modpath("hopper") and hopper ~= nil and hopper.add_container ~= nil then
-	hopper:add_container({
-		{"top", "castle_storage:ironbound_chest", "main"},
-		{"side", "castle_storage:ironbound_chest", "main"},
-		{"bottom", "castle_storage:ironbound_chest", "main"},
-	})
-end]]--

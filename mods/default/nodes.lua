@@ -250,7 +250,7 @@ minetest.register_node("default:dirt_path", {
 			},
 		},
 	tiles = {"default_dirt.png"},
-	groups = {cracky = 3, soil = 1},
+	groups = {crumbly = 3, soil = 1},
 	drop = {},
 	sounds = default.node_sound_dirt_defaults(),
 })
@@ -259,7 +259,7 @@ minetest.register_node("default:dirt_path", {
 minetest.register_node("default:path_dirt", {
 	description = "Path Dirt",
 	tiles = {"default_dirt.png"},
-	groups = {cracky = 3, soil = 1},
+	groups = {crumbly = 3, soil = 1},
 	drop = {},
 	sounds = default.node_sound_dirt_defaults(),
 })
@@ -267,7 +267,7 @@ minetest.register_node("default:path_dirt", {
 minetest.register_node("default:dirt", {
 	description = "Dirt",
 	tiles = {"default_dirt.png"},
-	groups = {cracky = 3, soil = 1},
+	groups = {crumbly = 3, soil = 1},
 	drop = {},
 	sounds = default.node_sound_dirt_defaults(),
 })
@@ -446,7 +446,7 @@ minetest.register_node("default:tree", {
 	tiles = {"default_tree_top.png", "default_tree_top.png", "default_tree.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	groups = {choppy = 2, tree = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 
@@ -467,8 +467,7 @@ minetest.register_node("default:sapling", {
 		type = "fixed",
 		fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16}
 	},
-	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
-		attached_node = 1, sapling = 1},
+	groups = {snappy = 2, dig_immediate = 3, attached_node = 1, sapling = 1},
 	sounds = default.node_sound_leaves_defaults(),
 
 	on_construct = function(pos)
@@ -562,7 +561,7 @@ minetest.register_node("default:apple_mark", {
 minetest.register_node("default:willow_tree", {
 	description = "Willow Tree",
 	tiles = {"default_willow_tree.png",},
-	groups = {choppy = 2, tree = 1, flammable = 1, oddly_breakable_by_hand=1},
+	groups = {choppy = 2, tree = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 	paramtype2 = "facedir",
@@ -576,7 +575,7 @@ minetest.register_node("default:willow_log", {
 		"default_willow_log.png",
 		"default_willow_tree.png",
 	},
-	groups = {choppy = 2, tree = 1, flammable = 1, oddly_breakable_by_hand=1},
+	groups = {choppy = 2, tree = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 	paramtype2 = "facedir",
@@ -614,8 +613,7 @@ minetest.register_node("default:willow_sapling", {
 		type = "fixed",
 		fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16}
 	},
-	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
-		attached_node = 1, sapling = 1},
+	groups = {snappy = 2, dig_immediate = 3, attached_node = 1, sapling = 1},
 	sounds = default.node_sound_leaves_defaults(),
 
 	on_construct = function(pos)
@@ -722,8 +720,7 @@ minetest.register_node("default:emergent_jungle_sapling", {
 		type = "fixed",
 		fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16}
 	},
-	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
-		attached_node = 1, sapling = 1},
+	groups = {snappy = 2, dig_immediate = 3, attached_node = 1, sapling = 1},
 	sounds = default.node_sound_leaves_defaults(),
 
 	on_construct = function(pos)
@@ -749,7 +746,7 @@ minetest.register_node("default:pine_tree", {
 	tiles = {"default_pine_tree.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
+	groups = {choppy = 3, tree = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 
@@ -762,7 +759,7 @@ minetest.register_node("default:pine_log", {
 		"default_pine_tree.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
+	groups = {choppy = 3, tree = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 
@@ -797,8 +794,7 @@ minetest.register_node("default:pine_sapling", {
 		type = "fixed",
 		fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16}
 	},
-	groups = {snappy = 2, dig_immediate = 3, flammable = 3,
-		attached_node = 1, sapling = 1},
+	groups = {snappy = 2, dig_immediate = 3, attached_node = 1, sapling = 1},
 	sounds = default.node_sound_leaves_defaults(),
 
 	on_construct = function(pos)
@@ -825,7 +821,7 @@ minetest.register_node("default:birch_tree", {
 	tiles = {"default_birch_tree.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
+	groups = {choppy = 3, tree = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 
@@ -838,7 +834,7 @@ minetest.register_node("default:birch_log", {
 		"default_birch_tree.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
+	groups = {choppy = 3, tree = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 
@@ -873,8 +869,7 @@ minetest.register_node("default:birch_sapling", {
 		type = "fixed",
 		fixed = {-3 / 16, -0.5, -3 / 16, 3 / 16, 0.5, 3 / 16}
 	},
-	groups = {snappy = 2, dig_immediate = 3, flammable = 3,
-		attached_node = 1, sapling = 1},
+	groups = {snappy = 2, dig_immediate = 3, attached_node = 1, sapling = 1},
 	sounds = default.node_sound_leaves_defaults(),
 
 	on_construct = function(pos)
@@ -1197,7 +1192,7 @@ minetest.register_node("default:bush_stem", {
 	wield_image = "default_bush_stem.png",
 	paramtype = "light",
 	sunlight_propagates = true,
-	groups = {choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	groups = {choppy = 2},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = {
@@ -1233,8 +1228,7 @@ minetest.register_node("default:bush_sapling", {
 		type = "fixed",
 		fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 2 / 16, 4 / 16}
 	},
-	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
-		attached_node = 1, sapling = 1},
+	groups = {snappy = 2, dig_immediate = 3, attached_node = 1, sapling = 1},
 	sounds = default.node_sound_leaves_defaults(),
 
 	on_construct = function(pos)
@@ -1264,7 +1258,7 @@ minetest.register_node("default:pine_bush_stem", {
 	wield_image = "default_pine_bush_stem.png",
 	paramtype = "light",
 	sunlight_propagates = true,
-	groups = {choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	groups = {choppy = 2},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = {
@@ -1300,8 +1294,7 @@ minetest.register_node("default:pine_bush_sapling", {
 		type = "fixed",
 		fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 2 / 16, 4 / 16}
 	},
-	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
-		attached_node = 1, sapling = 1},
+	groups = {snappy = 2, dig_immediate = 3, attached_node = 1, sapling = 1},
 	sounds = default.node_sound_leaves_defaults(),
 
 	on_construct = function(pos)
@@ -2076,7 +2069,7 @@ local function register_sign(material, desc, def)
 end
 
 register_sign("wood", "Wooden", {
-	groups = {choppy = 2, attached_node = 1, flammable = 2, oddly_breakable_by_hand = 3},
+	groups = {choppy = 2, attached_node = 1},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 })

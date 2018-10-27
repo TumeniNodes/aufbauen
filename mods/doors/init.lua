@@ -436,7 +436,7 @@ doors.register("door_birch", {
 		tiles = {{ name = "doors_door_birch.png", backface_culling = true }},
 		description = "Birch Door",
 		inventory_image = "doors_item_birch.png",
-		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+		groups = {choppy = 2},
 		sound_open = "doors_door_open",
 		sound_close = "doors_door_close",
 })
@@ -445,7 +445,7 @@ doors.register("door_junglewood", {
 		tiles = {{ name = "doors_door_junglewood.png", backface_culling = true }},
 		description = "Junglewood Door",
 		inventory_image = "doors_item_junglewood.png",
-		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+		groups = {choppy = 2},
 		sound_open = "doors_door_open",
 		sound_close = "doors_door_close",
 })
@@ -454,7 +454,7 @@ doors.register("door_oak", {
 		tiles = {{ name = "doors_door_oak.png", backface_culling = true }},
 		description = "Oak Door",
 		inventory_image = "doors_item_oak.png",
-		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+		groups = {choppy = 2},
 		sound_open = "doors_door_open",
 		sound_close = "doors_door_close",
 })
@@ -463,7 +463,7 @@ doors.register("door_pine", {
 		tiles = {{ name = "doors_door_pine.png", backface_culling = true }},
 		description = "Pine Door",
 		inventory_image = "doors_item_pine.png",
-		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+		groups = {choppy = 2},
 		sound_open = "doors_door_open",
 		sound_close = "doors_door_close",
 })
@@ -472,7 +472,7 @@ doors.register("door_willow", {
 		tiles = {{ name = "doors_door_willow.png", backface_culling = true }},
 		description = "Willow Door",
 		inventory_image = "doors_item_willow.png",
-		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+		groups = {choppy = 2},
 		sound_open = "doors_door_open",
 		sound_close = "doors_door_close",
 })
@@ -481,7 +481,7 @@ doors.register("door_wood", {
 		tiles = {{ name = "doors_door_wood.png", backface_culling = true }},
 		description = "Wooden Door",
 		inventory_image = "doors_item_wood.png",
-		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+		groups = {choppy = 2},
 		sound_open = "doors_door_open",
 		sound_close = "doors_door_close",
 })
@@ -702,7 +702,7 @@ doors.register_trapdoor("doors:trapdoor", {
 	wield_image = "doors_trapdoor.png",
 	tile_front = "doors_trapdoor.png",
 	tile_side = "doors_trapdoor_side.png",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
+	groups = {choppy = 2, door = 1},
 })
 
 doors.register_trapdoor("doors:trapdoor_steel", {
