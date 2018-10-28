@@ -138,7 +138,7 @@ function xpanes.register_pane(name, def)
 			connect_back = {{-1/32, -1/2, 1/32, 1/32, 1/2, 1/2}},
 			connect_right = {{1/32, -1/2, -1/32, 1/2, 1/2, 1/32}},
 		},
-		connects_to = {"group:pane", "group:stone", "group:glass", "group:wood", "group:tree", "group:wall"},
+		connects_to = {"group:pane", "group:stone", "group:glass", "group:wood","group:wall"},
 	})
 end
 
@@ -177,6 +177,16 @@ xpanes.register_pane("bar", {
 	textures = {"xpanes_bar.png","xpanes_bar.png","xpanes_bar_top.png"},
 	inventory_image = "xpanes_bar.png",
 	wield_image = "xpanes_bar.png",
+	groups = {cracky=2},
+	sounds = default.node_sound_metal_defaults(),
+	}
+)
+
+xpanes.register_pane("iron_bar", {
+	description = "Iron Bars",
+	textures = {"xpanes_iron_bar.png","xpanes_iron_bar_top.png","xpanes_iron_bar_top.png"},
+	inventory_image = "xpanes_iron_bar.png",
+	wield_image = "xpanes_iron_bar.png",
 	groups = {cracky=2},
 	sounds = default.node_sound_metal_defaults(),
 	}

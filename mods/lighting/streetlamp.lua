@@ -2,10 +2,10 @@
 
 	lighting
 	================
-    streetlamp.lua: a modified & rebranded copy of tublib_addons2
+	streetlamp.lua: a modified & rebranded copy of tublib_addons2
 	Copyright (C) 2017-2018 Joachim Stolberg
 
-    one the forum: https://forum.minetest.net/viewtopic.php?f=9&t=18773
+	one the forum: https://forum.minetest.net/viewtopic.php?f=9&t=18773
 
     on github: https://github.com/joe7575/techpack
 
@@ -13,14 +13,14 @@
 	See LICENSE.txt for more information
 ]]--
 
---   textures modified from tublib_addons2, Copyright (C) 2017-2018 Joachim Stolberg
+--	textures modified from tublib_addons2, Copyright (C) 2017-2018 Joachim Stolberg
    --===============================================================================--
 
 -- Manual Streetlamps
 
 minetest.register_node("lighting:streetlamp_off", {
 	description = "Street Lamp Off",
-    use_texture_alpha = true,
+	use_texture_alpha = true,
 	tiles = {'lighting_streetlamp_top.png',
 		'lighting_streetlamp_top.png',
 		'lighting_streetlamp_off.png',
@@ -50,7 +50,7 @@ minetest.register_node("lighting:streetlamp_off", {
 
 minetest.register_node("lighting:streetlamp_on", {
 	description = "Street Lamp ",
-    use_texture_alpha = true,
+	use_texture_alpha = true,
 	tiles = {'lighting_streetlamp_top.png',
 		'lighting_streetlamp_top.png',
 		'lighting_streetlamp_on.png',
@@ -78,37 +78,37 @@ minetest.register_node("lighting:streetlamp_on", {
 	end,
 })
 
---[[    minetest.register_abm({
-        	nodenames = {"lighting:streetlamp_off", "lighting:streetlamp_on"},
-        	interval = 10,
-        	chance = 1,
---            catch_up = false,
-        	action = function(pos, node)
-        		local tod = minetest.get_timeofday()
-        		if tod >= 0.2 and tod <= 0.8 then
-        			if node.name == "lighting:streetlamp_on" then
-        				minetest.swap_node(pos, {name = "lighting:streetlamp_off"})
-        			end
-        		else
-        			if node.name == "lighting:streetlamp_off" then
-        				minetest.swap_node(pos, {name = "lighting:streetlamp_on"})
-        			else
-        				minetest.add_particle({
-        					pos = {x=pos.x, y=pos.y-0.1, z=pos.z},
-        					velocity = {x=0, y=0, z=0},
-        					acceleration = {x=0, y=0, z=0},
-        					expirationtime = 11,
-        					size = 20,
-        					collisiondetection = false,
-        					collisionremoval = false,
-        					vertical = true,
-        					texture = "lighting_streetlamp_glow.png",
-        					glow = 7
-        				})
-        			end
-        		end
-        	end
-        })]]--
+--[[	minetest.register_abm({
+		nodenames = {"lighting:streetlamp_off", "lighting:streetlamp_on"},
+		interval = 10,
+		chance = 1,
+		catch_up = false,
+		action = function(pos, node)
+			local tod = minetest.get_timeofday()
+			if tod >= 0.2 and tod <= 0.8 then
+				if node.name == "lighting:streetlamp_on" then
+					minetest.swap_node(pos, {name = "lighting:streetlamp_off"})
+				end
+			else
+				if node.name == "lighting:streetlamp_off" then
+					minetest.swap_node(pos, {name = "lighting:streetlamp_on"})
+			else
+				minetest.add_particle({
+						pos = {x=pos.x, y=pos.y-0.1, z=pos.z},
+						velocity = {x=0, y=0, z=0},
+						acceleration = {x=0, y=0, z=0},
+						expirationtime = 11,
+						size = 20,
+						collisiondetection = false,
+						collisionremoval = false,
+						vertical = true,
+						texture = "lighting_streetlamp_glow.png",
+						glow = 7
+					})
+				end
+			end
+		end
+	})]]--
 
 
 
@@ -116,7 +116,7 @@ minetest.register_node("lighting:streetlamp_on", {
 
 minetest.register_node("lighting:tod_streetlamp_off", {
 	description = "TOD Street Lamp Off",
-    use_texture_alpha = true,
+	use_texture_alpha = true,
 	tiles = {
 		-- up, down, right, left, back, front
 		'lighting_streetlamp_top.png',
@@ -139,7 +139,7 @@ minetest.register_node("lighting:tod_streetlamp_off", {
 	selection_box = {
 		type = "fixed",
 		fixed = {-3/16, -1/2, -3/16, 3/16, 1/8, 3/16},
-    },
+	},
 })
 
 minetest.register_node("lighting:tod_streetlamp_on", {
@@ -147,7 +147,15 @@ minetest.register_node("lighting:tod_streetlamp_on", {
     use_texture_alpha = true,
 	tiles = {'lighting_streetlamp_top.png',
 		'lighting_streetlamp_top.png',
-		'lighting_streetlamp_on.png',
+		{
+			image = 'lighting_streetlamp_on.png',
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 4.0
+			},
+		}
 	},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -168,35 +176,36 @@ minetest.register_node("lighting:tod_streetlamp_on", {
 	},
 })
 
-    minetest.register_abm({
-        	nodenames = {"lighting:tod_streetlamp_off", "lighting:tod_streetlamp_on"},
-        	interval = 10,
-        	chance = 1,
---            catch_up = false,
-        	action = function(pos, node)
-        		local tod = minetest.get_timeofday()
-        		if tod >= 0.2 and tod <= 0.8 then
-        			if node.name == "lighting:tod_streetlamp_on" then
-        				minetest.swap_node(pos, {name = "lighting:tod_streetlamp_off"})
-        			end
-        		else
-        			if node.name == "lighting:tod_streetlamp_off" then
-        				minetest.swap_node(pos, {name = "lighting:tod_streetlamp_on"})
-        			else
-        				minetest.add_particle({
-        					pos = {x=pos.x, y=pos.y-0.1, z=pos.z},
-        					velocity = {x=0, y=0, z=0},
-        					acceleration = {x=0, y=0, z=0},
-        					expirationtime = 11,
-        					size = 20,
-        					collisiondetection = false,
-        					collisionremoval = false,
-        					vertical = true,
-        					texture = "lighting_streetlamp_glow.png",
-        					glow = 7
-        				})
-        			end
-        		end
-        	end
-        })
+	minetest.register_abm({
+		nodenames = {"lighting:tod_streetlamp_off", "lighting:tod_streetlamp_on"},
+		interval = 10,
+		chance = 1,
+		catch_up = false,
+		action = function(pos, node)
+			local tod = minetest.get_timeofday()
+			if tod >= 0.2 and tod <= 0.8 then
+				if node.name == "lighting:tod_streetlamp_on" then
+					minetest.swap_node(pos, {name = "lighting:tod_streetlamp_off"})
+				end
+			else
+				if node.name == "lighting:tod_streetlamp_off" then
+					minetest.swap_node(pos, {name = "lighting:tod_streetlamp_on"})
+				else
+					minetest.add_particle({
+						pos = {x=pos.x, y=pos.y-0.1, z=pos.z},
+						velocity = {x=0, y=0, z=0},
+						acceleration = {x=0, y=0, z=0},
+						expirationtime = 11,
+						size = 20,
+						collisiondetection = false,
+						collisionremoval = false,
+						vertical = true,
+						texture = "lighting_streetlamp_glow.png",
+						animation =
+						glow = 7
+					})
+				end
+			end
+		end
+	})
 

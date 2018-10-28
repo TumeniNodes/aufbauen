@@ -17,6 +17,7 @@ minetest.register_node("lighting:oil_lamp", {
 	description = "Oil Lamp",
 	drawtype = "mesh",
 	mesh = "torch_floor.obj",
+--	visual_scale = 0.8,
 	inventory_image = "lighting_oil_lamp_on_floor.png",
 	wield_image = "lighting_oil_lamp_on_floor.png",
 	tiles = {{
