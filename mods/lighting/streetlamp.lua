@@ -5,7 +5,7 @@
 	streetlamp.lua: a modified & rebranded copy of tublib_addons2
 	Copyright (C) 2017-2018 Joachim Stolberg
 
-	one the forum: https://forum.minetest.net/viewtopic.php?f=9&t=18773
+	on the forum: https://forum.minetest.net/viewtopic.php?f=9&t=18773
 
     on github: https://github.com/joe7575/techpack
 
@@ -201,7 +201,7 @@ minetest.register_node("lighting:tod_streetlamp_on", {
 						collisionremoval = false,
 						vertical = true,
 						texture = "lighting_streetlamp_glow.png",
-						animation =
+--						animation = ,
 						glow = 7
 					})
 				end
