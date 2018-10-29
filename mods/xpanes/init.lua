@@ -113,7 +113,7 @@ function xpanes.register_pane(name, def)
 			type = "fixed",
 			fixed = {{-1/2, -1/2, -1/32, 1/2, 1/2, 1/32}},
 		},
-		connect_sides = { "left", "right" },
+		connect_sides = {"bottom", "left", "right" },
 	})
 
 	local groups = table.copy(def.groups)
@@ -133,6 +133,7 @@ function xpanes.register_pane(name, def)
 		node_box = {
 			type = "connected",
 			fixed = {{-1/32, -1/2, -1/32, 1/32, 1/2, 1/32}},
+			connect_bottom = {{-1/32, -1/2, -1/32, 1/32, 1/2, 1/32}},
 			connect_front = {{-1/32, -1/2, -1/2, 1/32, 1/2, -1/32}},
 			connect_left = {{-1/2, -1/2, -1/32, -1/32, 1/2, 1/32}},
 			connect_back = {{-1/32, -1/2, 1/32, 1/32, 1/2, 1/2}},
