@@ -1,1 +1,5 @@
+dofile(minetest.get_modpath("wood") .. "/bookshelf.lua")
+dofile(minetest.get_modpath("wood") .. "/chests.lua")
+dofile(minetest.get_modpath("wood") .. "/fence.lua")
+dofile(minetest.get_modpath("wood") .. "/vessels.lua")
 dofile(minetest.get_modpath("wood") .. "/wood.lua")

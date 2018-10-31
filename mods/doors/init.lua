@@ -731,7 +731,7 @@ doors.register_trapdoor("doors:trapdoor_iron", {
 	groups = {cracky = 1, level = 2, door = 1},
 })
 
-
+--[[
 ----fence gate----
 
 function doors.register_fence_gate(name, def)
@@ -848,3 +848,4 @@ doors.register_fence_gate("doors:gate_granite", {
 	material = "wood:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
+]]--
