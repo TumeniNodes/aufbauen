@@ -1,3 +1,5 @@
+trees = {}
+
 local random = math.random
 
 --
@@ -561,3 +563,4 @@ function default.sapling_on_place(itemstack, placer, pointed_thing,
 
 	return itemstack
 end
+
