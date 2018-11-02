@@ -20,6 +20,9 @@ c_doors.door = {
 	{"wood", "Wood", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_wood.png",backface_culling = true}, "wood:wood"},
 
 --Metal Doors
+
+	{"copper", "Copper", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_copper.png",backface_culling = true}, "metal:copper_block"},
+
 	{"iron", "Iron", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_iron.png",backface_culling = true}, "metal:iron_block"},
 
 	{"steel", "Steel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_steel.png",backface_culling = true}, "metal:iron_block"},
@@ -178,33 +181,6 @@ minetest.register_node("c_doors:" ..name.. "_Rdoor_open", {
 		minetest.sound_play(door_sound.."_close", {gain = 0.15, max_hear_distance = 2})
 	end,
 })
-
---
--- Crafting
---
-minetest.register_craft({
-	output = "c_doors:" ..name.. "_Ldoor",
-	recipe = {
-		{"", craft_material , ""},
-		{"", craft_material, ""},
-		{"", craft_material , ""},
-	}
-})
-
-minetest.register_craft({
-	output = "c_doors:" ..name.. "_Rdoor",
-	recipe = {
-		{"c_doors:" ..name.. "_Ldoor"},
-	}
-})
-
-minetest.register_craft({
-	output = "c_doors:" ..name.. "_Ldoor",
-	recipe = {
-		{"c_doors:" ..name.. "_Rdoor"},
-	}
-})
-
 end
 
 -- Register Window Nodes
@@ -398,24 +374,4 @@ minetest.register_node("c_doors:dbl_" ..name.. "_win_lg_open", {
 		minetest.sound_play("c_doors_glass_close", {gain = 0.30, max_hear_distance = 2})
 	end,
 })
---
--- Crafting
---
-minetest.register_craft({
-	output = "c_doors:dbl_" ..name.. "_win_lg",
-	recipe = {
-		{"c_doors:dbl_" ..name.. "_win_sml"},
-		{"c_doors:dbl_" ..name.. "_win_sml"},
-	}
-})
-
-minetest.register_craft({
-	output = "c_doors:dbl_" ..name.. "_win_sml 4",
-	recipe = {
-		{ craft_material , "default:glass", craft_material},
-		{"default:glass", "", "default:glass"},
-		{ craft_material , "default:glass", craft_material},
-	}
-})
-
 end
