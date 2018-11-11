@@ -11,7 +11,6 @@ function fence.register_fence(name, def)
 	-- Allow almost everything to be overridden
 	local default_fields = {
 		paramtype = "light",
-		paramtype2 = "facedir",
 		drawtype = "nodebox",
 		node_box = {
 			type = "connected",
@@ -144,7 +143,6 @@ function fence.register_fence_rail(name, def)
 	-- Allow almost everything to be overridden
 	local default_fields = {
 		paramtype = "light",
-		paramtype2 = "facedir",
 		drawtype = "nodebox",
 		node_box = {
 			type = "connected",
