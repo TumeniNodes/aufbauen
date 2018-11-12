@@ -166,6 +166,7 @@ xpanes.register_pane("obsidian_pane", {
 xpanes.register_pane("rusted_pane", {
 	description = "Rusted Glass Pane",
 	textures = {"xpanes_rusted.png","xpanes_pane_half.png","xpanes_edge_rusted.png"},
+	use_texture_alpha = true,
 	inventory_image = "xpanes_rusted.png",
 	wield_image = "xpanes_rusted.png",
 	sounds = default.node_sound_metal_defaults(),

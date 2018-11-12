@@ -274,6 +274,7 @@ function metal.register_slab(modname, subname, desc, tiles, groups, sounds)
 		description = desc .. " Slab",
 		drawtype = "nodebox",
 		tiles = tiles,
+		use_texture_alpha = true,
 		paramtype = "light",
 		paramtype2 = "facedir",
 		is_ground_content = false,
@@ -343,6 +344,14 @@ metal.register_slab(
 {"metal_rusted.png", "metal_rusted.png",
 "metal_rusted_split.png", "metal_rusted_split.png",
 "metal_rusted_split.png", "metal_rusted_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_slab(
+"metal",
+"rusted_glass",
+"Rusted Glass",
+{"metal_rusted_glass.png", "metal_rusted_glass.png", "metal_rusted_glass_split.png"},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 
