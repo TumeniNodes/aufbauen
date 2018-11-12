@@ -21,7 +21,7 @@ c_doors.door = {
 
 --Metal Doors
 
-	{"copper", "Copper", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_copper.png",backface_culling = true}, "metal:copper_block"},
+	{"rusted", "Rusted", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_rusted.png",backface_culling = true}, "metal:rusted_block"},
 
 	{"iron", "Iron", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_iron.png",backface_culling = true}, "metal:iron_block"},
 

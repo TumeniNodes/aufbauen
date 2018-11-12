@@ -48,17 +48,17 @@ default.node_sound_metal_defaults())
 
 metal.register_basic_block(
 "metal",
-"copper",
-"Copper",
-{"metal_copper.png"},
+"iron",
+"Iron",
+{"metal_iron.png"},
 {cracky = 3, oddly_breakable_by_hand = 3},
 default.node_sound_metal_defaults())
 
 metal.register_basic_block(
 "metal",
-"iron",
-"Iron",
-{"metal_iron.png"},
+"rusted",
+"Rusted",
+{"metal_rusted.png"},
 {cracky = 3, oddly_breakable_by_hand = 3},
 default.node_sound_metal_defaults())
 
@@ -143,17 +143,17 @@ default.node_sound_metal_defaults())
 
 metal.register_block(
 "metal",
-"copper",
-"Copper",
-{"metal_copper.png"},
+"iron",
+"Iron",
+{"metal_iron.png"},
 {cracky = 3, oddly_breakable_by_hand = 3},
 default.node_sound_metal_defaults())
 
 metal.register_block(
 "metal",
-"iron",
-"Iron",
-{"metal_iron.png"},
+"rusted",
+"Rusted",
+{"metal_rusted.png"},
 {cracky = 3, oddly_breakable_by_hand = 3},
 default.node_sound_metal_defaults())
 
@@ -237,21 +237,21 @@ default.node_sound_metal_defaults())
 
 metal.register_stair(
 "metal",
-"copper",
-"Copper",
-{"metal_copper_split.png", "metal_copper.png",
-"metal_copper_side.png^[transformFX", "metal_copper_side.png",
-"metal_copper.png", "metal_copper_split.png"},
-{cracky = 1, level = 2},
-default.node_sound_metal_defaults())
-
-metal.register_stair(
-"metal",
 "iron",
 "Iron",
 {"metal_iron_split.png", "metal_iron.png",
 "metal_iron_side.png^[transformFX", "metal_iron_side.png",
 "metal_iron.png", "metal_iron_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_stair(
+"metal",
+"rusted",
+"Rusted",
+{"metal_rusted_split.png", "metal_rusted.png",
+"metal_rusted_side.png^[transformFX", "metal_rusted_side.png",
+"metal_rusted.png", "metal_rusted_split.png"},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 
@@ -328,21 +328,21 @@ default.node_sound_metal_defaults())
 
 metal.register_slab(
 "metal",
-"copper",
-"Copper",
-{"metal_copper.png", "metal_copper.png",
-"metal_copper_split.png", "metal_copper_split.png",
-"metal_copper_split.png", "metal_copper_split.png"},
-{cracky = 1, level = 2},
-default.node_sound_metal_defaults())
-
-metal.register_slab(
-"metal",
 "iron",
 "Iron",
 {"metal_iron.png", "metal_iron.png",
 "metal_iron_split.png", "metal_iron_split.png",
 "metal_iron_split.png", "metal_iron_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_slab(
+"metal",
+"rusted",
+"Rusted",
+{"metal_rusted.png", "metal_rusted.png",
+"metal_rusted_split.png", "metal_rusted_split.png",
+"metal_rusted_split.png", "metal_rusted_split.png"},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 
@@ -435,21 +435,21 @@ default.node_sound_metal_defaults())
 
 metal.register_stair_inner(
 "metal",
-"copper",
-"Copper",
-{"metal_copper_side.png^[transformR270", "metal_copper.png",
-"metal_copper_side.png^[transformFX", "metal_copper.png",
-"metal_copper.png", "metal_copper_side.png"},
-{cracky = 1, level = 2},
-default.node_sound_metal_defaults())
-
-metal.register_stair_inner(
-"metal",
 "iron",
 "Iron",
 {"metal_iron_side.png^[transformR270", "metal_iron.png",
 "metal_iron_side.png^[transformFX", "metal_iron.png",
 "metal_iron.png", "metal_iron_side.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_stair_inner(
+"metal",
+"rusted",
+"Rusted",
+{"metal_rusted_side.png^[transformR270", "metal_rusted.png",
+"metal_rusted_side.png^[transformFX", "metal_rusted.png",
+"metal_rusted.png", "metal_rusted_side.png"},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 
@@ -538,20 +538,21 @@ metal.register_stair_outer(
 default.node_sound_metal_defaults())
 
 metal.register_stair_outer(
-"metal",
-"copper",
-"Copper",
-{"metal_copper_side.png^[transformR90", "metal_copper.png",
-"metal_copper_outer.png", "metal_copper_side.png",
-"metal_copper_side.png^[transformR90", "metal_copper_outer.png"},
-{cracky = 1, level = 2},
-default.node_sound_metal_defaults())
-metal.register_stair_outer(
 "metal", "iron",
 "Iron",
 {"metal_iron_side.png^[transformR90", "metal_iron.png",
 "metal_iron_outer.png", "metal_iron_side.png",
 "metal_iron_side.png^[transformR90", "metal_iron_outer.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_stair_outer(
+"metal",
+"rusted",
+"Rusted",
+{"metal_rusted_side.png^[transformR90", "metal_rusted.png",
+"metal_rusted_outer.png", "metal_rusted_side.png",
+"metal_rusted_side.png^[transformR90", "metal_rusted_outer.png"},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 
@@ -618,17 +619,17 @@ default.node_sound_metal_defaults())
 
 metal.register_grid_block(
 "metal",
-"copper",
-"Copper",
-{"metal_copper.png"},
+"iron",
+"Iron",
+{"metal_iron.png"},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 
 metal.register_grid_block(
 "metal",
-"iron",
-"Iron",
-{"metal_iron.png"},
+"rusted",
+"Rusted",
+{"metal_rusted.png"},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 
@@ -700,21 +701,21 @@ default.node_sound_metal_defaults())
 
 metal.register_grid_stair(
 "metal",
-"copper",
-"Copper",
-{"metal_copper_split.png", "metal_copper.png",
-"metal_copper_side.png^[transformFX", "metal_copper_side.png",
-"metal_copper.png", "metal_copper_split.png"},
-{cracky = 1, level = 2},
-default.node_sound_metal_defaults())
-
-metal.register_grid_stair(
-"metal",
 "iron",
 "Iron",
 {"metal_iron_split.png", "metal_iron.png",
 "metal_iron_side.png^[transformFX", "metal_iron_side.png",
 "metal_iron.png", "metal_iron_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_stair(
+"metal",
+"rusted",
+"Rusted",
+{"metal_rusted_split.png", "metal_rusted.png",
+"metal_rusted_side.png^[transformFX", "metal_rusted_side.png",
+"metal_rusted.png", "metal_rusted_split.png"},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 
@@ -780,21 +781,21 @@ default.node_sound_metal_defaults())
 
 metal.register_grid_slab(
 "metal",
-"copper",
-"Copper",
-{"metal_copper.png", "metal_copper.png",
-"metal_copper_split.png", "metal_copper_split.png",
-"metal_copper_split.png", "metal_copper_split.png"},
-{cracky = 1, level = 2},
-default.node_sound_metal_defaults())
-
-metal.register_grid_slab(
-"metal",
 "iron",
 "Iron",
 {"metal_iron.png", "metal_iron.png",
 "metal_iron_split.png", "metal_iron_split.png",
 "metal_iron_split.png", "metal_iron_split.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_slab(
+"metal",
+"rusted",
+"Rusted",
+{"metal_rusted.png", "metal_rusted.png",
+"metal_rusted_split.png", "metal_rusted_split.png",
+"metal_rusted_split.png", "metal_rusted_split.png"},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 
@@ -874,21 +875,21 @@ default.node_sound_metal_defaults())
 
 metal.register_grid_stair_inner(
 "metal",
-"copper",
-"Copper",
-{"metal_copper_side.png^[transformR270", "metal_copper.png",
-"metal_copper_side.png^[transformFX", "metal_copper.png",
-"metal_copper.png", "metal_copper_side.png"},
-{cracky = 1, level = 2},
-default.node_sound_metal_defaults())
-
-metal.register_grid_stair_inner(
-"metal",
 "iron",
 "Iron",
 {"metal_iron_side.png^[transformR270", "metal_iron.png",
 "metal_iron_side.png^[transformFX", "metal_iron.png",
 "metal_iron.png", "metal_iron_side.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_stair_inner(
+"metal",
+"rusted",
+"Rusted",
+{"metal_rusted_side.png^[transformR270", "metal_rusted.png",
+"metal_rusted_side.png^[transformFX", "metal_rusted.png",
+"metal_rusted.png", "metal_rusted_side.png"},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 
@@ -966,21 +967,21 @@ default.node_sound_metal_defaults())
 
 metal.register_grid_stair_outer(
 "metal",
-"copper",
-"Copper",
-{"metal_copper_side.png^[transformR90", "metal_copper.png",
-"metal_copper_outer.png", "metal_copper_side.png",
-"metal_copper_side.png^[transformR90", "metal_copper_outer.png"},
-{cracky = 1, level = 2},
-default.node_sound_metal_defaults())
-
-metal.register_grid_stair_outer(
-"metal",
 "iron",
 "Iron ",
 {"metal_iron_side.png^[transformR90", "metal_iron.png",
 "metal_iron_outer.png", "metal_iron_side.png",
 "metal_iron_side.png^[transformR90", "metal_iron_outer.png"},
+{cracky = 1, level = 2},
+default.node_sound_metal_defaults())
+
+metal.register_grid_stair_outer(
+"metal",
+"rusted",
+"Rusted",
+{"metal_rusted_side.png^[transformR90", "metal_rusted.png",
+"metal_rusted_outer.png", "metal_rusted_side.png",
+"metal_rusted_side.png^[transformR90", "metal_rusted_outer.png"},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 
