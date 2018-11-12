@@ -1092,12 +1092,12 @@ minetest.register_node("metal:furnace_active", {
 })
 
 
-minetest.register_node("metal:ladder_steel", {
-	description = "Steel Ladder",
+minetest.register_node("metal:ladder_iron", {
+	description = "Iron Ladder",
 	drawtype = "signlike",
-	tiles = {"metal_ladder_steel.png"},
-	inventory_image = "metal_ladder_steel.png",
-	wield_image = "metal_ladder_steel.png",
+	tiles = {"metal_ladder_iron.png"},
+	inventory_image = "metal_ladder_iron.png",
+	wield_image = "metal_ladder_iron.png",
 	paramtype = "light",
 	paramtype2 = "wallmounted",
 	sunlight_propagates = true,
@@ -1115,12 +1115,35 @@ minetest.register_node("metal:ladder_steel", {
 	sounds = default.node_sound_metal_defaults(),
 })
 
-minetest.register_node("metal:ladder_iron", {
-	description = "Iron Ladder",
+minetest.register_node("metal:ladder_rusted", {
+	description = "Rusted Ladder",
 	drawtype = "signlike",
-	tiles = {"metal_ladder_iron.png"},
-	inventory_image = "metal_ladder_iron.png",
-	wield_image = "metal_ladder_iron.png",
+	tiles = {"metal_ladder_rusted.png"},
+	inventory_image = "metal_ladder_rusted.png",
+	wield_image = "metal_ladder_rusted.png",
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,
+	walkable = false,
+	climbable = true,
+	is_ground_content = false,
+	selection_box = {
+		type = "wallmounted",
+		--wall_top = = <default>
+		--wall_bottom = = <default>
+		--wall_side = = <default>
+	},
+	groups = {cracky = 2},
+	drop = {},
+	sounds = default.node_sound_metal_defaults(),
+})
+
+minetest.register_node("metal:ladder_steel", {
+	description = "Steel Ladder",
+	drawtype = "signlike",
+	tiles = {"metal_ladder_steel.png"},
+	inventory_image = "metal_ladder_steel.png",
+	wield_image = "metal_ladder_steel.png",
 	paramtype = "light",
 	paramtype2 = "wallmounted",
 	sunlight_propagates = true,

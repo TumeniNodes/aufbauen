@@ -784,12 +784,12 @@ stairs.register_stair_and_slab(
 )
 
 stairs.register_stair_and_slab(
-	"copper_block",
-	"metal:copper_block",
+	"rusted_block",
+	"metal:rusted_block",
 	{cracky = 1, level = 2},
-	{"metal_copper.png"},
-	"Copper Block Stair",
-	"Copper Block Slab",
+	{"metal_rusted.png"},
+	"Rusted Block Stair",
+	"Rusted Block Slab",
 	default.node_sound_metal_defaults()
 )
 
