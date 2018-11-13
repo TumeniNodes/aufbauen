@@ -351,7 +351,9 @@ metal.register_slab(
 "metal",
 "rusted_glass",
 "Rusted Glass",
-{"metal_rusted_glass.png", "metal_rusted_glass.png", "metal_rusted_glass_split.png"},
+{{name ="metal_rusted_glass.png",backface_culling = true},
+{name = "metal_rusted_glass.png",backface_culling = true},
+{name ="metal_rusted_glass_split.png",backface_culling = true}},
 {cracky = 1, level = 2},
 default.node_sound_metal_defaults())
 

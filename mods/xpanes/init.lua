@@ -163,12 +163,22 @@ xpanes.register_pane("obsidian_pane", {
 	}
 )
 
+xpanes.register_pane("rusted_bar", {
+	description = "Rusted Bars",
+	textures = {"xpanes_rusted_bar.png","xpanes_rusted_bar.png","xpanes_rusted_bar_top.png"},
+	inventory_image = "xpanes_rusted_bar.png",
+	wield_image = "xpanes_rusted_bar.png",
+	groups = {cracky=2},
+	sounds = default.node_sound_metal_defaults(),
+	}
+)
+
 xpanes.register_pane("rusted_pane", {
 	description = "Rusted Glass Pane",
-	textures = {"xpanes_rusted.png","xpanes_pane_half.png","xpanes_edge_rusted.png"},
+	textures = {{name = "xpanes_rusted.png",backface_culling = true}, "xpanes_edge_rusted.png", "xpanes_edge_rusted.png"},
 	use_texture_alpha = true,
-	inventory_image = "xpanes_rusted.png",
-	wield_image = "xpanes_rusted.png",
+	inventory_image = "xpanes_rusted_inv.png",
+	wield_image = "xpanes_rusted_inv.png",
 	sounds = default.node_sound_metal_defaults(),
 	groups = {snappy=2, cracky=3, oddly_breakable_by_hand=3},
 	}
