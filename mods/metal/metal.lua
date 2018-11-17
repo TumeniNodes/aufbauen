@@ -591,6 +591,7 @@ minetest.register_node("metal:" .. subname .. "_grid_block", {
 	tiles = tiles,
 	paramtype = "light",
 	is_ground_content = false,
+	climbable = true,
 	groups = groups,
 	sounds = sounds,
 	node_box = {
