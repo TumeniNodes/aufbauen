@@ -66,7 +66,7 @@ minetest.register_node("lighting:streetlamp_on", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	sunlight_propagates = true,
-	light_source = 6,
+	light_source = 7,
 	groups = {not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
@@ -168,7 +168,7 @@ minetest.register_node("lighting:tod_streetlamp_on", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	sunlight_propagates = true,
-	light_source = 6,
+	light_source = 7,
 	groups = {not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
@@ -265,7 +265,7 @@ minetest.register_node("lighting:tod_streetlamp_hanging_on", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	sunlight_propagates = true,
-	light_source = 6,
+	light_source = 7,
 	groups = {not_in_creative_inventory = 1},
 	node_box = {
 		type = "fixed",
