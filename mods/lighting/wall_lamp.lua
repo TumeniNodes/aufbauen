@@ -103,7 +103,7 @@ minetest.register_node("lighting:wall_lamp_on", {
 	end,
 })
 
---[[	minetest.register_abm({
+	minetest.register_abm({
 			nodenames = {"lighting:streetlamp_off", "lighting:streetlamp_on"},
 			interval = 10,
 			chance = 1,
@@ -119,21 +119,22 @@ minetest.register_node("lighting:wall_lamp_on", {
 						minetest.swap_node(pos, {name = "lighting:streetlamp_on"})
 					else
 						minetest.add_particle({
-							pos = {x=pos.x, y=pos.y-0.1, z=pos.z},
-							velocity = {x=0, y=0, z=0},
-							acceleration = {x=0, y=0, z=0},
-							expirationtime = 11,
-							size = 20,
-							collisiondetection = false,
-							collisionremoval = false,
-							vertical = true,
-							texture = "lighting_streetlamp_glow.png",
-							glow = 7
-						})
-					end
+						pos = {x=pos.x, y=pos.y-0.1, z=pos.z},
+						velocity = {x=0, y=0, z=0},
+						acceleration = {x=0, y=0, z=0},
+						expirationtime = 0,
+						size = 0, -- until I figure a better visual image
+						collisiondetection = false,
+						collisionremoval = false,
+						vertical = true,
+						texture = "lighting_streetlamp_glow.png",
+--						animation = ,
+						glow = 4
+					})
 				end
 			end
-})]]--
+		end
+	})
 
 
 
@@ -232,11 +233,11 @@ minetest.register_node("lighting:tod_wall_lamp_on", {
 	},
 })
 
---[[	minetest.register_abm({
+	minetest.register_abm({
 			nodenames = {"lighting:tod_wall_lamp_off", "lighting:tod_wall_lamp_on"},
 			interval = 10,
 			chance = 1,
-			catch_up = false,
+--			catch_up = false,
 			action = function(pos, node)
 				local tod = minetest.get_timeofday()
 				if tod >= 0.2 and tod <= 0.8 then
@@ -251,15 +252,15 @@ minetest.register_node("lighting:tod_wall_lamp_on", {
 							velocity = {x=0, y=0, z=0},
 							acceleration = {x=0, y=0, z=0},
 							expirationtime = 0,
-							size = 20,
+							size = 0, -- until I figure a better visual image
 							collisiondetection = false,
 							collisionremoval = false,
 							vertical = true,
 							texture = "lighting_streetlamp_glow.png",
-							glow = 6
+--							animation = ,
+							glow = 4
 						})
 					end
 				end
 			end
 		})
-]]--
