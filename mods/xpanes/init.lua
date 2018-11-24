@@ -155,7 +155,7 @@ end
 
 xpanes.register_pane("pane_birch", {
 	description = "Birch Glass Pane",
-	textures = {{name = "xpanes_birch.png",backface_culling = true},"xpanes_pane_half.png","xpanes_birch_top.png"},
+	textures = {{name = "xpanes_birch.png",backface_culling = true},"xpanes_pane_half.png","xpanes_birch_edge.png"},
 	use_texture_alpha = true,
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_birch.png", "xpanes_blank.png"),
 	wield_image = "xpanes_birch.png",
@@ -166,7 +166,7 @@ xpanes.register_pane("pane_birch", {
 
 xpanes.register_pane("pane_junglewood", {
 	description = "Junglewood Glass Pane",
-	textures = {{name = "xpanes_junglewood.png",backface_culling = true},"xpanes_pane_half.png","xpanes_junglewood_top.png"},
+	textures = {{name = "xpanes_junglewood.png",backface_culling = true},"xpanes_pane_half.png","xpanes_junglewood_edge.png"},
 	use_texture_alpha = true,
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_junglewood.png", "xpanes_blank.png"),
 	wield_image = "xpanes_junglewood.png",
@@ -177,7 +177,7 @@ xpanes.register_pane("pane_junglewood", {
 
 xpanes.register_pane("pane_oak", {
 	description = "Oak Glass Pane",
-	textures = {{name = "xpanes_oak.png",backface_culling = true},"xpanes_pane_half.png","xpanes_oak_top.png"},
+	textures = {{name = "xpanes_oak.png",backface_culling = true},"xpanes_pane_half.png","xpanes_oak_edge.png"},
 	use_texture_alpha = true,
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_oak.png", "xpanes_blank.png"),
 	wield_image = "xpanes_oak.png",
@@ -188,7 +188,7 @@ xpanes.register_pane("pane_oak", {
 
 xpanes.register_pane("pane_pine", {
 	description = "Pine Glass Pane",
-	textures = {{name = "xpanes_pine.png",backface_culling = true},"xpanes_pane_half.png","xpanes_pine_top.png"},
+	textures = {{name = "xpanes_pine.png",backface_culling = true},"xpanes_pane_half.png","xpanes_pine_edge.png"},
 	use_texture_alpha = true,
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_pine.png", "xpanes_blank.png"),
 	wield_image = "xpanes_pine.png",
@@ -199,7 +199,7 @@ xpanes.register_pane("pane_pine", {
 
 xpanes.register_pane("pane_willow", {
 	description = "Willow Glass Pane",
-	textures = {{name = "xpanes_willow.png",backface_culling = true},"xpanes_pane_half.png","xpanes_willow_top.png"},
+	textures = {{name = "xpanes_willow.png",backface_culling = true},"xpanes_pane_half.png","xpanes_willow_edge.png"},
 	use_texture_alpha = true,
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_willow.png", "xpanes_blank.png"),
 	wield_image = "xpanes_willow.png",
@@ -210,7 +210,7 @@ xpanes.register_pane("pane_willow", {
 
 xpanes.register_pane("pane_wood", {
 	description = "Wood Glass Pane",
-	textures = {{name = "xpanes_wood.png",backface_culling = true},"xpanes_pane_half.png","xpanes_wood_top.png"},
+	textures = {{name = "xpanes_wood.png",backface_culling = true},"xpanes_pane_half.png","xpanes_wood_edge.png"},
 	use_texture_alpha = true,
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_wood.png", "xpanes_blank.png"),
 	wield_image = "xpanes_wood.png",
@@ -219,19 +219,9 @@ xpanes.register_pane("pane_wood", {
 	}
 )
 
-xpanes.register_pane("rusted_railing", {
-	description = "Rusted Bars",
-	textures = {{name = "xpanes_rusted_railing.png",backface_culling = true},"xpanes_rusted_railing.png","xpanes_rusted_railing_top.png"},
-	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_rusted_railing.png", "xpanes_blank.png"),
-	wield_image = "xpanes_rusted_railing.png",
-	groups = {cracky=2},
-	sounds = default.node_sound_metal_defaults(),
-	}
-)
-
 xpanes.register_pane("pane_iron", {
 	description = "Iron Glass Pane",
-	textures = {"xpanes_iron.png", "xpanes_pane_half.png","xpanes_edge_iron.png"},
+	textures = {"xpanes_iron.png", "xpanes_pane_half.png","xpanes_iron_edge.png"},
 	use_texture_alpha = true,
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_iron.png", "xpanes_blank.png"),
 	wield_image = "xpanes_iron.png",
@@ -242,7 +232,7 @@ xpanes.register_pane("pane_iron", {
 
 xpanes.register_pane("pane_rusted", {
 	description = "Rusted Glass Pane",
-	textures = {"xpanes_rusted.png", "xpanes_pane_half.png","xpanes_edge_rusted.png"},
+	textures = {"xpanes_rusted.png", "xpanes_pane_half.png","xpanes_rusted_edge.png"},
 	use_texture_alpha = true,
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_rusted.png", "xpanes_blank.png"),
 	wield_image = "xpanes_rusted.png",
@@ -251,21 +241,42 @@ xpanes.register_pane("pane_rusted", {
 	}
 )
 
-xpanes.register_pane("bar", {
-	description = "Steel Bars",
-	textures = {"xpanes_bar.png","xpanes_bar.png","xpanes_bar_top.png"},
-	inventory_image = "xpanes_bar.png",
-	wield_image = "xpanes_bar.png",
-	groups = {cracky=2},
+xpanes.register_pane("pane_steel", {
+	description = "Steel Glass Pane",
+	textures = {"xpanes_steel.png", "xpanes_pane_half.png","xpanes_steel_edge.png"},
+	use_texture_alpha = true,
+	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_steel.png", "xpanes_blank.png"),
+	wield_image = "xpanes_steel.png",
 	sounds = default.node_sound_metal_defaults(),
+	groups = {snappy=2, cracky=3, oddly_breakable_by_hand=3},
 	}
 )
 
 xpanes.register_pane("iron_bar", {
 	description = "Iron Bars",
-	textures = {"xpanes_iron_bar.png","xpanes_iron_bar_top.png","xpanes_iron_bar_top.png"},
+	textures = {"xpanes_iron_bar.png","xpanes_iron_edge.png","xpanes_iron_edge.png"},
 	inventory_image = "xpanes_iron_bar.png",
 	wield_image = "xpanes_iron_bar.png",
+	groups = {cracky=2},
+	sounds = default.node_sound_metal_defaults(),
+	}
+)
+
+xpanes.register_pane("rusted_bar", {
+	description = "Rusted Bars",
+	textures = {{name = "xpanes_rusted_bar.png",backface_culling = true},"xpanes_rusted_edge.png","xpanes_rusted_edge.png"},
+	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_rusted_bar.png", "xpanes_blank.png"),
+	wield_image = "xpanes_rusted_bar.png",
+	groups = {cracky=2},
+	sounds = default.node_sound_metal_defaults(),
+	}
+)
+
+xpanes.register_pane("steel_bar", {
+	description = "Steel Bars",
+	textures = {"xpanes_steel_bar.png","xpanes_steel_edge.png","xpanes_steel_edge.png"},
+	inventory_image = "xpanes_steel_bar.png",
+	wield_image = "xpanes_steel_bar.png",
 	groups = {cracky=2},
 	sounds = default.node_sound_metal_defaults(),
 	}

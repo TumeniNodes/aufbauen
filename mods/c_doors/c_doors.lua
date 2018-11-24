@@ -63,6 +63,12 @@ c_doors.door = {
 
 	{"steel", "Steel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_steel.png",backface_culling = true}, "metal:iron_block"},
 
+	{"steel_bars", "Steel Bars", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_steel_bars.png",backface_culling = true}, "metal:iron_block"},
+
+	{"steelgate", "SteelGate", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_irongate", {name = "c_doors_steelgate.png",backface_culling = true}, "default:coalblock"},
+
+	{"steel_panel", "Steel Panel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_steel_panel.png",backface_culling = true}, "metal:iron_block"},
+
 --Glass Doors
 	{"glass", "Glass", {cracky = 3, door = 1}, default.node_sound_glass_defaults(), "c_doors_glass", {name = "c_doors_glass.png"}, "glass:glass"},
 
