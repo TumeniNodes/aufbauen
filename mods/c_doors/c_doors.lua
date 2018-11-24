@@ -47,13 +47,21 @@ c_doors.door = {
 
 	{"rusted", "Rusted", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_rusted.png",backface_culling = true}, "metal:rusted_block"},
 
+	{"rusted_bars", "Rusted Bars", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_rusted_bars.png",backface_culling = true}, "metal:rusted_block"},
+
+	{"rustedgate", "RustedGate", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_irongate", {name = "c_doors_rustedgate.png",backface_culling = true}, "default:coalblock"},
+
+	{"rusted_panel", "Rusted Panel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_rusted_panel.png",backface_culling = true}, "metal:rusted_block"},
+
 	{"iron", "Iron", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_iron.png",backface_culling = true}, "metal:iron_block"},
+
+	{"iron_bars", "Iron Bars", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_iron_bars.png",backface_culling = true}, "metal:iron_block"},
+
+	{"irongate", "IronGate", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_irongate", {name = "c_doors_irongate.png",backface_culling = true}, "default:coalblock"},
 
 	{"iron_panel", "Iron Panel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_iron_panel.png",backface_culling = true}, "metal:iron_block"},
 
 	{"steel", "Steel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_steel.png",backface_culling = true}, "metal:iron_block"},
-
-	{"irongate", "IronGate", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_irongate", {name = "c_doors_irongate.png",backface_culling = true}, "default:coalblock"},
 
 --Glass Doors
 	{"glass", "Glass", {cracky = 3, door = 1}, default.node_sound_glass_defaults(), "c_doors_glass", {name = "c_doors_glass.png"}, "glass:glass"},

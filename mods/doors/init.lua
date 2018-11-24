@@ -731,6 +731,19 @@ doors.register_trapdoor("doors:trapdoor_iron", {
 	groups = {cracky = 1, level = 2, door = 1},
 })
 
+doors.register_trapdoor("doors:trapdoor_rusted", {
+	description = "Rusted Trapdoor",
+	inventory_image = "doors_trapdoor_rusted.png",
+	wield_image = "doors_trapdoor_rusted.png",
+	tile_front = "doors_trapdoor_rusted.png",
+	tile_side = "doors_trapdoor_rusted_side.png",
+	protected = true,
+	sounds = default.node_sound_metal_defaults(),
+	sound_open = "doors_steel_door_open",
+	sound_close = "doors_steel_door_close",
+	groups = {cracky = 1, level = 2, door = 1},
+})
+
 --[[
 ----fence gate----
 

@@ -229,6 +229,17 @@ xpanes.register_pane("rusted_railing", {
 	}
 )
 
+xpanes.register_pane("pane_iron", {
+	description = "Iron Glass Pane",
+	textures = {"xpanes_iron.png", "xpanes_pane_half.png","xpanes_edge_iron.png"},
+	use_texture_alpha = true,
+	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_iron.png", "xpanes_blank.png"),
+	wield_image = "xpanes_iron.png",
+	sounds = default.node_sound_metal_defaults(),
+	groups = {snappy=2, cracky=3, oddly_breakable_by_hand=3},
+	}
+)
+
 xpanes.register_pane("pane_rusted", {
 	description = "Rusted Glass Pane",
 	textures = {"xpanes_rusted.png", "xpanes_pane_half.png","xpanes_edge_rusted.png"},
