@@ -162,6 +162,126 @@ minetest.register_node("wood:wood_planks", {
 -- Wood Ladder
 --
 
+minetest.register_node("wood:ladder_birch", {
+	description = "Birch Ladder",
+	drawtype = "signlike",
+	tiles = {"wood_ladder_birch.png"},
+	inventory_image = "wood_ladder_birch.png",
+	wield_image = "wood_ladder_birch.png",
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,
+	walkable = false,
+	climbable = true,
+	is_ground_content = false,
+	selection_box = {
+		type = "wallmounted",
+		--wall_top = = <default>
+		--wall_bottom = = <default>
+		--wall_side = = <default>
+	},
+	groups = {choppy = 2},
+	drop = {},
+	legacy_wallmounted = true,
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("wood:ladder_junglewood", {
+	description = "Junglewood Ladder",
+	drawtype = "signlike",
+	tiles = {"wood_ladder_junglewood.png"},
+	inventory_image = "wood_ladder_junglewood.png",
+	wield_image = "wood_ladder_junglewood.png",
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,
+	walkable = false,
+	climbable = true,
+	is_ground_content = false,
+	selection_box = {
+		type = "wallmounted",
+		--wall_top = = <default>
+		--wall_bottom = = <default>
+		--wall_side = = <default>
+	},
+	groups = {choppy = 2},
+	drop = {},
+	legacy_wallmounted = true,
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("wood:ladder_oak", {
+	description = "Oak Ladder",
+	drawtype = "signlike",
+	tiles = {"wood_ladder_oak.png"},
+	inventory_image = "wood_ladder_oak.png",
+	wield_image = "wood_ladder_oak.png",
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,
+	walkable = false,
+	climbable = true,
+	is_ground_content = false,
+	selection_box = {
+		type = "wallmounted",
+		--wall_top = = <default>
+		--wall_bottom = = <default>
+		--wall_side = = <default>
+	},
+	groups = {choppy = 2},
+	drop = {},
+	legacy_wallmounted = true,
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("wood:ladder_pine", {
+	description = "Pine Ladder",
+	drawtype = "signlike",
+	tiles = {"wood_ladder_pine.png"},
+	inventory_image = "wood_ladder_pine.png",
+	wield_image = "wood_ladder_pine.png",
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,
+	walkable = false,
+	climbable = true,
+	is_ground_content = false,
+	selection_box = {
+		type = "wallmounted",
+		--wall_top = = <default>
+		--wall_bottom = = <default>
+		--wall_side = = <default>
+	},
+	groups = {choppy = 2},
+	drop = {},
+	legacy_wallmounted = true,
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("wood:ladder_willow", {
+	description = "Willow Ladder",
+	drawtype = "signlike",
+	tiles = {"wood_ladder_willow.png"},
+	inventory_image = "wood_ladder_willow.png",
+	wield_image = "wood_ladder_willow.png",
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,
+	walkable = false,
+	climbable = true,
+	is_ground_content = false,
+	selection_box = {
+		type = "wallmounted",
+		--wall_top = = <default>
+		--wall_bottom = = <default>
+		--wall_side = = <default>
+	},
+	groups = {choppy = 2},
+	drop = {},
+	legacy_wallmounted = true,
+	sounds = default.node_sound_wood_defaults(),
+})
+
 minetest.register_node("wood:ladder_wood", {
 	description = "Wooden Ladder",
 	drawtype = "signlike",
