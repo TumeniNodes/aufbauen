@@ -11,25 +11,37 @@ c_doors.door = {
 
 	{"birch_glass", "Birch Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_birch_glass.png",backface_culling = true}, "wood:wood"},
 
+	{"birch_panel", "Birch Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_birch_panel.png",backface_culling = true}, "wood:wood"},
+
 	{"junglewood", "Junglewood", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_junglewood.png",backface_culling = true}, "wood:wood"},
 
 	{"junglewood_glass", "Junglewood Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_junglewood_glass.png",backface_culling = true}, "wood:wood"},
+
+	{"junglewood_panel", "Junglewood Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_junglewood_panel.png",backface_culling = true}, "wood:wood"},
 
 	{"oak", "Oak", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_oak.png",backface_culling = true}, "wood:wood"},
 
 	{"oak_glass", "Oak Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_oak_glass.png",backface_culling = true}, "wood:wood"},
 
+	{"oak_panel", "Oak Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_oak_panel.png",backface_culling = true}, "wood:wood"},
+
 	{"pine", "Pine", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_pine.png",backface_culling = true}, "wood:wood"},
 
 	{"pine_glass", "Pine Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_pine_glass.png",backface_culling = true}, "wood:wood"},
+
+	{"pine_panel", "Pine Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_pine_panel.png",backface_culling = true}, "wood:wood"},
 
 	{"willow", "Willow", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_willow.png",backface_culling = true}, "default:wood"},
 
 	{"willow_glass", "Willow Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_willow_glass.png",backface_culling = true}, "default:wood"},
 
+	{"willow_panel", "Willow Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_willow_panel.png",backface_culling = true}, "default:wood"},
+
 	{"wood", "Wood", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_wood.png",backface_culling = true}, "wood:wood"},
 
 	{"wood_glass", "Wood Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_wood_glass.png",backface_culling = true}, "wood:wood"},
+
+	{"wood_panel", "Wood Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_wood_panel.png",backface_culling = true}, "wood:wood"},
 
 --Metal Doors
 
