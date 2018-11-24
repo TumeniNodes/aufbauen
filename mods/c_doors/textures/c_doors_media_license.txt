@@ -5,22 +5,10 @@ Media License
 textures created using gimp
 https://www.gimp.org/
 
-* c_doors_dble_glass.png
-* c_doors_dble_glass_inv.png
-* c_doors_dble_glass_sides.png
-* c_doors_dble_obsidian_glass.png
-* c_doors_dble_obsidian_glass_inv.png
-* c_doors_dble_obsidian_glass_sides.png
-* c_doors_dble_steel.png
-* c_doors_dble_steel_inv.png
-* c_doors_dble_steel_sides.png
-* c_doors_dble_wood.png
-* c_doors_dble_wood_inv.png
-* c_doors_dble_wood_sides.png
-* c_doors_glass_detail.png
-
-Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+*All textures and models:
 Copyright (C) 2016-2018 TumeniNodes
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+(*)Unless otherwise noted
 
 You are free to:
 Share — copy and redistribute the material in any medium or format.
@@ -54,7 +42,7 @@ http://creativecommons.org/licenses/by-sa/4.0/
 ------------------------------
 
 ------------------------------
-*c_doors_door_iron.png is an adaption of *homedecor_door_wrought_iron.png by Vanessa Ezekowitz, which is part of the homedecor modpack https://forum.minetest.net/viewtopic.php?f=11&t=2041
+(*)c_doors_door_iron.png is an adaption of *homedecor_door_wrought_iron.png by Vanessa Ezekowitz, which is part of the homedecor modpack https://forum.minetest.net/viewtopic.php?f=11&t=2041
 
 WTFPL
 for more information about this license go to http://www.wtfpl.net/
