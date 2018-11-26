@@ -696,12 +696,57 @@ function doors.register_trapdoor(name, def)
 	_doors.registered_trapdoors[name_closed] = true
 end
 
-doors.register_trapdoor("doors:trapdoor", {
-	description = "Wooden Trapdoor",
-	inventory_image = "doors_trapdoor.png",
-	wield_image = "doors_trapdoor.png",
-	tile_front = "doors_trapdoor.png",
-	tile_side = "doors_trapdoor_side.png",
+doors.register_trapdoor("doors:trapdoor_birch", {
+	description = "Birch Trapdoor",
+	inventory_image = "doors_trapdoor_birch.png",
+	wield_image = "doors_trapdoor_birch.png",
+	tile_front = "doors_trapdoor_birch.png",
+	tile_side = "doors_trapdoor_birch.png",
+	groups = {choppy = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:trapdoor_junglewood", {
+	description = "Junglewood Trapdoor",
+	inventory_image = "doors_trapdoor_junglewood.png",
+	wield_image = "doors_trapdoor_junglewood.png",
+	tile_front = "doors_trapdoor_junglewood.png",
+	tile_side = "doors_trapdoor_junglewood.png",
+	groups = {choppy = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:trapdoor_oak", {
+	description = "Oak Trapdoor",
+	inventory_image = "doors_trapdoor_oak.png",
+	wield_image = "doors_trapdoor_oak.png",
+	tile_front = "doors_trapdoor_oak.png",
+	tile_side = "doors_trapdoor_oak.png",
+	groups = {choppy = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:trapdoor_pine", {
+	description = "Pine Trapdoor",
+	inventory_image = "doors_trapdoor_pine.png",
+	wield_image = "doors_trapdoor_pine.png",
+	tile_front = "doors_trapdoor_pine.png",
+	tile_side = "doors_trapdoor_pine.png",
+	groups = {choppy = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:trapdoor_willow", {
+	description = "Wiilow Trapdoor",
+	inventory_image = "doors_trapdoor_willow.png",
+	wield_image = "doors_trapdoor_willow.png",
+	tile_front = "doors_trapdoor_willow.png",
+	tile_side = "doors_trapdoor_willow.png",
+	groups = {choppy = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:trapdoor_wood", {
+	description = "Wood Trapdoor",
+	inventory_image = "doors_trapdoor_wood.png",
+	wield_image = "doors_trapdoor_wood.png",
+	tile_front = "doors_trapdoor_wood.png",
+	tile_side = "doors_trapdoor_wood.png",
 	groups = {choppy = 2, door = 1},
 })
 
