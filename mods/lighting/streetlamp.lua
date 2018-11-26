@@ -83,10 +83,10 @@ minetest.register_node("lighting:streetlamp_on", {
 	on_rightclick = function(pos, node, clicker)
 		node.name = "lighting:streetlamp_off"
 		minetest.swap_node(pos, node)
-	end,
+	end
 })
 
-	minetest.register_abm({
+--[[	minetest.register_abm({
 		nodenames = {"lighting:streetlamp_off", "lighting:streetlamp_on"},
 		interval = 10,
 		chance = 1,
@@ -117,7 +117,7 @@ minetest.register_node("lighting:streetlamp_on", {
 				end
 			end
 		end
-	})
+	})]]--
 
 
 -- Time of Day Streetlamps
