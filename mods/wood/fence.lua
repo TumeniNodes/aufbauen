@@ -345,49 +345,49 @@ end
 
 fence.register_fence_gate("wood:fence_gate_birch", {
 	description = "Birch Fence Gate",
-	texture = "wood_fence_gate_birch.png",
+	texture = "wood_fence_birch.png",
 	material = "default:birch_wood",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
 })
 
 fence.register_fence_gate("wood:fence_gate_junglewood", {
 	description = "Junglewood Fence Gate",
-	texture = "wood_fence_gate_junglewood.png",
+	texture = "wood_fence_junglewood.png",
 	material = "default:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
 fence.register_fence_gate("wood:fence_gate_oak", {
 	description = "Oak Fence Gate",
-	texture = "wood_fence_gate_oak.png",
+	texture = "wood_fence_oak.png",
 	material = "default:oak_wood",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
 })
 
 fence.register_fence_gate("wood:fence_gate_pine", {
 	description = "Pine Fence Gate",
-	texture = "wood_fence_gate_pine.png",
+	texture = "wood_fence_pine.png",
 	material = "default:pine_wood",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
 })
 
 fence.register_fence_gate("wood:fence_gate_willow", {
 	description = "Willow Fence Gate",
-	texture = "wood_fence_gate_willow.png",
+	texture = "wood_fence_willow.png",
 	material = "default:willow_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
 fence.register_fence_gate("wood:fence_gate_wood", {
 	description = "Wood Fence Gate",
-	texture = "wood_fence_gate_wood.png",
+	texture = "wood_fence_wood.png",
 	material = "default:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
 fence.register_fence_gate("wood:fence_gate_granite", {
 	description = "Granite Fence Gate",
-	texture = "wood_fence_gate_granite.png",
+	texture = "wood_fence_granite.png",
 	material = "wood:wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
