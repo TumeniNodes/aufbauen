@@ -1104,71 +1104,98 @@ minetest.register_node("metal:furnace_active", {
 })
 
 
-minetest.register_node("metal:ladder_iron", {
+--
+-- Metal Ladder
+--
+ladder = {}
+
+function ladder.register_ladder(name, def)
+
+	local default_fields = {
+	paramtype = "light",
+	paramtype2 = "facedir",
+	tiles = def.texture,
+	inventory_image = def.image,
+	wield_image = def.image,
+	sunlight_propagates = true,
+	is_ground_content = false,
+	legacy_wallmounted = true,
+	walkable = true,
+	climbable = true,
+	groups = {},
+	sounds = {},
+	drop = {},
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.375, -0.5, 0.4375, -0.25, 0.5, 0.5},
+			{0.25, -0.5, 0.4375, 0.375, 0.5, 0.5},
+			{-0.25, 0.3125, 0.4375, 0.25, 0.4375, 0.5},
+			{-0.25, 0.0625, 0.4375, 0.25, 0.1875, 0.5},
+			{-0.25, -0.1875, 0.4375, 0.25, -0.0625, 0.5},
+			{-0.25, -0.4375, 0.4375, 0.25, -0.3125, 0.5},
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.375, -0.5, 0.4375, 0.375, 0.5, 0.5},
+		},
+	},
+}
+for k, v in pairs(default_fields) do
+		if not def[k] then
+			def[k] = v
+		end
+	end
+
+	-- Always add to the ladder group, even if no group provided
+	def.groups.ladder = 1
+
+	def.texture = nil
+	def.material = nil
+
+	minetest.register_node(name, def)
+end
+
+
+ladder.register_ladder("metal:ladder_iron", {
 	description = "Iron Ladder",
-	drawtype = "signlike",
-	tiles = {"metal_ladder_iron.png"},
+	image = "metal_ladder_iron.png",
+	texture = {"metal_iron.png", "metal_iron.png",
+				"metal_iron.png", "metal_iron.png",
+				"metal_ladder_iron.png","metal_ladder_iron.png"},
 	inventory_image = "metal_ladder_iron.png",
 	wield_image = "metal_ladder_iron.png",
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	sunlight_propagates = true,
-	walkable = false,
-	climbable = true,
-	is_ground_content = false,
-	selection_box = {
-		type = "wallmounted",
-		--wall_top = = <default>
-		--wall_bottom = = <default>
-		--wall_side = = <default>
-	},
+	material = "metal:iron",
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_metal_defaults(),
 })
 
-minetest.register_node("metal:ladder_rusted", {
+ladder.register_ladder("metal:ladder_rusted", {
 	description = "Rusted Ladder",
-	drawtype = "signlike",
-	tiles = {"metal_ladder_rusted.png"},
+	image = "metal_ladder_rusted.png",
+	texture = {"metal_rusted.png", "metal_rusted.png",
+				"metal_rusted.png", "metal_rusted.png",
+				"metal_ladder_rusted.png","metal_ladder_rusted.png"},
 	inventory_image = "metal_ladder_rusted.png",
 	wield_image = "metal_ladder_rusted.png",
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	sunlight_propagates = true,
-	walkable = false,
-	climbable = true,
-	is_ground_content = false,
-	selection_box = {
-		type = "wallmounted",
-		--wall_top = = <default>
-		--wall_bottom = = <default>
-		--wall_side = = <default>
-	},
+	material = "metal:rusted",
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_metal_defaults(),
 })
 
-minetest.register_node("metal:ladder_steel", {
+ladder.register_ladder("metal:ladder_steel", {
 	description = "Steel Ladder",
-	drawtype = "signlike",
-	tiles = {"metal_ladder_steel.png"},
+	image = "metal_ladder_steel.png",
+	texture = {"metal_steel.png", "metal_steel.png",
+				"metal_steel.png", "metal_steel.png",
+				"metal_ladder_steel.png","metal_ladder_steel.png"},
 	inventory_image = "metal_ladder_steel.png",
 	wield_image = "metal_ladder_steel.png",
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	sunlight_propagates = true,
-	walkable = false,
-	climbable = true,
-	is_ground_content = false,
-	selection_box = {
-		type = "wallmounted",
-		--wall_top = = <default>
-		--wall_bottom = = <default>
-		--wall_side = = <default>
-	},
+	material = "metal:steel",
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_metal_defaults(),
 })
+

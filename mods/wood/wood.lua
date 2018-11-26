@@ -161,304 +161,134 @@ minetest.register_node("wood:wood_planks", {
 --
 -- Wood Ladder
 --
+ladder = {}
 
-minetest.register_node("wood:ladder_birch", {
+function ladder.register_ladder(name, def)
+
+	local default_fields = {
+	paramtype = "light",
+	paramtype2 = "facedir",
+	tiles = def.texture,
+	inventory_image = def.image,
+	wield_image = def.image,
+	sunlight_propagates = true,
+	is_ground_content = false,
+	legacy_wallmounted = true,
+	walkable = true,
+	climbable = true,
+	groups = {},
+	sounds = {},
+	drop = {},
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.375, -0.5, 0.4375, -0.25, 0.5, 0.5},
+			{0.25, -0.5, 0.4375, 0.375, 0.5, 0.5},
+			{-0.4375, 0.3125, 0.375, 0.4375, 0.4375, 0.4375},
+			{-0.4375, 0.0625, 0.375, 0.4375, 0.1875, 0.4375},
+			{-0.4375, -0.1875, 0.375, 0.4375, -0.0625, 0.4375},
+			{-0.4375, -0.4375, 0.375, 0.4375, -0.3125, 0.4375},
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.4375, -0.5, 0.375, 0.4375, 0.5, 0.4375},
+		},
+	},
+}
+for k, v in pairs(default_fields) do
+		if not def[k] then
+			def[k] = v
+		end
+	end
+
+	-- Always add to the ladder group, even if no group provided
+	def.groups.ladder = 1
+
+	def.texture = nil
+	def.material = nil
+
+	minetest.register_node(name, def)
+end
+
+
+ladder.register_ladder("wood:ladder_birch", {
 	description = "Birch Ladder",
-	drawtype = "signlike",
-	tiles = {"wood_ladder_birch.png"},
+	image = "wood_ladder_birch.png",
+	texture = {"wood_birch_planks.png", "wood_birch_planks.png",
+				"wood_birch_planks.png", "wood_birch_planks.png",
+				"wood_ladder_birch.png","wood_ladder_birch.png"},
 	inventory_image = "wood_ladder_birch.png",
 	wield_image = "wood_ladder_birch.png",
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	sunlight_propagates = true,
-	walkable = false,
-	climbable = true,
-	is_ground_content = false,
-	selection_box = {
-		type = "wallmounted",
-		--wall_top = = <default>
-		--wall_bottom = = <default>
-		--wall_side = = <default>
-	},
-	groups = {choppy = 2},
-	drop = {},
-	legacy_wallmounted = true,
+	material = "wood:birch",
+	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("wood:ladder_junglewood", {
+ladder.register_ladder("wood:ladder_junglewood", {
 	description = "Junglewood Ladder",
-	drawtype = "signlike",
-	tiles = {"wood_ladder_junglewood.png"},
+	image = "wood_ladder_junglewood.png",
+	texture = {"wood_junglewood_planks.png", "wood_junglewood_planks.png",
+				"wood_junglewood_planks.png", "wood_junglewood_planks.png",
+				"wood_ladder_junglewood.png","wood_ladder_junglewood.png"},
 	inventory_image = "wood_ladder_junglewood.png",
 	wield_image = "wood_ladder_junglewood.png",
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	sunlight_propagates = true,
-	walkable = false,
-	climbable = true,
-	is_ground_content = false,
-	selection_box = {
-		type = "wallmounted",
-		--wall_top = = <default>
-		--wall_bottom = = <default>
-		--wall_side = = <default>
-	},
-	groups = {choppy = 2},
-	drop = {},
-	legacy_wallmounted = true,
+	material = "wood:junglewood",
+	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("wood:ladder_oak", {
+ladder.register_ladder("wood:ladder_oak", {
 	description = "Oak Ladder",
-	drawtype = "signlike",
-	tiles = {"wood_ladder_oak.png"},
+	image = "wood_ladder_oak.png",
+	texture = {"wood_oak_planks.png", "wood_oak_planks.png",
+				"wood_oak_planks.png", "wood_oak_planks.png",
+				"wood_ladder_oak.png","wood_ladder_oak.png"},
 	inventory_image = "wood_ladder_oak.png",
 	wield_image = "wood_ladder_oak.png",
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	sunlight_propagates = true,
-	walkable = false,
-	climbable = true,
-	is_ground_content = false,
-	selection_box = {
-		type = "wallmounted",
-		--wall_top = = <default>
-		--wall_bottom = = <default>
-		--wall_side = = <default>
-	},
-	groups = {choppy = 2},
-	drop = {},
-	legacy_wallmounted = true,
+	material = "wood:oak",
+	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("wood:ladder_pine", {
+ladder.register_ladder("wood:ladder_pine", {
 	description = "Pine Ladder",
-	drawtype = "signlike",
-	tiles = {"wood_ladder_pine.png"},
+	image = "wood_ladder_pine.png",
+	texture = {"wood_pine_planks.png", "wood_pine_planks.png",
+				"wood_pine_planks.png", "wood_pine_planks.png",
+				"wood_ladder_pine.png","wood_ladder_pine.png"},
 	inventory_image = "wood_ladder_pine.png",
 	wield_image = "wood_ladder_pine.png",
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	sunlight_propagates = true,
-	walkable = false,
-	climbable = true,
-	is_ground_content = false,
-	selection_box = {
-		type = "wallmounted",
-		--wall_top = = <default>
-		--wall_bottom = = <default>
-		--wall_side = = <default>
-	},
-	groups = {choppy = 2},
-	drop = {},
-	legacy_wallmounted = true,
+	material = "wood:pine",
+	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("wood:ladder_willow", {
+ladder.register_ladder("wood:ladder_willow", {
 	description = "Willow Ladder",
-	drawtype = "signlike",
-	tiles = {"wood_ladder_willow.png"},
+	image = "wood_ladder_willow.png",
+	texture = {"wood_willow_planks.png", "wood_willow_planks.png",
+				"wood_willow_planks.png", "wood_willow_planks.png",
+				"wood_ladder_willow.png","wood_ladder_willow.png"},
 	inventory_image = "wood_ladder_willow.png",
 	wield_image = "wood_ladder_willow.png",
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	sunlight_propagates = true,
-	walkable = false,
-	climbable = true,
-	is_ground_content = false,
-	selection_box = {
-		type = "wallmounted",
-		--wall_top = = <default>
-		--wall_bottom = = <default>
-		--wall_side = = <default>
-	},
-	groups = {choppy = 2},
-	drop = {},
-	legacy_wallmounted = true,
+	material = "wood:willow",
+	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("wood:ladder_wood", {
-	description = "Wooden Ladder",
-	drawtype = "signlike",
-	tiles = {"wood_ladder_wood.png"},
+ladder.register_ladder("wood:ladder_wood", {
+	description = "Wood Ladder",
+	image = "wood_ladder_wood.png",
+	texture = {"wood_wood_planks.png", "wood_wood_planks.png",
+				"wood_wood_planks.png", "wood_wood_planks.png",
+				"wood_ladder_wood.png","wood_ladder_wood.png"},
 	inventory_image = "wood_ladder_wood.png",
 	wield_image = "wood_ladder_wood.png",
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	sunlight_propagates = true,
-	walkable = false,
-	climbable = true,
-	is_ground_content = false,
-	selection_box = {
-		type = "wallmounted",
-		--wall_top = = <default>
-		--wall_bottom = = <default>
-		--wall_side = = <default>
-	},
-	groups = {choppy = 2},
-	drop = {},
-	legacy_wallmounted = true,
-	sounds = default.node_sound_wood_defaults(),
-})
-
-
---
--- Fences
---
-
---[[
-default.register_fence("wood:fence_birch", {
-	description = "Birch Fence",
-	image = "wood_fence_birch.png",
-	texture = {"wood_fence_birch.png"},
-	inventory_image = "wood_fence_birch_inv.png",
-	wield_image = "wood_fence_birch_inv.png",
-	material = "wood:birch_wood",
-	groups = {choppy = 3},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-default.register_fence("wood:fence_junglewood", {
-	description = "Jungle Wood Fence",
-	image = "wood_fence_junglewood.png",
-	texture = {"wood_fence_junglewood.png"},
-	inventory_image = "wood_fence_junglewood_inv.png",
-	wield_image = "wood_fence_junglewood_inv.png",
-	material = "wood:junglewood",
-	groups = {choppy = 2},
-	sounds = default.node_sound_wood_defaults(),
-	drop = {}
-})
-
-default.register_fence("wood:fence_oak", {
-	description = "Oak Fence",
-	image = "wood_fence_oak.png",
-	texture = {"wood_fence_oak.png"},
-	inventory_image = "wood_fence_oak_inv.png",
-	wield_image = "wood_fence_oak_inv.png",
-	material = "wood:oak_wood",
-	groups = {choppy = 3},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-default.register_fence("wood:fence_pine", {
-	description = "Pine Fence",
-	image = "wood_fence_pine.png",
-	texture = {"wood_fence_pine.png"},
-	inventory_image = "wood_fence_pine_inv.png",
-	wield_image = "wood_fence_pine_inv.png",
-	material = "wood:pine_wood",
-	groups = {choppy = 3},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-default.register_fence("wood:fence_willow", {
-	description = "Willow Fence",
-	image = "wood_fence_willow.png",
-	texture = {"wood_fence_willow.png"},
-	inventory_image = "wood_fence_willow_inv.png",
-	wield_image = "wood_fence_willow_inv.png",
-	material = "wood:willow_planks",
-	groups = {choppy = 2},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-default.register_fence("wood:fence_wood", {
-	description = "Wood Fence",
-	image = "wood_fence_wood.png",
-	texture = {"wood_fence_wood.png"},
-	inventory_image = "wood_fence_wood_inv.png",
-	wield_image = "wood_fence_wood_inv.png",
 	material = "wood:wood",
-	groups = {choppy = 2},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-default.register_fence("wood:fence_granite", {
-	description = "Granite Fence Post",
-	image = "wood_fence_granite.png",
-	texture = {"wood_fence_granite_top.png", "wood_fence_granite_top.png", "wood_fence_granite.png"},
-	inventory_image = "wood_fence_granite_inv.png",
-	wield_image = "wood_fence_granite_inv.png",
-	material = "wood:granite",
-	drop = {},
-	groups = {cracky = 3, stone = 1},
-	sounds = default.node_sound_stone_defaults(),
-})
-
-
---
---Fence Rails
---
-
-default.register_fence_rail("wood:fence_rail_birch", {
-	description = "Birch Fence Rail",
-	texture = "wood_fence_rail_birch.png",
-	inventory_image = "wood_fence_rail_birch_inv.png",
-	wield_image = "wood_fence_rail_birch_inv.png",
-	material = "wood:birch_wood",
-	drop = {},
-	groups = {choppy = 2},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-default.register_fence_rail("wood:fence_rail_junglewood", {
-	description = "Jungle Wood Fence Rail",
-	texture = "wood_fence_rail_junglewood.png",
-	inventory_image = "wood_fence_rail_junglewood_inv.png",
-	wield_image = "wood_fence_rail_junglewood_inv.png",
-	material = "wood:junglewood",
-	drop = {},
-	groups = {choppy = 2},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-default.register_fence_rail("wood:fence_rail_oak", {
-	description = "Oak Fence Rail",
-	texture = "wood_fence_rail_oak.png",
-	inventory_image = "wood_fence_rail_oak_inv.png",
-	wield_image = "wood_fence_rail_oak_inv.png",
-	material = "wood:oak_wood",
-	drop = {},
-	groups = {choppy = 2},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-default.register_fence_rail("wood:fence_rail_pine", {
-	description = "Pine Fence Rail",
-	texture = "wood_fence_rail_pine.png",
-	inventory_image = "wood_fence_rail_pine_inv.png",
-	wield_image = "wood_fence_rail_pine_inv.png",
-	material = "wood:pine_wood",
-	drop = {},
 	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-default.register_fence_rail("wood:fence_rail_willow", {
-	description = "Willow Fence Rail",
-	texture = "wood_fence_rail_willow.png",
-	inventory_image = "wood_fence_rail_willow_inv.png",
-	wield_image = "wood_fence_rail_willow_inv.png",
-	material = "wood:willow_wood",
-	groups = {choppy = 2},
-	drop = {},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-default.register_fence_rail("wood:fence_rail_wood", {
-	description = "Wood Fence Rail",
-	texture = "wood_fence_rail_wood.png",
-	inventory_image = "wood_fence_rail_wood_inv.png",
-	wield_image = "wood_fence_rail_wood_inv.png",
-	material = "wood:wood",
-	groups = {choppy = 2},
-	drop = {},
-	sounds = default.node_sound_wood_defaults(),
-})
-]]--
