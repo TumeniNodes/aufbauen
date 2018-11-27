@@ -164,17 +164,6 @@ xpanes.register_pane("pane_birch", {
 	}
 )
 
-xpanes.register_pane("picket_birch", {
-	description = "Birch Picket",
-	textures = {"xpanes_birch_picket.png","xpanes_pane_half.png","xpanes_blank.png"},
-	use_texture_alpha = true,
-	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_birch_picket.png", "xpanes_blank.png"),
-	wield_image = "xpanes_birch_picket.png",
-	sounds = default.node_sound_wood_defaults(),
-	groups = {snappy=2, cracky=3},
-	}
-)
-
 xpanes.register_pane("pane_junglewood", {
 	description = "Junglewood Glass Pane",
 	textures = {{name = "xpanes_junglewood.png",backface_culling = true},"xpanes_pane_half.png","xpanes_junglewood_edge.png"},
@@ -182,17 +171,6 @@ xpanes.register_pane("pane_junglewood", {
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_junglewood.png", "xpanes_blank.png"),
 	wield_image = "xpanes_junglewood.png",
 	sounds = default.node_sound_glass_defaults(),
-	groups = {snappy=2, cracky=3},
-	}
-)
-
-xpanes.register_pane("picket_junglewood", {
-	description = "Junglewood Picket",
-	textures = {"xpanes_junglewood_picket.png","xpanes_pane_half.png","xpanes_blank.png"},
-	use_texture_alpha = true,
-	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_junglewood_picket.png", "xpanes_blank.png"),
-	wield_image = "xpanes_junglewood_picket.png",
-	sounds = default.node_sound_wood_defaults(),
 	groups = {snappy=2, cracky=3},
 	}
 )
@@ -208,17 +186,6 @@ xpanes.register_pane("pane_oak", {
 	}
 )
 
-xpanes.register_pane("picket_oak", {
-	description = "Oak Picket",
-	textures = {"xpanes_oak_picket.png","xpanes_pane_half.png","xpanes_blank.png"},
-	use_texture_alpha = true,
-	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_oak_picket.png", "xpanes_blank.png"),
-	wield_image = "xpanes_oak_picket.png",
-	sounds = default.node_sound_wood_defaults(),
-	groups = {snappy=2, cracky=3},
-	}
-)
-
 xpanes.register_pane("pane_pine", {
 	description = "Pine Glass Pane",
 	textures = {{name = "xpanes_pine.png",backface_culling = true},"xpanes_pane_half.png","xpanes_pine_edge.png"},
@@ -226,17 +193,6 @@ xpanes.register_pane("pane_pine", {
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_pine.png", "xpanes_blank.png"),
 	wield_image = "xpanes_pine.png",
 	sounds = default.node_sound_glass_defaults(),
-	groups = {snappy=2, cracky=3},
-	}
-)
-
-xpanes.register_pane("picket_pine", {
-	description = "Pine Picket",
-	textures = {"xpanes_pine_picket.png","xpanes_pane_half.png","xpanes_blank.png"},
-	use_texture_alpha = true,
-	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_pine_picket.png", "xpanes_blank.png"),
-	wield_image = "xpanes_pine_picket.png",
-	sounds = default.node_sound_wood_defaults(),
 	groups = {snappy=2, cracky=3},
 	}
 )
@@ -252,17 +208,6 @@ xpanes.register_pane("pane_willow", {
 	}
 )
 
-xpanes.register_pane("picket_willow", {
-	description = "Willow Picket",
-	textures = {"xpanes_willow_picket.png","xpanes_pane_half.png","xpanes_blank.png"},
-	use_texture_alpha = true,
-	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_willow_picket.png", "xpanes_blank.png"),
-	wield_image = "xpanes_willow_picket.png",
-	sounds = default.node_sound_wood_defaults(),
-	groups = {snappy=2, cracky=3},
-	}
-)
-
 xpanes.register_pane("pane_wood", {
 	description = "Wood Glass Pane",
 	textures = {{name = "xpanes_wood.png",backface_culling = true},"xpanes_pane_half.png","xpanes_wood_edge.png"},
@@ -270,17 +215,6 @@ xpanes.register_pane("pane_wood", {
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_wood.png", "xpanes_blank.png"),
 	wield_image = "xpanes_wood.png",
 	sounds = default.node_sound_glass_defaults(),
-	groups = {snappy=2, cracky=3},
-	}
-)
-
-xpanes.register_pane("picket_wood", {
-	description = "Wood Picket",
-	textures = {"xpanes_wood_picket.png","xpanes_pane_half.png","xpanes_blank.png"},
-	use_texture_alpha = true,
-	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_wood_picket.png", "xpanes_blank.png"),
-	wield_image = "xpanes_wood_picket.png",
-	sounds = default.node_sound_wood_defaults(),
 	groups = {snappy=2, cracky=3},
 	}
 )
@@ -296,17 +230,6 @@ xpanes.register_pane("pane_iron", {
 	}
 )
 
-xpanes.register_pane("picket_iron", {
-	description = "Iron Picket",
-	textures = {"xpanes_iron_picket.png","xpanes_pane_half.png","xpanes_blank.png"},
-	use_texture_alpha = true,
-	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_iron_picket.png", "xpanes_blank.png"),
-	wield_image = "xpanes_iron_picket.png",
-	sounds = default.node_sound_metal_defaults(),
-	groups = {snappy=2, cracky=3},
-	}
-)
-
 xpanes.register_pane("pane_rusted", {
 	description = "Rusted Glass Pane",
 	textures = {"xpanes_rusted.png", "xpanes_pane_half.png","xpanes_rusted_edge.png"},
@@ -318,17 +241,6 @@ xpanes.register_pane("pane_rusted", {
 	}
 )
 
-xpanes.register_pane("picket_rusted", {
-	description = "Rusted Picket",
-	textures = {"xpanes_rusted_picket.png","xpanes_pane_half.png","xpanes_blank.png"},
-	use_texture_alpha = true,
-	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_rusted_picket.png", "xpanes_blank.png"),
-	wield_image = "xpanes_rusted_picket.png",
-	sounds = default.node_sound_metal_defaults(),
-	groups = {snappy=2, cracky=3},
-	}
-)
-
 xpanes.register_pane("pane_steel", {
 	description = "Steel Glass Pane",
 	textures = {"xpanes_steel.png", "xpanes_pane_half.png","xpanes_steel_edge.png"},
@@ -337,17 +249,6 @@ xpanes.register_pane("pane_steel", {
 	wield_image = "xpanes_steel.png",
 	sounds = default.node_sound_metal_defaults(),
 	groups = {snappy=2, cracky=3, oddly_breakable_by_hand=3},
-	}
-)
-
-xpanes.register_pane("picket_steel", {
-	description = "Steel Picket",
-	textures = {"xpanes_steel_picket.png","xpanes_pane_half.png","xpanes_blank.png"},
-	use_texture_alpha = true,
-	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_steel_picket.png", "xpanes_blank.png"),
-	wield_image = "xpanes_steel_picket.png",
-	sounds = default.node_sound_metal_defaults(),
-	groups = {snappy=2, cracky=3},
 	}
 )
 

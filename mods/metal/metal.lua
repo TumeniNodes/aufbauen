@@ -1199,3 +1199,150 @@ ladder.register_ladder("metal:ladder_steel", {
 	sounds = default.node_sound_metal_defaults(),
 })
 
+
+--
+-- Metal Picket Fence
+--
+
+pickets = {}
+
+function pickets.register_picket(subname, recipeitem, groups, images, description, sounds)
+	groups.picket = 1
+minetest.register_node(":pickets:picket" .. subname, {
+	description = description,
+	tiles = images,
+	paramtype = "light",
+	paramtype2 = "facedir",
+	facedir = simple,
+	groups = groups,
+	sounds = sounds,
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.0625, -0.4375, 0.5, 0},
+			{0.4375, -0.5, -0.0625, 0.5, 0.5, 0},
+			{-0.3125, -0.5, -0.0625, -0.1875, 0.5, 0},
+			{-0.5, 0.1875, 0, 0.5, 0.3125, 0.0625},
+			{0.1875, -0.5, -0.0625, 0.3125, 0.5, 0},
+			{-0.5, -0.3125, 0, 0.5, -0.1875, 0.0625},
+			{-0.0625, -0.5, -0.0625, 0.0625, 0.5, 0},
+		}
+	},
+		selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.0625, 0.5, 0.5, 0},
+		}
+	},
+})
+end
+
+function pickets.register_picket_corner(subname, recipeitem, groups, images, description, sounds)
+	groups.picket = 1
+minetest.register_node(":pickets:picket_corner" .. subname, {
+	description = description,
+	tiles = images,
+	paramtype = "light",
+	paramtype2 = "facedir",
+	facedir = simple,
+	groups = groups,
+	sounds = sounds,
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.0625, -0.5, 0.4375, 0, 0.5, 0.5},
+			{0.4375, -0.5, -0.0625, 0.5, 0.5, 0},
+			{-0.0625, -0.5, 0.1875, 0, 0.5, 0.3125},
+			{0, 0.1875, 0, 0.5, 0.3125, 0.0625},
+			{0.1875, -0.5, -0.0625, 0.3125, 0.5, 0},
+			{0, -0.3125, 0, 0.5, -0.1875, 0.0625},
+			{-0.0625, -0.5, -0.0625, 0.0625, 0.5, 0.0625},
+			{0, 0.1875, 0.0625, 0.0625, 0.3125, 0.5},
+			{0, -0.3125, 0.0625, 0.0625, -0.1875, 0.5},
+		}
+	},
+		selection_box = {
+		type = "fixed",
+		fixed = {
+			{0, -0.5, -0.0625, 0.5, 0.5, 0},
+			{-0.0625, -0.5, -0.0625, 0, 0.5, 0.5},
+		}
+	},
+})
+end
+
+function pickets.register_picket_icorner(subname, recipeitem, groups, images, description, sounds)
+	groups.picket = 1
+minetest.register_node(":pickets:picket_icorner" .. subname, {
+	description = description,
+	tiles = images,
+	paramtype = "light",
+	paramtype2 = "facedir",
+	facedir = simple,
+	groups = groups,
+	sounds = sounds,
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{0, -0.5, -0.5, 0.0625, 0.5, -0.4375},
+			{0.4375, -0.5, -0.0625, 0.5, 0.5, 0},
+			{0, -0.5, -0.3125, 0.0625, 0.5, -0.1875},
+			{0.0625, 0.1875, 0, 0.5, 0.3125, 0.0625},
+			{0.1875, -0.5, -0.0625, 0.3125, 0.5, 0},
+			{0.0625, -0.3125, 0, 0.5, -0.1875, 0.0625},
+			{-0.0625, -0.5, -0.0625, 0.0625, 0.5, 0.0625},
+			{-0.0625, 0.1875, -0.5, 0, 0.3125, -0.0625},
+			{-0.0625, -0.3125, -0.5, 0, -0.1875, -0.0625},
+		}
+	},
+		selection_box = {
+		type = "fixed",
+		fixed = {
+			{0.0625, -0.5, -0.0625, 0.5, 0.5, 0},
+			{0, -0.5, -0.5, 0.0625, 0.5, 0},
+		}
+	},
+})
+end
+
+function pickets.register_picket_and_picket_corner_and_picket_icorner(subname, recipeitem, groups, images,desc_picket, desc_picket_corner, desc_picket_icorner,sounds)
+	pickets.register_picket(subname, recipeitem, groups, images, desc_picket, sounds)
+	pickets.register_picket_corner(subname, recipeitem, groups, images, desc_picket_corner, sounds)
+	pickets.register_picket_icorner(subname, recipeitem, groups, images, desc_picket_icorner, sounds)
+end
+
+
+-- Register pickets and picket corners
+
+pickets.register_picket_and_picket_corner_and_picket_icorner("_iron", "metal:iron",
+		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		{"metal_iron.png", "metal_iron.png",
+		"metal_iron_picket.png", "metal_iron_picket.png",
+		"metal_iron_picket.png", "metal_iron_picket.png"},
+		"Iron Picket",
+		"Iron Picket Corner",
+		"Iron Picket iCorner",
+		default.node_sound_metal_defaults())
+
+pickets.register_picket_and_picket_corner_and_picket_icorner("_rusted", "metal:rusted",
+		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		{"metal_rusted.png", "metal_rusted.png",
+		"metal_rusted_picket.png", "metal_rusted_picket.png",
+		"metal_rusted_picket.png", "metal_rusted_picket.png"},
+		"Rusted Picket",
+		"Rusted Picket Corner",
+		"Rusted Picket iCorner",
+		default.node_sound_metal_defaults())
+
+pickets.register_picket_and_picket_corner_and_picket_icorner("_steel", "metal:steel",
+		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		{"metal_steel.png", "metal_steel.png",
+		"metal_steel_picket.png", "metal_steel_picket.png",
+		"metal_steel_picket.png", "metal_steel_picket.png"},
+		"Steel Picket",
+		"Steel Picket Corner",
+		"Steel Picket iCorner",
+		default.node_sound_metal_defaults())
