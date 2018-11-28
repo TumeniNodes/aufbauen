@@ -432,64 +432,70 @@ function doors.register(name, def)
 	_doors.registered_doors[name .. "_b"] = true
 end
 
-doors.register("door_birch", {
-		tiles = {{ name = "doors_door_birch.png", backface_culling = true }},
+--
+-- Wood Doors
+--
+doors.register("birch_door", {
+		tiles = {{ name = "doors_birch_door.png", backface_culling = true }},
 		description = "Birch Door",
-		inventory_image = "doors_item_birch.png",
+		inventory_image = "doors_birch_item.png",
 		groups = {choppy = 2},
 		sound_open = "doors_door_open",
 		sound_close = "doors_door_close",
 })
 
-doors.register("door_junglewood", {
-		tiles = {{ name = "doors_door_junglewood.png", backface_culling = true }},
+doors.register("junglewood_door", {
+		tiles = {{ name = "doors_junglewood_door.png", backface_culling = true }},
 		description = "Junglewood Door",
-		inventory_image = "doors_item_junglewood.png",
+		inventory_image = "doors_junglewood_item.png",
 		groups = {choppy = 2},
 		sound_open = "doors_door_open",
 		sound_close = "doors_door_close",
 })
 
-doors.register("door_oak", {
-		tiles = {{ name = "doors_door_oak.png", backface_culling = true }},
+doors.register("maple_door", {
+		tiles = {{ name = "doors_maple_door.png", backface_culling = true }},
+		description = "Maple Door",
+		inventory_image = "doors_maple_item.png",
+		groups = {choppy = 2},
+		sound_open = "doors_door_open",
+		sound_close = "doors_door_close",
+})
+
+doors.register("oak_door", {
+		tiles = {{ name = "doors_oak_door.png", backface_culling = true }},
 		description = "Oak Door",
-		inventory_image = "doors_item_oak.png",
+		inventory_image = "doors_oak_item.png",
 		groups = {choppy = 2},
 		sound_open = "doors_door_open",
 		sound_close = "doors_door_close",
 })
 
-doors.register("door_pine", {
-		tiles = {{ name = "doors_door_pine.png", backface_culling = true }},
+doors.register("pine_door", {
+		tiles = {{ name = "doors_pine_door.png", backface_culling = true }},
 		description = "Pine Door",
-		inventory_image = "doors_item_pine.png",
+		inventory_image = "doors_pine_item.png",
 		groups = {choppy = 2},
 		sound_open = "doors_door_open",
 		sound_close = "doors_door_close",
 })
 
-doors.register("door_willow", {
-		tiles = {{ name = "doors_door_willow.png", backface_culling = true }},
+doors.register("willow_door", {
+		tiles = {{ name = "doors_willow_door.png", backface_culling = true }},
 		description = "Willow Door",
-		inventory_image = "doors_item_willow.png",
+		inventory_image = "doors_willow_item.png",
 		groups = {choppy = 2},
 		sound_open = "doors_door_open",
 		sound_close = "doors_door_close",
 })
 
-doors.register("door_wood", {
-		tiles = {{ name = "doors_door_wood.png", backface_culling = true }},
-		description = "Wooden Door",
-		inventory_image = "doors_item_wood.png",
-		groups = {choppy = 2},
-		sound_open = "doors_door_open",
-		sound_close = "doors_door_close",
-})
-
-doors.register("door_iron", {
-		tiles = {{name = "doors_door_iron.png", backface_culling = true}},
+--
+-- Metal Doors
+--
+doors.register("iron_door", {
+		tiles = {{name = "doors_iron_door.png", backface_culling = true}},
 		description = "Iron Door",
-		inventory_image = "doors_item_iron.png",
+		inventory_image = "doors_iron_item.png",
 		protected = true,
 		groups = {cracky = 1, level = 2},
 		sounds = default.node_sound_metal_defaults(),
@@ -497,10 +503,10 @@ doors.register("door_iron", {
 		sound_close = "doors_steel_door_close",
 })
 
-doors.register("door_rusted", {
-		tiles = {{name = "doors_door_rusted.png", backface_culling = true}},
+doors.register("rusted_door", {
+		tiles = {{name = "doors_rusted_door.png", backface_culling = true}},
 		description = "Rusted Door",
-		inventory_image = "doors_item_rusted.png",
+		inventory_image = "doors_rusted_item.png",
 		protected = true,
 		groups = {cracky = 1, level = 2},
 		sounds = default.node_sound_metal_defaults(),
@@ -508,10 +514,10 @@ doors.register("door_rusted", {
 		sound_close = "doors_steel_door_close",
 })
 
-doors.register("door_steel", {
-		tiles = {{name = "doors_door_steel.png", backface_culling = true}},
+doors.register("steel_door", {
+		tiles = {{name = "doors_steel_door.png", backface_culling = true}},
 		description = "Steel Door",
-		inventory_image = "doors_item_steel.png",
+		inventory_image = "doors_steel_item.png",
 		protected = true,
 		groups = {cracky = 1, level = 2},
 		sounds = default.node_sound_metal_defaults(),
@@ -519,22 +525,25 @@ doors.register("door_steel", {
 		sound_close = "doors_steel_door_close",
 })
 
-doors.register("door_glass", {
-		tiles = {"doors_door_glass.png"},
+--
+-- Glass Doors
+--
+doors.register("glass_door", {
+		tiles = {"doors_glass_door.png"},
 		use_texture_alpha = true,
 		description = "Glass Door",
-		inventory_image = "doors_item_glass.png",
+		inventory_image = "doors_glass_item.png",
 		groups = {cracky=3, oddly_breakable_by_hand=3},
 		sounds = default.node_sound_glass_defaults(),
 		sound_open = "doors_glass_door_open",
 		sound_close = "doors_glass_door_close",
 })
 
-doors.register("door_obsidian_glass", {
-		tiles = {"doors_door_obsidian_glass.png"},
+doors.register("obsidian_glass_door", {
+		tiles = {"doors_obsidian_glass_door.png"},
 		use_texture_alpha = true,
 		description = "Obsidian Glass Door",
-		inventory_image = "doors_item_obsidian_glass.png",
+		inventory_image = "doors_obsidian_glass_item.png",
 		groups = {cracky=3},
 		sounds = default.node_sound_glass_defaults(),
 		sound_open = "doors_glass_door_open",
@@ -552,9 +561,9 @@ function doors.register_door(name, def)
 	local modname = name:sub(1, i - 1)
 	if not def.tiles then
 		if def.protected then
-			def.tiles = {{name = "doors_door_steel.png", backface_culling = true}}
+			def.tiles = {{name = "doors_steel_door.png", backface_culling = true}}
 		else
-			def.tiles = {{name = "doors_door_wood.png", backface_culling = true}}
+			def.tiles = {{name = "doors_maple_door.png", backface_culling = true}}
 		end
 		minetest.log("warning", modname .. " registered door \"" .. name .. "\" " ..
 				"using deprecated API method \"doors.register_door()\" but " ..
@@ -707,66 +716,72 @@ function doors.register_trapdoor(name, def)
 	_doors.registered_trapdoors[name_closed] = true
 end
 
-doors.register_trapdoor("doors:trapdoor_birch", {
+--
+-- Wood Trapdoors
+--
+doors.register_trapdoor("doors:birch_trapdoor", {
 	description = "Birch Trapdoor",
-	inventory_image = "doors_trapdoor_birch.png",
-	wield_image = "doors_trapdoor_birch.png",
-	tile_front = "doors_trapdoor_birch.png",
-	tile_side = "doors_trapdoor_birch.png",
+	inventory_image = "doors_birch_trapdoor.png",
+	wield_image = "doors_birch_trapdoor.png",
+	tile_front = "doors_birch_trapdoor.png",
+	tile_side = "doors_birch_trapdoor.png",
 	groups = {choppy = 2, door = 1},
 })
 
-doors.register_trapdoor("doors:trapdoor_junglewood", {
+doors.register_trapdoor("doors:junglewood_trapdoor", {
 	description = "Junglewood Trapdoor",
-	inventory_image = "doors_trapdoor_junglewood.png",
-	wield_image = "doors_trapdoor_junglewood.png",
-	tile_front = "doors_trapdoor_junglewood.png",
-	tile_side = "doors_trapdoor_junglewood.png",
+	inventory_image = "doors_junglewood_trapdoor.png",
+	wield_image = "doors_junglewood_trapdoor.png",
+	tile_front = "doors_junglewood_trapdoor.png",
+	tile_side = "doors_junglewood_trapdoor.png",
 	groups = {choppy = 2, door = 1},
 })
 
-doors.register_trapdoor("doors:trapdoor_oak", {
+doors.register_trapdoor("doors:maple_trapdoor", {
+	description = "Maple Trapdoor",
+	inventory_image = "doors_maple_trapdoor.png",
+	wield_image = "doors_maple_trapdoor.png",
+	tile_front = "doors_maple_trapdoor.png",
+	tile_side = "doors_maple_trapdoor.png",
+	groups = {choppy = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:oak_trapdoor", {
 	description = "Oak Trapdoor",
-	inventory_image = "doors_trapdoor_oak.png",
-	wield_image = "doors_trapdoor_oak.png",
-	tile_front = "doors_trapdoor_oak.png",
-	tile_side = "doors_trapdoor_oak.png",
+	inventory_image = "doors_oak_trapdoor.png",
+	wield_image = "doors_oak_trapdoor.png",
+	tile_front = "doors_oak_trapdoor.png",
+	tile_side = "doors_oak_trapdoor.png",
 	groups = {choppy = 2, door = 1},
 })
 
-doors.register_trapdoor("doors:trapdoor_pine", {
+doors.register_trapdoor("doors:pine_trapdoor", {
 	description = "Pine Trapdoor",
-	inventory_image = "doors_trapdoor_pine.png",
-	wield_image = "doors_trapdoor_pine.png",
-	tile_front = "doors_trapdoor_pine.png",
-	tile_side = "doors_trapdoor_pine.png",
+	inventory_image = "doors_pine_trapdoor.png",
+	wield_image = "doors_pine_trapdoor.png",
+	tile_front = "doors_pine_trapdoor.png",
+	tile_side = "doors_pine_trapdoor.png",
 	groups = {choppy = 2, door = 1},
 })
 
-doors.register_trapdoor("doors:trapdoor_willow", {
+doors.register_trapdoor("doors:willow_trapdoor", {
 	description = "Wiilow Trapdoor",
-	inventory_image = "doors_trapdoor_willow.png",
-	wield_image = "doors_trapdoor_willow.png",
-	tile_front = "doors_trapdoor_willow.png",
-	tile_side = "doors_trapdoor_willow.png",
+	inventory_image = "doors_willow_trapdoor.png",
+	wield_image = "doors_willow_trapdoor.png",
+	tile_front = "doors_willow_trapdoor.png",
+	tile_side = "doors_willow_trapdoor.png",
 	groups = {choppy = 2, door = 1},
 })
 
-doors.register_trapdoor("doors:trapdoor_wood", {
-	description = "Wood Trapdoor",
-	inventory_image = "doors_trapdoor_wood.png",
-	wield_image = "doors_trapdoor_wood.png",
-	tile_front = "doors_trapdoor_wood.png",
-	tile_side = "doors_trapdoor_wood.png",
-	groups = {choppy = 2, door = 1},
-})
-
-doors.register_trapdoor("doors:trapdoor_iron", {
+--
+-- Metal Trapdoors
+--
+doors.register_trapdoor("doors:iron_trapdoor", {
 	description = "Iron Trapdoor",
-	inventory_image = "doors_trapdoor_iron.png",
-	wield_image = "doors_trapdoor_iron.png",
-	tile_front = "doors_trapdoor_iron.png",
-	tile_side = "doors_trapdoor_iron_side.png",
+	inventory_image = "doors_iron_trapdoor.png",
+	wield_image = "doors_iron_trapdoor.png",
+	tile_front = "doors_iron_trapdoor.png",
+	tile_side = "doors_iron_trapdoor_side.png",
 	protected = true,
 	sounds = default.node_sound_metal_defaults(),
 	sound_open = "doors_steel_door_open",
@@ -774,12 +789,12 @@ doors.register_trapdoor("doors:trapdoor_iron", {
 	groups = {cracky = 1, level = 2, door = 1},
 })
 
-doors.register_trapdoor("doors:trapdoor_rusted", {
+doors.register_trapdoor("doors:rusted_trapdoor", {
 	description = "Rusted Trapdoor",
-	inventory_image = "doors_trapdoor_rusted.png",
-	wield_image = "doors_trapdoor_rusted.png",
-	tile_front = "doors_trapdoor_rusted.png",
-	tile_side = "doors_trapdoor_rusted_side.png",
+	inventory_image = "doors_rusted_trapdoor.png",
+	wield_image = "doors_rusted_trapdoor.png",
+	tile_front = "doors_rusted_trapdoor.png",
+	tile_side = "doors_rusted_trapdoor_side.png",
 	protected = true,
 	sounds = default.node_sound_metal_defaults(),
 	sound_open = "doors_steel_door_open",
@@ -787,12 +802,12 @@ doors.register_trapdoor("doors:trapdoor_rusted", {
 	groups = {cracky = 1, level = 2, door = 1},
 })
 
-doors.register_trapdoor("doors:trapdoor_steel", {
+doors.register_trapdoor("doors:steel_trapdoor", {
 	description = "Steel Trapdoor",
-	inventory_image = "doors_trapdoor_steel.png",
-	wield_image = "doors_trapdoor_steel.png",
-	tile_front = "doors_trapdoor_steel.png",
-	tile_side = "doors_trapdoor_steel_side.png",
+	inventory_image = "doors_steel_trapdoor.png",
+	wield_image = "doors_steel_trapdoor.png",
+	tile_front = "doors_steel_trapdoor.png",
+	tile_side = "doors_steel_trapdoor_side.png",
 	protected = true,
 	sounds = default.node_sound_metal_defaults(),
 	sound_open = "doors_steel_door_open",

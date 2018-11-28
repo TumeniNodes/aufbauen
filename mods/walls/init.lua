@@ -17,7 +17,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 			connect_back = {{-3/16, -1/2,  1/4,  3/16, 3/8,  1/2}},
 			connect_right = {{ 1/4, -1/2, -3/16,  1/2, 3/8,  3/16}},
 		},
-		connects_to = { "group:wall", "group:stone", "group:fence", "group:pane" },
+		connects_to = { "group:wall", "group:stone", "group:wood", "group:fence", "group:pane" },
 		paramtype = "light",
 		paramtype2 = "facedir",
 		is_ground_content = false,
@@ -59,7 +59,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 			connect_back = {{-3/16, -1/2,  1/4,  3/16, 1/2,  1/2}},
 			connect_right = {{ 1/4, -1/2, -3/16,  1/2, 1/2,  3/16}},
 		},
-		connects_to = {"group:wall", "group:stone", "group:fence", "group:pane"},
+		connects_to = {"group:wall", "group:stone", "group:wood", "group:fence", "group:pane"},
 		paramtype = "light",
 		paramtype2 = "facedir",
 		is_ground_content = false,
@@ -90,7 +90,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 			connect_back = {{-3/16, -1/2,  3/16,  3/16, 3/8,  1/2}},
 			connect_right = {{ 3/16, -1/2, -3/16,  1/2, 3/8,  3/16}},
 		},
-		connects_to = {"group:wall", "group:stone", "group:fence", "group:pane"},
+		connects_to = {"group:wall", "group:stone", "group:wood", "group:fence", "group:pane"},
 		paramtype = "light",
 		paramtype2 = "facedir",
 		is_ground_content = false,
@@ -132,7 +132,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 			connect_back = {{-3/16, -1/2,  3/16,  3/16, 1/2,  1/2}},
 			connect_right = {{ 3/16, -1/2, -3/16,  1/2, 1/2,  3/16}},
 		},
-		connects_to = {"group:wall", "group:stone", "group:fence", "group:pane"},
+		connects_to = {"group:wall", "group:stone", "group:wood", "group:fence", "group:pane"},
 		paramtype = "light",
 		paramtype2 = "facedir",
 		is_ground_content = false,
@@ -161,7 +161,10 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 	})
 end
 
+
+--
 --stone walls
+--
 walls.register("walls:cobblestone", "Cobblestone Wall", "stone_cobblestone.png",
 		"stone:cobblestone", default.node_sound_stone_defaults())
 
@@ -204,24 +207,29 @@ walls.register("walls:sandstone_brick", "Sandstone Brick Wall", "stone_sandstone
 walls.register("walls:stone_wood", "Stone Wood Wall", {"stone_stone_wood_top.png","stone_stone_wood.png", "stone_stone_wood.png"},
 		"stone:stone_wood", default.node_sound_stone_defaults())
 
---wood walls
-walls.register("walls:birch", "Birch Wall", "wood_birch_planks.png",
-		"wood:birch_planks", default.node_sound_stone_defaults())
 
-walls.register("walls:junglewood", "Jungle Wood Wall", "wood_junglewood_planks.png",
-		"wood:junglewood_planks", default.node_sound_stone_defaults())
+--
+--wood walls
+--
+walls.register("walls:birch", "Birch Wall", "wood_birch_planks.png",
+		"wood:birch_planks", default.node_sound_wood_defaults())
+
+walls.register("walls:junglewood", "Junglewood Wall", "wood_junglewood_planks.png",
+		"wood:junglewood_planks", default.node_sound_wood_defaults())
+
+walls.register("walls:maple", "Maple Wall", "wood_maple_planks.png",
+		"wood:maple_planks", default.node_sound_wood_defaults())
 
 walls.register("walls:oak", "Oak Wall", "wood_oak_planks.png",
-		"wood:oak_planks", default.node_sound_stone_defaults())
+		"wood:oak_planks", default.node_sound_wood_defaults())
 
 walls.register("walls:pine", "Pine Wall", "wood_pine_planks.png",
-		"wood:pine_planks", default.node_sound_stone_defaults())
+		"wood:pine_planks", default.node_sound_wood_defaults())
 
 walls.register("walls:willow", "Willow Wall", "wood_willow_planks.png",
-		"wood:willow_planks", default.node_sound_stone_defaults())
+		"wood:willow_planks", default.node_sound_wood_defaults())
 
-walls.register("walls:wood", "Wood Wall", "wood_wood_planks.png",
-		"wood:wood_planks", default.node_sound_stone_defaults())
 
+--
 --metal walls
-
+--

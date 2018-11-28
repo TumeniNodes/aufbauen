@@ -53,10 +53,11 @@ local function update_bookshelf(pos)
 	end
 end
 
-minetest.register_node("wood:bookshelf", {
-	description = "Bookshelf",
-	tiles = {"wood_wood_planks.png", "wood_wood_planks.png", "wood_wood_planks.png",
-		"wood_wood_planks.png", "wood_bookshelf.png", "wood_bookshelf.png"},
+minetest.register_node("wood:maple_bookshelf", {
+	description = "Maple Bookshelf",
+	tiles = {"wood_maple_planks.png", "wood_maple_planks.png",
+			"wood_maple_planks.png","wood_maple_planks.png",
+			"wood_maple_planks.png^wood_bookshelf.png", "wood_maple_planks.png^wood_bookshelf.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {choppy = 3},

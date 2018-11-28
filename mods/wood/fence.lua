@@ -55,83 +55,83 @@ end
 -- Fences
 --
 
-fence.register_fence("wood:fence_birch", {
+fence.register_fence("wood:birch_fence", {
 	description = "Birch Fence",
-	image = "wood_fence_birch.png",
-	texture = {"wood_fence_birch.png"},
-	inventory_image = "wood_fence_birch_inv.png",
-	wield_image = "wood_fence_birch_inv.png",
-	material = "wood:birch_wood",
+	image = "wood_birch_fence.png",
+	texture = {"wood_birch_fence.png"},
+	inventory_image = "wood_birch_fence_inv.png",
+	wield_image = "wood_birch_fence_inv.png",
+	material = "wood:birch",
 	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-fence.register_fence("wood:fence_junglewood", {
-	description = "Jungle Wood Fence",
-	image = "wood_fence_junglewood.png",
-	texture = {"wood_fence_junglewood.png"},
-	inventory_image = "wood_fence_junglewood_inv.png",
-	wield_image = "wood_fence_junglewood_inv.png",
+fence.register_fence("wood:granite_fence", {
+	description = "Granite Fence Post",
+	image = "wood_granite_fence.png",
+	texture = {"wood_granite_fence_top.png", "wood_granite_fence_top.png", "wood_granite_fence.png"},
+	inventory_image = "wood_granite_fence_inv.png",
+	wield_image = "wood_granite_fence_inv.png",
+	material = "wood:granite",
+	drop = {},
+	groups = {cracky = 3, stone = 1},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+fence.register_fence("wood:junglewood_fence", {
+	description = "Junglewood Fence",
+	image = "wood_junglewood_fence.png",
+	texture = {"wood_junglewood_fence.png"},
+	inventory_image = "wood_junglewood_fence_inv.png",
+	wield_image = "wood_junglewood_fence_inv.png",
 	material = "wood:junglewood",
 	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults(),
 	drop = {}
 })
 
-fence.register_fence("wood:fence_oak", {
+fence.register_fence("wood:maple_fence", {
+	description = "Maple Fence",
+	image = "wood_maple_fence.png",
+	texture = {"wood_maple_fence.png"},
+	inventory_image = "wood_maple_fence_inv.png",
+	wield_image = "wood_maple_fence_inv.png",
+	material = "wood:maple",
+	groups = {choppy = 2},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+fence.register_fence("wood:oak_fence", {
 	description = "Oak Fence",
-	image = "wood_fence_oak.png",
-	texture = {"wood_fence_oak.png"},
-	inventory_image = "wood_fence_oak_inv.png",
-	wield_image = "wood_fence_oak_inv.png",
-	material = "wood:oak_wood",
+	image = "wood_oak_fence.png",
+	texture = {"wood_oak_fence.png"},
+	inventory_image = "wood_oak_fence_inv.png",
+	wield_image = "wood_oak_fence_inv.png",
+	material = "wood:oak",
 	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-fence.register_fence("wood:fence_pine", {
+fence.register_fence("wood:pine_fence", {
 	description = "Pine Fence",
-	image = "wood_fence_pine.png",
-	texture = {"wood_fence_pine.png"},
-	inventory_image = "wood_fence_pine_inv.png",
-	wield_image = "wood_fence_pine_inv.png",
-	material = "wood:pine_wood",
+	image = "wood_pine_fence.png",
+	texture = {"wood_pine_fence.png"},
+	inventory_image = "wood_pine_fence_inv.png",
+	wield_image = "wood_pine_fence_inv.png",
+	material = "wood:pine",
 	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-fence.register_fence("wood:fence_willow", {
+fence.register_fence("wood:willow_fence", {
 	description = "Willow Fence",
-	image = "wood_fence_willow.png",
-	texture = {"wood_fence_willow.png"},
-	inventory_image = "wood_fence_willow_inv.png",
-	wield_image = "wood_fence_willow_inv.png",
+	image = "wood_willow_fence.png",
+	texture = {"wood_willow_fence.png"},
+	inventory_image = "wood_willow_fence_inv.png",
+	wield_image = "wood_willow_fence_inv.png",
 	material = "wood:willow_planks",
 	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults(),
-})
-
-fence.register_fence("wood:fence_wood", {
-	description = "Wood Fence",
-	image = "wood_fence_wood.png",
-	texture = {"wood_fence_wood.png"},
-	inventory_image = "wood_fence_wood_inv.png",
-	wield_image = "wood_fence_wood_inv.png",
-	material = "wood:wood",
-	groups = {choppy = 2},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-fence.register_fence("wood:fence_granite", {
-	description = "Granite Fence Post",
-	image = "wood_fence_granite.png",
-	texture = {"wood_fence_granite_top.png", "wood_fence_granite_top.png", "wood_fence_granite.png"},
-	inventory_image = "wood_fence_granite_inv.png",
-	wield_image = "wood_fence_granite_inv.png",
-	material = "wood:granite",
-	drop = {},
-	groups = {cracky = 3, stone = 1},
-	sounds = default.node_sound_stone_defaults(),
 })
 
 
@@ -201,67 +201,67 @@ end
 --Fence Rails
 --
 
-fence.register_fence_rail("wood:fence_rail_birch", {
+fence.register_fence_rail("wood:birch_fence_rail", {
 	description = "Birch Fence Rail",
-	texture = "wood_fence_rail_birch.png",
-	inventory_image = "wood_fence_rail_birch_inv.png",
-	wield_image = "wood_fence_rail_birch_inv.png",
-	material = "wood:birch_wood",
+	texture = "wood_birch_fence_rail.png",
+	inventory_image = "wood_birch_fence_rail_inv.png",
+	wield_image = "wood_birch_fence_rail_inv.png",
+	material = "wood:birch",
 	drop = {},
 	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-fence.register_fence_rail("wood:fence_rail_junglewood", {
+fence.register_fence_rail("wood:junglewood_fence_rail", {
 	description = "Jungle Wood Fence Rail",
-	texture = "wood_fence_rail_junglewood.png",
-	inventory_image = "wood_fence_rail_junglewood_inv.png",
-	wield_image = "wood_fence_rail_junglewood_inv.png",
+	texture = "wood_junglewood_fence_rail.png",
+	inventory_image = "wood_junglewood_fence_rail_inv.png",
+	wield_image = "wood_junglewood_fence_rail_inv.png",
 	material = "wood:junglewood",
 	drop = {},
 	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-fence.register_fence_rail("wood:fence_rail_oak", {
+fence.register_fence_rail("wood:maple_fence_rail", {
+	description = "Maple Fence Rail",
+	texture = "wood_maple_fence_rail.png",
+	inventory_image = "wood_maple_fence_rail_inv.png",
+	wield_image = "wood_maple_fence_rail_inv.png",
+	material = "wood:maple",
+	groups = {choppy = 2},
+	drop = {},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+fence.register_fence_rail("wood:oak_fence_rail", {
 	description = "Oak Fence Rail",
-	texture = "wood_fence_rail_oak.png",
-	inventory_image = "wood_fence_rail_oak_inv.png",
-	wield_image = "wood_fence_rail_oak_inv.png",
-	material = "wood:oak_wood",
+	texture = "wood_oak_fence_rail.png",
+	inventory_image = "wood_oak_fence_rail_inv.png",
+	wield_image = "wood_oak_fence_rail_inv.png",
+	material = "wood:oak",
 	drop = {},
 	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-fence.register_fence_rail("wood:fence_rail_pine", {
+fence.register_fence_rail("wood:pine_fence_rail", {
 	description = "Pine Fence Rail",
-	texture = "wood_fence_rail_pine.png",
-	inventory_image = "wood_fence_rail_pine_inv.png",
-	wield_image = "wood_fence_rail_pine_inv.png",
-	material = "wood:pine_wood",
+	texture = "wood_pine_fence_rail.png",
+	inventory_image = "wood_pine_fence_rail_inv.png",
+	wield_image = "wood_pine_fence_rail_inv.png",
+	material = "wood:pine",
 	drop = {},
 	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-fence.register_fence_rail("wood:fence_rail_willow", {
+fence.register_fence_rail("wood:willow_fence_rail", {
 	description = "Willow Fence Rail",
-	texture = "wood_fence_rail_willow.png",
-	inventory_image = "wood_fence_rail_willow_inv.png",
-	wield_image = "wood_fence_rail_willow_inv.png",
-	material = "wood:willow_wood",
-	groups = {choppy = 2},
-	drop = {},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-fence.register_fence_rail("wood:fence_rail_wood", {
-	description = "Wood Fence Rail",
-	texture = "wood_fence_rail_wood.png",
-	inventory_image = "wood_fence_rail_wood_inv.png",
-	wield_image = "wood_fence_rail_wood_inv.png",
-	material = "wood:wood",
+	texture = "wood_willow_fence_rail.png",
+	inventory_image = "wood_willow_fence_rail_inv.png",
+	wield_image = "wood_willow_fence_rail_inv.png",
+	material = "wood:willow",
 	groups = {choppy = 2},
 	drop = {},
 	sounds = default.node_sound_wood_defaults(),
@@ -343,51 +343,51 @@ end
 -- Fence Gates
 --
 
-fence.register_fence_gate("wood:fence_gate_birch", {
+fence.register_fence_gate("wood:birch_fence_gate", {
 	description = "Birch Fence Gate",
-	texture = "wood_fence_birch.png",
-	material = "default:birch_wood",
+	texture = "wood_birch_fence.png",
+	material = "default:birch",
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
 })
 
-fence.register_fence_gate("wood:fence_gate_junglewood", {
-	description = "Junglewood Fence Gate",
-	texture = "wood_fence_junglewood.png",
-	material = "default:wood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
-})
-
-fence.register_fence_gate("wood:fence_gate_oak", {
-	description = "Oak Fence Gate",
-	texture = "wood_fence_oak.png",
-	material = "default:oak_wood",
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
-})
-
-fence.register_fence_gate("wood:fence_gate_pine", {
-	description = "Pine Fence Gate",
-	texture = "wood_fence_pine.png",
-	material = "default:pine_wood",
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
-})
-
-fence.register_fence_gate("wood:fence_gate_willow", {
-	description = "Willow Fence Gate",
-	texture = "wood_fence_willow.png",
-	material = "default:willow_wood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
-})
-
-fence.register_fence_gate("wood:fence_gate_wood", {
-	description = "Wood Fence Gate",
-	texture = "wood_fence_wood.png",
-	material = "default:wood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
-})
-
-fence.register_fence_gate("wood:fence_gate_granite", {
+fence.register_fence_gate("wood:granite_fence_gate", {
 	description = "Granite Fence Gate",
-	texture = "wood_fence_granite.png",
-	material = "wood:wood",
+	texture = "wood_granite_fence.png",
+	material = "wood:granite",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
+})
+
+fence.register_fence_gate("wood:junglewood_fence_gate", {
+	description = "Junglewood Fence Gate",
+	texture = "wood_junglewood_fence.png",
+	material = "default:wood",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
+})
+
+fence.register_fence_gate("wood:maple_fence_gate", {
+	description = "Maple Fence Gate",
+	texture = "wood_maple_fence.png",
+	material = "default:maple",
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
+})
+
+fence.register_fence_gate("wood:oak_fence_gate", {
+	description = "Oak Fence Gate",
+	texture = "wood_oak_fence.png",
+	material = "default:oak",
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
+})
+
+fence.register_fence_gate("wood:pine_fence_gate", {
+	description = "Pine Fence Gate",
+	texture = "wood_pine_fence.png",
+	material = "default:pine",
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3}
+})
+
+fence.register_fence_gate("wood:willow_fence_gate", {
+	description = "Willow Fence Gate",
+	texture = "wood_willow_fence.png",
+	material = "default:willow",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })

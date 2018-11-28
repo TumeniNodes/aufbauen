@@ -54,6 +54,33 @@ minetest.register_node("wood:junglewood_planks", {
 
 
 --
+-- Maple Nodes
+--
+
+minetest.register_node("wood:maple_planking", {
+	description = "Maple Planking",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"wood_maple_planking.png"},
+	is_ground_content = false,
+	groups = {choppy = 2, wood = 1},
+	drop = {},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("wood:maple_planks", {
+	description = "Maple Planks",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"wood_maple_planks.png"},
+	is_ground_content = false,
+	groups = {choppy = 2, wood = 1},
+	drop = {},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+
+--
 -- Oak Nodes
 --
 
@@ -132,33 +159,6 @@ minetest.register_node("wood:willow_planks", {
 
 
 --
--- Wood Nodes
---
-
-minetest.register_node("wood:wood_planking", {
-	description = "Wood Planking",
-	paramtype2 = "facedir",
-	place_param2 = 0,
-	tiles = {"wood_wood_planking.png"},
-	is_ground_content = false,
-	groups = {choppy = 2, wood = 1},
-	drop = {},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-minetest.register_node("wood:wood_planks", {
-	description = "Wood Planks",
-	paramtype2 = "facedir",
-	place_param2 = 0,
-	tiles = {"wood_wood_planks.png"},
-	is_ground_content = false,
-	groups = {choppy = 2, wood = 1},
-	drop = {},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-
---
 -- Wood Ladder
 --
 ladder = {}
@@ -214,7 +214,7 @@ for k, v in pairs(default_fields) do
 end
 
 
-ladder.register_ladder("wood:ladder_birch", {
+ladder.register_ladder("wood:birch_ladder", {
 	description = "Birch Ladder",
 	image = "wood_birch_ladder.png",
 	texture = {"wood_birch_planks.png", "wood_birch_planks.png",
@@ -227,7 +227,7 @@ ladder.register_ladder("wood:ladder_birch", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-ladder.register_ladder("wood:ladder_junglewood", {
+ladder.register_ladder("wood:junglewood_ladder", {
 	description = "Junglewood Ladder",
 	image = "wood_junglewood_ladder.png",
 	texture = {"wood_junglewood_planks.png", "wood_junglewood_planks.png",
@@ -240,7 +240,20 @@ ladder.register_ladder("wood:ladder_junglewood", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-ladder.register_ladder("wood:ladder_oak", {
+ladder.register_ladder("wood:maple_ladder", {
+	description = "Maple Ladder",
+	image = "wood_maple_ladder.png",
+	texture = {"wood_maple_planks.png", "wood_maple_planks.png",
+				"wood_maple_planks.png", "wood_maple_planks.png",
+				"wood_maple_ladder.png","wood_maple_ladder.png"},
+	inventory_image = "wood_maple_ladder.png",
+	wield_image = "wood_maple_ladder.png",
+	material = "wood:maple",
+	groups = {choppy = 3},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+ladder.register_ladder("wood:oak_ladder", {
 	description = "Oak Ladder",
 	image = "wood_oak_ladder.png",
 	texture = {"wood_oak_planks.png", "wood_oak_planks.png",
@@ -253,7 +266,7 @@ ladder.register_ladder("wood:ladder_oak", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-ladder.register_ladder("wood:ladder_pine", {
+ladder.register_ladder("wood:pine_ladder", {
 	description = "Pine Ladder",
 	image = "wood_pine_ladder.png",
 	texture = {"wood_pine_planks.png", "wood_pine_planks.png",
@@ -266,7 +279,7 @@ ladder.register_ladder("wood:ladder_pine", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-ladder.register_ladder("wood:ladder_willow", {
+ladder.register_ladder("wood:willow_ladder", {
 	description = "Willow Ladder",
 	image = "wood_willow_ladder.png",
 	texture = {"wood_willow_planks.png", "wood_willow_planks.png",
@@ -275,19 +288,6 @@ ladder.register_ladder("wood:ladder_willow", {
 	inventory_image = "wood_willow_ladder.png",
 	wield_image = "wood_willow_ladder.png",
 	material = "wood:willow",
-	groups = {choppy = 3},
-	sounds = default.node_sound_wood_defaults(),
-})
-
-ladder.register_ladder("wood:ladder_wood", {
-	description = "Wood Ladder",
-	image = "wood_wood_ladder.png",
-	texture = {"wood_wood_planks.png", "wood_wood_planks.png",
-				"wood_wood_planks.png", "wood_wood_planks.png",
-				"wood_wood_ladder.png","wood_wood_ladder.png"},
-	inventory_image = "wood_wood_ladder.png",
-	wield_image = "wood_wood_ladder.png",
-	material = "wood:wood",
 	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -430,6 +430,16 @@ pickets.register_picket_and_picket_corner_and_picket_icorner("_junglewood", "woo
 		"Junglewood Picket iCorner",
 		default.node_sound_wood_defaults())
 
+pickets.register_picket_and_picket_corner_and_picket_icorner("_maple", "wood:maple_planks",
+		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		{"wood_maple_planks.png", "wood_maple_planks.png",
+		"wood_maple_picket.png", "wood_maple_picket.png",
+		"wood_maple_picket.png", "wood_maple_picket.png"},
+		"Maple Picket",
+		"Maple Picket Corner",
+		"Maple Picket iCorner",
+		default.node_sound_wood_defaults())
+
 pickets.register_picket_and_picket_corner_and_picket_icorner("_oak", "wood:oak_planks",
 		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		{"wood_oak_planks.png", "wood_oak_planks.png",
@@ -460,12 +470,3 @@ pickets.register_picket_and_picket_corner_and_picket_icorner("_willow", "wood:wi
 		"Willow Picket iCorner",
 		default.node_sound_wood_defaults())
 
-pickets.register_picket_and_picket_corner_and_picket_icorner("_wood", "wood:wood_planks",
-		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
-		{"wood_wood_planks.png", "wood_wood_planks.png",
-		"wood_wood_picket.png", "wood_wood_picket.png",
-		"wood_wood_picket.png", "wood_wood_picket.png"},
-		"Wood Picket",
-		"Wood Picket Corner",
-		"Wood Picket iCorner",
-		default.node_sound_wood_defaults())

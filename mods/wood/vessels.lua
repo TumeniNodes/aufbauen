@@ -38,8 +38,9 @@ end
 
 minetest.register_node("wood:vessels_shelf", {
 	description = "Vessels Shelf",
-	tiles = {"wood_wood_planks.png", "wood_wood_planks.png", "wood_wood_planks.png",
-		"wood_wood_planks.png", "vessels_shelf.png", "vessels_shelf.png"},
+	tiles = {"wood_maple_planks.png", "wood_maple_planks.png",
+			"wood_maple_planks.png", "wood_maple_planks.png",
+			"wood_maple_planks.png^vessels_shelf.png", "wood_maple_planks.png^vessels_shelf.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},

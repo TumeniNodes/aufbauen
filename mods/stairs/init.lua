@@ -548,22 +548,22 @@ stairs.register_stair_and_slab(
 )
 
 stairs.register_stair_and_slab(
-	"wood_planks",
-	"wood:wood_planks",
-	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-	{"wood_wood_planks.png"},
-	"Wood Planks Stair",
-	"Wood Planks Slab",
+	"maple_planks",
+	"wood:maple_planks",
+	{choppy = 2, oddly_breakable_by_hand = 2, wood = 1},
+	{"wood_maple_planks.png"},
+	"Maple Planks Stair",
+	"Maple Planks Slab",
 	default.node_sound_wood_defaults()
 )
 
 stairs.register_stair_and_slab(
-	"wood_planking",
-	"wood:wood_planking",
-	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-	{"wood_wood_planking.png"},
-	"Wood Planking Stair",
-	"Wood Planking Slab",
+	"maple_planking",
+	"wood:maple_planking",
+	{choppy = 2, oddly_breakable_by_hand = 2, wood = 1},
+	{"wood_maple_planking.png"},
+	"Maple Planking Stair",
+	"Maple Planking Slab",
 	default.node_sound_wood_defaults()
 )
 
@@ -774,54 +774,44 @@ stairs.register_stair_and_slab(
 --metal stairs
 
 stairs.register_stair_and_slab(
-	"bronze_block",
-	"metal:bronze_block",
+	"bronze",
+	"metal:bronze",
 	{cracky = 1, level = 2},
 	{"metal_bronze.png"},
-	"Bronze Block Stair",
-	"Bronze Block Slab",
+	"Bronze Stair",
+	"Bronze Slab",
 	default.node_sound_metal_defaults()
 )
 
 stairs.register_stair_and_slab(
-	"rusted_block",
-	"metal:rusted_block",
-	{cracky = 1, level = 2},
-	{"metal_rusted.png"},
-	"Rusted Block Stair",
-	"Rusted Block Slab",
-	default.node_sound_metal_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"iron_block",
-	"metal:iron_block",
+	"iron",
+	"metal:iron",
 	{cracky = 1, level = 2},
 	{"metal_iron.png"},
-	"Iron Block Stair",
-	"Iron Block Slab",
+	"Iron Stair",
+	"Iron Slab",
 	default.node_sound_metal_defaults()
 )
 
 stairs.register_stair_and_slab(
-	"steel_block",
-	"metal:steel_block",
+	"rusted",
+	"metal:rusted",
 	{cracky = 1, level = 2},
-	{"metal_steel.png"},
-	"Steel Block Stair",
-	"Steel Block Slab",
+	{"metal_rusted.png"},
+	"Rusted Stair",
+	"Rusted Slab",
 	default.node_sound_metal_defaults()
 )
 
---[[stairs.register_stair_and_slab(
-	"tin_block",
-	"default:tin_block",
+stairs.register_stair_and_slab(
+	"steel",
+	"metal:steel",
 	{cracky = 1, level = 2},
-	{"default_tin_block.png"},
-	"Tin Block Stair",
-	"Tin Block Slab",
+	{"metal_steel.png"},
+	"Steel Stair",
+	"Steel Slab",
 	default.node_sound_metal_defaults()
-)]]--
+)
 
 
 --soft/non-stone slabs
@@ -832,6 +822,15 @@ stairs.register_slab(
 	{cracky = 1, level = 2},
 	{"default_dirt.png"},
 	"Dirt Slab",
+	default.node_sound_dirt_defaults()
+)
+
+stairs.register_slab(
+	"gravel",
+	"default:gravel",
+	{cracky = 1, level = 2},
+	{"default_gravel.png"},
+	"Gravel Slab",
 	default.node_sound_dirt_defaults()
 )
 
