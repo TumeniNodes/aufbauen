@@ -488,6 +488,26 @@ stairs.register_stair_and_slab(
 )
 
 stairs.register_stair_and_slab(
+	"maple_planking",
+	"wood:maple_planking",
+	{choppy = 2, oddly_breakable_by_hand = 2, wood = 1},
+	{"wood_maple_planking.png"},
+	"Maple Planking Stair",
+	"Maple Planking Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"maple_planks",
+	"wood:maple_planks",
+	{choppy = 2, oddly_breakable_by_hand = 2, wood = 1},
+	{"wood_maple_planks.png"},
+	"Maple Planks Stair",
+	"Maple Planks Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
 	"oak_planking",
 	"wood:oak_planking",
 	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
@@ -546,27 +566,6 @@ stairs.register_stair_and_slab(
 	"Willow Planks Slab",
 	default.node_sound_wood_defaults()
 )
-
-stairs.register_stair_and_slab(
-	"maple_planks",
-	"wood:maple_planks",
-	{choppy = 2, oddly_breakable_by_hand = 2, wood = 1},
-	{"wood_maple_planks.png"},
-	"Maple Planks Stair",
-	"Maple Planks Slab",
-	default.node_sound_wood_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"maple_planking",
-	"wood:maple_planking",
-	{choppy = 2, oddly_breakable_by_hand = 2, wood = 1},
-	{"wood_maple_planking.png"},
-	"Maple Planking Stair",
-	"Maple Planking Slab",
-	default.node_sound_wood_defaults()
-)
-
 
 --stone stairs
 

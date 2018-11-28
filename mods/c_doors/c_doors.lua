@@ -6,7 +6,10 @@ c_doors = {}
 -- Register Door Nodes
 c_doors.door = {
 
+--
 --Wood Doors
+--
+
 	{"birch", "Birch", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_birch.png",backface_culling = true}, "wood:wood"},
 
 	{"birch_glass", "Birch Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_birch_glass.png",backface_culling = true}, "wood:wood"},
@@ -18,6 +21,12 @@ c_doors.door = {
 	{"junglewood_glass", "Junglewood Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_junglewood_glass.png",backface_culling = true}, "wood:wood"},
 
 	{"junglewood_panel", "Junglewood Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_junglewood_panel.png",backface_culling = true}, "wood:wood"},
+
+	{"maple", "Maple", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_maple.png",backface_culling = true}, "wood:wood"},
+
+	{"maple_glass", "Maple Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_maple_glass.png",backface_culling = true}, "wood:wood"},
+
+	{"maple_panel", "Maple Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_maple_panel.png",backface_culling = true}, "wood:wood"},
 
 	{"oak", "Oak", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_oak.png",backface_culling = true}, "wood:wood"},
 
@@ -37,21 +46,9 @@ c_doors.door = {
 
 	{"willow_panel", "Willow Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_willow_panel.png",backface_culling = true}, "default:wood"},
 
-	{"wood", "Wood", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_wood.png",backface_culling = true}, "wood:wood"},
-
-	{"wood_glass", "Wood Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_wood_glass.png",backface_culling = true}, "wood:wood"},
-
-	{"wood_panel", "Wood Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_wood_panel.png",backface_culling = true}, "wood:wood"},
-
+--
 --Metal Doors
-
-	{"rusted", "Rusted", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_rusted.png",backface_culling = true}, "metal:rusted_block"},
-
-	{"rusted_bars", "Rusted Bars", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_rusted_bars.png",backface_culling = true}, "metal:rusted_block"},
-
-	{"rustedgate", "RustedGate", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_irongate", {name = "c_doors_rustedgate.png",backface_culling = true}, "default:coalblock"},
-
-	{"rusted_panel", "Rusted Panel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_rusted_panel.png",backface_culling = true}, "metal:rusted_block"},
+--
 
 	{"iron", "Iron", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_iron.png",backface_culling = true}, "metal:iron_block"},
 
@@ -60,6 +57,14 @@ c_doors.door = {
 	{"irongate", "IronGate", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_irongate", {name = "c_doors_irongate.png",backface_culling = true}, "default:coalblock"},
 
 	{"iron_panel", "Iron Panel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_iron_panel.png",backface_culling = true}, "metal:iron_block"},
+
+	{"rusted", "Rusted", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_rusted.png",backface_culling = true}, "metal:rusted_block"},
+
+	{"rusted_bars", "Rusted Bars", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_rusted_bars.png",backface_culling = true}, "metal:rusted_block"},
+
+	{"rustedgate", "RustedGate", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_irongate", {name = "c_doors_rustedgate.png",backface_culling = true}, "default:coalblock"},
+
+	{"rusted_panel", "Rusted Panel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_rusted_panel.png",backface_culling = true}, "metal:rusted_block"},
 
 	{"steel", "Steel", {cracky = 1, door = 1}, default.node_sound_metal_defaults(), "c_doors_metal", {name = "c_doors_steel.png",backface_culling = true}, "metal:iron_block"},
 
@@ -86,8 +91,8 @@ for _, row in ipairs(c_doors.door) do
 
 minetest.register_node("c_doors:" ..name.. "_Ldoor", {
 	description = desc.. " Door (left)",
-	inventory_image = "c_doors_item_" ..name.. ".png^[transformFXX",
-	wield_image = "c_doors_item_" ..name.. ".png^[transformFXX",
+	inventory_image = "c_doors_" ..name.. "_item.png^[transformFXX",
+	wield_image = "c_doors_" ..name.. "_item.png^[transformFXX",
 	drawtype = "mesh",
 	mesh = "c_door_L.obj",
 	tiles = {door_tiles},
@@ -155,8 +160,8 @@ minetest.register_node("c_doors:" ..name.. "_Ldoor_open", {
 
 minetest.register_node("c_doors:" ..name.. "_Rdoor", {
 	description = desc.. " Door (right)",
-	inventory_image = "c_doors_item_" ..name.. ".png",
-	wield_image = "c_doors_item_" ..name.. ".png",
+	inventory_image = "c_doors_" ..name.. "_item.png",
+	wield_image = "c_doors_" ..name.. "_item.png",
 	drawtype = "mesh",
 	mesh = "c_door_R.obj",
 	tiles = {door_tiles},
