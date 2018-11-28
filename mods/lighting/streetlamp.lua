@@ -30,6 +30,7 @@ minetest.register_node("lighting:streetlamp_off", {
 	sunlight_propagates = true,
 	groups = {snappy = 3},
 	sounds = default.node_sound_glass_defaults(),
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -136,6 +137,7 @@ minetest.register_node("lighting:tod_streetlamp_off", {
 	sunlight_propagates = true,
 	groups = {snappy = 3},
 	sounds = default.node_sound_glass_defaults(),
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -233,6 +235,7 @@ minetest.register_node("lighting:tod_streetlamp_hanging_off", {
 	sunlight_propagates = true,
 	groups = {snappy = 3},
 	sounds = default.node_sound_glass_defaults(),
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -344,6 +347,7 @@ function minetest.register_lamp_post(name, def)
 		sunlight_propagates = true,
 		is_ground_content = false,
 		groups = {},
+		drop = {},
 	}
 	for k, v in pairs(default_fields) do
 		if not def[k] then

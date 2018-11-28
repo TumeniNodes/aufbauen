@@ -42,6 +42,7 @@ minetest.register_node("wood:chest",{
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky=2},
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {

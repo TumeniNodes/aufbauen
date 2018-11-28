@@ -62,6 +62,7 @@ minetest.register_node("wood:maple_bookshelf", {
 	is_ground_content = false,
 	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)

@@ -21,6 +21,7 @@ minetest.register_node("lighting:wall_lamp_off", {
 	sunlight_propagates = true,
 	groups = {snappy = 3},
 	sounds = default.node_sound_glass_defaults(),
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -103,7 +104,7 @@ minetest.register_node("lighting:wall_lamp_on", {
 	end,
 })
 
-	minetest.register_abm({
+--[[	minetest.register_abm({
 			nodenames = {"lighting:streetlamp_off", "lighting:streetlamp_on"},
 			interval = 10,
 			chance = 1,
@@ -135,7 +136,7 @@ minetest.register_node("lighting:wall_lamp_on", {
 			end
 		end
 	})
-
+]]--
 
 
 -- Time of Day Wall Lamps
@@ -159,6 +160,7 @@ minetest.register_node("lighting:tod_wall_lamp_off", {
 	sunlight_propagates = true,
 	groups = {snappy = 3},
 	sounds = default.node_sound_glass_defaults(),
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {

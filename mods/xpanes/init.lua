@@ -102,7 +102,7 @@ function xpanes.register_pane(name, def)
 		paramtype2 = "facedir",
 		tiles = {def.textures[3], def.textures[3], def.textures[1]},
 		groups = flatgroups,
-		drop = "xpanes:" .. name .. "_flat",
+		drop = {},
 		sounds = def.sounds,
 		use_texture_alpha = def.use_texture_alpha or false,
 		node_box = {
@@ -127,7 +127,7 @@ function xpanes.register_pane(name, def)
 		description = def.description,
 		tiles = {def.textures[3], def.textures[3], def.textures[1]},
 		groups = groups,
-		drop = "xpanes:" .. name .. "_flat",
+		drop = {},
 		sounds = def.sounds,
 		use_texture_alpha = def.use_texture_alpha or false,
 		node_box = {

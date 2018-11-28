@@ -45,6 +45,7 @@ minetest.register_node("wood:vessels_shelf", {
 	is_ground_content = false,
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)

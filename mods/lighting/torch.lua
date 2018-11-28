@@ -67,7 +67,7 @@ minetest.register_node("lighting:torch", {
 	liquids_pointable = false,
 	light_source = 12,
 	groups = {choppy=2, dig_immediate=3, flammable=1, attached_node=1, torch=1},
-	drop = "{}",
+	drop = {},
 	selection_box = {
 		type = "wallmounted",
 		wall_bottom = {-1/8, -1/2, -1/8, 1/8, 2/16, 1/8},
@@ -115,7 +115,7 @@ minetest.register_node("lighting:torch_wall", {
 	walkable = false,
 	light_source = 12,
 	groups = {choppy=2, dig_immediate=3, flammable=1, not_in_creative_inventory=1, attached_node=1, torch=1},
-	drop = "{}",
+	drop = {},
 	selection_box = {
 		type = "wallmounted",
 		wall_side = {-1/2, -1/2, -1/8, -1/8, 1/8, 1/8},

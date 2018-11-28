@@ -11,6 +11,7 @@ minetest.register_node("metal:" .. subname .. "_basic_block", {
 	is_ground_content = false,
 	groups = groups,
 	sounds = sounds,
+	drop = {},
 	})
 end
 
@@ -82,6 +83,7 @@ minetest.register_node("metal:" .. subname .. "_block", {
 	is_ground_content = false,
 	groups = groups,
 	sounds = sounds,
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -179,6 +181,7 @@ function metal.register_stair(modname, subname, desc, tiles, groups, sounds)
 		is_ground_content = false,
 		groups = groups,
 		sounds = sounds,
+		drop = {},
 		node_box = {
 			type = "fixed",
 			fixed = {
@@ -280,6 +283,7 @@ function metal.register_slab(modname, subname, desc, tiles, groups, sounds)
 		is_ground_content = false,
 		groups = groups,
 		sounds = sounds,
+		drop = {},
 		node_box = {
 			type = "fixed",
 			fixed = {
@@ -381,6 +385,7 @@ function metal.register_stair_inner(modname, subname, desc, tiles, groups, sound
 		is_ground_content = false,
 		groups = groups,
 		sounds = sounds,
+		drop = {},
 		node_box = {
 			type = "fixed",
 			fixed = {
@@ -488,6 +493,7 @@ function metal.register_stair_outer(modname, subname, desc, tiles, groups, sound
 		is_ground_content = false,
 		groups = groups,
 		sounds = sounds,
+		drop = {},
 		node_box = {
 			type = "fixed",
 			fixed = {
@@ -594,6 +600,7 @@ minetest.register_node("metal:" .. subname .. "_grid_block", {
 	climbable = true,
 	groups = groups,
 	sounds = sounds,
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -667,6 +674,7 @@ function metal.register_grid_stair(modname, subname, desc, tiles, groups, sounds
 		is_ground_content = false,
 		groups = groups,
 		sounds = sounds,
+		drop = {},
 		node_box = {
 			type = "fixed",
 			fixed = {
@@ -755,6 +763,7 @@ function metal.register_grid_slab(modname, subname, desc, tiles, groups, sounds)
 		is_ground_content = false,
 		groups = groups,
 		sounds = sounds,
+		drop = {},
 		node_box = {
 			type = "fixed",
 			fixed = {
@@ -835,6 +844,7 @@ function metal.register_grid_stair_inner(modname, subname, desc, tiles, groups, 
 		is_ground_content = false,
 		groups = groups,
 		sounds = sounds,
+		drop = {},
 		node_box = {
 			type = "fixed",
 			fixed = {
@@ -929,6 +939,7 @@ function metal.register_grid_stair_outer(modname, subname, desc, tiles, groups, 
 		is_ground_content = false,
 		groups = groups,
 		sounds = sounds,
+		drop = {},
 		node_box = {
 			type = "fixed",
 			fixed = {
@@ -1023,6 +1034,7 @@ minetest.register_node("metal:furnace", {
 	is_ground_content = false,
 	groups = {cracky=2},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -1071,10 +1083,10 @@ minetest.register_node("metal:furnace_active", {
 	},
 	paramtype2 = "facedir",
 	light_source = 4,
-	drop = {},
 	not_in_creative_inventory = true,
 	legacy_facedir_simple = true,
 	is_ground_content = false,
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -1216,6 +1228,7 @@ minetest.register_node(":pickets:picket" .. subname, {
 	facedir = simple,
 	groups = groups,
 	sounds = sounds,
+	drop = {},
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",
@@ -1248,6 +1261,7 @@ minetest.register_node(":pickets:picket_corner" .. subname, {
 	facedir = simple,
 	groups = groups,
 	sounds = sounds,
+	drop = {},
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",
@@ -1283,6 +1297,7 @@ minetest.register_node(":pickets:picket_icorner" .. subname, {
 	facedir = simple,
 	groups = groups,
 	sounds = sounds,
+	drop = {},
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",

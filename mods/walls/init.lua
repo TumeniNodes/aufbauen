@@ -8,6 +8,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 	-- inventory node, and pole-type wall start item
 	minetest.register_node(wall_name, {
 		description = wall_desc,
+		drop = {},
 		drawtype = "nodebox",
 		node_box = {
 			type = "connected",
@@ -50,6 +51,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 
 	minetest.register_node(wall_name .. "_full", {
 		description = wall_desc,
+		drop = {},
 		drawtype = "nodebox",
 		node_box = {
 			type = "connected",
@@ -66,7 +68,6 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 		groups = {cracky = 3, wall = 1, stone = 2},
 		tiles = wall_texture_table,
 		sounds = wall_sounds,
-		drop = wall_name,
 		after_dig_node = function(pos, oldnode, oldmetadata, digger)
 			local pos_under = {x = pos.x, y = pos.y - 1, z = pos.z}
 			local node_under = string.gsub(minetest.get_node(pos_under).name, "_full$", "")
@@ -80,6 +81,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 	-- add a low wall and full low wall to use between original walls or alone
 	minetest.register_node(wall_name .. "_low", {
 		description = wall_desc .. " Low",
+		drop = {},
 		drawtype = "nodebox",
 		node_box = {
 			type = "connected",
@@ -123,6 +125,7 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 
 	minetest.register_node(wall_name .. "_low_full", {
 		description = wall_desc .. " Low Full",
+		drop = {},
 		drawtype = "nodebox",
 		node_box = {
 			type = "connected",
@@ -139,7 +142,6 @@ walls.register = function(wall_name, wall_desc, wall_texture_table, wall_mat, wa
 		groups = {cracky = 3, wall = 1, stone = 2},
 		tiles = wall_texture_table,
 		sounds = wall_sounds,
-		drop = wall_name,
 		after_dig_node = function(pos, oldnode, oldmetadata, digger)
 			local pos_under = {x = pos.x, y = pos.y - 1, z = pos.z}
 			local node_under = string.gsub(minetest.get_node(pos_under).name, "_full$", "")

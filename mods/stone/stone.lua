@@ -11,8 +11,8 @@ minetest.register_node("stone:brick", {
 	tiles = {"stone_brick.png"},
 	is_ground_content = false,
 	groups = {cracky = 3},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 
@@ -25,8 +25,8 @@ minetest.register_node("stone:cobblestone", {
 	tiles = {"stone_cobblestone.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 2},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:cobblestone_path", {
@@ -40,8 +40,8 @@ minetest.register_node("stone:cobblestone_path", {
 		},
 	tiles = {"stone_cobblestone.png"},
 	groups = {cracky = 3, soil = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:cobblestone_mossy", {
@@ -49,8 +49,8 @@ minetest.register_node("stone:cobblestone_mossy", {
 	tiles = {"stone_cobblestone_mossy.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:cobblestone_path_mossy", {
@@ -64,8 +64,8 @@ minetest.register_node("stone:cobblestone_path_mossy", {
 		},
 	tiles = {"stone_cobblestone_mossy.png"},
 	groups = {cracky = 3, soil = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 --
@@ -77,8 +77,8 @@ minetest.register_node("stone:granite_block", {
 	tiles = {"stone_granite_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:granite_block_half", {
@@ -87,8 +87,8 @@ minetest.register_node("stone:granite_block_half", {
 	is_ground_content = false,
 	paramtype2 = "facedir",
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:granite_brick", {
@@ -96,8 +96,8 @@ minetest.register_node("stone:granite_brick", {
 	tiles = {"stone_granite_brick.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:granite_cinderblock", {
@@ -105,8 +105,8 @@ minetest.register_node("stone:granite_cinderblock", {
 	tiles = {"stone_granite_cinderblock.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:granite_smooth", {
@@ -114,8 +114,8 @@ minetest.register_node("stone:granite_smooth", {
 	tiles = {"stone_granite_smooth.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 
@@ -128,8 +128,8 @@ minetest.register_node("stone:limestone_block", {
 	tiles = {"stone_limestone_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:limestone_block_half", {
@@ -138,8 +138,8 @@ minetest.register_node("stone:limestone_block_half", {
 	is_ground_content = false,
 	paramtype2 = "facedir",
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:limestone_brick", {
@@ -149,8 +149,8 @@ minetest.register_node("stone:limestone_brick", {
 	tiles = {"stone_limestone_brick.png"},
 	is_ground_content = false,
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:limestone_cinderblock", {
@@ -158,8 +158,8 @@ minetest.register_node("stone:limestone_cinderblock", {
 	tiles = {"stone_limestone_cinderblock.png"},
 	is_ground_content = false,
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:limestone_smooth", {
@@ -167,8 +167,8 @@ minetest.register_node("stone:limestone_smooth", {
 	tiles = {"stone_limestone_smooth.png"},
 	is_ground_content = false,
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 
@@ -183,8 +183,8 @@ minetest.register_node("stone:sandstone_brick", {
 	tiles = {"stone_sandstone_brick.png"},
 	is_ground_content = false,
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:sandstone_block", {
@@ -192,8 +192,8 @@ minetest.register_node("stone:sandstone_block", {
 	tiles = {"stone_sandstone_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:sandstone_block_half", {
@@ -202,8 +202,8 @@ minetest.register_node("stone:sandstone_block_half", {
 	is_ground_content = false,
 	paramtype2 = "facedir",
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:sandstone_cinderblock", {
@@ -211,8 +211,7 @@ minetest.register_node("stone:sandstone_cinderblock", {
 	tiles = {"stone_sandstone_cinderblock.png"},
 	is_ground_content = false,
 	groups = {cracky = 2},
-	drop = {},
-	sounds = default.node_sound_stone_defaults(),
+	sounds = default.node_sound_stone_defaults(),drop = {},
 })
 
 minetest.register_node("stone:sandstone_smooth", {
@@ -220,8 +219,8 @@ minetest.register_node("stone:sandstone_smooth", {
 	tiles = {"stone_sandstone_smooth.png"},
 	is_ground_content = false,
 	groups = {cracky = 2},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 
@@ -236,8 +235,8 @@ minetest.register_node("stone:stone_brick", {
 	tiles = {"stone_stone_brick.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:stone_brick_mossy", {
@@ -247,8 +246,8 @@ minetest.register_node("stone:stone_brick_mossy", {
 	tiles = {"stone_stone_brick_mossy.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:stone_block", {
@@ -256,8 +255,8 @@ minetest.register_node("stone:stone_block", {
 	tiles = {"stone_stone_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:stone_block_mossy", {
@@ -265,8 +264,8 @@ minetest.register_node("stone:stone_block_mossy", {
 	tiles = {"stone_stone_block_mossy.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:stone_block_half", {
@@ -275,8 +274,8 @@ minetest.register_node("stone:stone_block_half", {
 	is_ground_content = false,
 	paramtype2 = "facedir",
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:stone_block_half_mossy", {
@@ -285,8 +284,8 @@ minetest.register_node("stone:stone_block_half_mossy", {
 	is_ground_content = false,
 	paramtype2 = "facedir",
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:stone_cinderblock", {
@@ -294,8 +293,8 @@ minetest.register_node("stone:stone_cinderblock", {
 	tiles = {"stone_stone_cinderblock.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:stone_cinderblock_mossy", {
@@ -303,8 +302,8 @@ minetest.register_node("stone:stone_cinderblock_mossy", {
 	tiles = {"stone_stone_cinderblock_mossy.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:stone_smooth", {
@@ -312,8 +311,8 @@ minetest.register_node("stone:stone_smooth", {
 	tiles = {"stone_stone_smooth.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })
 
 minetest.register_node("stone:stone_smooth_mossy", {
@@ -321,6 +320,6 @@ minetest.register_node("stone:stone_smooth_mossy", {
 	tiles = {"stone_stone_smooth_mossy.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
-	drop = {},
 	sounds = default.node_sound_stone_defaults(),
+	drop = {},
 })

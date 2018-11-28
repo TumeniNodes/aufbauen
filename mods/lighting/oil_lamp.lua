@@ -31,7 +31,7 @@ minetest.register_node("lighting:oil_lamp", {
 	liquids_pointable = false,
 	light_source = 6,
 	groups = {choppy=2, dig_immediate=3, flammable=1, attached_node=1, torch=1},
-	drop = "{}",
+	drop = {},
 	selection_box = {
 		type = "wallmounted",
 		wall_bottom = {-1/8, -1/2, -1/8, 1/8, 2/16, 1/8},
@@ -79,7 +79,7 @@ minetest.register_node("lighting:oil_lamp_wall", {
 	walkable = false,
 	light_source = 6,
 	groups = {choppy=2, dig_immediate=3, flammable=1, not_in_creative_inventory=1, attached_node=1, torch=1},
-	drop = "{}",
+	drop = {},
 	selection_box = {
 		type = "wallmounted",
 		wall_side = {-1/2, -7/16, -3/16, -1/8, 3/8, 3/16},

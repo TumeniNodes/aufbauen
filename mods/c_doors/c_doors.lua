@@ -106,6 +106,7 @@ minetest.register_node("c_doors:" ..name.. "_Ldoor", {
 	buildable_to = false,
 	groups = mat_groups,
 	sounds = mat_sound,
+	drop = {},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -138,8 +139,8 @@ minetest.register_node("c_doors:" ..name.. "_Ldoor_open", {
 	walkable = true,
 	buildable_to = false,
 	groups = mat_groups,
-	drop = "c_doors:" ..name.. "_Ldoor",
 	sounds = mat_sound,
+	drop = {},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -175,6 +176,7 @@ minetest.register_node("c_doors:" ..name.. "_Rdoor", {
 	buildable_to = false,
 	groups = mat_groups,
 	sounds = mat_sound,
+	drop = {},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -207,8 +209,8 @@ minetest.register_node("c_doors:" ..name.. "_Rdoor_open", {
 	walkable = true,
 	buildable_to = false,
 	groups = mat_groups,
-	drop = "c_doors:" ..name.. "_Rdoor",
 	sounds = mat_sound,
+	drop = {},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -257,6 +259,7 @@ minetest.register_node("c_doors:dbl_" ..name.. "_win_sml", {
 	is_ground_content = false,
 	groups = {cracky = 3},
 	sounds = default.node_sound_glass_defaults(),
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -290,7 +293,7 @@ minetest.register_node("c_doors:dbl_" ..name.. "_win_sml_open", {
 	on_rotate = screwdriver.rotate_simple,
 	sunlight_propogates = true,
 	is_ground_content = false,
-	drop = "c_doors:dbl_" ..name.. "_win_sml",
+	drop = {},
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 	node_box = {
@@ -342,6 +345,7 @@ minetest.register_node("c_doors:dbl_" ..name.. "_win_lg", {
 	is_ground_content = false,
 	groups = {cracky = 3},
 	sounds = default.node_sound_glass_defaults(),
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -378,9 +382,9 @@ minetest.register_node("c_doors:dbl_" ..name.. "_win_lg_open", {
 	on_rotate = screwdriver.rotate_simple,
 	sunlight_propogates = true,
 	is_ground_content = false,
-	drop = "c_doors:dbl_" ..name.. "_win_lg",
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
+	drop = {},
 	node_box = {
 		type = "fixed",
 		fixed = {

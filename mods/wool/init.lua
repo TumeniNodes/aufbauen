@@ -30,6 +30,7 @@ for i = 1, #dyes do
 		groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
 				flammable = 3, wool = 1},
 		sounds = default.node_sound_defaults(),
+		drop = {},
 	})
 
 	minetest.register_craft{

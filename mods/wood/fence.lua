@@ -12,6 +12,7 @@ function fence.register_fence(name, def)
 	local default_fields = {
 		paramtype = "light",
 		paramtype2 = "facedir",
+		drop = {},
 		drawtype = "nodebox",
 		node_box = {
 			type = "connected",
@@ -145,6 +146,7 @@ function fence.register_fence_rail(name, def)
 	local default_fields = {
 		paramtype = "light",
 		paramtype2 = "facedir",
+		drop = {},
 		drawtype = "nodebox",
 		node_box = {
 			type = "connected",
@@ -207,7 +209,6 @@ fence.register_fence_rail("wood:birch_fence_rail", {
 	inventory_image = "wood_birch_fence_rail_inv.png",
 	wield_image = "wood_birch_fence_rail_inv.png",
 	material = "wood:birch",
-	drop = {},
 	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -218,7 +219,6 @@ fence.register_fence_rail("wood:junglewood_fence_rail", {
 	inventory_image = "wood_junglewood_fence_rail_inv.png",
 	wield_image = "wood_junglewood_fence_rail_inv.png",
 	material = "wood:junglewood",
-	drop = {},
 	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -230,7 +230,6 @@ fence.register_fence_rail("wood:maple_fence_rail", {
 	wield_image = "wood_maple_fence_rail_inv.png",
 	material = "wood:maple",
 	groups = {choppy = 2},
-	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -240,7 +239,6 @@ fence.register_fence_rail("wood:oak_fence_rail", {
 	inventory_image = "wood_oak_fence_rail_inv.png",
 	wield_image = "wood_oak_fence_rail_inv.png",
 	material = "wood:oak",
-	drop = {},
 	groups = {choppy = 2},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -251,7 +249,6 @@ fence.register_fence_rail("wood:pine_fence_rail", {
 	inventory_image = "wood_pine_fence_rail_inv.png",
 	wield_image = "wood_pine_fence_rail_inv.png",
 	material = "wood:pine",
-	drop = {},
 	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -263,7 +260,6 @@ fence.register_fence_rail("wood:willow_fence_rail", {
 	wield_image = "wood_willow_fence_rail_inv.png",
 	material = "wood:willow",
 	groups = {choppy = 2},
-	drop = {},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -281,7 +277,7 @@ function fence.register_fence_gate(name, def)
 		paramtype2 = "facedir",
 		sunlight_propagates = true,
 		is_ground_content = false,
-		drop = name .. "_closed",
+		drop = {},
 		connect_sides = {"left", "right"},
 		groups = def.groups,
 		sounds = def.sounds,

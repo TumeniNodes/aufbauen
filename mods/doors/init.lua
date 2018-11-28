@@ -86,7 +86,7 @@ minetest.register_node("doors:hidden", {
 	diggable = false,
 	buildable_to = false,
 	floodable = false,
-	drop = "",
+	drop = {},
 	groups = {not_in_creative_inventory = 1},
 	on_blast = function() end,
 	tiles = {"doors_blank.png"},
@@ -352,7 +352,7 @@ function doors.register(name, def)
 
 	def.groups.not_in_creative_inventory = 1
 	def.groups.door = 1
-	def.drop = name
+	def.drop = {}
 	def.door = {
 		name = name,
 		sounds = { def.sound_close, def.sound_open },
@@ -617,6 +617,7 @@ function doors.register_trapdoor(name, def)
 	def.drawtype = "nodebox"
 	def.paramtype = "light"
 	def.paramtype2 = "facedir"
+	def.drop = {}
 	def.is_ground_content = false
 
 	if def.protected then
@@ -706,7 +707,7 @@ function doors.register_trapdoor(name, def)
 			def.tile_front .. '^[transform46',
 			def.tile_front .. '^[transform6'}
 
-	def_opened.drop = name_closed
+	def_opened.drop = {}
 	def_opened.groups.not_in_creative_inventory = 1
 
 	minetest.register_node(name_opened, def_opened)

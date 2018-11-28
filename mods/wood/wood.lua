@@ -12,8 +12,8 @@ minetest.register_node("wood:birch_planking", {
 	tiles = {"wood_birch_planking.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, wood = 1},
-	drop = {},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 minetest.register_node("wood:birch_planks", {
@@ -23,8 +23,8 @@ minetest.register_node("wood:birch_planks", {
 	tiles = {"wood_birch_planks.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, wood = 1},
-	drop = {},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 
@@ -40,6 +40,7 @@ minetest.register_node("wood:junglewood_planking", {
 	is_ground_content = false,
 	groups = {choppy = 2, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 minetest.register_node("wood:junglewood_planks", {
@@ -50,6 +51,7 @@ minetest.register_node("wood:junglewood_planks", {
 	is_ground_content = false,
 	groups = {choppy = 2, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 
@@ -64,8 +66,8 @@ minetest.register_node("wood:maple_planking", {
 	tiles = {"wood_maple_planking.png"},
 	is_ground_content = false,
 	groups = {choppy = 2, wood = 1},
-	drop = {},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 minetest.register_node("wood:maple_planks", {
@@ -75,8 +77,8 @@ minetest.register_node("wood:maple_planks", {
 	tiles = {"wood_maple_planks.png"},
 	is_ground_content = false,
 	groups = {choppy = 2, wood = 1},
-	drop = {},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 
@@ -91,8 +93,8 @@ minetest.register_node("wood:oak_planking", {
 	tiles = {"wood_oak_planking.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, wood = 1},
-	drop = {},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 minetest.register_node("wood:oak_planks", {
@@ -102,8 +104,8 @@ minetest.register_node("wood:oak_planks", {
 	tiles = {"wood_oak_planks.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, wood = 1},
-	drop = {},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 
@@ -118,8 +120,8 @@ minetest.register_node("wood:pine_planking", {
 	tiles = {"wood_pine_planking.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, wood = 1},
-	drop = {},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 minetest.register_node("wood:pine_planks", {
@@ -129,8 +131,7 @@ minetest.register_node("wood:pine_planks", {
 	tiles = {"wood_pine_planks.png"},
 	is_ground_content = false,
 	groups = {choppy = 3, wood = 1},
-	drop = {},
-	sounds = default.node_sound_wood_defaults(),
+	sounds = default.node_sound_wood_defaults(),drop = {},
 })
 
 --
@@ -143,8 +144,8 @@ minetest.register_node("wood:willow_planking", {
 	place_param2 = 0,
 	tiles = {"wood_willow_planking.png",},
 	groups = {choppy = 1, wood=1},
-	drop = {},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 minetest.register_node("wood:willow_planks", {
@@ -153,8 +154,8 @@ minetest.register_node("wood:willow_planks", {
 	place_param2 = 0,
 	tiles = {"wood_willow_planks.png",},
 	groups = {choppy = 1, wood=1},
-	drop = {},
 	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 
@@ -309,6 +310,7 @@ minetest.register_node(":pickets:picket" .. subname, {
 	facedir = simple,
 	groups = groups,
 	sounds = sounds,
+	drop = {},
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",
@@ -341,6 +343,7 @@ minetest.register_node(":pickets:picket_corner" .. subname, {
 	facedir = simple,
 	groups = groups,
 	sounds = sounds,
+	drop = {},
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",
@@ -376,6 +379,7 @@ minetest.register_node(":pickets:picket_icorner" .. subname, {
 	facedir = simple,
 	groups = groups,
 	sounds = sounds,
+	drop = {},
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",
