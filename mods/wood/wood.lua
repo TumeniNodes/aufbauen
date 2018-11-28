@@ -28,33 +28,6 @@ minetest.register_node("wood:birch_planks", {
 })
 
 
----
---- Junglewood Nodes
----
-
-minetest.register_node("wood:junglewood_planking", {
-	description = "Jungle Wood Planking",
-	paramtype2 = "facedir",
-	place_param2 = 0,
-	tiles = {"wood_junglewood_planking.png"},
-	is_ground_content = false,
-	groups = {choppy = 2, wood = 1},
-	sounds = default.node_sound_wood_defaults(),
-	drop = {},
-})
-
-minetest.register_node("wood:junglewood_planks", {
-	description = "Jungle Wood Planks",
-	paramtype2 = "facedir",
-	place_param2 = 0,
-	tiles = {"wood_junglewood_planks.png"},
-	is_ground_content = false,
-	groups = {choppy = 2, wood = 1},
-	sounds = default.node_sound_wood_defaults(),
-	drop = {},
-})
-
-
 --
 -- Maple Nodes
 --
@@ -132,6 +105,32 @@ minetest.register_node("wood:pine_planks", {
 	is_ground_content = false,
 	groups = {choppy = 3, wood = 1},
 	sounds = default.node_sound_wood_defaults(),drop = {},
+})
+
+---
+--- Walnut Nodes
+---
+
+minetest.register_node("wood:walnut_planking", {
+	description = "Walnut Planking",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"wood_walnut_planking.png"},
+	is_ground_content = false,
+	groups = {choppy = 2, wood = 1},
+	sounds = default.node_sound_wood_defaults(),
+	drop = {},
+})
+
+minetest.register_node("wood:walnut_planks", {
+	description = "Walnut Planks",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"wood_walnut_planks.png"},
+	is_ground_content = false,
+	groups = {choppy = 2, wood = 1},
+	sounds = default.node_sound_wood_defaults(),
+	drop = {},
 })
 
 --
@@ -228,19 +227,6 @@ ladder.register_ladder("wood:birch_ladder", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-ladder.register_ladder("wood:junglewood_ladder", {
-	description = "Junglewood Ladder",
-	image = "wood_junglewood_ladder.png",
-	texture = {"wood_junglewood_planks.png", "wood_junglewood_planks.png",
-				"wood_junglewood_planks.png", "wood_junglewood_planks.png",
-				"wood_junglewood_ladder.png","wood_junglewood_ladder.png"},
-	inventory_image = "wood_junglewood_ladder.png",
-	wield_image = "wood_junglewood_ladder.png",
-	material = "wood:junglewood",
-	groups = {choppy = 3},
-	sounds = default.node_sound_wood_defaults(),
-})
-
 ladder.register_ladder("wood:maple_ladder", {
 	description = "Maple Ladder",
 	image = "wood_maple_ladder.png",
@@ -276,6 +262,19 @@ ladder.register_ladder("wood:pine_ladder", {
 	inventory_image = "wood_pine_ladder.png",
 	wield_image = "wood_pine_ladder.png",
 	material = "wood:pine",
+	groups = {choppy = 3},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+ladder.register_ladder("wood:walnut_ladder", {
+	description = "Walnut Ladder",
+	image = "wood_walnut_ladder.png",
+	texture = {"wood_walnut_planks.png", "wood_walnut_planks.png",
+				"wood_walnut_planks.png", "wood_walnut_planks.png",
+				"wood_walnut_ladder.png","wood_walnut_ladder.png"},
+	inventory_image = "wood_walnut_ladder.png",
+	wield_image = "wood_walnut_ladder.png",
+	material = "wood:walnut",
 	groups = {choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -424,16 +423,6 @@ pickets.register_picket_and_picket_corner_and_picket_icorner("_birch", "wood:bir
 		"Birch Picket iCorner",
 		default.node_sound_wood_defaults())
 
-pickets.register_picket_and_picket_corner_and_picket_icorner("_junglewood", "wood:junglewood_planks",
-		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
-		{"wood_junglewood_planks.png", "wood_junglewood_planks.png",
-		"wood_junglewood_picket.png", "wood_junglewood_picket.png",
-		"wood_junglewood_picket.png", "wood_junglewood_picket.png"},
-		"Junglewood Picket",
-		"Junglewood Picket Corner",
-		"Junglewood Picket iCorner",
-		default.node_sound_wood_defaults())
-
 pickets.register_picket_and_picket_corner_and_picket_icorner("_maple", "wood:maple_planks",
 		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		{"wood_maple_planks.png", "wood_maple_planks.png",
@@ -462,6 +451,16 @@ pickets.register_picket_and_picket_corner_and_picket_icorner("_pine", "wood:pine
 		"Pine Picket",
 		"Pine Picket Corner",
 		"Pine Picket iCorner",
+		default.node_sound_wood_defaults())
+
+pickets.register_picket_and_picket_corner_and_picket_icorner("_walnut", "wood:walnut_planks",
+		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		{"wood_walnut_planks.png", "wood_walnut_planks.png",
+		"wood_walnut_picket.png", "wood_walnut_picket.png",
+		"wood_walnut_picket.png", "wood_walnut_picket.png"},
+		"Walnut Picket",
+		"Walnut Picket Corner",
+		"Walnut Picket iCorner",
 		default.node_sound_wood_defaults())
 
 pickets.register_picket_and_picket_corner_and_picket_icorner("_willow", "wood:willow_planks",

@@ -164,17 +164,6 @@ xpanes.register_pane("pane_birch", {
 	}
 )
 
-xpanes.register_pane("pane_junglewood", {
-	description = "Junglewood Glass Pane",
-	textures = {{name = "xpanes_junglewood.png",backface_culling = true},"xpanes_pane_half.png","xpanes_junglewood_edge.png"},
-	use_texture_alpha = true,
-	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_junglewood.png", "xpanes_blank.png"),
-	wield_image = "xpanes_junglewood.png",
-	sounds = default.node_sound_glass_defaults(),
-	groups = {snappy=2, cracky=3},
-	}
-)
-
 xpanes.register_pane("pane_maple", {
 	description = "Maple Glass Pane",
 	textures = {{name = "xpanes_maple.png",backface_culling = true},"xpanes_pane_half.png","xpanes_maple_edge.png"},
@@ -203,6 +192,17 @@ xpanes.register_pane("pane_pine", {
 	use_texture_alpha = true,
 	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_pine.png", "xpanes_blank.png"),
 	wield_image = "xpanes_pine.png",
+	sounds = default.node_sound_glass_defaults(),
+	groups = {snappy=2, cracky=3},
+	}
+)
+
+xpanes.register_pane("pane_walnut", {
+	description = "Walnut Glass Pane",
+	textures = {{name = "xpanes_walnut.png",backface_culling = true},"xpanes_pane_half.png","xpanes_walnut_edge.png"},
+	use_texture_alpha = true,
+	inventory_image = minetest.inventorycube("xpanes_blank.png", "xpanes_walnut.png", "xpanes_blank.png"),
+	wield_image = "xpanes_walnut.png",
 	sounds = default.node_sound_glass_defaults(),
 	groups = {snappy=2, cracky=3},
 	}

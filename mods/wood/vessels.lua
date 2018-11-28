@@ -105,6 +105,7 @@ minetest.register_node("wood:vessels_glass_bottle", {
 	},
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
+	drop = {},
 })
 
 minetest.register_node("wood:vessels_drinking_glass", {
@@ -122,6 +123,7 @@ minetest.register_node("wood:vessels_drinking_glass", {
 	},
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
+	drop = {},
 })
 
 minetest.register_node("wood:vessels_steel_bottle", {
@@ -139,4 +141,5 @@ minetest.register_node("wood:vessels_steel_bottle", {
 	},
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_defaults(),
+	drop = {},
 })

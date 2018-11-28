@@ -163,7 +163,7 @@ minetest.register_node("fireflies:firefly_bottle", {
 		end
 
 		if firefly_pos then
-			minetest.set_node(pos, {name = "vessels:glass_bottle"})
+			minetest.set_node(pos, {name = "wood:vessels_glass_bottle"})
 			minetest.set_node(firefly_pos, {name = "fireflies:firefly"})
 			minetest.get_node_timer(firefly_pos):start(1)
 		end
@@ -175,7 +175,7 @@ minetest.register_craft( {
 	recipe = {
 		{"", "", ""},
 		{"", "fireflies:firefly", ""},
-		{"", "vessels:glass_bottle", ""}
+		{"", "wood:vessels_glass_bottle", ""}
 	}
 })
 

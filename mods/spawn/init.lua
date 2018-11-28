@@ -24,11 +24,11 @@ local pos = {x = 0, y = 8, z = 0}
 -- Table of suitable biomes
 
 local biome_ids = {
-	minetest.get_biome_id("taiga"),
-	minetest.get_biome_id("coniferous_forest"),
-	minetest.get_biome_id("deciduous_forest"),
+--	minetest.get_biome_id("taiga"),
+--	minetest.get_biome_id("coniferous_forest"),
+--	minetest.get_biome_id("deciduous_forest"),
 	minetest.get_biome_id("grassland"),
-	minetest.get_biome_id("savanna"),
+--	minetest.get_biome_id("savanna"),
 }
 
 -- End of parameters

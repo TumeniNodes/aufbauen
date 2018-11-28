@@ -472,26 +472,6 @@ stairs.register_stair_and_slab(
 )
 
 stairs.register_stair_and_slab(
-	"junglewood_planking",
-	"wood:junglewood_planking",
-	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-	{"wood_junglewood_planking.png"},
-	"Junglewood Planking Stair",
-	"Junglewood Planking Slab",
-	default.node_sound_wood_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"junglewood_planks",
-	"wood:junglewood_planks",
-	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-	{"wood_junglewood_planks.png"},
-	"Junglewood Planks Stair",
-	"Junglewood Planks Slab",
-	default.node_sound_wood_defaults()
-)
-
-stairs.register_stair_and_slab(
 	"maple_planking",
 	"wood:maple_planking",
 	{choppy = 2, oddly_breakable_by_hand = 2, wood = 1},
@@ -548,6 +528,26 @@ stairs.register_stair_and_slab(
 	{"wood_pine_planks.png"},
 	"Pine Planks Stair",
 	"Pine Planks Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"walnut_planking",
+	"wood:walnut_planking",
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	{"wood_walnut_planking.png"},
+	"Walnut Planking Stair",
+	"Walnut Planking Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"walnut_planks",
+	"wood:walnut_planks",
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	{"wood_walnut_planks.png"},
+	"Walnut Planks Stair",
+	"Walnut Planks Slab",
 	default.node_sound_wood_defaults()
 )
 

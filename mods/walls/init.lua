@@ -216,9 +216,6 @@ walls.register("walls:stone_wood", "Stone Wood Wall", {"stone_stone_wood_top.png
 walls.register("walls:birch", "Birch Wall", "wood_birch_planks.png",
 		"wood:birch_planks", default.node_sound_wood_defaults())
 
-walls.register("walls:junglewood", "Junglewood Wall", "wood_junglewood_planks.png",
-		"wood:junglewood_planks", default.node_sound_wood_defaults())
-
 walls.register("walls:maple", "Maple Wall", "wood_maple_planks.png",
 		"wood:maple_planks", default.node_sound_wood_defaults())
 
@@ -227,6 +224,9 @@ walls.register("walls:oak", "Oak Wall", "wood_oak_planks.png",
 
 walls.register("walls:pine", "Pine Wall", "wood_pine_planks.png",
 		"wood:pine_planks", default.node_sound_wood_defaults())
+
+walls.register("walls:walnut", "Walnut Wall", "wood_walnut_planks.png",
+		"wood:walnut_planks", default.node_sound_wood_defaults())
 
 walls.register("walls:willow", "Willow Wall", "wood_willow_planks.png",
 		"wood:willow_planks", default.node_sound_wood_defaults())

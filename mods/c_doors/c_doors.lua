@@ -16,12 +16,6 @@ c_doors.door = {
 
 	{"birch_panel", "Birch Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_birch_panel.png",backface_culling = true}, "wood:wood"},
 
-	{"junglewood", "Junglewood", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_junglewood.png",backface_culling = true}, "wood:wood"},
-
-	{"junglewood_glass", "Junglewood Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_junglewood_glass.png",backface_culling = true}, "wood:wood"},
-
-	{"junglewood_panel", "Junglewood Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_junglewood_panel.png",backface_culling = true}, "wood:wood"},
-
 	{"maple", "Maple", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_maple.png",backface_culling = true}, "wood:wood"},
 
 	{"maple_glass", "Maple Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_maple_glass.png",backface_culling = true}, "wood:wood"},
@@ -39,6 +33,12 @@ c_doors.door = {
 	{"pine_glass", "Pine Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_pine_glass.png",backface_culling = true}, "wood:wood"},
 
 	{"pine_panel", "Pine Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_pine_panel.png",backface_culling = true}, "wood:wood"},
+
+	{"walnut", "Walnut", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_walnut.png",backface_culling = true}, "wood:walnut"},
+
+	{"walnut_glass", "Walnut Glass", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_walnut_glass.png",backface_culling = true}, "wood:walnut"},
+
+	{"walnut_panel", "Walnut Panel", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_walnut_panel.png",backface_culling = true}, "wood:walnut"},
 
 	{"willow", "Willow", {choppy = 2, door = 1}, default.node_sound_wood_defaults(), "doors_door", {name = "c_doors_willow.png",backface_culling = true}, "default:wood"},
 

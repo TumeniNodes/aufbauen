@@ -212,7 +212,7 @@ local function add_effects(pos, radius, drops)
 	})
 	minetest.add_particlespawner({
 		amount = 64,
-		time = 0.5,
+		time = 0.3,
 		minpos = vector.subtract(pos, radius / 2),
 		maxpos = vector.add(pos, radius / 2),
 		minvel = {x = -10, y = -10, z = -10},
@@ -221,8 +221,8 @@ local function add_effects(pos, radius, drops)
 		maxacc = vector.new(),
 		minexptime = 1,
 		maxexptime = 2.5,
-		minsize = radius * 3,
-		maxsize = radius * 5,
+		minsize = radius * 5,
+		maxsize = radius * 7,
 		texture = "tnt_smoke.png",
 	})
 
@@ -445,7 +445,7 @@ minetest.register_node("tnt:gunpowder", {
 	sounds = default.node_sound_leaves_defaults(),
 
 	on_punch = function(pos, node, puncher)
-		if puncher:get_wielded_item():get_name() == "default:torch" then
+		if puncher:get_wielded_item():get_name() == "lighting:torch" then
 			minetest.set_node(pos, {name = "tnt:gunpowder_burning"})
 			minetest.log("action", puncher:get_player_name() ..
 				" ignites tnt:gunpowder at " ..
@@ -612,7 +612,7 @@ function tnt.register_tnt(def)
 				end
 			end,
 			on_punch = function(pos, node, puncher)
-				if puncher:get_wielded_item():get_name() == "default:torch" then
+				if puncher:get_wielded_item():get_name() == "lighting:torch" then
 					minetest.swap_node(pos, {name = name .. "_burning"})
 					minetest.registered_nodes[name .. "_burning"].on_construct(pos)
 					minetest.log("action", puncher:get_player_name() ..
