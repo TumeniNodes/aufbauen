@@ -48,7 +48,7 @@ minetest.register_node("fire:basic_flame", {
 
 minetest.register_node("fire:permanent_flame", {
 	description = "Permanent Flame",
-	drawtype = "firelike",
+	drawtype = "plantlike",
 	tiles = {
 		{
 			name = "fire_basic_flame_animated.png",
@@ -61,14 +61,51 @@ minetest.register_node("fire:permanent_flame", {
 		},
 	},
 	inventory_image = "fire_basic_flame.png",
+	wield_image = "fire_basic_flame.png",
 	paramtype = "light",
-	light_source = 13,
+	light_source = 12,
 	walkable = false,
 	buildable_to = true,
 	sunlight_propagates = true,
 	damage_per_second = 4,
 	groups = {igniter = 2, dig_immediate = 3},
 	drop = "",
+})
+
+--
+-- Camp Fire
+--
+minetest.register_node("fire:camp_fire", {
+	description = "Camp Fire",
+	drawtype = "plantlike",
+	use_texture_alpha = true,
+	tiles = {
+		{
+			name = "camp_fire.png",
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 1
+			},
+		},
+	},
+	inventory_image = "camp_fire_inv.png",
+	wield_image = "camp_fire_inv.png",
+	paramtype = "light",
+	light_source = 9,
+	walkable = false,
+	buildable_to = true,
+	sunlight_propagates = true,
+	damage_per_second = 4,
+	groups = {igniter = 2, dig_immediate = 3},
+	drop = "",
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-5/16, -1/2, -5/16, 5/16, -3/8, 5/16},
+		}
+	}
 })
 
 
@@ -117,35 +154,6 @@ minetest.register_tool("fire:flint_and_steel", {
 	end
 })
 
---[[
-minetest.register_craft({
-	output = "fire:flint_and_steel",
-	recipe = {
-		{"default:flint", "default:steel_ingot"}
-	}
-})
-
-
--- Override coalblock to enable permanent flame above
--- Coalblock is non-flammable to avoid unwanted basic_flame nodes
-
-
-minetest.override_item("default:coalblock", {
-	after_destruct = function(pos, oldnode)
-		pos.y = pos.y + 1
-		if minetest.get_node(pos).name == "fire:permanent_flame" then
-			minetest.remove_node(pos)
-		end
-	end,
-	on_ignite = function(pos, igniter)
-		local flame_pos = {x = pos.x, y = pos.y + 1, z = pos.z}
-		if minetest.get_node(flame_pos).name == "air" then
-			minetest.set_node(flame_pos, {name = "fire:permanent_flame"})
-		end
-	end,
-})
---]]
-
 --
 -- Sound
 --
@@ -177,11 +185,12 @@ if flame_sound then
 		local fpos, num = minetest.find_nodes_in_area(
 			areamin,
 			areamax,
-			{"fire:basic_flame", "fire:permanent_flame"}
+			{"fire:basic_flame", "fire:permanent_flame", "fire:camp_fire"}
 		)
 		-- Total number of flames in radius
 		local flames = (num["fire:basic_flame"] or 0) +
-			(num["fire:permanent_flame"] or 0)
+			(num["fire:permanent_flame"] or 0) +
+			(num["fire:camp_fire"] or 0) 
 		-- Stop previous sound
 		if handles[player_name] then
 			minetest.sound_stop(handles[player_name])
@@ -224,7 +233,7 @@ if flame_sound then
 				{
 					pos = fposmid,
 					to_player = player_name,
-					gain = math.min(0.06 * (1 + flames * 0.125), 0.18),
+					gain = math.min(0.10 * (1 + flames * 0.125), 0.18),
 					max_hear_distance = 32,
 					loop = true, -- In case of lag
 				}
@@ -277,7 +286,7 @@ end
 
 minetest.register_abm({
 	label = "Extinguish flame",
-	nodenames = {"fire:basic_flame", "fire:permanent_flame"},
+	nodenames = {"fire:basic_flame", "fire:permanent_flame", "fire:camp_fire"},
 	neighbors = {"group:puts_out_fire"},
 	interval = 3,
 	chance = 1,
