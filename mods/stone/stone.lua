@@ -20,6 +20,54 @@ minetest.register_node("stone:brick", {
 -- Cobblestone Nodes
 --
 
+minetest.register_node("stone:cobble", {
+	description = "Cobble",
+	tiles = {"stone_cobble.png"},
+	is_ground_content = false,
+	groups = {cracky = 3, stone = 2},
+	sounds = default.node_sound_stone_defaults(),
+	drop = {},
+})
+
+minetest.register_node("stone:cobble_path", {
+	description = "Cobble Path",
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-1/2, -1/2, -1/2, 1/2, 3/8, 1/2},
+			},
+		},
+	tiles = {"stone_cobble.png"},
+	groups = {cracky = 3, soil = 1},
+	sounds = default.node_sound_stone_defaults(),
+	drop = {},
+})
+
+minetest.register_node("stone:cobble_mossy", {
+	description = "Mossy Cobble",
+	tiles = {"stone_cobble_mossy.png"},
+	is_ground_content = false,
+	groups = {cracky = 3, stone = 1},
+	sounds = default.node_sound_stone_defaults(),
+	drop = {},
+})
+
+minetest.register_node("stone:cobble_path_mossy", {
+	description = "Mossy Cobble Path",
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-1/2, -1/2, -1/2, 1/2, 3/8, 1/2},
+			},
+		},
+	tiles = {"stone_cobble_mossy.png"},
+	groups = {cracky = 3, soil = 1},
+	sounds = default.node_sound_stone_defaults(),
+	drop = {},
+})
+
 minetest.register_node("stone:cobblestone", {
 	description = "Cobblestone",
 	tiles = {"stone_cobblestone.png"},
