@@ -46,7 +46,7 @@ minetest.register_node("stone:cobble_path", {
 
 minetest.register_node("stone:cobble_mossy", {
 	description = "Mossy Cobble",
-	tiles = {"stone_cobble_mossy.png"},
+	tiles = {"stone_mossy_cobble.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 1},
 	sounds = default.node_sound_stone_defaults(),
@@ -62,7 +62,7 @@ minetest.register_node("stone:cobble_path_mossy", {
 			{-1/2, -1/2, -1/2, 1/2, 3/8, 1/2},
 			},
 		},
-	tiles = {"stone_cobble_mossy.png"},
+	tiles = {"stone_mossy_cobble.png"},
 	groups = {cracky = 3, soil = 1},
 	sounds = default.node_sound_stone_defaults(),
 	drop = {},
