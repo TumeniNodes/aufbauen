@@ -147,6 +147,15 @@ minetest.register_node("default:granite", {
 	drop = {},
 })
 
+minetest.register_node("default:granite_mossy", {
+	description = "Granite",
+	tiles = {"default_granite.png^stone_moss.png"},
+	groups = {cracky = 3, stone = 1},
+--	legacy_mineral = true,
+	sounds = default.node_sound_stone_defaults(),
+	drop = {},
+})
+
 minetest.register_node("default:limestone", {
 	description = "Limestone",
 	tiles = {"default_limestone.png"},

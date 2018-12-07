@@ -46,7 +46,7 @@ minetest.register_node("stone:cobble_path", {
 
 minetest.register_node("stone:cobble_mossy", {
 	description = "Mossy Cobble",
-	tiles = {"stone_mossy_cobble.png"},
+	tiles = {"stone_cobble_mossy.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 1},
 	sounds = default.node_sound_stone_defaults(),
@@ -62,7 +62,7 @@ minetest.register_node("stone:cobble_path_mossy", {
 			{-1/2, -1/2, -1/2, 1/2, 3/8, 1/2},
 			},
 		},
-	tiles = {"stone_mossy_cobble.png"},
+	tiles = {"stone_cobble_mossy.png"},
 	groups = {cracky = 3, soil = 1},
 	sounds = default.node_sound_stone_defaults(),
 	drop = {},
@@ -129,9 +129,32 @@ minetest.register_node("stone:granite_block", {
 	drop = {},
 })
 
+minetest.register_node("stone:granite_block_mossy", {
+	description = "Mossy Granite Block",
+	tiles = {"stone_granite_block_mossy.png^stone_moss.png",
+			"stone_granite_block_mossy.png^stone_moss.png",
+			"stone_granite_block_mossy.png"},
+	is_ground_content = false,
+	groups = {cracky = 2, stone = 1},
+	sounds = default.node_sound_stone_defaults(),
+	drop = {},
+})
+
 minetest.register_node("stone:granite_block_half", {
 	description = "Granite Block Half",
 	tiles = {"stone_granite_block_half.png"},
+	is_ground_content = false,
+	paramtype2 = "facedir",
+	groups = {cracky = 2, stone = 1},
+	sounds = default.node_sound_stone_defaults(),
+	drop = {},
+})
+
+minetest.register_node("stone:granite_block_half_mossy", {
+	description = "Mossy Granite Block Half",
+	tiles = {"stone_granite_block_half_mossy.png^stone_moss.png",
+			"stone_granite_block_half_mossy.png^stone_moss.png",
+			"stone_granite_block_half_mossy.png"},
 	is_ground_content = false,
 	paramtype2 = "facedir",
 	groups = {cracky = 2, stone = 1},
@@ -148,9 +171,29 @@ minetest.register_node("stone:granite_brick", {
 	drop = {},
 })
 
+minetest.register_node("stone:granite_brick_mossy", {
+	description = "Mossy Granite Brick",
+	tiles = {"stone_granite_brick_mossy.png"},
+	is_ground_content = false,
+	groups = {cracky = 2, stone = 1},
+	sounds = default.node_sound_stone_defaults(),
+	drop = {},
+})
+
 minetest.register_node("stone:granite_cinderblock", {
 	description = "Granite Cinderblock",
 	tiles = {"stone_granite_cinderblock.png"},
+	is_ground_content = false,
+	groups = {cracky = 2, stone = 1},
+	sounds = default.node_sound_stone_defaults(),
+	drop = {},
+})
+
+minetest.register_node("stone:granite_cinderblock_mossy", {
+	description = "Mossy Granite Cinderblock",
+	tiles = {"stone_granite_cinderblock_mossy.png^stone_moss.png",
+			"stone_granite_cinderblock_mossy.png^stone_moss.png",
+			"stone_granite_cinderblock_mossy.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, stone = 1},
 	sounds = default.node_sound_stone_defaults(),
