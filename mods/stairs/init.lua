@@ -829,11 +829,38 @@ stairs.register_slab(
 )
 
 stairs.register_slab(
-	"gravel",
-	"default:gravel",
+	"granite_gravel",
+	"default:granite_gravel",
 	{cracky = 1, level = 2},
-	{"default_gravel.png"},
-	"Gravel Slab",
+	{"default_granite_gravel.png"},
+	"Granite Gravel Slab",
+	default.node_sound_dirt_defaults()
+)
+
+stairs.register_slab(
+	"granite_gravel_mossy",
+	"default:granite_gravel_mossy",
+	{cracky = 1, level = 2},
+	{"default_granite_gravel_mossy.png"},
+	"Mossy Granite Gravel Slab",
+	default.node_sound_dirt_defaults()
+)
+
+stairs.register_slab(
+	"rock_gravel",
+	"default:rock_gravel",
+	{cracky = 1, level = 2},
+	{"default_rock_gravel.png"},
+	"Rock Gravel Slab",
+	default.node_sound_dirt_defaults()
+)
+
+stairs.register_slab(
+	"rock_gravel_mossy",
+	"default:rock_gravel_mossy",
+	{cracky = 1, level = 2},
+	{"default_rock_gravel_mossy.png"},
+	"Mossy Rock Gravel Slab",
 	default.node_sound_dirt_defaults()
 )
 

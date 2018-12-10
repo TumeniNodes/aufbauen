@@ -335,19 +335,95 @@ minetest.register_node("default:sand", {
 	drop = {},
 })
 
-minetest.register_node("default:gravel", {
-	description = "Gravel",
-	tiles = {"default_gravel.png"},
+minetest.register_node("default:granite_gravel", {
+	description = "Granite Gravel",
+	tiles = {"default_granite_gravel.png"},
 	groups = {crumbly = 2, falling_node = 1},
 	sounds = default.node_sound_gravel_defaults(),
 	drop = {},
 })
 
-minetest.register_node("default:gravel_mossy", {
-	description = "Mossy Gravel",
-	tiles = {"default_gravel_mossy.png"},
+minetest.register_node("default:granite_gravel_mossy", {
+	description = "Mossy Granite Gravel",
+	tiles = {"default_granite_gravel_mossy.png"},
 	groups = {crumbly = 2, falling_node = 1},
 	sounds = default.node_sound_gravel_defaults(),
+	drop = {},
+})
+
+minetest.register_node("default:granite_gravel_path", {
+	description = "Granite Gravel Path",
+	drawtype = "nodebox",
+	node_box = {
+		type = "connected",
+		fixed = {
+			{-1/2, -1/2, -1/2, 1/2, 3/8, 1/2},
+			},
+		},
+	tiles = {"default_granite_gravel.png"},
+	groups = {crumbly = 3, soil = 1},
+	sounds = default.node_sound_dirt_defaults(),
+	drop = {},
+})
+
+minetest.register_node("default:granite_gravel_mossy_path", {
+	description = "Mossy Granite Gravel Path",
+	drawtype = "nodebox",
+	node_box = {
+		type = "connected",
+		fixed = {
+			{-1/2, -1/2, -1/2, 1/2, 3/8, 1/2},
+			},
+		},
+	tiles = {"default_granite_gravel_mossy.png"},
+	groups = {crumbly = 3, soil = 1},
+	sounds = default.node_sound_dirt_defaults(),
+	drop = {},
+})
+
+minetest.register_node("default:rock_gravel", {
+	description = "Rock Gravel",
+	tiles = {"default_rock_gravel.png"},
+	groups = {crumbly = 2, falling_node = 1},
+	sounds = default.node_sound_gravel_defaults(),
+	drop = {},
+})
+
+minetest.register_node("default:rock_gravel_mossy", {
+	description = "Mossy Rock Gravel",
+	tiles = {"default_rock_gravel_mossy.png"},
+	groups = {crumbly = 2, falling_node = 1},
+	sounds = default.node_sound_gravel_defaults(),
+	drop = {},
+})
+
+minetest.register_node("default:rock_gravel_path", {
+	description = "Rock Gravel Path",
+	drawtype = "nodebox",
+	node_box = {
+		type = "connected",
+		fixed = {
+			{-1/2, -1/2, -1/2, 1/2, 3/8, 1/2},
+			},
+		},
+	tiles = {"default_rock_gravel.png"},
+	groups = {crumbly = 3, soil = 1},
+	sounds = default.node_sound_dirt_defaults(),
+	drop = {},
+})
+
+minetest.register_node("default:rock_gravel_mossy_path", {
+	description = "Mossy Rock Gravel Path",
+	drawtype = "nodebox",
+	node_box = {
+		type = "connected",
+		fixed = {
+			{-1/2, -1/2, -1/2, 1/2, 3/8, 1/2},
+			},
+		},
+	tiles = {"default_rock_gravel_mossy.png"},
+	groups = {crumbly = 3, soil = 1},
+	sounds = default.node_sound_dirt_defaults(),
 	drop = {},
 })
 
