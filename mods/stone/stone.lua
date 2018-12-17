@@ -4,16 +4,36 @@
 -- Brick Nodes
 --
 
-minetest.register_node("stone:brick", {
-	description = "Brick Block",
+minetest.register_node("stone:brick_1", {
+	description = "Brick",
 	paramtype2 = "facedir",
 	place_param2 = 0,
-	tiles = {"stone_brick.png"},
+	tiles = {"stone_brick_1.png"},
 	is_ground_content = false,
 	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 	drop = {},
+
+	on_place = function(itemstack, placer, pointed_thing)
+		local stack = ItemStack("stone:brick_" .. math.random(1,3))
+		local ret = minetest.item_place(stack, placer, pointed_thing)
+		return ItemStack("stone:brick_1 " ..
+			itemstack:get_count() - (1 - ret:get_count()))
+	end,
 })
+
+for i = 2, 3 do
+	minetest.register_node("stone:brick_" .. i, {
+		description = "Brick",
+		tiles = {"stone_brick_" .. i .. ".png"},
+--		inventory_image = "stone_brick_" .. i .. ".png",
+--		wield_image = "stone_brick_" .. i .. ".png",
+		groups = {cracky = 3, not_in_creative_inventory =1},
+		sounds = default.node_sound_stone_defaults(),
+		drop = {},
+	})
+end
+--})
 
 
 --
