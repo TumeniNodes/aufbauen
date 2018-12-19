@@ -33,8 +33,6 @@ for i = 2, 3 do
 		drop = {},
 	})
 end
---})
-
 
 --
 -- Cobblestone Nodes

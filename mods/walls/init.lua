@@ -167,6 +167,9 @@ end
 --
 --stone walls
 --
+walls.register("walls:brick_", "Brick Wall", "stone_brick_1.png",
+		"stone:brick", default.node_sound_stone_defaults())
+
 walls.register("walls:cobblestone", "Cobblestone Wall", "stone_cobblestone.png",
 		"stone:cobblestone", default.node_sound_stone_defaults())
 

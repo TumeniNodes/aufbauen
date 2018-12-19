@@ -574,10 +574,10 @@ stairs.register_stair_and_slab(
 --stone stairs
 
 stairs.register_stair_and_slab(
-	"brick",
-	"stone:brick",
+	"brick_1",
+	"stone:brick_1",
 	{cracky = 3},
-	{"stone_brick.png"},
+	{"stone_brick_1.png"},
 	"Brick Stair",
 	"Brick Slab",
 	default.node_sound_stone_defaults()
