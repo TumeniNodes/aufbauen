@@ -26,108 +26,12 @@ default.node_sound_metal_defaults())
 metal.register_basic_block(
 "metal",
 "grey_aluminium",
-"BGrey Aluminium",
-{"metal_grey.png"},
-{cracky = 3, oddly_breakable_by_hand = 3},
-default.node_sound_metal_defaults())
-
-metal.register_basic_block(
-"metal",
-"white_aluminium",
-"White Aluminium",
-{"metal_white.png"},
-{cracky = 3, oddly_breakable_by_hand = 3},
-default.node_sound_metal_defaults())
-
-metal.register_basic_block(
-"metal",
-"bronze",
-"Bronze",
-{"metal_bronze.png"},
-{cracky = 3, oddly_breakable_by_hand = 3},
-default.node_sound_metal_defaults())
-
-metal.register_basic_block(
-"metal",
-"iron",
-"Iron",
-{"metal_iron.png"},
-{cracky = 3, oddly_breakable_by_hand = 3},
-default.node_sound_metal_defaults())
-
-metal.register_basic_block(
-"metal",
-"rusted",
-"Rusted",
-{"metal_rusted.png"},
-{cracky = 3, oddly_breakable_by_hand = 3},
-default.node_sound_metal_defaults())
-
-metal.register_basic_block(
-"metal",
-"steel",
-"Steel",
-{"metal_steel.png"},
-{cracky = 3, oddly_breakable_by_hand = 3},
-default.node_sound_metal_defaults())
-
-
--- 3D blocks and stair nodes
-
-function metal.register_block(modname, subname, desc, tiles, groups, sounds)
-minetest.register_node("metal:" .. subname .. "_block", {
-	description = desc .. " Block",
-	drawtype = "nodebox",
-	tiles = tiles,
-	paramtype = "light",
-	is_ground_content = false,
-	groups = groups,
-	sounds = sounds,
-	drop = {},
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-7/16, -7/16, -7/16, 7/16, 7/16, 7/16},
-			{-1/2, -1/2, -1/2, -7/16, 1/2, -7/16},
-			{7/16, -1/2, -1/2, 1/2, 1/2, -7/16},
-			{-1/2, -1/2, 7/16, -7/16, 1/2, 1/2},
-			{7/16, -1/2, 7/16, 1/2, 1/2, 1/2},
-			{-1/2, 7/16, 7/16, 1/2, 1/2, 1/2},
-			{-1/2, 7/16, -1/2, 1/2, 1/2, -7/16},
-			{-1/2, -1/2, -1/2, 1/2, -7/16, -7/16},
-			{-1/2, -1/2, 7/16, 1/2, -7/16, 1/2},
-			{7/16, 7/16, -1/2, 1/2, 1/2, 1/2},
-			{7/16, -1/2, -1/2, 1/2, -7/16, 1/2},
-			{-1/2, 7/16, -1/2, -7/16, 1/2, 1/2},
-			{-1/2, -1/2, -1/2, -7/16, -7/16, 1/2},
-			},
-		},
-		selection_box = {
-			type = "fixed",
-			fixed = {
-				{-1/2, -1/2, -1/2, 1/2, 1/2, 1/2},
-			},
-		},
-	})
-end
-
-metal.register_block(
-"metal",
-"black_aluminium",
-"Black Aluminium",
-{"metal_black.png"},
-{cracky = 3, oddly_breakable_by_hand = 3},
-default.node_sound_metal_defaults())
-
-metal.register_block(
-"metal",
-"grey_aluminium",
 "Grey Aluminium",
 {"metal_grey.png"},
 {cracky = 3, oddly_breakable_by_hand = 3},
 default.node_sound_metal_defaults())
 
-metal.register_block(
+metal.register_basic_block(
 "metal",
 "white_aluminium",
 "White Aluminium",
@@ -135,7 +39,7 @@ metal.register_block(
 {cracky = 3, oddly_breakable_by_hand = 3},
 default.node_sound_metal_defaults())
 
-metal.register_block(
+metal.register_basic_block(
 "metal",
 "bronze",
 "Bronze",
@@ -143,7 +47,7 @@ metal.register_block(
 {cracky = 3, oddly_breakable_by_hand = 3},
 default.node_sound_metal_defaults())
 
-metal.register_block(
+metal.register_basic_block(
 "metal",
 "iron",
 "Iron",
@@ -151,7 +55,7 @@ metal.register_block(
 {cracky = 3, oddly_breakable_by_hand = 3},
 default.node_sound_metal_defaults())
 
-metal.register_block(
+metal.register_basic_block(
 "metal",
 "rusted",
 "Rusted",
@@ -159,7 +63,7 @@ metal.register_block(
 {cracky = 3, oddly_breakable_by_hand = 3},
 default.node_sound_metal_defaults())
 
-metal.register_block(
+metal.register_basic_block(
 "metal",
 "steel",
 "Steel",
