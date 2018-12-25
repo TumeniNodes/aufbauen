@@ -432,3 +432,150 @@ minetest.register_node("stone:stone_smooth_mossy", {
 	sounds = default.node_sound_stone_defaults(),
 	drop = {},
 })
+
+
+--
+-- Stone Stairs
+--
+
+if minetest.get_modpath( "stairs") then
+stairs.register_stair_and_slab(
+	"brick_1",
+	"stone:brick_1",
+	{cracky = 3},
+	{"stone_brick_1.png"},
+	"Brick Stair",
+	"Brick Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"cobblestone",
+	"stone:cobblestone",
+	{cracky = 3},
+	{"stone_cobblestone.png"},
+	"Cobblestone Stair",
+	"Cobblestone Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"cobblestone_mossy",
+	"stone:cobblestone_mossy",
+	{cracky = 3},
+	{"stone_cobblestone_mossy.png"},
+	"Mossy Cobblestone Stair",
+	"Mossy Cobblestone Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"granite_block",
+	"stone:granite_block",
+	{cracky = 2},
+	{"stone_granite_block.png"},
+	"Granite Block Stair",
+	"Granite Block Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"granite_cinderblock",
+	"stone:granite_cinderblock",
+	{cracky = 2},
+	{"stone_granite_cinderblock.png"},
+	"Granite Cinderblock Stair",
+	"Granite Cinderblock Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"granite_brick",
+	"stone:granite_brick",
+	{cracky = 2},
+	{"stone_granite_brick.png"},
+	"Granite Brick Stair",
+	"Granite Brick Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"granite_smooth",
+	"default:granite_smooth",
+	{crumbly = 1, cracky = 3},
+	{"stone_granite_smooth.png"},
+	"Smooth Granite Stair",
+	"Smooth Granite Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"limestone_block",
+	"stone:limestone_block",
+	{cracky = 2},
+	{"stone_limestone_block.png"},
+	"Limestone Block Stair",
+	"Limestone Block Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"limestone_brick",
+	"stone:limestone_brick",
+	{cracky = 2},
+	{"stone_limestone_brick.png"},
+	"Limestone Brick Stair",
+	"Limestone Brick Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"sandstone_block",
+	"stone:sandstone_block",
+	{cracky = 2},
+	{"stone_sandstone_block.png"},
+	"Sandstone Block Stair",
+	"Sandstone Block Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"sandstone_brick",
+	"stone:sandstone_brick",
+	{cracky = 2},
+	{"stone_sandstone_brick.png"},
+	"Sandstone Brick Stair",
+	"Sandstone Brick Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"stone_block",
+	"stone:stone_block",
+	{cracky = 2},
+	{"stone_stone_block.png"},
+	"Stone Block Stair",
+	"Stone Block Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"stone_brick",
+	"stone:stone_brick",
+	{cracky = 2},
+	{"stone_stone_brick.png"},
+	"Stone Brick Stair",
+	"Stone Brick Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"stone_cinderblock",
+	"stone:stone_cinderblock",
+	{cracky = 2},
+	{"stone_stone_cinderblock.png"},
+	"Stone Cinderblock Stair",
+	"Stone Cinderblock Slab",
+	default.node_sound_stone_defaults()
+)
+end

@@ -159,6 +159,133 @@ minetest.register_node("wood:willow_planks", {
 
 
 --
+-- Wood Stairs
+--
+
+if minetest.get_modpath( "stairs") then
+stairs.register_stair_and_slab(
+	"birch_planking",
+	"wood:birch_planking",
+	{choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	{"wood_birch_planking.png"},
+	"Birch Planking Stair",
+	"Birch Planking Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"birch_planks",
+	"wood:birch_planks",
+	{choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	{"wood_birch_planks.png"},
+	"Birch Planks Stair",
+	"Birch Planks_Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"maple_planking",
+	"wood:maple_planking",
+	{choppy = 2, oddly_breakable_by_hand = 2, wood = 1},
+	{"wood_maple_planking.png"},
+	"Maple Planking Stair",
+	"Maple Planking Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"maple_planks",
+	"wood:maple_planks",
+	{choppy = 2, oddly_breakable_by_hand = 2, wood = 1},
+	{"wood_maple_planks.png"},
+	"Maple Planks Stair",
+	"Maple Planks Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"oak_planking",
+	"wood:oak_planking",
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	{"wood_oak_planking.png"},
+	"Oak Planking Stair",
+	"Oak Planking Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"oak_planks",
+	"wood:oak_planks",
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	{"wood_oak_planks.png"},
+	"Oak Planks Stair",
+	"Oak Planks Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"pine_planking",
+	"wood:pine_planking",
+	{choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	{"wood_pine_planking.png"},
+	"Pine Planking Stair",
+	"Pine Planking Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"pine_planks",
+	"wood:pine_planks",
+	{choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	{"wood_pine_planks.png"},
+	"Pine Planks Stair",
+	"Pine Planks Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"walnut_planking",
+	"wood:walnut_planking",
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	{"wood_walnut_planking.png"},
+	"Walnut Planking Stair",
+	"Walnut Planking Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"walnut_planks",
+	"wood:walnut_planks",
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	{"wood_walnut_planks.png"},
+	"Walnut Planks Stair",
+	"Walnut Planks Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"willow_planking",
+	"wood:willow_planking",
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	{"wood_willow_planking.png"},
+	"Willow Planking Stair",
+	"Willow Planking Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"willow_planks",
+	"wood:willow_planks",
+	{choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	{"wood_willow_planks.png"},
+	"Willow Planks Stair",
+	"Willow Planks Slab",
+	default.node_sound_wood_defaults()
+)
+end
+
+
+--
 -- Wood Ladder
 --
 ladder = {}
