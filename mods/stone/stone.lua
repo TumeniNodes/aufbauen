@@ -38,14 +38,32 @@ end
 -- Cobblestone Nodes
 --
 
-minetest.register_node("stone:cobble", {
+minetest.register_node("stone:cobble_1", {
 	description = "Cobble",
-	tiles = {"stone_cobble.png"},
+	tiles = {"stone_cobble_1.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 2},
 	sounds = default.node_sound_stone_defaults(),
 	drop = {},
+
+	on_place = function(itemstack, placer, pointed_thing)
+		local stack = ItemStack("stone:cobble_" .. math.random(1,3))
+		local ret = minetest.item_place(stack, placer, pointed_thing)
+		return ItemStack("stone:cobble_1 " ..
+			itemstack:get_count() - (1 - ret:get_count()))
+	end,
 })
+
+for i = 2, 3 do
+	minetest.register_node("stone:cobble_" .. i, {
+		description = "Brick",
+		tiles = {"stone_cobble_" .. i .. ".png"},
+		groups = {cracky = 3, stone = 2, not_in_creative_inventory =1},
+		sounds = default.node_sound_stone_defaults(),
+		drop = {},
+	})
+end
+
 
 minetest.register_node("stone:cobble_path", {
 	description = "Cobble Path",
