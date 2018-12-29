@@ -218,6 +218,15 @@ minetest.register_node("stone:granite_cinderblock_mossy", {
 	drop = {},
 })
 
+minetest.register_node("stone:granite_slab", {
+	description = "Granite Slab",
+	tiles = {"stone_granite_block.png", "stone_granite_block.png", "stone_granite_slab.png"},
+	is_ground_content = false,
+	groups = {cracky = 2, stone = 1},
+	sounds = default.node_sound_stone_defaults(),
+	drop = {},
+})
+
 minetest.register_node("stone:granite_smooth", {
 	description = "Smooth Granite",
 	tiles = {"stone_granite_smooth.png"},

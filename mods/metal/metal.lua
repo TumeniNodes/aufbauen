@@ -76,7 +76,7 @@ default.node_sound_metal_defaults())
 -- Metal Stairs
 --
 
-if minetest.get_modpath( "stairs") then
+--if minetest.get_modpath( "stairs") then
 stairs.register_stair_and_slab(
 	"bronze",
 	"metal:bronze",
@@ -116,7 +116,7 @@ stairs.register_stair_and_slab(
 	"Steel Slab",
 	default.node_sound_metal_defaults()
 )
-end
+--end
 
 
 -- Keep furnace just for decoration
